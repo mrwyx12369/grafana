@@ -5,10 +5,10 @@ import { GrafanaTheme2 } from '@grafana/data';
 import { useStyles2 } from '@grafana/ui';
 
 const helpOptions = [
-  { value: 0, label: 'Documentation', href: 'https://grafana.com/docs/grafana/latest' },
-  { value: 1, label: 'Tutorials', href: 'https://grafana.com/tutorials' },
-  { value: 2, label: 'Community', href: 'https://community.grafana.com' },
-  { value: 3, label: 'Public Slack', href: 'http://slack.grafana.com' },
+  { value: 0, label: '文档', href: 'https://www.smxyi.com/docs/datav/latest' },
+  { value: 1, label: '学习', href: 'https://www.smxyi.com/datv/tutorials' },
+  { value: 2, label: '社区', href: 'https://www.smxyi.com' },
+  { value: 3, label: '企业微信', href: 'https://www.smxyi.com' },
 ];
 
 export const WelcomeBanner = () => {
@@ -16,7 +16,7 @@ export const WelcomeBanner = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Welcome to Grafana</h1>
+      <h1 className={styles.title}>欢迎访问大数据可视化系统</h1>
       <div className={styles.help}>
         <h3 className={styles.helpText}>需要帮助吗？</h3>
         <div className={styles.helpLinks}>
