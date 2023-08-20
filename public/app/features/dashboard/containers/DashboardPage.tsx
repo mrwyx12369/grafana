@@ -202,12 +202,12 @@ export class UnthemedDashboardPage extends PureComponent<Props, State> {
     }
 
     if (this.state.editPanelAccessDenied) {
-      this.props.notifyApp(createErrorNotification('Permission to edit panel denied'));
+      this.props.notifyApp(createErrorNotification('编辑面板的权限被拒绝'));
       locationService.partial({ editPanel: null });
     }
 
     if (this.state.panelNotFound) {
-      this.props.notifyApp(createErrorNotification(`Panel not found`));
+      this.props.notifyApp(createErrorNotification(`未找到面板`));
       locationService.partial({ editPanel: null, viewPanel: null });
     }
   }

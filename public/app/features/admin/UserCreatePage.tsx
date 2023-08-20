@@ -18,8 +18,8 @@ const createUser = async (user: UserDTO) => getBackendSrv().post('/api/admin/use
 const pageNav: NavModelItem = {
   icon: 'user',
   id: 'user-new',
-  text: 'New user',
-  subTitle: 'Create a new Grafana user.',
+  text: '新用户',
+  subTitle: '创建一个系统用户。',
 };
 
 const UserCreatePage = () => {
@@ -42,26 +42,26 @@ const UserCreatePage = () => {
             return (
               <>
                 <Field
-                  label="Name"
+                  label="姓名"
                   required
                   invalid={!!errors.name}
-                  error={errors.name ? 'Name is required' : undefined}
+                  error={errors.name ? '姓名为必填项' : undefined}
                 >
                   <Input id="name-input" {...register('name', { required: true })} />
                 </Field>
 
-                <Field label="Email">
+                <Field label="邮件">
                   <Input id="email-input" {...register('email')} />
                 </Field>
 
-                <Field label="Username">
+                <Field label="账号">
                   <Input id="username-input" {...register('login')} />
                 </Field>
                 <Field
-                  label="Password"
+                  label="密码"
                   required
                   invalid={!!errors.password}
-                  error={errors.password ? 'Password is required and must contain at least 4 characters' : undefined}
+                  error={errors.password ? '密码为必填项，且必须至少包含 4 个字符' : undefined}
                 >
                   <Input
                     id="password-input"
@@ -71,7 +71,7 @@ const UserCreatePage = () => {
                     type="password"
                   />
                 </Field>
-                <Button type="submit">Create user</Button>
+                <Button type="submit">创建</Button>
               </>
             );
           }}

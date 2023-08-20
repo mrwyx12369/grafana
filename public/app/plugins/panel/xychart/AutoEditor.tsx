@@ -80,7 +80,7 @@ export const AutoEditor = ({ value, onChange, context }: StandardEditorProps<XYD
   const styles = useStyles2(getStyles);
 
   if (!context.data) {
-    return <div>No data...</div>;
+    return <div>暂无数据...</div>;
   }
 
   return (

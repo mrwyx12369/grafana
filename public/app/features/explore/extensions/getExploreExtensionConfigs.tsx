@@ -14,8 +14,8 @@ export function getExploreExtensionConfigs(): PluginExtensionLinkConfig[] {
   try {
     return [
       createExtensionLinkConfig<PluginExtensionExploreContext>({
-        title: 'Add to dashboard',
-        description: 'Use the query and panel from explore and create/add it to a dashboard',
+        title: '添加到仪表板',
+        description: '使用“探索”中的查询和面板，并将其创建/添加到 dashboard',
         extensionPointId: PluginExtensionPoints.ExploreToolbarAction,
         icon: 'apps',
         category: 'Dashboards',
@@ -40,7 +40,7 @@ export function getExploreExtensionConfigs(): PluginExtensionLinkConfig[] {
       }),
     ];
   } catch (error) {
-    logWarning(`Could not configure extensions for Explore due to: "${error}"`);
+    logWarning(`由于以下原因，无法为“探索”配置扩展: "${error}"`);
     return [];
   }
 }

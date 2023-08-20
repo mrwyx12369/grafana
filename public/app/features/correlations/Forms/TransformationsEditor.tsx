@@ -48,8 +48,8 @@ export const TransformationsEditor = (props: Props) => {
         {({ fields, append, remove }) => (
           <>
             <Stack direction="column" alignItems="flex-start">
-              <div className={styles.heading}>Transformations</div>
-              {fields.length === 0 && <div> No transformations defined.</div>}
+              <div className={styles.heading}>转换</div>
+              {fields.length === 0 && <div> 未定义转换。</div>}
               {fields.length > 0 && (
                 <div>
                   {fields.map((fieldVal, index) => {
@@ -58,11 +58,11 @@ export const TransformationsEditor = (props: Props) => {
                         <Field
                           label={
                             <Stack gap={0.5}>
-                              <Label htmlFor={`config.transformations.${fieldVal.id}-${index}.type`}>Type</Label>
+                              <Label htmlFor={`config.transformations.${fieldVal.id}-${index}.type`}>类型</Label>
                               <Tooltip
                                 content={
                                   <div>
-                                    <p>The type of transformation that will be applied to the source data.</p>
+                                    <p>将应用于源数据的转换类型.</p>
                                   </div>
                                 }
                               >
@@ -130,13 +130,12 @@ export const TransformationsEditor = (props: Props) => {
                         <Field
                           label={
                             <Stack gap={0.5}>
-                              <Label htmlFor={`config.transformations.${fieldVal.id}.field`}>Field</Label>
+                              <Label htmlFor={`config.transformations.${fieldVal.id}.field`}>字段</Label>
                               <Tooltip
                                 content={
                                   <div>
                                     <p>
-                                      Optional. The field to transform. If not specified, the transformation will be
-                                      applied to the results field.
+                                      可选。要转换的字段。如果未指定，则转换将应用于结果字段。
                                     </p>
                                   </div>
                                 }
@@ -150,7 +149,7 @@ export const TransformationsEditor = (props: Props) => {
                             {...register(`config.transformations.${index}.field`)}
                             readOnly={readOnly}
                             defaultValue={fieldVal.field}
-                            label="field"
+                            label="字段"
                             id={`config.transformations.${fieldVal.id}.field`}
                           />
                         </Field>
@@ -158,7 +157,7 @@ export const TransformationsEditor = (props: Props) => {
                           label={
                             <Stack gap={0.5}>
                               <Label htmlFor={`config.transformations.${fieldVal.id}.expression`}>
-                                Expression
+                                  表达式
                                 {getSupportedTransTypeDetails(watch(`config.transformations.${index}.type`))
                                   .requireExpression
                                   ? ' *'
@@ -168,8 +167,7 @@ export const TransformationsEditor = (props: Props) => {
                                 content={
                                   <div>
                                     <p>
-                                      Required for regular expression. The expression the transformation will use.
-                                      Logfmt does not use further specifications.
+                                      正则表达式必需。转换将使用的表达式。Logfmt 不使用进一步的规范。
                                     </p>
                                   </div>
                                 }
@@ -185,7 +183,7 @@ export const TransformationsEditor = (props: Props) => {
                             {...register(`config.transformations.${index}.expression`, {
                               required: getSupportedTransTypeDetails(watch(`config.transformations.${index}.type`))
                                 .requireExpression
-                                ? 'Please define an expression'
+                                ? '请定义一个表达式'
                                 : undefined,
                             })}
                             defaultValue={fieldVal.expression}
@@ -205,8 +203,7 @@ export const TransformationsEditor = (props: Props) => {
                                 content={
                                   <div>
                                     <p>
-                                      Optional. Defines the name of the variable. This is currently only valid for
-                                      regular expressions with a single, unnamed capture group.
+                                     可选。定义变量的名称。这目前仅适用于具有单个未命名捕获组的正则表达式。
                                     </p>
                                   </div>
                                 }
@@ -229,7 +226,7 @@ export const TransformationsEditor = (props: Props) => {
                         {!readOnly && (
                           <div className={styles.removeButton}>
                             <IconButton
-                              tooltip="Remove transformation"
+                              tooltip="删除转换"
                               name="trash-alt"
                               onClick={() => {
                                 remove(index);
@@ -240,7 +237,7 @@ export const TransformationsEditor = (props: Props) => {
                                 setKeptVals(compact(keptValsCopy));
                               }}
                             >
-                              Remove
+                              删除
                             </IconButton>
                           </div>
                         )}
@@ -256,7 +253,7 @@ export const TransformationsEditor = (props: Props) => {
                   variant="secondary"
                   type="button"
                 >
-                  Add transformation
+                  新增转换
                 </Button>
               )}
             </Stack>

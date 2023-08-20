@@ -62,8 +62,8 @@ export default {
 export const Horizontal: Story<LayoutProps> = (args) => {
   return (
     <HorizontalGroup {...args}>
-      <Button>Save</Button>
-      <Button>Cancel</Button>
+      <Button>保存</Button>
+      <Button>取消</Button>
     </HorizontalGroup>
   );
 };
@@ -71,8 +71,8 @@ export const Horizontal: Story<LayoutProps> = (args) => {
 export const Vertical: Story<LayoutProps> = (args) => {
   return (
     <VerticalGroup {...args}>
-      <Button>Save</Button>
-      <Button>Cancel</Button>
+      <Button>保存</Button>
+      <Button>取消</Button>
     </VerticalGroup>
   );
 };

@@ -58,8 +58,8 @@ export const AutoRefreshIntervals = ({
 
   return (
     <Field
-      label="Auto refresh"
-      description="Define the auto refresh intervals that should be available in the auto refresh list."
+      label="自动刷新"
+      description="定义应在自动刷新列表中可用的自动刷新间隔。"
       error={invalidIntervalsMessage}
       invalid={!!invalidIntervalsMessage}
     >

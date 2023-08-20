@@ -347,7 +347,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
       <QueryOperationRow
         id="Query options"
         index={0}
-        title="Query options"
+        title="查询选项"
         headerElement={this.renderCollapsedText(styles)}
         isOpen={isOpen}
         onOpen={this.onOpenOptions}
@@ -363,10 +363,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
             width={9}
             tooltip={
               <>
-                Overrides the relative time range for individual panels, which causes them to be different than what is
-                selected in the dashboard time picker in the top-right corner of the dashboard. For example to configure
-                the Last 5 minutes the Relative time should be <code>now-5m</code> and <code>5m</code>, or variables
-                like <code>$_relativeTime</code>.
+              覆盖单个面板的相对时间范围，这会导致它们与在仪表板右上角的仪表板时间选取器中选择。例如，要配置过去 5 分钟相对时间应为<code>现在-5m</code> 和 <code>5m</code>，或变量喜欢 <code>$_relativeTime</code>.
               </>
             }
           >
@@ -375,7 +372,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
           <Input
             type="text"
             className="width-6"
-            placeholder="1h"
+            placeholder="1小时"
             onChange={this.onRelativeTimeChange}
             onBlur={this.onOverrideTime}
             invalid={!relativeTimeIsValid}
@@ -388,9 +385,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
             width={9}
             tooltip={
               <>
-                Overrides the time range for individual panels by shifting its start and end relative to the time
-                picker. For example to configure the Last 1h the Time shift should be <code>now-1h</code> and{' '}
-                <code>1h</code>, or variables like <code>$_timeShift</code>.
+              通过相对于时间移动单个面板的开始和结束来覆盖其时间范围拾取器。例如，要配置过去 1 小时，时移应为 <code>now-1h</code> 和 {' '}<code>1h</code> 或 <code>$_timeShift</code> 等变量。
               </>
             }
           >
@@ -399,7 +394,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
           <Input
             type="text"
             className="width-6"
-            placeholder="1h"
+            placeholder="1小时"
             onChange={this.onTimeShiftChange}
             onBlur={this.onTimeShift}
             invalid={!timeShiftIsValid}

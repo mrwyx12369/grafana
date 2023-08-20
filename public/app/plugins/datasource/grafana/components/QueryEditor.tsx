@@ -54,19 +54,19 @@ export class UnthemedQueryEditor extends PureComponent<Props, State> {
 
   queryTypes: Array<SelectableValue<GrafanaQueryType>> = [
     {
-      label: 'Random Walk',
+      label: '随机游走',
       value: GrafanaQueryType.RandomWalk,
-      description: 'Random signal within the selected time range',
+      description: '所选时间范围内的随机信号',
     },
     {
-      label: 'Live Measurements',
+      label: '实时指标',
       value: GrafanaQueryType.LiveMeasurements,
-      description: 'Stream real-time measurements from Grafana',
+      description: '从Grafana流式传输实时测量结果',
     },
     {
-      label: 'List public files',
+      label: '列出公共文件',
       value: GrafanaQueryType.List,
-      description: 'Show directory listings for public resources',
+      description: '显示公共资源的目录列表',
     },
   ];
 
@@ -75,9 +75,9 @@ export class UnthemedQueryEditor extends PureComponent<Props, State> {
 
     if (config.featureToggles.panelTitleSearch && hasAlphaPanels) {
       this.queryTypes.push({
-        label: 'Search',
+        label: '搜索',
         value: GrafanaQueryType.Search,
-        description: 'Search for grafana resources',
+        description: '搜索Grafana资源',
       });
     }
     if (config.featureToggles.editPanelCSVDragAndDrop) {
@@ -235,7 +235,7 @@ export class UnthemedQueryEditor extends PureComponent<Props, State> {
       currentChannel = {
         value: channel,
         label: channel,
-        description: `Connected to ${channel}`,
+        description: `连接到 ${channel}`,
       };
       channels = [currentChannel, ...channels];
     }
@@ -262,8 +262,8 @@ export class UnthemedQueryEditor extends PureComponent<Props, State> {
         if (!distinctFields.has(f)) {
           fields.push({
             value: f,
-            label: `${f} (not loaded)`,
-            description: `Configured, but not found in the query results`,
+            label: `${f} (未加载)`,
+            description: `已配置，但在查询结果中找不到`,
           });
           distinctFields.add(f);
         }
@@ -278,23 +278,23 @@ export class UnthemedQueryEditor extends PureComponent<Props, State> {
     return (
       <>
         <div className="gf-form">
-          <InlineField label="Channel" grow={true} labelWidth={labelWidth}>
+          <InlineField label="通道" grow={true} labelWidth={labelWidth}>
             <Select
               options={channels}
               value={currentChannel || ''}
               onChange={this.onChannelChange}
               allowCustomValue={true}
               backspaceRemovesValue={true}
-              placeholder="Select measurements channel"
+              placeholder="选择测量通道"
               isClearable={true}
-              noOptionsMessage="Enter channel name"
-              formatCreateLabel={(input: string) => `Connect to: ${input}`}
+              noOptionsMessage="输入频道名称"
+              formatCreateLabel={(input: string) => `连接到: ${input}`}
             />
           </InlineField>
         </div>
         {channel && (
           <div className="gf-form">
-            <InlineField label="Fields" grow={true} labelWidth={labelWidth}>
+            <InlineField label="字段" grow={true} labelWidth={labelWidth}>
               <Select
                 options={fields}
                 value={filter?.fields || []}
@@ -304,14 +304,14 @@ export class UnthemedQueryEditor extends PureComponent<Props, State> {
                 placeholder="All fields"
                 isClearable={true}
                 noOptionsMessage="Unable to list all fields"
-                formatCreateLabel={(input: string) => `Field: ${input}`}
+                formatCreateLabel={(input: string) => `字段: ${input}`}
                 isSearchable={true}
                 isMulti={true}
               />
             </InlineField>
-            <InlineField label="Buffer">
+            <InlineField label="缓冲">
               <Input
-                placeholder="Auto"
+                placeholder="自动"
                 width={12}
                 defaultValue={formattedTime}
                 onKeyDown={this.handleEnterKey}
@@ -322,9 +322,8 @@ export class UnthemedQueryEditor extends PureComponent<Props, State> {
           </div>
         )}
 
-        <Alert title="Grafana Live - Measurements" severity="info">
-          This supports real-time event streams in Grafana core. This feature is under heavy development. Expect the
-          interfaces and structures to change as this becomes more production ready.
+        <Alert title="实时指标" severity="info">
+          这支持 Grafana 核心中的实时事件流。此功能正在大量开发中。期待接口和结构随着生产就绪而改变。
         </Alert>
       </>
     );
@@ -356,16 +355,16 @@ export class UnthemedQueryEditor extends PureComponent<Props, State> {
 
     return (
       <InlineFieldRow>
-        <InlineField label="Path" grow={true} labelWidth={labelWidth}>
+        <InlineField label="路径" grow={true} labelWidth={labelWidth}>
           <Select
             options={folders}
             value={currentFolder || ''}
             onChange={this.onFolderChanged}
             allowCustomValue={true}
             backspaceRemovesValue={true}
-            placeholder="Select folder"
+            placeholder="选择文件夹"
             isClearable={true}
-            formatCreateLabel={(input: string) => `Folder: ${input}`}
+            formatCreateLabel={(input: string) => `文件夹: ${input}`}
           />
         </InlineField>
       </InlineFieldRow>
@@ -413,7 +412,7 @@ export class UnthemedQueryEditor extends PureComponent<Props, State> {
     return (
       <>
         <InlineFieldRow>
-          <InlineField label="Snapshot" grow={true} labelWidth={labelWidth}>
+          <InlineField label="快照" grow={true} labelWidth={labelWidth}>
             <InlineLabel>{pluralize('frame', query.snapshot?.length ?? 0, true)}</InlineLabel>
           </InlineField>
         </InlineFieldRow>
@@ -430,7 +429,7 @@ export class UnthemedQueryEditor extends PureComponent<Props, State> {
               }}
             >
               <FileDropzoneDefaultChildren
-                primaryText={this.props?.query?.file ? 'Replace file' : 'Drop file here or click to upload'}
+                primaryText={this.props?.query?.file ? '替换文件' : '将文件拖放到此处或单击以上传'}
               />
             </FileDropzone>
             {file && (

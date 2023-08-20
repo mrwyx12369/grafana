@@ -16,8 +16,8 @@ type OrderByRowProps = {
 };
 
 const sortOrderOptions = [
-  { description: 'Sort by ascending', value: 'ASC', icon: 'sort-amount-up' } as const,
-  { description: 'Sort by descending', value: 'DESC', icon: 'sort-amount-down' } as const,
+  { description: '升序', value: 'ASC', icon: 'sort-amount-up' } as const,
+  { description: '降序', value: 'DESC', icon: 'sort-amount-down' } as const,
 ];
 
 export function OrderByRow({ sql, onSqlChange, columns, showOffset }: OrderByRowProps) {
@@ -58,7 +58,7 @@ export function OrderByRow({ sql, onSqlChange, columns, showOffset }: OrderByRow
 
   return (
     <>
-      <EditorField label="Order by" width={25}>
+      <EditorField label="排序字段" width={25}>
         <InputGroup>
           <Select
             aria-label="Order by"
@@ -79,11 +79,11 @@ export function OrderByRow({ sql, onSqlChange, columns, showOffset }: OrderByRow
           />
         </InputGroup>
       </EditorField>
-      <EditorField label="Limit" optional width={25}>
+      <EditorField label="限制结果" optional width={25}>
         <Input type="number" min={0} id={uniqueId('limit-')} value={sql.limit || ''} onChange={onLimitChange} />
       </EditorField>
       {showOffset && (
-        <EditorField label="Offset" optional width={25}>
+        <EditorField label="位置偏移" optional width={25}>
           <Input type="number" id={uniqueId('offset-')} value={sql.offset || ''} onChange={onOffsetChange} />
         </EditorField>
       )}

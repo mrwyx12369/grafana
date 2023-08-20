@@ -89,7 +89,7 @@ const getNonExistentPublicDashboardResponse = () =>
     return res(
       ctx.status(404),
       ctx.json({
-        message: 'Public dashboard not found',
+        message: '未找到公共仪表板',
         messageId: 'publicdashboards.notFound',
         statusCode: 404,
         traceID: '',

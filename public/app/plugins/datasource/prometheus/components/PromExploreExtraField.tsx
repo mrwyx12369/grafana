@@ -107,16 +107,16 @@ PromExploreExtraField.displayName = 'PromExploreExtraField';
 
 export function getQueryTypeOptions(includeBoth: boolean) {
   const rangeOptions = [
-    { value: 'range', label: 'Range', description: 'Run query over a range of time' },
+    { value: 'range', label: '时间范围', description: '在一定时间内运行查询' },
     {
       value: 'instant',
-      label: 'Instant',
-      description: 'Run query against a single point in time. For this query, the "To" time is used',
+      label: '定时',
+      description: '针对单个时间点运行查询。对于此查询，使用“到”时间',
     },
   ];
 
   if (includeBoth) {
-    rangeOptions.push({ value: 'both', label: 'Both', description: 'Run an Instant query and a Range query' });
+    rangeOptions.push({ value: 'both', label: '选择二者', description: '运行即时查询和范围查询' });
   }
 
   return rangeOptions;

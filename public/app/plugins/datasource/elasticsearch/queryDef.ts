@@ -9,22 +9,22 @@ import {
 } from './types';
 
 export const extendedStats: ExtendedStat[] = [
-  { label: 'Avg', value: 'avg' },
-  { label: 'Min', value: 'min' },
-  { label: 'Max', value: 'max' },
-  { label: 'Sum', value: 'sum' },
-  { label: 'Count', value: 'count' },
-  { label: 'Std Dev', value: 'std_deviation' },
-  { label: 'Std Dev Upper', value: 'std_deviation_bounds_upper' },
-  { label: 'Std Dev Lower', value: 'std_deviation_bounds_lower' },
+  { label: '平均数', value: 'avg' },
+  { label: '组小数', value: 'min' },
+  { label: '最大数', value: 'max' },
+  { label: '合计数', value: 'sum' },
+  { label: '总数', value: 'count' },
+  { label: '标准方差', value: 'std_deviation' },
+  { label: '标准方差上界', value: 'std_deviation_bounds_upper' },
+  { label: '标准方差下界', value: 'std_deviation_bounds_lower' },
 ];
 
 export const movingAvgModelOptions: MovingAverageModelOption[] = [
-  { label: 'Simple', value: 'simple' },
-  { label: 'Linear', value: 'linear' },
-  { label: 'Exponentially Weighted', value: 'ewma' },
-  { label: 'Holt Linear', value: 'holt' },
-  { label: 'Holt Winters', value: 'holt_winters' },
+  { label: '简单平均', value: 'simple' },
+  { label: '线性平均', value: 'linear' },
+  { label: '指数加权平均', value: 'ewma' },
+  { label: '霍尔特线性趋势', value: 'holt' },
+  { label: '三次指数平滑', value: 'holt_winters' },
 ];
 
 export const highlightTags = {

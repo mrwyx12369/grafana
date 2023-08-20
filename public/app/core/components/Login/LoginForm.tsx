@@ -32,21 +32,21 @@ export const LoginForm = ({ children, onSubmit, isLoggingIn, passwordHint, login
       <Form onSubmit={onSubmit} validateOn="onChange">
         {({ register, errors }) => (
           <>
-            <Field label="Email or username" invalid={!!errors.user} error={errors.user?.message}>
+            <Field label="" invalid={!!errors.user} error={errors.user?.message}>
               <Input
-                {...register('user', { required: 'Email or username is required' })}
+                {...register('user', { required: '邮箱或账号是必填项' })}
                 autoFocus
                 autoCapitalize="none"
                 placeholder={loginHint}
                 aria-label={selectors.pages.Login.username}
               />
             </Field>
-            <Field label="Password" invalid={!!errors.password} error={errors.password?.message}>
+            <Field label="" invalid={!!errors.password} error={errors.password?.message}>
               <PasswordField
                 id="current-password"
                 autoComplete="current-password"
                 passwordHint={passwordHint}
-                {...register('password', { required: 'Password is required' })}
+                {...register('password', { required: '密码是必填项' })}
               />
             </Field>
             <Button
@@ -55,7 +55,7 @@ export const LoginForm = ({ children, onSubmit, isLoggingIn, passwordHint, login
               className={submitButton}
               disabled={isLoggingIn}
             >
-              {isLoggingIn ? 'Logging in...' : 'Log in'}
+              {isLoggingIn ? '登录中...' : '登录'}
             </Button>
             {children}
           </>

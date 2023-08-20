@@ -16,18 +16,18 @@ export const ConfigureCorrelationTargetForm = () => {
 
   return (
     <>
-      <FieldSet label="Setup the target for the correlation (Step 2 of 3)">
+      <FieldSet label="设置关联目标（第2步，共3步）">
         <p>
-          Define what data source the correlation will link to, and what query will run when the correlation is clicked.
+          定义相关性将链接到的数据源，以及单击相关性时将运行的查询。
         </p>
         <Controller
           control={control}
           name="targetUID"
-          rules={{ required: { value: true, message: 'This field is required.' } }}
+          rules={{ required: { value: true, message: '此字段为必填字段。' } }}
           render={({ field: { onChange, value } }) => (
             <Field
-              label="Target"
-              description="Specify which data source is queried when the link is clicked"
+              label="目标"
+              description="指定单击链接时查询的数据源"
               htmlFor="target"
               invalid={!!formState.errors.targetUID}
               error={formState.errors.targetUID?.message}

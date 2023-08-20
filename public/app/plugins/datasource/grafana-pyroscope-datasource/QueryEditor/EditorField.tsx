@@ -25,7 +25,7 @@ export const EditorField = (props: EditorFieldProps) => {
     <>
       <label className={styles.label} htmlFor={childInputId}>
         {label}
-        {optional && <span className={styles.optional}> - optional</span>}
+        {optional && <span className={styles.optional}> - 可选</span>}
         {tooltip && (
           <Tooltip placement="top" content={tooltip} theme="info">
             <Icon name="info-circle" size="sm" className={styles.icon} />

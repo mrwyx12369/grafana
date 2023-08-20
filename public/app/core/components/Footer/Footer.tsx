@@ -18,23 +18,23 @@ export let getFooterLinks = (): FooterLink[] => {
     {
       target: '_blank',
       id: 'documentation',
-      text: t('nav.help/documentation', 'Documentation'),
+      text: t('nav.help.documentation', '文档'),
       icon: 'document-info',
-      url: 'https://grafana.com/docs/grafana/latest/?utm_source=grafana_footer',
+      url: '#',
     },
     {
       target: '_blank',
       id: 'support',
-      text: t('nav.help/support', 'Support'),
+      text: t('nav.help.support', '支持'),
       icon: 'question-circle',
-      url: 'https://grafana.com/products/enterprise/?utm_source=grafana_footer',
+      url: '#',
     },
     {
       target: '_blank',
       id: 'community',
-      text: t('nav.help/community', 'Community'),
+      text: t('nav.help.community', '社区'),
       icon: 'comments-alt',
-      url: 'https://community.grafana.com/?utm_source=grafana_footer',
+      url: '#',
     },
   ];
 };
@@ -70,16 +70,16 @@ export function getVersionLinks(): FooterLink[] {
     target: '_blank',
     id: 'version',
     text: `v${buildInfo.version} (${buildInfo.commit})`,
-    url: hasReleaseNotes ? `https://github.com/grafana/grafana/blob/main/CHANGELOG.md` : undefined,
+    url: hasReleaseNotes ? `#` : undefined,
   });
 
   if (buildInfo.hasUpdate) {
     links.push({
       target: '_blank',
       id: 'updateVersion',
-      text: `New version available!`,
+      text: `存在新版本!`,
       icon: 'download-alt',
-      url: 'https://grafana.com/grafana/download?utm_source=grafana_footer',
+      url: '#',
     });
   }
 

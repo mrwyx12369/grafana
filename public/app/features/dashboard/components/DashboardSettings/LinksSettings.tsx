@@ -34,8 +34,8 @@ export function LinksSettings({ dashboard, sectionNav, editIndex }: SettingsPage
 
   let pageNav: NavModelItem | undefined;
   if (isEditing) {
-    const title = isNew ? 'New link' : 'Edit link';
-    const description = isNew ? 'Create a new link on your dashboard' : 'Edit a specific link of your dashboard';
+    const title = isNew ? '新建链接' : '编辑链接';
+    const description = isNew ? '在仪表板上创建新链接' : '编辑仪表板的特定链接';
     pageNav = {
       text: title,
       subTitle: description,

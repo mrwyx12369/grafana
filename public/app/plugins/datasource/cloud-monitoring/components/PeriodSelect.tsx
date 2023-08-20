@@ -41,11 +41,11 @@ export function PeriodSelect({
       value={[...options, ...templateVariableOptions].find((s) => s.value === current)}
       options={[
         {
-          label: 'Template Variables',
+          label: '模板变量',
           options: templateVariableOptions,
         },
         {
-          label: 'Aggregations',
+          label: '聚合方式',
           expanded: true,
           options: visibleOptions,
         },

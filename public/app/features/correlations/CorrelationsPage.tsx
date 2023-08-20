@@ -156,9 +156,9 @@ export default function CorrelationsPage() {
       navModel={navModel}
       subTitle={
         <>
-          Define how data living in different data sources relates to each other. Read more in the{' '}
+          定义位于不同数据源中的数据如何相互关联。详见{' '}
           <a href="https://grafana.com/docs/grafana/next/administration/correlations/" target="_blank" rel="noreferrer">
-            documentation <Icon name="external-link-alt" />
+            文档 <Icon name="external-link-alt" />
           </a>
         </>
       }
@@ -168,7 +168,7 @@ export default function CorrelationsPage() {
         <div>
           {!data && get.loading && (
             <div className={loaderWrapper}>
-              <LoadingPlaceholder text="loading..." />
+              <LoadingPlaceholder text="加载..." />
             </div>
           )}
 

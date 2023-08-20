@@ -4,15 +4,15 @@ import { DataSourcePluginCategory } from 'app/types';
 
 export function buildCategories(plugins: DataSourcePluginMeta[]): DataSourcePluginCategory[] {
   const categories: DataSourcePluginCategory[] = [
-    { id: 'tsdb', title: 'Time series databases', plugins: [] },
-    { id: 'logging', title: 'Logging & document databases', plugins: [] },
-    { id: 'tracing', title: 'Distributed tracing', plugins: [] },
-    { id: 'profiling', title: 'Profiling', plugins: [] },
-    { id: 'sql', title: 'SQL', plugins: [] },
-    { id: 'cloud', title: 'Cloud', plugins: [] },
-    { id: 'enterprise', title: 'Enterprise plugins', plugins: [] },
-    { id: 'iot', title: 'Industrial & IoT', plugins: [] },
-    { id: 'other', title: 'Others', plugins: [] },
+    { id: 'tsdb', title: '时间序列数据库', plugins: [] },
+    { id: 'logging', title: '日志记录和文档数据库', plugins: [] },
+    { id: 'tracing', title: '分布式跟踪', plugins: [] },
+    { id: 'profiling', title: '分析应用', plugins: [] },
+    { id: 'sql', title: 'SQ应用L', plugins: [] },
+    { id: 'cloud', title: '云应用', plugins: [] },
+    { id: 'enterprise', title: '企业插件', plugins: [] },
+    { id: 'iot', title: '工业和物联网IoT', plugins: [] },
+    { id: 'other', title: '其他插件', plugins: [] },
   ].filter((item) => item);
 
   const categoryIndex: Record<string, DataSourcePluginCategory> = {};
@@ -209,7 +209,7 @@ function getGrafanaCloudPhantomPlugin(): DataSourcePluginMeta {
     baseUrl: '',
     info: {
       description: 'Hosted Graphite, Prometheus, and Loki',
-      logos: { small: 'public/img/grafana_icon.svg', large: 'asd' },
+      logos: { small: 'public/img/logo.png', large: 'asd' },
       author: { name: 'Grafana Labs' },
       links: [
         {

@@ -310,7 +310,7 @@ export function getNewDashboardModelData(
       folderUid: '',
     },
     dashboard: {
-      title: 'New dashboard',
+      title: '新仪表板',
       panels,
     },
   };

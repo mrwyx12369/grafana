@@ -202,7 +202,7 @@ export function getFieldOverrideCategories(
             return (
               <ValuePicker
                 key="Add override property"
-                label="Add override property"
+                label="添加替代属性"
                 variant="secondary"
                 isFullWidth={true}
                 icon="plus"
@@ -221,14 +221,14 @@ export function getFieldOverrideCategories(
 
   categories.push(
     new OptionsPaneCategoryDescriptor({
-      title: 'add button',
+      title: '“添加”按钮',
       id: 'add button',
       customRender: function renderAddButton() {
         return (
           <AddOverrideButtonContainer key="Add override">
             <ValuePicker
               icon="plus"
-              label="Add field override"
+              label="添加字段覆盖"
               variant="secondary"
               menuPlacement="auto"
               isFullWidth={true}

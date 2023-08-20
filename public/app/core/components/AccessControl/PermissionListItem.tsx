@@ -16,7 +16,7 @@ export const PermissionListItem = ({ item, permissionLevels, canSet, onRemove, o
   <tr>
     <td>{getAvatar(item)}</td>
     <td>{getDescription(item)}</td>
-    <td>{item.isInherited && <em className="muted no-wrap">Inherited from folder</em>}</td>
+    <td>{item.isInherited && <em className="muted no-wrap">继承自文件夹</em>}</td>
     <td>
       <Select
         disabled={!canSet || !item.isManaged}
@@ -41,7 +41,7 @@ export const PermissionListItem = ({ item, permissionLevels, canSet, onRemove, o
           aria-label={`Remove permission for ${getName(item)}`}
         />
       ) : (
-        <Tooltip content={item.isInherited ? 'Inherited Permission' : 'Provisioned Permission'}>
+        <Tooltip content={item.isInherited ? '继承自文件夹' : '预配权限'}>
           <Button size="sm" icon="lock" />
         </Tooltip>
       )}

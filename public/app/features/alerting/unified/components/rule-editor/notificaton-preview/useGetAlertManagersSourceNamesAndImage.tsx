@@ -19,10 +19,10 @@ export const useGetAlertManagersSourceNamesAndImage = () => {
   const alertmanagerChoice = amConfigStatus?.alertmanagersChoice;
   const alertManagerSourceNamesWithImage: AlertManagerNameWithImage[] =
     alertmanagerChoice === AlertmanagerChoice.Internal
-      ? [{ name: GRAFANA_RULES_SOURCE_NAME, img: 'public/img/grafana_icon.svg' }]
+      ? [{ name: GRAFANA_RULES_SOURCE_NAME, img: 'public/img/logo.png' }]
       : alertmanagerChoice === AlertmanagerChoice.External
       ? externalDsAlertManagers
-      : [{ name: GRAFANA_RULES_SOURCE_NAME, img: 'public/img/grafana_icon.svg' }, ...externalDsAlertManagers];
+      : [{ name: GRAFANA_RULES_SOURCE_NAME, img: 'public/img/logo.png' }, ...externalDsAlertManagers];
 
   return alertManagerSourceNamesWithImage;
 };

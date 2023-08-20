@@ -30,32 +30,32 @@ const alertList = new PanelPlugin<AlertListOptions>(AlertList)
     builder
       .addSelect({
         name: 'Show',
-        path: 'showOptions',
+        path: '显示选项',
         settings: {
           options: [
-            { label: 'Current state', value: ShowOption.Current },
-            { label: 'Recent state changes', value: ShowOption.RecentChanges },
+            { label: '当前状态', value: ShowOption.Current },
+            { label: '最近状态变化', value: ShowOption.RecentChanges },
           ],
         },
         defaultValue: ShowOption.Current,
         category: ['Options'],
       })
       .addNumberInput({
-        name: 'Max items',
+        name: '最大项目数',
         path: 'maxItems',
         defaultValue: 10,
         category: ['Options'],
       })
       .addSelect({
-        name: 'Sort order',
+        name: '排序顺序',
         path: 'sortOrder',
         settings: {
           options: [
-            { label: 'Alphabetical (asc)', value: SortOrder.AlphaAsc },
-            { label: 'Alphabetical (desc)', value: SortOrder.AlphaDesc },
-            { label: 'Importance', value: SortOrder.Importance },
-            { label: 'Time (asc)', value: SortOrder.TimeAsc },
-            { label: 'Time (desc)', value: SortOrder.TimeDesc },
+            { label: '按字母顺序（升序）', value: SortOrder.AlphaAsc },
+            { label: '按字母顺序 (降序)', value: SortOrder.AlphaDesc },
+            { label: '重要程度', value: SortOrder.Importance },
+            { label: '时间(升序)', value: SortOrder.TimeAsc },
+            { label: '时间(降序)', value: SortOrder.TimeDesc },
           ],
         },
         defaultValue: SortOrder.AlphaAsc,
@@ -69,21 +69,21 @@ const alertList = new PanelPlugin<AlertListOptions>(AlertList)
       })
       .addTextInput({
         path: 'alertName',
-        name: 'Alert name',
+        name: '警报名称',
         defaultValue: '',
         category: ['Filter'],
         showIf: showIfCurrentState,
       })
       .addTextInput({
         path: 'dashboardTitle',
-        name: 'Dashboard title',
+        name: '仪表板标题',
         defaultValue: '',
         category: ['Filter'],
         showIf: showIfCurrentState,
       })
       .addCustomEditor({
         path: 'folderId',
-        name: 'Folder',
+        name: '文件夹',
         id: 'folderId',
         defaultValue: null,
         editor: function RenderFolderPicker({ value, onChange }) {
@@ -101,7 +101,7 @@ const alertList = new PanelPlugin<AlertListOptions>(AlertList)
       .addCustomEditor({
         id: 'tags',
         path: 'tags',
-        name: 'Tags',
+        name: '标签',
         description: '',
         defaultValue: [],
         editor(props) {
@@ -119,35 +119,35 @@ const alertList = new PanelPlugin<AlertListOptions>(AlertList)
       })
       .addBooleanSwitch({
         path: 'stateFilter.paused',
-        name: 'Paused',
+        name: '暂停',
         defaultValue: false,
         category: ['State filter'],
         showIf: showIfCurrentState,
       })
       .addBooleanSwitch({
         path: 'stateFilter.no_data',
-        name: 'No data',
+        name: '暂无数据',
         defaultValue: false,
         category: ['State filter'],
         showIf: showIfCurrentState,
       })
       .addBooleanSwitch({
         path: 'stateFilter.execution_error',
-        name: 'Execution error',
+        name: '执行错误',
         defaultValue: false,
         category: ['State filter'],
         showIf: showIfCurrentState,
       })
       .addBooleanSwitch({
         path: 'stateFilter.alerting',
-        name: 'Alerting',
+        name: '警报',
         defaultValue: false,
         category: ['State filter'],
         showIf: showIfCurrentState,
       })
       .addBooleanSwitch({
         path: 'stateFilter.pending',
-        name: 'Pending',
+        name: '等待',
         defaultValue: false,
         category: ['State filter'],
         showIf: showIfCurrentState,
@@ -160,34 +160,34 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
   builder
     .addRadio({
       path: 'viewMode',
-      name: 'View mode',
-      description: 'Toggle between list view and stat view',
+      name: '查看模式',
+      description: '在列表视图和统计信息视图之间切换',
       defaultValue: ViewMode.List,
       settings: {
         options: [
-          { label: 'List', value: ViewMode.List },
-          { label: 'Stat', value: ViewMode.Stat },
+          { label: '列表', value: ViewMode.List },
+          { label: '数字', value: ViewMode.Stat },
         ],
       },
       category: ['Options'],
     })
     .addRadio({
       path: 'groupMode',
-      name: 'Group mode',
-      description: 'How alert instances should be grouped',
+      name: '组模式',
+      description: '警报实例应如何分组',
       defaultValue: GroupMode.Default,
       settings: {
         options: [
-          { value: GroupMode.Default, label: 'Default grouping' },
-          { value: GroupMode.Custom, label: 'Custom grouping' },
+          { value: GroupMode.Default, label: '默认分组' },
+          { value: GroupMode.Custom, label: '自定义分组' },
         ],
       },
       category: ['Options'],
     })
     .addCustomEditor({
       path: 'groupBy',
-      name: 'Group by',
-      description: 'Filter alerts using label querying',
+      name: '分组',
+      description: '使用标签查询筛选警报',
       id: 'groupBy',
       defaultValue: [],
       showIf: (options) => options.groupMode === GroupMode.Custom,
@@ -204,23 +204,23 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
       },
     })
     .addNumberInput({
-      name: 'Max items',
+      name: '最大项目数',
       path: 'maxItems',
-      description: 'Maximum alerts to display',
+      description: '要显示的最大警报数',
       defaultValue: 20,
       category: ['Options'],
     })
     .addSelect({
-      name: 'Sort order',
+      name: '排序顺序',
       path: 'sortOrder',
-      description: 'Sort order of alerts and alert instances',
+      description: '警报和警报实例的排序顺序',
       settings: {
         options: [
-          { label: 'Alphabetical (asc)', value: SortOrder.AlphaAsc },
-          { label: 'Alphabetical (desc)', value: SortOrder.AlphaDesc },
-          { label: 'Importance', value: SortOrder.Importance },
-          { label: 'Time (asc)', value: SortOrder.TimeAsc },
-          { label: 'Time (desc)', value: SortOrder.TimeDesc },
+          { label: '按字母顺序（升序）', value: SortOrder.AlphaAsc },
+          { label: '按字母顺序 (降序)', value: SortOrder.AlphaDesc },
+          { label: '重要程度', value: SortOrder.Importance },
+          { label: '时间(升序)', value: SortOrder.TimeAsc },
+          { label: '时间(降序)', value: SortOrder.TimeDesc },
         ],
       },
       defaultValue: SortOrder.AlphaAsc,
@@ -228,29 +228,29 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
     })
     .addBooleanSwitch({
       path: 'dashboardAlerts',
-      name: 'Alerts from this dashboard',
-      description: 'Show alerts from this dashboard',
+      name: '来自此仪表板的警报',
+      description: '显示来自此仪表板的警报',
       defaultValue: false,
       category: ['Options'],
     })
     .addTextInput({
       path: 'alertName',
-      name: 'Alert name',
-      description: 'Filter for alerts containing this text',
+      name: '警报名称',
+      description: '筛选包含此文本的警报',
       defaultValue: '',
       category: ['Filter'],
     })
     .addTextInput({
       path: 'alertInstanceLabelFilter',
-      name: 'Alert instance label',
-      description: 'Filter alert instances using label querying, ex: {severity="critical", instance=~"cluster-us-.+"}',
+      name: '报警实例标签',
+      description: '使用标签查询筛选警报实例，例如：{severity="critical", instance=~"cluster-us-.+"}',
       defaultValue: '',
       category: ['Filter'],
     })
     .addCustomEditor({
       path: 'datasource',
-      name: 'Datasource',
-      description: 'Filter alerts from selected datasource',
+      name: '数据源',
+      description: '筛选来自所选数据源的警报',
       id: 'datasource',
       defaultValue: null,
       editor: function RenderDatasourcePicker(props) {
@@ -270,8 +270,8 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
     .addCustomEditor({
       showIf: (options) => options.datasource === GRAFANA_DATASOURCE_NAME || !Boolean(options.datasource),
       path: 'folder',
-      name: 'Folder',
-      description: 'Filter for alerts in the selected folder (only for Grafana alerts)',
+      name: '文件夹',
+      description: '筛选所选文件夹中的警报（仅适用于警报）',
       id: 'folder',
       defaultValue: null,
       editor: function RenderFolderPicker(props) {
@@ -292,31 +292,31 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
     })
     .addBooleanSwitch({
       path: 'stateFilter.firing',
-      name: 'Alerting / Firing',
+      name: '警报/触发',
       defaultValue: true,
       category: ['Alert state filter'],
     })
     .addBooleanSwitch({
       path: 'stateFilter.pending',
-      name: 'Pending',
+      name: '等待',
       defaultValue: true,
       category: ['Alert state filter'],
     })
     .addBooleanSwitch({
       path: 'stateFilter.noData',
-      name: 'No Data',
+      name: '暂无数据',
       defaultValue: false,
       category: ['Alert state filter'],
     })
     .addBooleanSwitch({
       path: 'stateFilter.normal',
-      name: 'Normal',
+      name: '正常',
       defaultValue: false,
       category: ['Alert state filter'],
     })
     .addBooleanSwitch({
       path: 'stateFilter.error',
-      name: 'Error',
+      name: '错误',
       defaultValue: true,
       category: ['Alert state filter'],
     });

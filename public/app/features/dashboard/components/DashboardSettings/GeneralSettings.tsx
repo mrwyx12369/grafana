@@ -15,9 +15,9 @@ import { SettingsPageProps } from './types';
 export type Props = SettingsPageProps & ConnectedProps<typeof connector>;
 
 const GRAPH_TOOLTIP_OPTIONS = [
-  { value: 0, label: 'Default' },
-  { value: 1, label: 'Shared crosshair' },
-  { value: 2, label: 'Shared Tooltip' },
+  { value: 0, label: '默认' },
+  { value: 1, label: '共享十字准线' },
+  { value: 2, label: '共享工具提示' },
 ];
 
 export function GeneralSettingsUnconnected({
@@ -87,8 +87,8 @@ export function GeneralSettingsUnconnected({
   };
 
   const editableOptions = [
-    { label: 'Editable', value: true },
-    { label: 'Read-only', value: false },
+    { label: '可编辑', value: true },
+    { label: '只读', value: false },
   ];
 
   return (
@@ -142,10 +142,10 @@ export function GeneralSettingsUnconnected({
         />
 
         {/* @todo: Update "Graph tooltip" description to remove prompt about reloading when resolving #46581 */}
-        <CollapsableSection label="Panel options" isOpen={true}>
+        <CollapsableSection label="面板选项" isOpen={true}>
           <Field
-            label="Graph tooltip"
-            description="Controls tooltip and hover highlight behavior across different panels. Reload the dashboard for changes to take effect"
+            label="图形工具"
+            description="控制工具提示和悬停在不同面板上的突出显示行为。重新加载仪表板以使更改生效"
           >
             <RadioButtonGroup
               onChange={onTooltipChange}

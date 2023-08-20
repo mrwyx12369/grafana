@@ -67,7 +67,7 @@ export function DataSourceDropdown(props: DataSourceDropdownProps) {
     inputId,
     noDefault = false,
     disabled = false,
-    placeholder = 'Select data source',
+    placeholder = '选择数据源',
     ...restProps
   } = props;
 
@@ -406,14 +406,14 @@ function Footer({ onClose, onChange, onClickAddCSV, ...props }: FooterProps) {
             ref={props.footerRef}
             onKeyDown={isUploadFileEnabled ? onKeyDownFirstButton : onKeyDownLastButton}
           >
-            Open advanced data source picker
+            打开高级数据源选取器
             <Icon name="arrow-right" />
           </Button>
         )}
       </ModalsController>
       {isUploadFileEnabled && (
         <Button variant="secondary" size="sm" onClick={onClickAddCSV} onKeyDown={onKeyDownLastButton}>
-          Add csv or spreadsheet
+          添加CSV或电子表格
         </Button>
       )}
     </div>

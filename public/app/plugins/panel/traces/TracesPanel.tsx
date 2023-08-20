@@ -25,7 +25,7 @@ export const TracesPanel = ({ data }: PanelProps) => {
   if (!data || !data.series.length || !traceProp) {
     return (
       <div className="panel-empty">
-        <p>No data found in response</p>
+        <p>在响应中未找到数据</p>
       </div>
     );
   }

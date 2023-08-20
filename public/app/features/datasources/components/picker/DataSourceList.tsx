@@ -98,7 +98,7 @@ function EmptyState({ className, onClickCTA }: { className?: string; onClickCTA?
   const styles = useStyles2(getEmptyStateStyles);
   return (
     <div className={cx(className, styles.container)}>
-      <p className={styles.message}>No data sources found</p>
+      <p className={styles.message}>未找到数据源</p>
       <AddNewDataSourceButton onClick={onClickCTA} />
     </div>
   );

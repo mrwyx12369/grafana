@@ -143,7 +143,7 @@ export function DataSourceModal({
 
   return (
     <Modal
-      title="Select data source"
+      title="选择数据源"
       closeOnEscape={true}
       closeOnBackdropClick={true}
       isOpen={true}
@@ -159,7 +159,7 @@ export function DataSourceModal({
           className={styles.searchInput}
           value={search}
           prefix={<Icon name="search" />}
-          placeholder="Search data source"
+          placeholder="搜索数据源"
           onChange={(e) => {
             setSearch(e.currentTarget.value);
             reportSearchUsageOnce();
@@ -211,7 +211,7 @@ export function DataSourceModal({
           )}
         </div>
         <div className={styles.newDSSection}>
-          <span className={styles.newDSDescription}>Open a new tab and configure a data source</span>
+          <span className={styles.newDSDescription}>打开新选项卡并配置数据源</span>
           <AddNewDataSourceButton
             variant="secondary"
             onClick={() => {

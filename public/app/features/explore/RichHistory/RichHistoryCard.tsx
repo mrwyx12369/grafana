@@ -236,9 +236,9 @@ export function RichHistoryCard(props: Props) {
     if (query.starred) {
       appEvents.publish(
         new ShowConfirmModalEvent({
-          title: 'Delete',
-          text: 'Are you sure you want to permanently delete your starred query?',
-          yesText: 'Delete',
+          title: '删除',
+          text: '是否确实要永久删除已加星标的查询？',
+          yesText: '确定',
           icon: 'trash-alt',
           onConfirm: () => performDelete(query.id),
         })
@@ -282,18 +282,18 @@ export function RichHistoryCard(props: Props) {
   };
 
   const updateComment = (
-    <div className={styles.updateCommentContainer} aria-label={comment ? 'Update comment form' : 'Add comment form'}>
+    <div className={styles.updateCommentContainer} aria-label={comment ? '更新评论表单' : '添加评论表单'}>
       <TextArea
         onKeyDown={onKeyDown}
         value={comment}
-        placeholder={comment ? undefined : 'An optional description of what the query does.'}
+        placeholder={comment ? undefined : '查询所执行操作的可选说明。'}
         onChange={(e) => setComment(e.currentTarget.value)}
         className={styles.textArea}
       />
       <div className={styles.commentButtonRow}>
         <Button onClick={onUpdateComment}>Save comment</Button>
         <Button variant="secondary" onClick={onCancelUpdateComment}>
-          Cancel
+          取消
         </Button>
       </div>
     </div>
@@ -304,18 +304,18 @@ export function RichHistoryCard(props: Props) {
       <IconButton
         name="comment-alt"
         onClick={toggleActiveUpdateComment}
-        tooltip={query.comment?.length > 0 ? 'Edit comment' : 'Add comment'}
+        tooltip={query.comment?.length > 0 ? '编辑评论' : '添加评论'}
       />
-      <IconButton name="copy" onClick={onCopyQuery} tooltip="Copy query to clipboard" />
+      <IconButton name="copy" onClick={onCopyQuery} tooltip="将查询复制到剪贴板" />
       {value?.dsInstance && (
-        <IconButton name="share-alt" onClick={onCreateShortLink} tooltip="Copy shortened link to clipboard" />
+        <IconButton name="share-alt" onClick={onCreateShortLink} tooltip="将缩短的链接复制到剪贴板" />
       )}
-      <IconButton name="trash-alt" title="Delete query" tooltip="Delete query" onClick={onDeleteQuery} />
+      <IconButton name="trash-alt" title="删除查询" tooltip="删除查询" onClick={onDeleteQuery} />
       <IconButton
         name={query.starred ? 'favorite' : 'star'}
         iconType={query.starred ? 'mono' : 'default'}
         onClick={onStarrQuery}
-        tooltip={query.starred ? 'Unstar query' : 'Star query'}
+        tooltip={query.starred ? '取消标星查询' : '标星查询'}
       />
     </div>
   );
@@ -346,12 +346,12 @@ export function RichHistoryCard(props: Props) {
               onClick={onRunQuery}
               disabled={!value?.dsInstance || value.queries.some((query) => !query.datasource)}
             >
-              {datasourceInstance?.uid === query.datasourceUid ? 'Run query' : 'Switch data source and run query'}
+              {datasourceInstance?.uid === query.datasourceUid ? '运行查询' : '切换数据源并运行查询'}
             </Button>
           </div>
         )}
       </div>
-      {loading && <LoadingPlaceholder text="loading..." className={styles.loader} />}
+      {loading && <LoadingPlaceholder text="加载中..." className={styles.loader} />}
     </div>
   );
 }

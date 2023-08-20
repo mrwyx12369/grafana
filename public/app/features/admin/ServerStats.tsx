@@ -34,65 +34,65 @@ export const ServerStats = () => {
 
   return (
     <>
-      <h2 className={styles.title}>Instance statistics</h2>
+      <h2 className={styles.title}>实例统计数据</h2>
       {isLoading ? (
         <div className={styles.loader}>
-          <Loader text={'Loading instance stats...'} />
+          <Loader text={'加载实例统计数据...'} />
         </div>
       ) : stats ? (
         <div className={styles.row}>
           <StatCard
             content={[
-              { name: 'Dashboards (starred)', value: `${stats.dashboards} (${stats.stars})` },
-              { name: 'Tags', value: stats.tags },
-              { name: 'Playlists', value: stats.playlists },
-              { name: 'Snapshots', value: stats.snapshots },
+              { name: '仪表板（已加星标）', value: `${stats.dashboards} (${stats.stars})` },
+              { name: '标签', value: stats.tags },
+              { name: '播放列表', value: stats.playlists },
+              { name: '快照', value: stats.snapshots },
             ]}
             footer={
               <LinkButton href={'/dashboards'} variant={'secondary'}>
-                Manage dashboards
+                管理仪表板
               </LinkButton>
             }
           />
 
           <div className={styles.doubleRow}>
             <StatCard
-              content={[{ name: 'Data sources', value: stats.datasources }]}
+              content={[{ name: '数据源', value: stats.datasources }]}
               footer={
                 hasAccessToDataSources && (
                   <LinkButton href={'/datasources'} variant={'secondary'}>
-                    Manage data sources
+                    管理数据源
                   </LinkButton>
                 )
               }
             />
             <StatCard
-              content={[{ name: 'Alerts', value: stats.alerts }]}
+              content={[{ name: '警报', value: stats.alerts }]}
               footer={
                 <LinkButton href={'/alerting/list'} variant={'secondary'}>
-                  Alerts
+                  警报
                 </LinkButton>
               }
             />
           </div>
           <StatCard
             content={[
-              { name: 'Organisations', value: stats.orgs },
-              { name: 'Users total', value: stats.users },
-              { name: 'Active users in last 30 days', value: stats.activeUsers },
-              { name: 'Active sessions', value: stats.activeSessions },
+              { name: '组织机构', value: stats.orgs },
+              { name: '用户数', value: stats.users },
+              { name: '过去30天内的活跃用户数', value: stats.activeUsers },
+              { name: '活动会话数', value: stats.activeSessions },
             ]}
             footer={
               hasAccessToAdminUsers && (
                 <LinkButton href={'/admin/users'} variant={'secondary'}>
-                  Manage users
+                  管理用户
                 </LinkButton>
               )
             }
           />
         </div>
       ) : (
-        <p className={styles.notFound}>No stats found.</p>
+        <p className={styles.notFound}>N未找到统计数据。</p>
       )}
     </>
   );

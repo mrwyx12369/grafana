@@ -14,8 +14,8 @@ export interface TimeSeriesTableTransformerOptions {}
 
 export const timeSeriesTableTransformer: DataTransformerInfo<TimeSeriesTableTransformerOptions> = {
   id: DataTransformerID.timeSeriesTable,
-  name: 'Time series to table transform',
-  description: 'Time series to table rows.',
+  name: '时序到表的转换',
+  description: '表行的时间序列。',
   defaultOptions: {},
 
   operator: (options) => (source) =>

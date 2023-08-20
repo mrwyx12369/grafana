@@ -121,7 +121,7 @@ export function ExploreToolbar({ exploreId, topOfViewRef, onChangeTime }: Props)
           actions={[
             <DashNavButton
               key="share"
-              tooltip="Copy shortened link"
+              tooltip="复制短链接"
               icon="share-alt"
               onClick={onCopyShortLink}
               aria-label="Copy shortened link"
@@ -149,25 +149,25 @@ export function ExploreToolbar({ exploreId, topOfViewRef, onChangeTime }: Props)
             <ToolbarButton
               variant="canvas"
               key="split"
-              tooltip="Split the pane"
+              tooltip="拆分窗格"
               onClick={onOpenSplitView}
               icon="columns"
               disabled={isLive}
             >
-              Split
+              拆分窗格
             </ToolbarButton>
           ) : (
             <ButtonGroup key="split-controls">
               <ToolbarButton
                 variant="canvas"
-                tooltip={`${isLargerPane ? 'Narrow' : 'Widen'} pane`}
+                tooltip={`${isLargerPane ? '窄' : '宽'} pane`}
                 onClick={onClickResize}
                 icon={isLargerPane ? 'gf-movepane-left' : 'gf-movepane-right'}
                 iconOnly={true}
                 className={cx(shouldRotateSplitIcon && rotateIcon)}
               />
-              <ToolbarButton tooltip="Close split pane" onClick={onCloseSplitView} icon="times" variant="canvas">
-                Close
+              <ToolbarButton tooltip="关闭拆分窗格" onClick={onCloseSplitView} icon="times" variant="canvas">
+                关闭
               </ToolbarButton>
             </ButtonGroup>
           ),
@@ -198,8 +198,8 @@ export function ExploreToolbar({ exploreId, topOfViewRef, onChangeTime }: Props)
             onIntervalChanged={onChangeRefreshInterval}
             value={refreshInterval}
             isLoading={loading}
-            text={showSmallTimePicker ? undefined : loading ? 'Cancel' : 'Run query'}
-            tooltip={showSmallTimePicker ? (loading ? 'Cancel' : 'Run query') : undefined}
+            text={showSmallTimePicker ? undefined : loading ? '取消' : '运行查询'}
+            tooltip={showSmallTimePicker ? (loading ? '取消' : '运行查询') : undefined}
             intervals={getTimeSrv().getValidIntervals(defaultIntervals)}
             isLive={isLive}
             onRefresh={() => onRunQuery(loading)}

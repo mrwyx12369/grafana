@@ -79,13 +79,13 @@ export function AddToDashboardForm(props: Props): ReactElement {
   const saveTargets: Array<SelectableValue<SaveTarget>> = [];
   if (canCreateDashboard) {
     saveTargets.push({
-      label: 'New dashboard',
+      label: '新仪表板',
       value: SaveTarget.NewDashboard,
     });
   }
   if (canWriteDashboard) {
     saveTargets.push({
-      label: 'Existing dashboard',
+      label: '现有仪表板',
       value: SaveTarget.ExistingDashboard,
     });
   }

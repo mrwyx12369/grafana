@@ -60,7 +60,7 @@ function getTabs(panel?: PanelModel, activeTab?: string) {
 
   if (Boolean(config.featureToggles['publicDashboards'])) {
     tabs.push({
-      label: 'Public dashboard',
+      label: '公共仪表板',
       value: shareDashboardType.publicDashboard,
       component: SharePublicDashboard,
     });

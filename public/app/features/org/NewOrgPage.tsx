@@ -23,7 +23,7 @@ interface CreateOrgFormDTO {
 const pageNav: NavModelItem = {
   icon: 'building',
   id: 'org-new',
-  text: 'New organization',
+  text: '新建组织构名',
 };
 
 export const NewOrgPage = ({ createOrganization }: Props) => {
@@ -36,9 +36,7 @@ export const NewOrgPage = ({ createOrganization }: Props) => {
     <Page navId="global-orgs" pageNav={pageNav}>
       <Page.Contents>
         <p className="muted">
-          Each organization contains their own dashboards, data sources, and configuration, which cannot be shared
-          shared between organizations. While users might belong to more than one organization, multiple organizations
-          are most frequently used in multi-tenant deployments.
+        每个组织都包含自己的仪表板、数据源和配置，无法共享在组织之间共享。虽然用户可能属于多个组织，但多个组织最常用于多租户部署.
         </p>
 
         <Form<CreateOrgFormDTO> onSubmit={createOrg}>
@@ -46,16 +44,16 @@ export const NewOrgPage = ({ createOrganization }: Props) => {
             return (
               <>
                 <FieldSet>
-                  <Field label="Organization name" invalid={!!errors.name} error={errors.name && errors.name.message}>
+                  <Field label="组织机构名称" invalid={!!errors.name} error={errors.name && errors.name.message}>
                     <Input
-                      placeholder="Org name"
+                      placeholder="组织机构名称"
                       {...register('name', {
-                        required: 'Organization name is required',
+                        required: '组织名机构称为必填项',
                       })}
                     />
                   </Field>
                 </FieldSet>
-                <Button type="submit">Create</Button>
+                <Button type="submit">创建</Button>
               </>
             );
           }}

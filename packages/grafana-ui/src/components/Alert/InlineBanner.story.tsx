@@ -42,7 +42,7 @@ export const Basic: StoryFn<typeof Alert> = (args) => {
 
 Basic.args = {
   severity: 'error',
-  title: 'Basic',
+  title: '基本',
 };
 
 export const WithActions: StoryFn<typeof Alert> = (args) => {
@@ -67,7 +67,7 @@ export const Examples: StoryFn<typeof Alert> = () => {
     <VerticalGroup>
       <StoryExample name="With buttonContent and children">
         <Alert
-          title={'The title of the alert'}
+          title={'警告标题'}
           severity={'error'}
           buttonContent={<span>Close</span>}
           onRemove={action('Remove button clicked')}

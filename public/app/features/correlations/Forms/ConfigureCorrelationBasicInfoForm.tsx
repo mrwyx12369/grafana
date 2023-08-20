@@ -25,27 +25,27 @@ export const ConfigureCorrelationBasicInfoForm = () => {
 
   return (
     <>
-      <FieldSet label="Define correlation label (Step 1 of 3)">
-        <p>Define text that will describe the correlation.</p>
+      <FieldSet label="定义相关标签（第1步，共3步）">
+        <p>定义将描述相关性的文本。</p>
         <input type="hidden" {...register('config.type')} />
         <Field
-          label="Label"
-          description="This name will be used as the label for the correlation. This will show as button text, a menu item, or hover text on a link."
+          label="标签"
+          description="此名称将用作关联的标签。这将显示为按钮文本、菜单项或链接上的悬停文本。"
           className={styles.label}
           invalid={!!formState.errors.label}
           error={formState.errors.label?.message}
         >
           <Input
             id={getInputId('label', correlation)}
-            {...register('label', { required: { value: true, message: 'This field is required.' } })}
+            {...register('label', { required: { value: true, message: '此字段为必填字段。' } })}
             readOnly={readOnly}
-            placeholder="e.g. Tempo traces"
+            placeholder="例如速度跟踪"
           />
         </Field>
 
         <Field
-          label="Description"
-          description="Optional description with more information about the link"
+          label="描述"
+          description="可选说明，其中包含有关链接的详细信息"
           // the Field component automatically adds margin to itself, so we are forced to workaround it by overriding  its styles
           className={cx(styles.description)}
         >

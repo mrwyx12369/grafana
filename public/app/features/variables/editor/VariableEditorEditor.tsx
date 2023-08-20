@@ -155,9 +155,9 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
           <VariableTextField
             value={this.props.editor.name}
             onChange={this.onNameChange}
-            name="Name"
-            placeholder="Variable name"
-            description="The name of the template variable. (Max. 50 characters)"
+            name="名称"
+            placeholder="变量名"
+            description="模板变量的名称（最多 50 个字符）"
             invalid={!!this.props.editor.errors.name}
             error={this.props.editor.errors.name}
             testId={selectors.pages.Dashboard.Settings.Variables.Edit.General.generalNameInputV2}
@@ -166,17 +166,17 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
           />
 
           <VariableTextField
-            name="Label"
-            description="Optional display name"
+            name="标签"
+            description="可选显示名称"
             value={this.props.variable.label ?? ''}
-            placeholder="Label name"
+            placeholder="标签名称"
             onChange={this.onLabelChange}
             testId={selectors.pages.Dashboard.Settings.Variables.Edit.General.generalLabelInputV2}
           />
           <VariableTextAreaField
-            name="Description"
+            name="描述"
             value={variable.description ?? ''}
-            placeholder="Descriptive text"
+            placeholder="描述性文本"
             onChange={this.onDescriptionChange}
             width={52}
           />
@@ -193,7 +193,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
           <div style={{ marginTop: '16px' }}>
             <HorizontalGroup spacing="md" height="inherit">
               <Button variant="destructive" fill="outline" onClick={this.onModalOpen}>
-                Delete
+                删除
               </Button>
               <Button
                 type="submit"
@@ -201,7 +201,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
                 disabled={loading}
                 variant="secondary"
               >
-                Run query
+                运行查询
                 {loading && <Icon className="spin-clockwise" name="sync" size="sm" style={{ marginLeft: '2px' }} />}
               </Button>
               <Button
@@ -209,7 +209,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
                 onClick={this.onApply}
                 data-testid={selectors.pages.Dashboard.Settings.Variables.Edit.General.applyButton}
               >
-                Apply
+                应用
               </Button>
             </HorizontalGroup>
           </div>

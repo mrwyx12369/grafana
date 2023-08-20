@@ -29,8 +29,8 @@ export const Configuration = ({
       <FieldSet disabled={disabled}>
         <VerticalGroup spacing="md">
           <Layout orientation={1} spacing="xs" justify="space-between">
-            <Label description="The public dashboard uses the default time range settings of the dashboard">
-              Default time range
+            <Label description="公共仪表板使用仪表板的默认时间范围设置">
+              默认时间范围
             </Label>
             <TimeRangeInput value={timeRange} disabled onChange={() => {}} />
           </Layout>
@@ -46,7 +46,7 @@ export const Configuration = ({
                 onChange('isTimeSelectionEnabled', e.currentTarget.checked);
               }}
             />
-            <Label description="Allow viewers to change time range">Time range picker enabled</Label>
+            <Label description="允许观看者更改时间范围">启用时间范围选取器</Label>
           </Layout>
           <Layout orientation={0} spacing="sm">
             <Switch
@@ -60,7 +60,7 @@ export const Configuration = ({
               }}
               data-testid={selectors.EnableAnnotationsSwitch}
             />
-            <Label description="Show annotations on public dashboard">Show annotations</Label>
+            <Label description="在公共仪表板上显示注释">显示批注</Label>
           </Layout>
         </VerticalGroup>
       </FieldSet>

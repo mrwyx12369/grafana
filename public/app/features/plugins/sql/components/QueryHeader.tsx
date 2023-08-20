@@ -26,8 +26,8 @@ export interface QueryHeaderProps {
 }
 
 const editorModes = [
-  { label: 'Builder', value: EditorMode.Builder },
-  { label: 'Code', value: EditorMode.Code },
+  { label: '构建器', value: EditorMode.Builder },
+  { label: '代码', value: EditorMode.Code },
 ];
 
 export function QueryHeader({
@@ -107,9 +107,9 @@ export function QueryHeader({
     <>
       <EditorHeader>
         <InlineSelect
-          label="Format"
+          label="格式"
           value={query.format}
-          placeholder="Select format"
+          placeholder="选择格式"
           menuShouldPortal
           onChange={onFormatChange}
           options={QUERY_FORMAT_OPTIONS}
@@ -119,7 +119,7 @@ export function QueryHeader({
           <>
             <InlineSwitch
               id="sql-filter"
-              label="Filter"
+              label="筛选"
               transparent={true}
               showLabel={true}
               value={queryRowFilter.filter}
@@ -131,7 +131,7 @@ export function QueryHeader({
 
             <InlineSwitch
               id="sql-group"
-              label="Group"
+              label="分组"
               transparent={true}
               showLabel={true}
               value={queryRowFilter.group}
@@ -143,7 +143,7 @@ export function QueryHeader({
 
             <InlineSwitch
               id="sql-order"
-              label="Order"
+              label="排序顺序"
               transparent={true}
               showLabel={true}
               value={queryRowFilter.order}
@@ -155,7 +155,7 @@ export function QueryHeader({
 
             <InlineSwitch
               id="sql-preview"
-              label="Preview"
+              label="预览"
               transparent={true}
               showLabel={true}
               value={queryRowFilter.preview}
@@ -171,21 +171,20 @@ export function QueryHeader({
 
         {isQueryRunnable ? (
           <Button icon="play" variant="primary" size="sm" onClick={() => onRunQuery()}>
-            Run query
+            运行查询
           </Button>
         ) : (
           <Tooltip
             theme="error"
             content={
               <>
-                Your query is invalid. Check below for details. <br />
-                However, you can still run this query.
+              您的查询无效。详情请看下文。但是，您仍然可以运行此查询。
               </>
             }
             placement="top"
           >
             <Button icon="exclamation-triangle" variant="secondary" size="sm" onClick={() => onRunQuery()}>
-              Run query
+              运行查
             </Button>
           </Tooltip>
         )}
@@ -220,7 +219,7 @@ export function QueryHeader({
           <Space v={0.5} />
           <EditorRow>
             {datasetDropdownIsAvailable() && (
-              <EditorField label="Dataset" width={25}>
+              <EditorField label="数据集" width={25}>
                 <DatasetSelector
                   db={db}
                   dataset={query.dataset}
@@ -230,7 +229,7 @@ export function QueryHeader({
                 />
               </EditorField>
             )}
-            <EditorField label="Table" width={25}>
+            <EditorField label="数据表" width={25}>
               <TableSelector
                 db={db}
                 dataset={query.dataset || preconfiguredDataset}

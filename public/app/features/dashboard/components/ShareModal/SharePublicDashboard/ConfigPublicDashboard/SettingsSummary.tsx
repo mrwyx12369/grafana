@@ -28,11 +28,11 @@ export function SettingsSummary({
   ) : (
     <div className={cx(styles.summaryWrapper, className)}>
       <span className={styles.summary}>
-        {'Time range = '}
+        {'时间范围 = '}
         <TimeRangeLabel className={styles.timeRange} value={timeRange} />
       </span>
-      <span className={styles.summary}>{`Time range picker = ${timeSelectionEnabled ? 'enabled' : 'disabled'}`}</span>
-      <span className={styles.summary}>{`Annotations = ${annotationsEnabled ? 'show' : 'hide'}`}</span>
+      <span className={styles.summary}>{`时间范围选取器 = ${timeSelectionEnabled ? '启用' : '禁用'}`}</span>
+      <span className={styles.summary}>{`标注 = ${annotationsEnabled ? '显示' : '隐藏'}`}</span>
     </div>
   );
 }

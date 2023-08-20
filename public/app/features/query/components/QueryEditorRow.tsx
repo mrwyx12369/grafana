@@ -442,7 +442,7 @@ export class QueryEditorRow<TQuery extends DataQuery> extends PureComponent<Prop
       <HorizontalGroup width="auto">
         {hasEditorHelp && (
           <QueryOperationToggleAction
-            title="Show data source help"
+            title="显示数据源帮助"
             icon="question-circle"
             onClick={this.onToggleHelp}
             active={showingHelp}
@@ -450,7 +450,7 @@ export class QueryEditorRow<TQuery extends DataQuery> extends PureComponent<Prop
         )}
         {hasTextEditMode && (
           <QueryOperationAction
-            title="Toggle text edit mode"
+            title="切换文本编辑模式"
             icon="pen"
             onClick={(e) => {
               this.onToggleEditMode(e, props);
@@ -458,16 +458,16 @@ export class QueryEditorRow<TQuery extends DataQuery> extends PureComponent<Prop
           />
         )}
         {this.renderExtraActions()}
-        <QueryOperationAction title="Duplicate query" icon="copy" onClick={this.onCopyQuery} />
+        <QueryOperationAction title="复制查询" icon="copy" onClick={this.onCopyQuery} />
         {!hideDisableQuery ? (
           <QueryOperationToggleAction
-            title="Disable query"
+            title="禁用查询"
             icon={isDisabled ? 'eye-slash' : 'eye'}
             active={isDisabled}
             onClick={this.onDisableQuery}
           />
         ) : null}
-        <QueryOperationAction title="Remove query" icon="trash-alt" onClick={this.onRemoveQuery} />
+        <QueryOperationAction title="删除查询" icon="trash-alt" onClick={this.onRemoveQuery} />
       </HorizontalGroup>
     );
   };

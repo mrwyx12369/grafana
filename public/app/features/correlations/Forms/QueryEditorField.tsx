@@ -29,10 +29,10 @@ export const QueryEditorField = ({ dsUid, invalid, error, name }: Props) => {
 
   return (
     <Field
-      label="Query"
+      label="查询"
       description={
         <span>
-          Define the query that is run when the link is clicked. You can use{' '}
+          定义单击链接时运行的查询。您可以使用{' '}
           <a
             href="https://grafana.com/docs/grafana/latest/panels-visualizations/configure-data-links/"
             target="_blank"
@@ -40,7 +40,7 @@ export const QueryEditorField = ({ dsUid, invalid, error, name }: Props) => {
           >
             variables
           </a>{' '}
-          to access specific field values.
+          以访问特定字段值。
         </span>
       }
       invalid={invalid}
@@ -51,7 +51,7 @@ export const QueryEditorField = ({ dsUid, invalid, error, name }: Props) => {
         rules={{
           validate: {
             hasQueryEditor: () =>
-              QueryEditor !== undefined || 'The selected target data source must export a query editor.',
+              QueryEditor !== undefined || '所选目标数据源必须导出查询编辑器.',
           },
         }}
         render={({ field: { value, onChange } }) => {
@@ -59,17 +59,17 @@ export const QueryEditorField = ({ dsUid, invalid, error, name }: Props) => {
             return <LoadingPlaceholder text="Loading query editor..." />;
           }
           if (dsError) {
-            return <Alert title="Error loading data source">The selected data source could not be loaded.</Alert>;
+            return <Alert title="加载数据源时出错">无法加载所选数据源。</Alert>;
           }
           if (!datasource) {
             return (
-              <Alert title="No data source selected" severity="info">
-                Please select a target data source first.
+              <Alert title="未选择数据源" severity="info">
+                请先选择目标数据源。
               </Alert>
             );
           }
           if (!QueryEditor) {
-            return <Alert title="Data source does not export a query editor."></Alert>;
+            return <Alert title="数据源不导出查询编辑器。"></Alert>;
           }
           return (
             <>

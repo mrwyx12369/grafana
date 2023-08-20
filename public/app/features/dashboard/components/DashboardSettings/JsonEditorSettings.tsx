@@ -20,7 +20,7 @@ export function JsonEditorSettings({ dashboard, sectionNav }: SettingsPageProps)
 
   const styles = useStyles2(getStyles);
   const subTitle =
-    'The JSON model below is the data structure that defines the dashboard. This includes dashboard settings, panel settings, layout, queries, and so on';
+    '下面的 JSON 模型是定义仪表板的数据结构。这包括仪表板设置、面板设置、布局、查询等';
 
   return (
     <Page navModel={sectionNav} subTitle={subTitle}>
@@ -36,7 +36,7 @@ export function JsonEditorSettings({ dashboard, sectionNav }: SettingsPageProps)
         {dashboard.meta.canSave && (
           <div>
             <Button type="submit" onClick={onClick}>
-              Save changes
+              保存修改
             </Button>
           </div>
         )}

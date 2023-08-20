@@ -28,11 +28,10 @@ export function ConnectionsRedirectNotice() {
     <Alert severity="info" title="" onRemove={() => setShowNotice(false)}>
       <div className={styles.alertContent}>
         <p className={styles.alertParagraph}>
-          Data sources have a new home! You can discover new data sources or manage existing ones in the Connections
-          page, accessible from the main menu.
+          数据源有了新家！您可以在“连接”页面中发现新数据源或管理现有数据源，该页面可从主菜单访问。
         </p>
         <LinkButton aria-label="Link to Connections" icon="arrow-right" href={ROUTES.DataSources} fill="text">
-          Go to connections
+          转到连接
         </LinkButton>
       </div>
     </Alert>

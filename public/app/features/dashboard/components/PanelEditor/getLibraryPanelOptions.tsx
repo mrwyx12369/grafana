@@ -12,7 +12,7 @@ import { OptionPaneRenderProps } from './types';
 export function getLibraryPanelOptionsCategory(props: OptionPaneRenderProps): OptionsPaneCategoryDescriptor {
   const { panel, onPanelConfigChange, dashboard } = props;
   const descriptor = new OptionsPaneCategoryDescriptor({
-    title: 'Library panel options',
+    title: '库面板选项',
     id: 'Library panel options',
     isOpenDefault: true,
   });
@@ -21,7 +21,7 @@ export function getLibraryPanelOptionsCategory(props: OptionPaneRenderProps): Op
     descriptor
       .addItem(
         new OptionsPaneItemDescriptor({
-          title: 'Name',
+          title: '名称',
           value: panel.libraryPanel.name,
           popularRank: 1,
           render: function renderName() {
@@ -39,7 +39,7 @@ export function getLibraryPanelOptionsCategory(props: OptionPaneRenderProps): Op
       )
       .addItem(
         new OptionsPaneItemDescriptor({
-          title: 'Information',
+          title: '信息',
           render: function renderLibraryPanelInformation() {
             return <LibraryPanelInformation panel={panel} formatDate={dashboard.formatDate} />;
           },

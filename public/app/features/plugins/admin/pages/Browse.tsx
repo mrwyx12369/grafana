@@ -41,8 +41,8 @@ export default function Browse({ route }: GrafanaRouteComponentProps): ReactElem
     sortBy
   );
   const filterByOptions = [
-    { value: 'all', label: 'All' },
-    { value: 'installed', label: 'Installed' },
+    { value: 'all', label: '所有' },
+    { value: 'installed', label: '已安装' },
   ];
 
   const onSortByChange = (value: SelectableValue<string>) => {
@@ -69,9 +69,9 @@ export default function Browse({ route }: GrafanaRouteComponentProps): ReactElem
 
   const subTitle = (
     <div>
-      Extend the Grafana experience with panel plugins and apps. To find more data sources go to{' '}
+    通过面板插件和应用程序扩展 Grafana 体验。要查找更多数据源，请转到{' '}
       <a className="external-link" href={`${CONNECTIONS_ROUTES.AddNewConnection}?cat=data-source`}>
-        Connections
+        连接
       </a>
       .
     </div>
@@ -81,38 +81,38 @@ export default function Browse({ route }: GrafanaRouteComponentProps): ReactElem
     <Page navModel={navModel} subTitle={subTitle}>
       <Page.Contents>
         <HorizontalGroup wrap>
-          <Field label="Search">
+          <Field label="搜索">
             <SearchField value={keyword} onSearch={onSearch} />
           </Field>
           <HorizontalGroup wrap className={styles.actionBar}>
             {/* Filter by type */}
-            <Field label="Type">
+            <Field label="类型">
               <Select
                 aria-label="Plugin type filter"
                 value={filterByType}
                 onChange={onFilterByTypeChange}
                 width={18}
                 options={[
-                  { value: 'all', label: 'All' },
-                  { value: 'datasource', label: 'Data sources' },
-                  { value: 'panel', label: 'Panels' },
-                  { value: 'app', label: 'Applications' },
+                  { value: 'all', label: '所有' },
+                  { value: 'datasource', label: '数据源' },
+                  { value: 'panel', label: '面板' },
+                  { value: 'app', label: '应用' },
                 ]}
               />
             </Field>
 
             {/* Filter by installed / all */}
             {remotePluginsAvailable ? (
-              <Field label="State">
+              <Field label="状态">
                 <RadioButtonGroup value={filterBy} onChange={onFilterByChange} options={filterByOptions} />
               </Field>
             ) : (
               <Tooltip
-                content="This filter has been disabled because the Grafana server cannot access grafana.com"
+                content="此过滤器已被禁用，因为Grafana服务器无法访问grafana.com"
                 placement="top"
               >
                 <div>
-                  <Field label="State">
+                  <Field label="状态">
                     <RadioButtonGroup
                       disabled={true}
                       value={filterBy}
@@ -125,24 +125,24 @@ export default function Browse({ route }: GrafanaRouteComponentProps): ReactElem
             )}
 
             {/* Sorting */}
-            <Field label="Sort">
+            <Field label="排序">
               <Select
                 aria-label="Sort Plugins List"
                 width={24}
                 value={sortBy}
                 onChange={onSortByChange}
                 options={[
-                  { value: 'nameAsc', label: 'By name (A-Z)' },
-                  { value: 'nameDesc', label: 'By name (Z-A)' },
-                  { value: 'updated', label: 'By updated date' },
-                  { value: 'published', label: 'By published date' },
-                  { value: 'downloads', label: 'By downloads' },
+                  { value: 'nameAsc', label: '按名称(升序)' },
+                  { value: 'nameDesc', label: '按名称(降序)' },
+                  { value: 'updated', label: '按更新日期' },
+                  { value: 'published', label: '按更发布日期' },
+                  { value: 'downloads', label: '按下载次数' },
                 ]}
               />
             </Field>
 
             {/* Display mode */}
-            <Field label="View">
+            <Field label="查看数">
               <RadioButtonGroup<PluginListDisplayMode>
                 className={styles.displayAs}
                 value={displayMode}
@@ -151,9 +151,9 @@ export default function Browse({ route }: GrafanaRouteComponentProps): ReactElem
                   {
                     value: PluginListDisplayMode.Grid,
                     icon: 'table',
-                    description: 'Display plugins in a grid layout',
+                    description: '在网格布局中显示插件',
                   },
-                  { value: PluginListDisplayMode.List, icon: 'list-ul', description: 'Display plugins in list' },
+                  { value: PluginListDisplayMode.List, icon: 'list-ul', description: '在列表中显示插件' },
                 ]}
               />
             </Field>

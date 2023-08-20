@@ -336,7 +336,7 @@ export const QueryAndExpressionsStep = ({ editingExistingRule, onDataChange }: P
   return (
     <RuleEditorSection
       stepNo={2}
-      title={type !== RuleFormType.cloudRecording ? 'Define query and alert condition' : 'Define query'}
+      title={type !== RuleFormType.cloudRecording ? '定义查询和警报条件' : '定义查询'}
     >
       {/* This is the cloud data source selector */}
       {(type === RuleFormType.cloudRecording || type === RuleFormType.cloudAlerting) && (
@@ -374,7 +374,7 @@ export const QueryAndExpressionsStep = ({ editingExistingRule, onDataChange }: P
               }}
               control={control}
               rules={{
-                required: { value: true, message: 'A valid expression is required' },
+                required: { value: true, message: '需要有效的表达式' },
               }}
             />
           </Field>
@@ -393,17 +393,14 @@ export const QueryAndExpressionsStep = ({ editingExistingRule, onDataChange }: P
           {/* Data Queries */}
           <Stack direction="row" gap={1} alignItems="baseline">
             <div className={styles.mutedText}>
-              Define queries and/or expressions and then choose one of them as the alert rule condition. This is the
-              threshold that an alert rule must meet or exceed in order to fire.
+              定义查询和/或表达式，然后选择其中一个作为警报规则条件。这是警报规则必须达到或超过才能触发的阈值。
             </div>
 
             <NeedHelpInfo
-              contentText={`An alert rule consists of one or more queries and expressions that select the data you want to measure.
-          Define queries and/or expressions and then choose one of them as the alert rule condition. This is the threshold that an alert rule must meet or exceed in order to fire.
-          For more information on queries and expressions, see Query and transform data.`}
+              contentText={`警报规则由一个或多个查询和表达式组成，用于选择要度量的数据。定义查询和/或表达式，然后选择其中一个作为警报规则条件。这是警报规则必须达到或超过才能触发的阈值。有关查询和表达式的详细信息，请参阅查询和转换数据。`}
               externalLink={`https://grafana.com/docs/grafana/latest/panels-visualizations/query-transform-data/`}
-              linkText={`Read about query and condition`}
-              title="Define query and alert condition"
+              linkText={`阅读有关查询和条件的信息`}
+              title="定义查询和警报条件"
             />
           </Stack>
 
@@ -417,7 +414,7 @@ export const QueryAndExpressionsStep = ({ editingExistingRule, onDataChange }: P
             condition={condition}
             onSetCondition={handleSetCondition}
           />
-          <Tooltip content={'You appear to have no compatible data sources'} show={noCompatibleDataSources}>
+          <Tooltip content={'您似乎没有兼容的数据源'} show={noCompatibleDataSources}>
             <Button
               type="button"
               onClick={() => {
@@ -428,7 +425,7 @@ export const QueryAndExpressionsStep = ({ editingExistingRule, onDataChange }: P
               disabled={noCompatibleDataSources}
               className={styles.addQueryButton}
             >
-              Add query
+              新增查询
             </Button>
           </Tooltip>
           <SmartAlertTypeDetector
@@ -462,12 +459,12 @@ export const QueryAndExpressionsStep = ({ editingExistingRule, onDataChange }: P
 
             {isPreviewLoading && (
               <Button icon="fa fa-spinner" type="button" variant="destructive" onClick={cancelQueries}>
-                Cancel
+                取消
               </Button>
             )}
             {!isPreviewLoading && (
               <Button icon="sync" type="button" onClick={runQueriesPreview} disabled={emptyQueries}>
-                Preview
+                预览
               </Button>
             )}
           </Stack>
@@ -475,7 +472,7 @@ export const QueryAndExpressionsStep = ({ editingExistingRule, onDataChange }: P
           {/* No Queries */}
           {emptyQueries && (
             <Alert title="No queries or expressions have been configured" severity="warning">
-              Create at least one query or expression to be alerted on
+              创建至少一个要发出警报的查询或表达式
             </Alert>
           )}
         </Stack>
@@ -502,7 +499,7 @@ function TypeSelectorButton({ onClickType }: { onClickType: (type: ExpressionQue
   return (
     <Dropdown overlay={newMenu}>
       <Button variant="secondary">
-        Add expression
+        添加表达式
         <Icon name="angle-down" />
       </Button>
     </Dropdown>

@@ -217,7 +217,7 @@ export function FileDropzone({ options, children, readAs, onLoad, fileListRender
       </div>
       {fileErrors.length > 0 && renderErrorMessages(fileErrors)}
       <small className={cx(styles.small, styles.acceptContainer)}>
-        {options?.maxSize && `Max file size: ${formattedValueToString(formattedSize)}`}
+        {options?.maxSize && `最大文件大小： ${formattedValueToString(formattedSize)}`}
         {options?.maxSize && options?.accept && <span className={styles.acceptSeparator}>|</span>}
         {options?.accept && getAcceptedFileTypeText(options.accept)}
       </small>
@@ -254,7 +254,7 @@ export function transformAcceptToNewFormat(accept?: string | string[] | Accept):
   return accept;
 }
 
-export function FileDropzoneDefaultChildren({ primaryText = 'Drop file here or click to upload', secondaryText = '' }) {
+export function FileDropzoneDefaultChildren({ primaryText = '将文件拖放到此处或单击以上传', secondaryText = '' }) {
   const theme = useTheme2();
   const styles = getStyles(theme);
 
@@ -271,16 +271,16 @@ function getPrimaryText(files: DropzoneFile[], options?: BackwardsCompatibleDrop
   if (options?.multiple === undefined || options?.multiple) {
     return 'Upload file';
   }
-  return files.length ? 'Replace file' : 'Upload file';
+  return files.length ? '替换文件' : '上传文件';
 }
 
 function getAcceptedFileTypeText(accept: string | string[] | Accept) {
   if (isString(accept)) {
-    return `Accepted file type: ${accept}`;
+    return `接受的文件类型: ${accept}`;
   }
 
   if (Array.isArray(accept)) {
-    return `Accepted file types: ${accept.join(', ')}`;
+    return `接受的文件类型： ${accept.join(', ')}`;
   }
 
   // react-dropzone has updated the type of the "accept" parameter since v13.0.0:

@@ -188,7 +188,7 @@ export class ElasticQueryBuilder {
       metric = target.metrics[0];
 
       if (!metric || !(metric.type === 'raw_document' || metric.type === 'raw_data')) {
-        throw { message: 'Invalid query' };
+        throw { message: '无效查询' };
       }
     }
 
@@ -415,7 +415,7 @@ export class ElasticQueryBuilder {
     const { orderBy = 'key', order = orderBy === 'doc_count' ? 'desc' : 'asc' } = queryDef;
 
     if (['asc', 'desc'].indexOf(order) < 0) {
-      throw { message: `Invalid query sort order ${order}` };
+      throw { message: `无效查询排序顺序 ${order}` };
     }
 
     switch (orderBy) {
@@ -428,7 +428,7 @@ export class ElasticQueryBuilder {
         query.aggs['1'].terms.order['_count'] = order;
         break;
       default:
-        throw { message: `Invalid query sort type ${orderBy}` };
+        throw { message: `无效查询排序类型 ${orderBy}` };
     }
 
     return query;

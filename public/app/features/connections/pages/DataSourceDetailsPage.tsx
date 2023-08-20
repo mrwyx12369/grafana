@@ -20,8 +20,8 @@ export function DataSourceDetailsPage() {
       navId={navId}
       notFoundComponent={<NotFoundDatasource />}
       notFoundNavModel={{
-        text: 'Unknown datasource',
-        subTitle: 'No datasource with this ID could be found.',
+        text: '未知数据源',
+        subTitle: '找不到具有此 ID 的数据源。',
         active: true,
       }}
     />
@@ -33,9 +33,9 @@ function NotFoundDatasource() {
 
   return (
     <Alert severity={AppNotificationSeverity.Warning} title="">
-      Maybe you mistyped the URL or the plugin with the id <Badge text={id} color="orange" /> is unavailable.
+      也许您输入了错误的 URL 或插件id <Badge text={id} color="orange" /> 不存在
       <br />
-      To see a list of available datasources please <a href={ROUTES.AddNewConnection}>click here</a>.
+        要查看可用数据源的列表，请 <a href={ROUTES.AddNewConnection}>点击</a>.
     </Alert>
   );
 }

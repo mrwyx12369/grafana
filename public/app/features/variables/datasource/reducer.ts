@@ -46,12 +46,12 @@ export const dataSourceVariableSlice = createSlice({
         }
 
         if (isDefault(source, regex)) {
-          options.push({ text: 'default', value: 'default', selected: false });
+          options.push({ text: '默认', value: 'default', selected: false });
         }
       }
 
       if (options.length === 0) {
-        options.push({ text: 'No data sources found', value: '', selected: false });
+        options.push({ text: '未找到数据源', value: '', selected: false });
       }
 
       if (instanceState.includeAll) {

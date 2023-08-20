@@ -68,12 +68,12 @@ export const TeamList = ({
       <Page.Contents isLoading={!hasFetched}>
         {noTeams ? (
           <EmptyListCTA
-            title="You haven't created any teams yet."
+            title="您尚未创建任何团队。"
             buttonIcon="users-alt"
             buttonLink="org/teams/new"
-            buttonTitle=" New team"
+            buttonTitle=" 新建团队"
             buttonDisabled={!contextSrv.hasPermission(AccessControlAction.ActionTeamsCreate)}
-            proTip="Assign folder and dashboard permissions to teams instead of users to ease administration."
+            proTip="将文件夹和仪表板权限分配给团队而不是用户，以简化管理。"
             proTipLink=""
             proTipLinkTitle=""
             proTipTarget="_blank"
@@ -82,7 +82,7 @@ export const TeamList = ({
           <>
             <div className="page-action-bar">
               <InlineField grow>
-                <FilterInput placeholder="Search teams" value={query} onChange={changeQuery} />
+                <FilterInput placeholder="搜索团队" value={query} onChange={changeQuery} />
               </InlineField>
 
               <LinkButton href={canCreate ? 'org/teams/new' : '#'} disabled={!canCreate}>
@@ -96,10 +96,10 @@ export const TeamList = ({
                   <thead>
                     <tr>
                       <th />
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Members</th>
-                      {displayRolePicker && <th>Roles</th>}
+                      <th>名称</th>
+                      <th>邮件</th>
+                      <th>成员</th>
+                      {displayRolePicker && <th>角色</th>}
                       <th style={{ width: '1%' }} />
                     </tr>
                   </thead>

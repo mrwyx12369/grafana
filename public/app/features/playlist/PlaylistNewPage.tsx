@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { NavModelItem } from '@grafana/data';
 import { locationService } from '@grafana/runtime';
 import { Page } from 'app/core/components/Page/Page';
+import { t } from 'app/core/internationalization';
 
 import { PlaylistForm } from './PlaylistForm';
 import { createPlaylist, getDefaultPlaylist } from './api';
@@ -17,9 +18,8 @@ export const PlaylistNewPage = () => {
   };
 
   const pageNav: NavModelItem = {
-    text: 'New playlist',
-    subTitle:
-      'A playlist rotates through a pre-selected list of dashboards. A playlist can be a great way to build situational awareness, or just show off your metrics to your team or visitors.',
+    text: t('nav.new-playlist', 'New playlist'),
+    subTitle:t('nav.new-playlist-subtitle', 'A playlist rotates through a pre-selected list of dashboards. A playlist can be a great way to build situational awareness, or just show off your metrics to your team or visitors.')
   };
 
   return (

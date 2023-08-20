@@ -185,7 +185,7 @@ export const ExpressionResult: FC<ExpressionResultProps> = ({ series, isAlertCon
           // There's no way to uniquely identify a frame that doesn't cause render bugs :/ (Gilles)
           <FrameRow key={uniqueId()} frame={frame} index={pageStart + index} isAlertCondition={isAlertCondition} />
         ))}
-      {emptyResults && <div className={cx(styles.expression.noData, styles.mutedText)}>No data</div>}
+      {emptyResults && <div className={cx(styles.expression.noData, styles.mutedText)}>暂无数据</div>}
       {shouldShowPagination && (
         <div className={styles.pagination.wrapper} data-testid="paginate-expression">
           <Stack>
@@ -412,7 +412,7 @@ const TimeseriesRow: FC<FrameProps & { index: number }> = ({ frame, index }) => 
               </table>
             }
           >
-            <span>Time series data</span>
+            <span>时间序列数据</span>
           </HoverCard>
         </div>
       </Stack>

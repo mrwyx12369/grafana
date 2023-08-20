@@ -208,7 +208,7 @@ export const filterFieldsByNameTransformRegistryItem: TransformerRegistryItem<Fi
   id: DataTransformerID.filterFieldsByName,
   editor: FilterByNameTransformerEditor,
   transformation: standardTransformers.filterFieldsByNameTransformer,
-  name: 'Filter by name',
-  description: 'Removes part of the query results using a regex pattern. The pattern can be inclusive or exclusive.',
+  name: '按名称筛选',
+  description: '使用正则表达式模式删除部分查询结果。该模式可以是包容性的，也可以是排他性的。',
   categories: new Set([TransformerCategory.Filter]),
 };

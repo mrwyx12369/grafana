@@ -167,7 +167,7 @@ export const SearchResultsTable = React.memo(
     );
 
     if (!rows.length) {
-      return <div className={styles.noData}>No data</div>;
+      return <div className={styles.noData}>暂无数据</div>;
     }
 
     return (

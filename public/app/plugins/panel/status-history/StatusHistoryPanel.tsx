@@ -168,7 +168,7 @@ export const StatusHistoryPanel = ({
   if (!frames || warn) {
     return (
       <div className="panel-empty">
-        <p>{warn ?? 'No data found in response'}</p>
+        <p>{warn ?? '在响应中未找到数据'}</p>
       </div>
     );
   }

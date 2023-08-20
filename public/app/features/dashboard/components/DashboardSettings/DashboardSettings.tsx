@@ -93,19 +93,19 @@ function getSettingsPages(dashboard: DashboardModel) {
 
   if (dashboard.meta.canEdit) {
     pages.push({
-      title: 'General',
+      title: '通用',
       id: 'settings',
       icon: 'sliders-v-alt',
       component: GeneralSettings,
     });
 
     pages.push({
-      title: 'Annotations',
+      title: '注释',
       id: 'annotations',
       icon: 'comment-alt',
       component: AnnotationsSettings,
       subTitle:
-        'Annotation queries return events that can be visualized as event markers in graphs across the dashboard.',
+        '注释查询返回的事件可可视化为仪表板图形中的事件标记。',
     });
 
     pages.push({

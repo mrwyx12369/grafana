@@ -68,8 +68,7 @@ const AdminEditOrgPage = ({ match }: Props) => {
 
   const renderMissingPermissionMessage = () => (
     <Alert severity="info" title="Access denied">
-      You do not have permission to see users in this organization. To update this organization, contact your server
-      administrator.
+      您无权查看此组织中的用户。要更新此组织，请联系您的服务器管理员。
     </Alert>
   );
 
@@ -90,14 +89,14 @@ const AdminEditOrgPage = ({ match }: Props) => {
   const pageNav: NavModelItem = {
     text: orgState?.value?.name ?? '',
     icon: 'shield',
-    subTitle: 'Manage settings and user roles for an organization.',
+    subTitle: '管理组织的设置和用户角色。',
   };
 
   return (
-    <Page navId="global-orgs" pageNav={pageNav} subTitle="Manage settings for this specific org.">
+    <Page navId="global-orgs" pageNav={pageNav} subTitle="管理此特定组织的设置。">
       <Page.Contents>
         <>
-          <Legend>Edit organization</Legend>
+          <Legend>编辑机构</Legend>
           {orgState.value && (
             <Form
               defaultValues={{ orgName: orgState.value.name }}
@@ -105,11 +104,11 @@ const AdminEditOrgPage = ({ match }: Props) => {
             >
               {({ register, errors }) => (
                 <>
-                  <Field label="Name" invalid={!!errors.orgName} error="Name is required" disabled={!canWriteOrg}>
+                  <Field label="名称" invalid={!!errors.orgName} error="名称为必填项" disabled={!canWriteOrg}>
                     <Input {...register('orgName', { required: true })} id="org-name-input" />
                   </Field>
                   <Button type="submit" disabled={!canWriteOrg}>
-                    Update
+                    更新
                   </Button>
                 </>
               )}
@@ -117,7 +116,7 @@ const AdminEditOrgPage = ({ match }: Props) => {
           )}
 
           <div style={{ marginTop: '20px' }}>
-            <Legend>Organization users</Legend>
+            <Legend>机构用户</Legend>
             {!canReadUsers && renderMissingPermissionMessage()}
             {canReadUsers && !!users.length && (
               <VerticalGroup spacing="md">

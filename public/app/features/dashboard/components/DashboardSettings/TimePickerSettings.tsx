@@ -66,8 +66,8 @@ export class TimePickerSettings extends PureComponent<Props, State> {
 
   render() {
     return (
-      <CollapsableSection label="Time options" isOpen={true}>
-        <Field label="Time zone" data-testid={selectors.components.TimeZonePicker.containerV2}>
+      <CollapsableSection label="时间选项" isOpen={true}>
+        <Field label="时区" data-testid={selectors.components.TimeZonePicker.containerV2}>
           <TimeZonePicker
             inputId="time-options-input"
             includeInternal={true}
@@ -76,7 +76,7 @@ export class TimePickerSettings extends PureComponent<Props, State> {
             width={40}
           />
         </Field>
-        <Field label="Week start" data-testid={selectors.components.WeekStartPicker.containerV2}>
+        <Field label="周开始" data-testid={selectors.components.WeekStartPicker.containerV2}>
           <WeekStartPicker
             inputId="week-start-input"
             width={40}
@@ -88,7 +88,7 @@ export class TimePickerSettings extends PureComponent<Props, State> {
           refreshIntervals={this.props.refreshIntervals}
           onRefreshIntervalChange={this.props.onRefreshIntervalChange}
         />
-        <Field label="Now delay" description="Exclude recent data that may be incomplete.">
+        <Field label="现在延迟" description="排除可能不完整的最新数据。">
           <Input
             id="now-delay-input"
             invalid={!this.state.isNowDelayValid}
@@ -97,7 +97,7 @@ export class TimePickerSettings extends PureComponent<Props, State> {
             defaultValue={this.props.nowDelay}
           />
         </Field>
-        <Field label="Hide time picker">
+        <Field label="隐藏时间选取器">
           <Switch
             id="hide-time-picker-toggle"
             value={!!this.props.timePickerHidden}
@@ -105,8 +105,8 @@ export class TimePickerSettings extends PureComponent<Props, State> {
           />
         </Field>
         <Field
-          label="Refresh live dashboards"
-          description="Continuously re-draw panels where the time range references 'now'"
+          label="刷新实时仪表板"
+          description="连续重绘时间范围引用“现在”的面板"
         >
           <Switch id="refresh-live-dashboards-toggle" value={!!this.props.liveNow} onChange={this.onLiveNowChange} />
         </Field>

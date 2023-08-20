@@ -24,7 +24,7 @@ const selectors = e2eSelectors.pages.UserListPage;
 
 const PublicDashboardsTab = ({ view, setView }: { view: TabView | null; setView: (v: TabView | null) => void }) => (
   <Tab
-    label="Public dashboard users"
+    label="公共仪表板用户"
     active={view === TabView.PUBLIC_DASHBOARDS}
     onChangeTab={() => setView(TabView.PUBLIC_DASHBOARDS)}
     data-testid={selectors.tabs.publicDashboardsUsers}
@@ -63,13 +63,13 @@ export default function UserListPage() {
       {showAdminAndOrgTabs ? (
         <TabsBar className={styles.tabsMargin}>
           <Tab
-            label="All users"
+            label="所有用户"
             active={view === TabView.ADMIN}
             onChangeTab={() => setView(TabView.ADMIN)}
             data-testid={selectors.tabs.allUsers}
           />
           <Tab
-            label="Organization users"
+            label="机构用户"
             active={view === TabView.ORG}
             onChangeTab={() => setView(TabView.ORG)}
             data-testid={selectors.tabs.orgUsers}
@@ -80,7 +80,7 @@ export default function UserListPage() {
         hasEmailSharingEnabled && (
           <TabsBar className={styles.tabsMargin}>
             <Tab
-              label="Users"
+              label="用户"
               active={view === TabView.ORG}
               onChangeTab={() => setView(TabView.ORG)}
               data-testid={selectors.tabs.users}

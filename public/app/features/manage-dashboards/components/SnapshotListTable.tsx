@@ -3,6 +3,7 @@ import useAsync from 'react-use/lib/useAsync';
 
 import { getBackendSrv, locationService } from '@grafana/runtime';
 import { ConfirmModal, Button, LinkButton } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { Snapshot } from '../types';
 
@@ -47,10 +48,10 @@ export const SnapshotListTable = () => {
         <thead>
           <tr>
             <th>
-              <strong>Name</strong>
+              <strong>{t('snapshort.list.name','Name')}</strong>
             </th>
             <th>
-              <strong>Snapshot url</strong>
+              <strong>{t('snapshort.list.url','URL')}</strong>
             </th>
             <th style={{ width: '70px' }}></th>
             <th style={{ width: '30px' }}></th>

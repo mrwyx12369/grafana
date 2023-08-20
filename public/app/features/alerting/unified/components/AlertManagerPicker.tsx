@@ -48,7 +48,7 @@ export const AlertManagerPicker = ({ disabled = false }: Props) => {
         }}
         options={options}
         maxMenuHeight={500}
-        noOptionsMessage="No datasources found"
+        noOptionsMessage="未找到数据源"
         value={selectedAlertmanager}
         getOptionLabel={(o) => o.label}
       />

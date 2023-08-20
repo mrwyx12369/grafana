@@ -4,6 +4,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 import { GrafanaTheme2, SelectableValue } from '@grafana/data';
 import { AsyncMultiSelect, Icon, Button, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { getBackendSrv } from 'app/core/services/backend_srv';
 import { DashboardSearchItemType } from 'app/features/search/types';
 import { FolderInfo, PermissionLevelString } from 'app/types';
@@ -49,8 +50,8 @@ export function FolderFilter({ onChange, maxMenuHeight }: FolderFilterProps): JS
         isLoading={loading}
         loadOptions={debouncedLoadOptions}
         maxMenuHeight={maxMenuHeight}
-        placeholder="Filter by folder"
-        noOptionsMessage="No folders found"
+        placeholder={t('folder.filter.select-placeholder','Filter by folder')}
+        noOptionsMessage={t('folder.filter.no-folder-found','No folders found')}
         prefix={<Icon name="filter" />}
         aria-label="Folder filter"
         defaultOptions
@@ -75,7 +76,7 @@ async function getFoldersAsOptions(
   const searchHits = await getBackendSrv().search(params);
   const options = searchHits.map((d) => ({ label: d.title, value: { uid: d.uid, title: d.title } }));
   if (!searchString || 'general'.includes(searchString.toLowerCase())) {
-    options.unshift({ label: 'General', value: { uid: 'general', title: 'General' } });
+    options.unshift({ label: t('folder.general-folder','General'), value: { uid: 'general', title: t('folder.general-folder','General') } });
   }
 
   setLoading(false);

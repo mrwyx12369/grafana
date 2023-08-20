@@ -189,7 +189,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
   render() {
     return (
       <>
-        <VariableLegend>Query options</VariableLegend>
+        <VariableLegend>查询选项</VariableLegend>
         <Field label="Data source" htmlFor="data-source-picker">
           <DataSourcePicker
             current={this.props.variable.datasource}
@@ -206,15 +206,15 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
           name="Regex"
           description={
             <div>
-              Optional, if you want to extract part of a series name or metric node segment.
+            可选，如果要提取系列名称或衡量指标节点段的一部分。
               <br />
-              Named capture groups can be used to separate the display text and value (
+              命名捕获组可用于分隔显示文本和值 (
               <a
                 className="external-link"
                 href="https://grafana.com/docs/grafana/latest/variables/filter-variables-with-regex#filter-and-modify-using-named-text-and-value-capture-groups"
                 target="__blank"
               >
-                see examples
+                示例
               </a>
               ).
             </div>

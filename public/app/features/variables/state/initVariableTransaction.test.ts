@@ -156,7 +156,7 @@ describe('initVariablesTransaction', () => {
             toKeyedAction(
               key,
               setCurrentVariableValue(
-                toVariablePayload(ds, { option: { selected: false, text: 'No data sources found', value: '' } })
+                toVariablePayload(ds, { option: { selected: false, text: '未找到数据源', value: '' } })
               )
             )
           );

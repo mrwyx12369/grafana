@@ -205,7 +205,7 @@ export function TraceView(props: Props) {
           />
         </>
       ) : (
-        <div className={styles.noDataMsg}>No data</div>
+        <div className={styles.noDataMsg}>暂无数据</div>
       )}
     </>
   );

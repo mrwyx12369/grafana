@@ -101,8 +101,8 @@ export interface QueryRowFilter {
 }
 
 export const QUERY_FORMAT_OPTIONS = [
-  { label: 'Time series', value: QueryFormat.Timeseries },
-  { label: 'Table', value: QueryFormat.Table },
+  { label: '时间序列数据', value: QueryFormat.Timeseries },
+  { label: '表格数据', value: QueryFormat.Table },
 ];
 
 const backWardToOption = (value: string) => ({ label: value, value });

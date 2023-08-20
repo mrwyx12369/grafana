@@ -73,7 +73,7 @@ export const SearchResultsCards = React.memo(
     if (!response.totalRows) {
       return (
         <div className={styles.noData} style={{ width }}>
-          No data
+          暂无数据
         </div>
       );
     }

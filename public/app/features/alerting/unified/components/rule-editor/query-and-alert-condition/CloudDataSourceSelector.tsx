@@ -29,7 +29,7 @@ export const CloudDataSourceSelector = ({ disabled, onChangeCloudDatasource }: C
         {(ruleFormType === RuleFormType.cloudAlerting || ruleFormType === RuleFormType.cloudRecording) && (
           <Field
             className={styles.formInput}
-            label={disabled ? 'Data source' : 'Select data source'}
+            label={disabled ? '数据源' : '选择数据源'}
             error={errors.dataSourceName?.message}
             invalid={!!errors.dataSourceName?.message}
             data-testid="datasource-picker"
@@ -52,7 +52,7 @@ export const CloudDataSourceSelector = ({ disabled, onChangeCloudDatasource }: C
               name="dataSourceName"
               control={control}
               rules={{
-                required: { value: true, message: 'Please select a data source' },
+                required: { value: true, message: '请选择数据源' },
               }}
             />
           </Field>

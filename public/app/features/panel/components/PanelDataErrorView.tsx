@@ -99,22 +99,22 @@ function getMessageFor(
   }
 
   if (!data.series || data.series.length === 0 || data.series.every((frame) => frame.length === 0)) {
-    return fieldConfig?.defaults.noValue ?? 'No data';
+    return fieldConfig?.defaults.noValue ?? '暂无数据';
   }
 
   if (needsStringField && !dataSummary.hasStringField) {
-    return 'Data is missing a string field';
+    return '数据缺少字符串字段';
   }
 
   if (needsNumberField && !dataSummary.hasNumberField) {
-    return 'Data is missing a number field';
+    return '数据缺少数字字段';
   }
 
   if (needsTimeField && !dataSummary.hasTimeField) {
-    return 'Data is missing a time field';
+    return '数据缺少时间字段';
   }
 
-  return 'Cannot visualize data';
+  return '无法可视化数据';
 }
 
 const getStyles = (theme: GrafanaTheme2) => {

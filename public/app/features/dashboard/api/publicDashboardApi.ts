@@ -99,7 +99,7 @@ export const publicDashboardApi = createApi({
       }),
       async onQueryStarted({ dashboard, payload }, { dispatch, queryFulfilled }) {
         const { data } = await queryFulfilled;
-        dispatch(notifyApp(createSuccessNotification('Public dashboard updated!')));
+        dispatch(notifyApp(createSuccessNotification('公共仪表板已更新！')));
 
         if (dashboard.updateMeta) {
           dashboard.updateMeta({
@@ -157,7 +157,7 @@ export const publicDashboardApi = createApi({
       }),
       async onQueryStarted({ dashboard, uid }, { dispatch, queryFulfilled }) {
         await queryFulfilled;
-        dispatch(notifyApp(createSuccessNotification('Public dashboard deleted!')));
+        dispatch(notifyApp(createSuccessNotification('P公共仪表板已删除！')));
 
         dashboard?.updateMeta({
           publicDashboardUid: uid,

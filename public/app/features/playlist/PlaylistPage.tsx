@@ -5,6 +5,7 @@ import { ConfirmModal } from '@grafana/ui';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
 import { Page } from 'app/core/components/Page/Page';
 import PageActionBar from 'app/core/components/PageActionBar/PageActionBar';
+import { t } from 'app/core/internationalization';
 import { contextSrv } from 'app/core/services/context_srv';
 
 import { EmptyQueryListBanner } from './EmptyQueryListBanner';
@@ -36,14 +37,14 @@ export const PlaylistPage = () => {
 
   const emptyListBanner = (
     <EmptyListCTA
-      title="There are no playlists created yet"
+      title={t('playlist.empty-title','There are no playlists created yet')}
       buttonIcon="plus"
       buttonLink="playlists/new"
-      buttonTitle="Create Playlist"
+      buttonTitle={t('playlist.create','Create Playlist')}
       buttonDisabled={!contextSrv.isEditor}
-      proTip="You can use playlists to cycle dashboards on TVs without user control"
+      proTip={t('playlist.tips','You can use playlists to cycle dashboards on TVs without user control')}
       proTipLink="http://docs.grafana.org/reference/playlist/"
-      proTipLinkTitle="Learn more"
+      proTipLinkTitle={t('playlist.learn-more','Learn more')}
       proTipTarget="_blank"
     />
   );

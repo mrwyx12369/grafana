@@ -17,8 +17,8 @@ export function AdminOrgsTable({ orgs, onDelete }: Props) {
     <table className="filter-table form-inline filter-table--hover">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Name</th>
+          <th>ID标识</th>
+          <th>机构名称</th>
           <th style={{ width: '1%' }}></th>
         </tr>
       </thead>

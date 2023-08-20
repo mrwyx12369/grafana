@@ -35,14 +35,14 @@ const MetricValueDisplay = (props: CanvasElementProps<TextConfig, TextData>) => 
 
   const getDisplayValue = () => {
     if (panelData && config.text?.field && fieldNotFound()) {
-      return 'Field not found';
+      return '未找到字段';
     }
 
     if (panelData && config.text?.field && !data?.text) {
-      return 'No data';
+      return '暂无数据';
     }
 
-    return data?.text ? data.text : 'Double click to set field';
+    return data?.text ? data.text : '双击设置字段';
   };
 
   const fieldNotFound = () => {

@@ -18,7 +18,7 @@ const getOrgs = async () => {
 };
 
 const getErrorMessage = (error: Error) => {
-  return isFetchError(error) ? error?.data?.message : 'An unexpected error happened.';
+  return isFetchError(error) ? error?.data?.message : '发生意外错误。';
 };
 
 export default function AdminListOrgsPages() {
@@ -36,7 +36,7 @@ export default function AdminListOrgsPages() {
           <div className="page-action-bar">
             <div className="page-action-bar__spacer" />
             <LinkButton icon="plus" href="org/new" disabled={!canCreateOrg}>
-              New org
+              新建组织机构
             </LinkButton>
           </div>
           {state.error && getErrorMessage(state.error)}

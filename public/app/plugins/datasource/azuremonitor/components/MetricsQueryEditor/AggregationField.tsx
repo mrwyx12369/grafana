@@ -36,7 +36,7 @@ const AggregationField = ({
   const options = addValueToOptions(aggregationOptions, variableOptionGroup, query.azureMonitor?.aggregation);
 
   return (
-    <Field label="Aggregation">
+    <Field label="聚合字段">
       <Select
         inputId="azure-monitor-metrics-aggregation-field"
         value={query.azureMonitor?.aggregation || null}

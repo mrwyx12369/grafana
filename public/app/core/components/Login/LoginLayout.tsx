@@ -6,7 +6,7 @@ import { useStyles2, styleMixins } from '@grafana/ui';
 
 import { Branding } from '../Branding/Branding';
 import { BrandingSettings } from '../Branding/types';
-import { Footer } from '../Footer/Footer';
+// import { Footer } from '../Footer/Footer';
 
 interface InnerBoxProps {
   enterAnimation?: boolean;
@@ -42,10 +42,10 @@ export const LoginLayout = ({ children, branding, isChangingPassword }: React.Pr
             <Branding.LoginLogo className={loginStyles.loginLogo} logo={loginLogo} />
             <div className={loginStyles.titleWrapper}>
               {isChangingPassword ? (
-                <h1 className={loginStyles.mainTitle}>Update your password</h1>
+                <h2 className={loginStyles.mainTitle}>更新密码</h2>
               ) : (
                 <>
-                  <h1 className={loginStyles.mainTitle}>{loginTitle}</h1>
+                  <h2 className={loginStyles.mainTitle}>{loginTitle}</h2>
                   {subTitle && <h3 className={loginStyles.subTitle}>{subTitle}</h3>}
                 </>
               )}
@@ -54,11 +54,10 @@ export const LoginLayout = ({ children, branding, isChangingPassword }: React.Pr
           <div className={loginStyles.loginOuterBox}>{children}</div>
         </div>
       </div>
-      {branding?.hideFooter ? <></> : <Footer customLinks={branding?.footerLinks} />}
     </Branding.LoginBackground>
   );
 };
-
+//{branding?.hideFooter ? <></> : <Footer customLinks={branding?.footerLinks} />}
 const flyInAnimation = keyframes`
 from{
   opacity: 0;
@@ -124,10 +123,10 @@ export const getLoginStyles = (theme: GrafanaTheme2) => {
       text-align: center;
     `,
     mainTitle: css`
-      font-size: 22px;
+      font-size: 16px;
 
       @media ${styleMixins.mediaUp(theme.v1.breakpoints.sm)} {
-        font-size: 32px;
+        font-size: 24px;
       }
     `,
     subTitle: css`
@@ -143,14 +142,14 @@ export const getLoginStyles = (theme: GrafanaTheme2) => {
       position: relative;
       justify-content: flex-start;
       z-index: 1;
-      min-height: 320px;
+      min-height: 600px;
       border-radius: ${theme.shape.borderRadius(4)};
-      padding: ${theme.spacing(2, 0)};
+      padding: ${theme.spacing(1, 0)};
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
 
       @media ${styleMixins.mediaUp(theme.v1.breakpoints.sm)} {
-        min-height: 320px;
+        min-height: 600px;
         justify-content: center;
       }
     `,
@@ -162,7 +161,6 @@ export const getLoginStyles = (theme: GrafanaTheme2) => {
     `,
     loginInnerBox: css`
       padding: ${theme.spacing(0, 2, 2, 2)};
-
       display: flex;
       flex-direction: column;
       align-items: center;

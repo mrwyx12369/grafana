@@ -88,7 +88,7 @@ export const PageToolbar = React.memo(
             <div className={styles.pageIcon}>
               <IconButton
                 name="arrow-left"
-                tooltip="Go back (Esc)"
+                tooltip="返回(Esc)"
                 tooltipPlacement="bottom"
                 size="xxl"
                 aria-label={selectors.components.BackButton.backArrow}

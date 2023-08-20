@@ -232,9 +232,9 @@ export class GraphCtrl extends MetricsPanelCtrl {
         for (const frame of this.dataList) {
           if (frame.length && frame.fields?.length) {
             return {
-              title: 'Unable to graph data',
-              tip: 'Data exists, but is not timeseries',
-              actionText: 'Switch to table view',
+              title: '无法绘制数据图表',
+              tip: '数据存在，但不是时间序列',
+              actionText: '切换到表视图',
               action: () => {
                 dispatch(changePanelPlugin({ panel: this.panel, pluginId: 'table' }));
               },
@@ -244,8 +244,8 @@ export class GraphCtrl extends MetricsPanelCtrl {
       }
 
       return {
-        title: 'No data',
-        tip: 'No data returned from query',
+        title: '暂无数据',
+        tip: '查询未返回任何数据',
       };
     }
 

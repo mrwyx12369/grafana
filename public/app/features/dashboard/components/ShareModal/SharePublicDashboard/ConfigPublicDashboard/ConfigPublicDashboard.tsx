@@ -121,7 +121,7 @@ const ConfigPublicDashboard = () => {
 
       {hasEmailSharingEnabled && <EmailSharingConfiguration />}
 
-      <Field label="Dashboard URL" className={styles.fieldSpace}>
+      <Field label="仪表板URL地址" className={styles.fieldSpace}>
         <Input
           value={generatePublicDashboardUrl(publicDashboard!.accessToken!)}
           readOnly
@@ -135,7 +135,7 @@ const ConfigPublicDashboard = () => {
               getText={() => generatePublicDashboardUrl(publicDashboard!.accessToken!)}
               onClipboardCopy={onCopyURL}
             >
-              Copy
+              拷贝
             </ClipboardButton>
           }
         />
@@ -160,14 +160,14 @@ const ConfigPublicDashboard = () => {
               margin-bottom: 0;
             `}
           >
-            Pause sharing dashboard
+            停止分享仪表板
           </Label>
         </Layout>
       </Field>
 
       <Field className={styles.fieldSpace}>
         <SettingsBar
-          title="Settings"
+          title="设置"
           headerElement={({ className }) => (
             <SettingsSummary
               className={className}
@@ -203,7 +203,7 @@ const ConfigPublicDashboard = () => {
               title: dashboard.title,
             }}
           >
-            Revoke public URL
+            收回分享URL地址
           </DeletePublicDashboardButton>
         </HorizontalGroup>
       </Layout>

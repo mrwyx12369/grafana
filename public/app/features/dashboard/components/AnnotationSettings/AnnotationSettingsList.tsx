@@ -59,8 +59,8 @@ export const AnnotationSettingsList = ({ dashboard, onNew, onEdit }: Props) => {
           <table role="grid" className="filter-table filter-table--hover">
             <thead>
               <tr>
-                <th>Query name</th>
-                <th>Data source</th>
+                <th>查询名称</th>
+                <th>数据源</th>
                 <th colSpan={3}></th>
               </tr>
             </thead>
@@ -109,21 +109,18 @@ export const AnnotationSettingsList = ({ dashboard, onNew, onEdit }: Props) => {
       {showEmptyListCTA && (
         <EmptyListCTA
           onClick={onNew}
-          title="There are no custom annotation queries added yet"
+          title="没有添加自定义注释查询t"
           buttonIcon="comment-alt"
-          buttonTitle="Add annotation query"
-          infoBoxTitle="What are annotation queries?"
+          buttonTitle="添加注释查询"
+          infoBoxTitle="什么是注释查询?"
           infoBox={{
-            __html: `<p>Annotations provide a way to integrate event data into your graphs. They are visualized as vertical lines
-          and icons on all graph panels. When you hover over an annotation icon you can get event text &amp; tags for
-          the event. You can add annotation events directly from grafana by holding CTRL or CMD + click on graph (or
-          drag region). These will be stored in Grafana's annotation database.
+            __html: `<p>批注提供了一种将事件数据集成到图表中的方法。它们被可视化为垂直线和所有图形面板上的图标。当您将鼠标悬停在注释图标上时，您可以获得事件文本和标签
+            事件。您可以通过按住 CTRL 或 CMD + 单击图形（或拖动区域）。这些将存储在格拉法纳的注释数据库中。
         </p>
-        Checkout the
-        <a class='external-link' target='_blank' href='http://docs.grafana.org/reference/annotations/'
-          >Annotations documentation</a
-        >
-        for more information.`,
+        详见
+        <a class='external-link' target='_blank' href='#'
+          >注释文档</a
+        >`,
           }}
         />
       )}

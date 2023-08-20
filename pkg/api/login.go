@@ -193,10 +193,10 @@ func (hs *HTTPServer) tryAutoLogin(c *contextmodel.ReqContext) bool {
 
 func (hs *HTTPServer) LoginAPIPing(c *contextmodel.ReqContext) response.Response {
 	if c.IsSignedIn || c.IsAnonymous {
-		return response.JSON(http.StatusOK, util.DynMap{"message": "Logged in"})
+		return response.JSON(http.StatusOK, util.DynMap{"message": "登录成功!"})
 	}
 
-	return response.Error(401, "Unauthorized", nil)
+	return response.Error(401, "未授权", nil)
 }
 
 func (hs *HTTPServer) LoginPost(c *contextmodel.ReqContext) response.Response {
@@ -215,7 +215,7 @@ func (hs *HTTPServer) LoginPost(c *contextmodel.ReqContext) response.Response {
 
 func (hs *HTTPServer) loginUserWithUser(user *user.User, c *contextmodel.ReqContext) error {
 	if user == nil {
-		return errors.New("could not login user")
+		return errors.New("不能登录用户")
 	}
 
 	addr := c.RemoteAddr()
@@ -233,7 +233,7 @@ func (hs *HTTPServer) loginUserWithUser(user *user.User, c *contextmodel.ReqCont
 	}
 	c.UserToken = userToken
 
-	hs.log.Info("Successful Login", "User", user.Email)
+	hs.log.Info("成功登录", "User", user.Email)
 	authn.WriteSessionCookie(c.Resp, hs.Cfg, userToken)
 	return nil
 }

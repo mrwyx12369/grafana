@@ -228,7 +228,7 @@ export class QueryGroup extends PureComponent<Props, State> {
                 <Button
                   variant="secondary"
                   icon="question-circle"
-                  title="Open data source help"
+                  title="打开数据源帮助"
                   onClick={this.onOpenHelp}
                   data-testid="query-tab-help-button"
                 />
@@ -248,7 +248,7 @@ export class QueryGroup extends PureComponent<Props, State> {
                     onClick={onOpenQueryInspector}
                     aria-label={selectors.components.QueryTab.queryInspectorButton}
                   >
-                    Query inspector
+                    查询检查器
                   </Button>
                 </div>
               )}

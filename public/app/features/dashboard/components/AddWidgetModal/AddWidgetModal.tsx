@@ -28,7 +28,7 @@ export const AddWidgetModal = () => {
 
   return (
     <Modal
-      title="Select widget type"
+      title="选择小部件类型"
       closeOnEscape
       closeOnBackdropClick
       isOpen
@@ -42,7 +42,7 @@ export const AddWidgetModal = () => {
         className={styles.searchInput}
         value={searchQuery}
         prefix={<Icon name="search" />}
-        placeholder="Search widget"
+        placeholder="搜索小部件"
         onChange={(e) => {
           setSearchQuery(e.currentTarget.value);
         }}

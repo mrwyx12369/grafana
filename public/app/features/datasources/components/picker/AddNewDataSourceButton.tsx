@@ -19,11 +19,11 @@ export function AddNewDataSourceButton({ variant, onClick }: AddNewDataSourceBut
       variant={variant || 'primary'}
       href={newDataSourceURL}
       disabled={!hasCreateRights}
-      tooltip={!hasCreateRights ? 'You do not have permission to configure new data sources' : undefined}
+      tooltip={!hasCreateRights ? '您没有配置新数据源的权限' : undefined}
       onClick={onClick}
       target="_blank"
     >
-      Configure a new data source
+      配置新数据源
     </LinkButton>
   );
 }

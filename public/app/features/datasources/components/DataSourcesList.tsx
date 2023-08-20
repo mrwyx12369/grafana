@@ -73,13 +73,13 @@ export function DataSourcesListView({
     return (
       <EmptyListCTA
         buttonDisabled={!hasCreateRights}
-        title="No data sources defined"
+        title="未定义数据源"
         buttonIcon="database"
         buttonLink={dataSourcesRoutes.New}
-        buttonTitle="Add data source"
-        proTip="You can also define data sources through configuration files."
-        proTipLink="http://docs.grafana.org/administration/provisioning/?utm_source=grafana_ds_list#data-sources"
-        proTipLinkTitle="Learn more"
+        buttonTitle="添加数据源"
+        proTip="您还可以通过配置文件定义数据源。"
+        proTipLink="#"
+        proTipLinkTitle="了解更多信息"
         proTipTarget="_blank"
       />
     );
@@ -124,7 +124,7 @@ export function DataSourcesListView({
                       });
                     }}
                   >
-                    Build a dashboard
+                    构建仪表板
                   </LinkButton>
 
                   {/* Explore */}
@@ -144,7 +144,7 @@ export function DataSourcesListView({
                         });
                       }}
                     >
-                      Explore
+                      探索数据
                     </LinkButton>
                   )}
                 </Card.Tags>

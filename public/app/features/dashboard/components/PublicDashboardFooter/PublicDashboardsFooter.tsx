@@ -30,7 +30,7 @@ export function setPublicDashboardFooterConfigFn(fn: typeof getPublicDashboardFo
 export let getPublicDashboardFooterConfig = (): PublicDashboardFooterCfg => ({
   hide: false,
   text: 'powered by Grafana',
-  logo: 'public/img/grafana_icon.svg',
+  logo: 'public/img/logo.png',
   link: 'https://grafana.com/',
 });
 

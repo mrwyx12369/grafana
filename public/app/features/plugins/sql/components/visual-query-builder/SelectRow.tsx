@@ -112,7 +112,7 @@ export function SelectRow({ sql, format, columns, onSqlChange, functions }: Sele
       {sql.columns?.map((item, index) => (
         <div key={index}>
           <Stack gap={2} alignItems="end">
-            <EditorField label="Column" width={25}>
+            <EditorField label="数据列" width={25}>
               <Select
                 value={getColumnValue(item)}
                 options={columnsWithAsterisk}
@@ -123,7 +123,7 @@ export function SelectRow({ sql, format, columns, onSqlChange, functions }: Sele
               />
             </EditorField>
 
-            <EditorField label="Aggregation" optional width={25}>
+            <EditorField label="聚合函数" optional width={25}>
               <Select
                 value={item.name ? toOption(item.name) : null}
                 inputId={`select-aggregation-${index}-${uniqueId()}`}
@@ -134,7 +134,7 @@ export function SelectRow({ sql, format, columns, onSqlChange, functions }: Sele
                 onChange={onAggregationChange(item, index)}
               />
             </EditorField>
-            <EditorField label="Alias" optional width={15}>
+            <EditorField label="别名" optional width={15}>
               <Select
                 value={item.alias ? toOption(item.alias) : null}
                 inputId={`select-alias-${index}-${uniqueId()}`}

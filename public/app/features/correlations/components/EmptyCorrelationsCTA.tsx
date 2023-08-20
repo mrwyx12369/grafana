@@ -12,16 +12,16 @@ export const EmptyCorrelationsCTA = ({ onClick, canWriteCorrelations }: Props) =
 
   return canWriteCorrelations ? (
     <EmptyListCTA
-      title="You haven't defined any correlation yet."
+      title="您尚未定义任何关联。"
       buttonIcon="gf-glue"
       onClick={onClick}
-      buttonTitle="Add correlation"
-      proTip="you can also define correlations via datasource provisioning"
+      buttonTitle="添加相关性"
+      proTip="您还可以通过数据源预配定义关联"
     />
   ) : (
     <Card>
-      <Card.Heading>There are no correlations configured yet.</Card.Heading>
-      <Card.Description>Please contact your administrator to create new correlations.</Card.Description>
+      <Card.Heading>尚未配置关联。</Card.Heading>
+      <Card.Description>请与管理员联系以创建新的关联.</Card.Description>
     </Card>
   );
 };

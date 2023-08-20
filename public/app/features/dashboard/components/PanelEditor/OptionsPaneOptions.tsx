@@ -88,7 +88,7 @@ export const OptionsPaneOptions = (props: OptionPaneRenderProps) => {
         break;
       case OptionFilter.Recent:
         mainBoxElements.push(
-          <OptionsPaneCategory id="Recent options" title="Recent options" key="Recent options" forceOpen={1}>
+          <OptionsPaneCategory id="Recent options" title="最近的选项" key="Recent options" forceOpen={1}>
             {getRecentOptions(allOptions).map((item) => item.render())}
           </OptionsPaneCategory>
         );
@@ -113,7 +113,7 @@ export const OptionsPaneOptions = (props: OptionPaneRenderProps) => {
           />
         )}
         <div className={styles.formRow}>
-          <FilterInput width={0} value={searchQuery} onChange={setSearchQuery} placeholder={'Search options'} />
+          <FilterInput width={0} value={searchQuery} onChange={setSearchQuery} placeholder={'搜索选项'} />
         </div>
         {showSearchRadioButtons && (
           <div className={styles.formRow}>
@@ -132,8 +132,8 @@ export const OptionsPaneOptions = (props: OptionPaneRenderProps) => {
 
 function getOptionRadioFilters(): Array<SelectableValue<OptionFilter>> {
   return [
-    { label: OptionFilter.All, value: OptionFilter.All },
-    { label: OptionFilter.Overrides, value: OptionFilter.Overrides },
+    { label: '所有', value: OptionFilter.All },
+    { label: '覆盖', value: OptionFilter.Overrides },
   ];
 }
 
@@ -155,7 +155,7 @@ function renderSearchHits(
     <div key="search results">
       <OptionsPaneCategory
         id="Found options"
-        title={`Matched ${optionHits.length}/${totalCount} options`}
+        title={`匹配 ${optionHits.length}/${totalCount} 个选项`}
         key="Normal options"
         forceOpen={1}
       >

@@ -13,8 +13,7 @@ function AdminSettings() {
     <Page navId="server-settings">
       <Page.Contents isLoading={loading}>
         <div className="grafana-info-box span8" style={{ margin: '20px 0 25px 0' }}>
-          These system settings are defined in grafana.ini or custom.ini (or overridden in ENV variables). To change
-          these you currently need to restart Grafana.
+          这些系统设置在系统中定义.ini或自定义.ini（或在 ENV 变量中覆盖）。要更改这些您当前需要重新启动系统。
         </div>
 
         {settings && (

@@ -77,7 +77,7 @@ const PublicDashboardCard = ({ pd }: { pd: PublicDashboardListResponse }) => {
         <div className={styles.pauseSwitch}>
           <Switch
             value={!pd.isEnabled}
-            label="Pause sharing"
+            label="停止分享"
             disabled={isUpdateLoading}
             onChange={(e) => {
               reportInteraction('grafana_dashboards_public_enable_clicked', {
@@ -87,7 +87,7 @@ const PublicDashboardCard = ({ pd }: { pd: PublicDashboardListResponse }) => {
             }}
             data-testid={selectors.ListItem.pauseSwitch}
           />
-          <span>Pause sharing</span>
+          <span>停止分享</span>
         </div>
         <LinkButton
           disabled={isOrphaned}
@@ -98,7 +98,7 @@ const PublicDashboardCard = ({ pd }: { pd: PublicDashboardListResponse }) => {
           color={theme.colors.warning.text}
           href={generatePublicDashboardUrl(pd.accessToken)}
           key="public-dashboard-url"
-          tooltip="View public dashboard"
+          tooltip="查看公共仪表板"
           data-testid={selectors.ListItem.linkButton}
         />
         <LinkButton
@@ -109,7 +109,7 @@ const PublicDashboardCard = ({ pd }: { pd: PublicDashboardListResponse }) => {
           color={theme.colors.warning.text}
           href={generatePublicDashboardConfigUrl(pd.dashboardUid)}
           key="public-dashboard-config-url"
-          tooltip="Configure public dashboard"
+          tooltip="配置公共仪表板"
           data-testid={selectors.ListItem.configButton}
         />
         {hasWritePermissions && (
@@ -118,7 +118,7 @@ const PublicDashboardCard = ({ pd }: { pd: PublicDashboardListResponse }) => {
             icon="trash-alt"
             variant="secondary"
             publicDashboard={pd}
-            tooltip="Revoke public dashboard url"
+            tooltip="撤销公共仪表板URL地址"
             loader={<Spinner />}
             data-testid={selectors.ListItem.trashcanButton}
           />

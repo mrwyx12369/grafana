@@ -4,6 +4,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { GrafanaTheme2, PanelPluginMeta, SelectableValue } from '@grafana/data';
 import { config } from '@grafana/runtime';
 import { Icon, Button, MultiSelect, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { getAllPanelPluginMeta, getVizPluginMeta, getWidgetPluginMeta } from 'app/features/panel/state/util';
 
 export interface Props {
@@ -44,8 +45,8 @@ export const PanelTypeFilter = ({ onChange: propsOnChange, maxMenuHeight, isWidg
     defaultOptions: true,
     getOptionLabel: (i: SelectableValue<PanelPluginMeta>) => i.label,
     getOptionValue: (i: SelectableValue<PanelPluginMeta>) => i.value,
-    noOptionsMessage: 'No Panel types found',
-    placeholder: 'Filter by type',
+    noOptionsMessage: t('panel.type.no-panel-types-found','No Panel types found'),
+    placeholder: t('panel.type.select-filter-placeholder','Filter by type'),
     maxMenuHeight,
     options,
     value,
@@ -63,7 +64,7 @@ export const PanelTypeFilter = ({ onChange: propsOnChange, maxMenuHeight, isWidg
           onClick={() => onChange([])}
           aria-label="Clear types"
         >
-          Clear types
+          {t('panel.type.clear-types','Clear types')}
         </Button>
       )}
       <MultiSelect<PanelPluginMeta> {...selectOptions} prefix={<Icon name="filter" />} aria-label="Panel Type filter" />

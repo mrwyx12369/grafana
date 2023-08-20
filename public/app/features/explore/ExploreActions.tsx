@@ -27,7 +27,7 @@ export const ExploreActions = () => {
     if (splitted) {
       actionsArr.push({
         id: 'explore/run-query-left',
-        name: 'Run query (left)',
+        name: '运行查询（左）',
         keywords: 'query left',
         perform: () => {
           dispatch(runQueries({ exploreId: keys[0] }));
@@ -38,7 +38,7 @@ export const ExploreActions = () => {
         // we should always have the right exploreId if split
         actionsArr.push({
           id: 'explore/run-query-right',
-          name: 'Run query (right)',
+          name: '运行查询（右）',
           keywords: 'query right',
           perform: () => {
             dispatch(runQueries({ exploreId: keys[1] }));
@@ -47,7 +47,7 @@ export const ExploreActions = () => {
         });
         actionsArr.push({
           id: 'explore/split-view-close-left',
-          name: 'Close split view left',
+          name: '关闭拆分视图左边',
           keywords: 'split',
           perform: () => {
             dispatch(splitClose(keys[0]));
@@ -56,7 +56,7 @@ export const ExploreActions = () => {
         });
         actionsArr.push({
           id: 'explore/split-view-close-right',
-          name: 'Close split view right',
+          name: '关闭拆分视图右边',
           keywords: 'split',
           perform: () => {
             dispatch(splitClose(keys[1]));
@@ -67,7 +67,7 @@ export const ExploreActions = () => {
     } else {
       actionsArr.push({
         id: 'explore/run-query',
-        name: 'Run query',
+        name: '运行查询',
         keywords: 'query',
         perform: () => {
           dispatch(runQueries({ exploreId: keys[0] }));
@@ -76,7 +76,7 @@ export const ExploreActions = () => {
       });
       actionsArr.push({
         id: 'explore/split-view-open',
-        name: 'Open split view',
+        name: '打开拆分视图',
         keywords: 'split',
         perform: () => {
           dispatch(splitOpen());

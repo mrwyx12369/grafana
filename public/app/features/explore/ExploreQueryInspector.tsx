@@ -36,7 +36,7 @@ export function ExploreQueryInspector(props: Props) {
   }, []);
 
   const statsTab: TabConfig = {
-    label: 'Stats',
+    label: '统计',
     value: 'stats',
     icon: 'chart-line',
     content: <InspectStatsTab data={queryResponse!} timeZone={queryResponse?.request?.timezone as TimeZone} />,
@@ -50,7 +50,7 @@ export function ExploreQueryInspector(props: Props) {
   };
 
   const dataTab: TabConfig = {
-    label: 'Data',
+    label: '数据',
     value: 'data',
     icon: 'database',
     content: (
@@ -65,7 +65,7 @@ export function ExploreQueryInspector(props: Props) {
   };
 
   const queryTab: TabConfig = {
-    label: 'Query',
+    label: '查询',
     value: 'query',
     icon: 'info-circle',
     content: (
@@ -76,7 +76,7 @@ export function ExploreQueryInspector(props: Props) {
   const tabs = [statsTab, queryTab, jsonTab, dataTab];
   if (errors?.length) {
     const errorTab: TabConfig = {
-      label: 'Error',
+      label: '错误',
       value: 'error',
       icon: 'exclamation-triangle',
       content: <InspectErrorTab errors={errors} />,
@@ -85,7 +85,7 @@ export function ExploreQueryInspector(props: Props) {
   }
   return (
     <ExploreDrawer width={width}>
-      <TabbedContainer tabs={tabs} onClose={onClose} closeIconTooltip="Close query inspector" />
+      <TabbedContainer tabs={tabs} onClose={onClose} closeIconTooltip="关闭查询检查器" />
     </ExploreDrawer>
   );
 }

@@ -34,7 +34,7 @@ export const TableSelector = ({ db, dataset, table, className, onChange }: Table
       onChange={onChange}
       isLoading={state.loading}
       menuShouldPortal={true}
-      placeholder={state.loading ? 'Loading tables' : 'Select table'}
+      placeholder={state.loading ? '加载数据表' : '选择数据表'}
     />
   );
 };

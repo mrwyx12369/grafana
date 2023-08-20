@@ -43,7 +43,7 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
     <div className={css({ width: '100%' })}>
       <InlineFieldRow className={styles.row}>
         <InlineField
-          tooltip="The Prometheus data source the trace is going to navigate to"
+          tooltip="Prometheus跟踪将导航到的普罗米修斯数据源"
           label="Data source"
           labelWidth={26}
         >
@@ -74,7 +74,7 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
               });
             }}
           >
-            Clear
+            清除
           </Button>
         ) : null}
       </InlineFieldRow>
@@ -112,7 +112,7 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
       </InlineFieldRow>
 
       <InlineFieldRow>
-        <InlineField tooltip="Tags that will be used in the metrics query" label="Tags" labelWidth={26}>
+        <InlineField tooltip="将在指标查询中使用的标记" label="标签" labelWidth={26}>
           <TagMappingInput
             values={options.jsonData.tracesToMetrics?.tags ?? []}
             onChange={(v) =>
@@ -127,9 +127,9 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
 
       {options.jsonData.tracesToMetrics?.queries?.map((query, i) => (
         <div key={i} className={styles.queryRow}>
-          <InlineField label="Link Label" labelWidth={26} tooltip="Descriptive label for the linked query">
+          <InlineField label="连接标签" labelWidth={26} tooltip="链接查询的描述性标签">
             <Input
-              label="Link Label"
+              label="连接标签"
               type="text"
               allowFullScreen
               value={query.name}
@@ -145,13 +145,13 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
             />
           </InlineField>
           <InlineField
-            label="Query"
+            label="查询"
             labelWidth={10}
-            tooltip="The Prometheus query that will run when navigating from a trace to metrics. Interpolate tags using the `$__tags` keyword"
+            tooltip="从跟踪导航到指标时将运行的 Prometheus 查询。使用`$__tags` 关键字"
             grow
           >
             <Input
-              label="Query"
+              label="查询"
               type="text"
               allowFullScreen
               value={query.query}
@@ -168,7 +168,7 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
 
           <Button
             variant="destructive"
-            title="Remove query"
+            title="移除查询"
             icon="times"
             type="button"
             onClick={() => {
@@ -185,7 +185,7 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
 
       <Button
         variant="secondary"
-        title="Add query"
+        title="新增查询"
         icon="plus"
         type="button"
         onClick={() => {
@@ -195,7 +195,7 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
           });
         }}
       >
-        Add query
+        新增查询
       </Button>
     </div>
   );
@@ -207,7 +207,7 @@ export const TraceToMetricsSection = ({ options, onOptionsChange }: DataSourcePl
       title="Trace to metrics"
       description={
         <ConfigDescriptionLink
-          description="Navigate from a trace span to the selected data source's metrics."
+          description="从跟踪范围导航到所选数据源的指标。"
           suffix={`${options.type}/#trace-to-metrics`}
           feature="trace to metrics"
         />

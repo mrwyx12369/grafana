@@ -20,36 +20,36 @@ const meta: Meta<typeof PageToolbar> = {
 export const Examples = () => {
   return (
     <VerticalGroup>
-      <StoryExample name="With non clickable title">
-        <PageToolbar pageIcon="bell" title="Dashboard">
+      <StoryExample name="标题不可点击">
+        <PageToolbar pageIcon="bell" title="仪表板">
           <ToolbarButton icon="panel-add" />
-          <ToolbarButton icon="sync">Sync</ToolbarButton>
+          <ToolbarButton icon="sync">同步</ToolbarButton>
         </PageToolbar>
       </StoryExample>
-      <StoryExample name="With clickable title and parent">
+      <StoryExample name="带有可点击的标题和父级">
         <PageToolbar
           pageIcon="apps"
-          title="A very long dashboard name"
-          parent="A long folder name"
+          title="很长的仪表板名称"
+          parent="长文件夹名称"
           titleHref=""
           parentHref=""
           leftItems={[
-            <IconButton name="share-alt" size="lg" key="share" tooltip="Share" />,
+            <IconButton name="share-alt" size="lg" key="share" tooltip="共享" />,
             <IconButton name="favorite" iconType="mono" size="lg" key="favorite" tooltip="Add to favourites" />,
           ]}
         >
           <ToolbarButton icon="panel-add" />
           <ToolbarButton icon="share-alt" />
-          <ToolbarButton icon="sync">Sync</ToolbarButton>
-          <ToolbarButton icon="cog">Settings </ToolbarButton>
+          <ToolbarButton icon="sync">同步</ToolbarButton>
+          <ToolbarButton icon="cog">设置 </ToolbarButton>
         </PageToolbar>
       </StoryExample>
       <StoryExample name="Go back version">
         <PageToolbar title="Service overview / Edit panel" onGoBack={() => action('Go back')}>
           <ToolbarButton icon="cog" />
           <ToolbarButton icon="save" />
-          <ToolbarButton>Discard</ToolbarButton>
-          <ToolbarButton>Apply</ToolbarButton>
+          <ToolbarButton>弃用</ToolbarButton>
+          <ToolbarButton>应用</ToolbarButton>
         </PageToolbar>
       </StoryExample>
     </VerticalGroup>

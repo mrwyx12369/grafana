@@ -32,14 +32,14 @@ export const VisualEditor = ({ query, db, queryRowFilter, onChange, onValidate, 
         </EditorRow>
         {queryRowFilter.filter && (
           <EditorRow>
-            <EditorField label="Filter by column value" optional>
+            <EditorField label="按列值筛选" optional>
               <SQLWhereRow fields={state.value || []} query={query} onQueryChange={onChange} db={db} />
             </EditorField>
           </EditorRow>
         )}
         {queryRowFilter.group && (
           <EditorRow>
-            <EditorField label="Group by column">
+            <EditorField label="按列分组">
               <SQLGroupByRow fields={state.value || []} query={query} onQueryChange={onChange} db={db} />
             </EditorField>
           </EditorRow>

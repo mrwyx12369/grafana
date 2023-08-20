@@ -33,7 +33,7 @@ export const PasswordField = React.forwardRef<HTMLInputElement, Props>(
             onClick={() => {
               setShowPassword(!showPassword);
             }}
-            tooltip={showPassword ? 'Hide password' : 'Show password'}
+            tooltip={showPassword ? '隐藏密码' : '显示密码'}
           />
         }
       />

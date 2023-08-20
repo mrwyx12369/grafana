@@ -37,27 +37,27 @@ export const ConfigureCorrelationSourceForm = () => {
   return (
     <>
       <FieldSet
-        label={`Configure the data source that will link to ${getDatasourceSrv().getInstanceSettings(
+        label={`配置将链接到的数据源 ${getDatasourceSrv().getInstanceSettings(
           correlation?.targetUID
-        )?.name} (Step 3 of 3)`}
+        )?.name} (第3步，共3步`}
       >
         <p>
-          Define what data source will display the correlation, and what data will replace previously defined variables.
+          定义哪些数据源将显示相关性，哪些数据将替换以前定义的变量。
         </p>
         <Controller
           control={control}
           name="sourceUID"
           rules={{
-            required: { value: true, message: 'This field is required.' },
+            required: { value: true, message: '此字段为必填字段。' },
             validate: {
               writable: (uid: string) =>
-                !getDatasourceSrv().getInstanceSettings(uid)?.readOnly || "Source can't be a read-only data source.",
+                !getDatasourceSrv().getInstanceSettings(uid)?.readOnly || "源不能是只读数据源。",
             },
           }}
           render={({ field: { onChange, value } }) => (
             <Field
-              label="Source"
-              description="Results from selected source data source have links displayed in the panel"
+              label="数据源"
+              description="来自所选源数据源的结果在面板中显示链接"
               htmlFor="source"
               invalid={!!formState.errors.sourceUID}
               error={formState.errors.sourceUID?.message}
@@ -75,34 +75,33 @@ export const ConfigureCorrelationSourceForm = () => {
         />
 
         <Field
-          label="Results field"
-          description="The link will be shown next to the value of this field"
+          label="结果字段"
+          description="该链接将显示在此字段的值旁边d"
           className={styles.label}
           invalid={!!formState.errors?.config?.field}
           error={formState.errors?.config?.field?.message}
         >
           <Input
             id={getInputId('field', correlation)}
-            {...register('config.field', { required: 'This field is required.' })}
+            {...register('config.field', { required: '此字段为必填字段。' })}
             readOnly={readOnly}
           />
         </Field>
         {variables.length > 0 && (
           <Card>
-            <Card.Heading>Variables used in the target query</Card.Heading>
+            <Card.Heading>目标查询中使用的变量</Card.Heading>
             <Card.Description>
-              You have used following variables in the target query:{' '}
+              您已在目标查询中使用以下变量:{' '}
               {variables.map((name, i) => (
                 <span className={styles.variable} key={i}>
                   {name}
                   {i < variables.length - 1 ? ', ' : ''}
                 </span>
               ))}
-              <br />A data point needs to provide values to all variables as fields or as transformations output to make
-              the correlation button appear in the visualization.
+              <br />数据点需要为所有变量提供值作为字段或转换输出进行关联按钮将显示在可视化效果中。
               <br />
-              Note: Not every variable needs to be explicitly defined below. A transformation such as{' '}
-              <span className={styles.variable}>logfmt</span> will create variables for every key/value pair.
+                注意：并非每个变量都需要在下面明确定义。诸如{' '}
+              <span className={styles.variable}>logfmt</span> 将为每个键值对创建变量。.
             </Card.Description>
           </Card>
         )}

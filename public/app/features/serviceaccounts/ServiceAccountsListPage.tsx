@@ -150,16 +150,16 @@ export const ServiceAccountsListPageUnconnected = ({
   const docsLink = (
     <a
       className="external-link"
-      href="https://grafana.com/docs/grafana/latest/administration/service-accounts/"
+      href="http://www.smxyi.com/datav"
       target="_blank"
       rel="noopener noreferrer"
     >
-      documentation.
+      文档.
     </a>
   );
   const subTitle = (
     <span>
-      Service accounts and their tokens can be used to authenticate against the Grafana API. Find out more in our{' '}
+    服务帐户及其令牌可用于针对系统API进行身份验证。在我们的{' '}
       {docsLink}
     </span>
   );
@@ -170,7 +170,7 @@ export const ServiceAccountsListPageUnconnected = ({
         <div className="page-action-bar">
           <InlineField grow>
             <FilterInput
-              placeholder="Search service account by name"
+              placeholder="按名称搜索服务帐户"
               value={query}
               onChange={onQueryChange}
               width={50}
@@ -178,9 +178,9 @@ export const ServiceAccountsListPageUnconnected = ({
           </InlineField>
           <RadioButtonGroup
             options={[
-              { label: 'All', value: ServiceAccountStateFilter.All },
-              { label: 'With expired tokens', value: ServiceAccountStateFilter.WithExpiredTokens },
-              { label: 'Disabled', value: ServiceAccountStateFilter.Disabled },
+              { label: '所有', value: ServiceAccountStateFilter.All },
+              { label: '带令牌过期', value: ServiceAccountStateFilter.WithExpiredTokens },
+              { label: '禁用', value: ServiceAccountStateFilter.Disabled },
             ]}
             onChange={onStateFilterChange}
             value={serviceAccountStateFilter}
@@ -188,7 +188,7 @@ export const ServiceAccountsListPageUnconnected = ({
           />
           {!noServiceAccountsCreated && contextSrv.hasPermission(AccessControlAction.ServiceAccountsCreate) && (
             <LinkButton href="org/serviceaccounts/create" variant="primary">
-              Add service account
+              添加服务帐户
             </LinkButton>
           )}
         </div>
@@ -196,12 +196,12 @@ export const ServiceAccountsListPageUnconnected = ({
         {!isLoading && noServiceAccountsCreated && (
           <>
             <EmptyListCTA
-              title="You haven't created any service accounts yet."
+              title="您尚未创建任何服务帐户。"
               buttonIcon="key-skeleton-alt"
               buttonLink="org/serviceaccounts/create"
-              buttonTitle="Add service account"
+              buttonTitle="添加服务帐户"
               buttonDisabled={!contextSrv.hasPermission(AccessControlAction.ServiceAccountsCreate)}
-              proTip="Remember, you can provide specific permissions for API access to other applications."
+              proTip="请记住，您可以为对其他应用程序的 API 访问提供特定权限。"
               proTipLink=""
               proTipLinkTitle=""
               proTipTarget="_blank"
@@ -216,10 +216,10 @@ export const ServiceAccountsListPageUnconnected = ({
                 <thead>
                   <tr>
                     <th></th>
-                    <th>Account</th>
+                    <th>账号</th>
                     <th>ID</th>
-                    <th>Roles</th>
-                    <th>Tokens</th>
+                    <th>角色</th>
+                    <th>令牌</th>
                     <th style={{ width: '34px' }} />
                   </tr>
                 </thead>
@@ -245,24 +245,24 @@ export const ServiceAccountsListPageUnconnected = ({
           <>
             <ConfirmModal
               isOpen={isRemoveModalOpen}
-              body={`Are you sure you want to delete '${currentServiceAccount.name}'${
+              body={`是否确实要删除'${currentServiceAccount.name}'${
                 !!currentServiceAccount.tokens
-                  ? ` and ${currentServiceAccount.tokens} accompanying ${pluralize(
-                      'token',
+                  ? ` 和相应的${currentServiceAccount.tokens} ${pluralize(
+                      '个令牌吗?',
                       currentServiceAccount.tokens
                     )}`
                   : ''
               }?`}
-              confirmText="Delete"
-              title="Delete service account"
+              confirmText="确定"
+              title="删除服务帐户"
               onConfirm={onServiceAccountRemove}
               onDismiss={onRemoveModalClose}
             />
             <ConfirmModal
               isOpen={isDisableModalOpen}
-              title="Disable service account"
-              body={`Are you sure you want to disable '${currentServiceAccount.name}'?`}
-              confirmText="Disable service account"
+              title="禁用服务帐户"
+              body={`是否确实要禁用 '${currentServiceAccount.name}'?`}
+              confirmText="禁用服务帐户"
               onConfirm={onDisable}
               onDismiss={onDisableModalClose}
             />
