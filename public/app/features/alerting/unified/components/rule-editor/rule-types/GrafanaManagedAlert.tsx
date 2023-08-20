@@ -10,9 +10,9 @@ const GrafanaManagedRuleType = ({ selected = false, disabled, onClick }: SharedP
       name="Grafana managed alert"
       description={
         <span>
-          Supports multiple data sources of any kind.
+          支持任何类型的多个数据源。
           <br />
-          Transform data with expressions.
+          使用表达式转换数据。
         </span>
       }
       image="public/img/logo.png"

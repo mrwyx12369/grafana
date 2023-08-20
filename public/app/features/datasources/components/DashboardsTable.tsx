@@ -36,7 +36,7 @@ export function DashboardsTable({ dashboards, onImport, onRemove }: Props) {
               <td style={{ textAlign: 'right' }}>
                 {!dashboard.imported ? (
                   <Button variant="secondary" size="sm" onClick={() => onImport(dashboard, false)}>
-                    Import
+                    导入
                   </Button>
                 ) : (
                   <Button variant="secondary" size="sm" onClick={() => onImport(dashboard, true)}>

@@ -14,19 +14,18 @@ export const UnsupportedDataSourcesAlert = ({ unsupportedDataSources }: { unsupp
   return (
     <Alert
       severity="warning"
-      title="Unsupported data sources"
+      title="不支持的数据源"
       data-testid={selectors.UnsupportedDataSourcesWarningAlert}
       bottomSpacing={0}
     >
       <p className={styles.unsupportedDataSourceDescription}>
-        There are data sources in this dashboard that are unsupported for public dashboards. Panels that use these data
-        sources may not function properly: {unsupportedDataSources}.
+      此仪表板中存在公共仪表板不支持的数据源。使用这些数据的面板源可能无法正常工作： {unsupportedDataSources}.
       </p>
       <a
         href="https://grafana.com/docs/grafana/latest/dashboards/dashboard-public/"
         className={cx('text-link', styles.unsupportedDataSourceDescription)}
       >
-        Read more about supported data sources
+        阅读有关支持的数据源的详细信息
       </a>
     </Alert>
   );

@@ -114,7 +114,7 @@ const TracesQueryEditor = ({
               setError={setError}
               variableOptionGroup={variableOptionGroup}
             />
-            <Field label="Operation ID">
+            <Field label="操作ID">
               <Input
                 id="azure-monitor-traces-operation-id-field"
                 value={operationId}
@@ -146,8 +146,8 @@ const TracesQueryEditor = ({
               onQueryChange={onChange}
               inputId="azure-monitor-traces"
               options={[
-                { label: 'Table', value: ResultFormat.Table },
-                { label: 'Trace', value: ResultFormat.Trace },
+                { label: '数据表', value: ResultFormat.Table },
+                { label: '跟踪', value: ResultFormat.Trace },
               ]}
               defaultValue={ResultFormat.Table}
               setFormatAs={setFormatAs}

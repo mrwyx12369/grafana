@@ -19,7 +19,7 @@ export function Preview({ rawSql }: PreviewProps) {
   const labelElement = (
     <div className={styles.labelWrapper}>
       <span className={styles.label}>Preview</span>
-      <IconButton tooltip="Copy to clipboard" onClick={() => copyToClipboard(rawSql)} name="copy" />
+      <IconButton tooltip="复制到剪贴板" onClick={() => copyToClipboard(rawSql)} name="copy" />
     </div>
   );
 

@@ -29,21 +29,21 @@ export function DashboardChangedModal({ onDismiss, event }: Props) {
   return (
     <Modal
       isOpen={true}
-      title="Dashboard changed"
+      title="仪表板已更改"
       icon="copy"
       onDismiss={onDismiss}
       onClickBackdrop={() => {}}
       className={styles.modal}
     >
       <div className={styles.description}>
-        The dashboad has been updated by another session. Do you want to continue editing or discard your local changes?
+      仪表板已由另一个会话更新。是要继续编辑还是放弃本地更改？
       </div>
       <Modal.ButtonRow>
         <Button onClick={onDismiss} variant="secondary" fill="outline">
-          Continue editing
+         继续编辑
         </Button>
         <Button onClick={onDiscardChanges} variant="destructive">
-          Discard local changes
+         放弃本地更改
         </Button>
       </Modal.ButtonRow>
     </Modal>

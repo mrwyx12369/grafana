@@ -29,7 +29,7 @@ export const SaveDashboardButton = ({ dashboard, onSaveSuccess, size }: SaveDash
             }}
             aria-label={selectors.pages.Dashboard.Settings.General.saveDashBoard}
           >
-            Save dashboard
+            保存仪表板
           </Button>
         );
       }}
@@ -58,7 +58,7 @@ export const SaveDashboardAsButton = ({ dashboard, onSaveSuccess, variant, size 
             variant={variant}
             aria-label={selectors.pages.Dashboard.Settings.General.saveAsDashBoard}
           >
-            Save as
+            另存为
           </Button>
         );
       }}

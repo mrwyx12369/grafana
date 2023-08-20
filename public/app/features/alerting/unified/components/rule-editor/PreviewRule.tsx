@@ -35,12 +35,12 @@ export function PreviewRule(): React.ReactElement | null {
       <HorizontalGroup>
         {allDataSourcesAvailable && (
           <Button disabled={!isPreviewAvailable} type="button" variant="primary" onClick={onPreview}>
-            Preview alerts
+            预览警报
           </Button>
         )}
         {!allDataSourcesAvailable && (
-          <Alert title="Preview is not available" severity="warning">
-            Cannot display the query preview. Some of the data sources used in the queries are not available.
+          <Alert title="预览不可用" severity="warning">
+            无法显示查询预览。查询中使用的某些数据源不可用。
           </Alert>
         )}
       </HorizontalGroup>
@@ -75,7 +75,7 @@ function createPreviewRequest(values: any[]): PreviewRuleRequest {
   const [type, dataSourceName, condition, queries, expression] = values;
   const dsSettings = getDataSourceSrv().getInstanceSettings(dataSourceName);
   if (!dsSettings) {
-    throw new Error(`Cannot find data source settings for ${dataSourceName}`);
+    throw new Error(`找不到${dataSourceName}的数据源设置`);
   }
 
   switch (type) {
@@ -96,7 +96,7 @@ function createPreviewRequest(values: any[]): PreviewRuleRequest {
       };
 
     default:
-      throw new Error(`Alert type ${type} not supported by preview.`);
+      throw new Error(`警报类型 ${type} 预览版不支持。`);
   }
 }
 

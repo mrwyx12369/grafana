@@ -91,10 +91,10 @@ const isNumeric = (value: string) => !isNaN(toNumber(value));
 
 export const getDiffOperationText = (operation: string): string => {
   if (operation === 'add') {
-    return 'added';
+    return '已增加';
   }
   if (operation === 'remove') {
-    return 'deleted';
+    return '已删除';
   }
-  return 'changed';
+  return '已变更';
 };

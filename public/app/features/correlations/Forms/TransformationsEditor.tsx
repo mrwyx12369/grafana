@@ -279,7 +279,7 @@ function getSupportedTransTypeDetails(transType: SupportedTransformationType): S
       return {
         label: 'Logfmt',
         value: SupportedTransformationType.Logfmt,
-        description: 'Parse provided field with logfmt to get variables',
+        description: '使用 logfmt 解析提供的字段以获取变量',
         showExpression: false,
         showMapValue: false,
       };
@@ -288,7 +288,7 @@ function getSupportedTransTypeDetails(transType: SupportedTransformationType): S
         label: 'Regular expression',
         value: SupportedTransformationType.Regex,
         description:
-          'Field will be parsed with regex. Use named capture groups to return multiple variables, or a single unnamed capture group to add variable to named map value.',
+          '字段将使用正则表达式解析。使用命名捕获组返回多个变量，或使用单个未命名捕获组将变量添加到命名映射值。',
         showExpression: true,
         showMapValue: true,
         requireExpression: true,

@@ -91,7 +91,7 @@ export default function TimelineHeaderRow(props: TimelineHeaderRowProps) {
   return (
     <TimelineRow className={styles.TimelineHeaderRow} data-testid="TimelineHeaderRow">
       <TimelineRow.Cell className={cx(ubFlex, ubPx2, styles.TimelineHeaderWrapper)} width={nameColumnWidth}>
-        <h4 className={styles.TimelineHeaderRowTitle}>Service &amp; Operation</h4>
+        <h4 className={styles.TimelineHeaderRowTitle}>服务与运营</h4>
         <TimelineCollapser
           onCollapseAll={onCollapseAll}
           onExpandAll={onExpandAll}

@@ -80,7 +80,7 @@ const SilencesTable = ({ silences, alertManagerAlerts, alertManagerSourceName }:
           <Authorize actions={[permissions.create]} fallback={contextSrv.isEditor}>
             <div className={styles.topButtonContainer}>
               <LinkButton href={makeAMLink('/alerting/silence/new', alertManagerSourceName)} icon="plus">
-                Add Silence
+                新建静默
               </LinkButton>
             </div>
           </Authorize>
@@ -93,7 +93,7 @@ const SilencesTable = ({ silences, alertManagerAlerts, alertManagerSourceName }:
             <CollapsableSection label={`Expired silences (${itemsExpired.length})`} isOpen={showExpiredFromUrl}>
               <div className={styles.callout}>
                 <Icon className={styles.calloutIcon} name="info-circle" />
-                <span>Expired silences are automatically deleted after 5 days.</span>
+                <span>过期的静默将在 5 天后自动删除。</span>
               </div>
               <SilenceList
                 items={itemsExpired}

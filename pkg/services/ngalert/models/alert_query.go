@@ -279,7 +279,7 @@ func (aq *AlertQuery) PreSave() error {
 	}
 
 	if ok := isExpression || aq.RelativeTimeRange.isValid(); !ok {
-		return fmt.Errorf("invalid relative time range: %+v", aq.RelativeTimeRange)
+		return fmt.Errorf("无效的相对时间范围： %+v", aq.RelativeTimeRange)
 	}
 	return nil
 }

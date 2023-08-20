@@ -22,7 +22,7 @@ export function TemplateDataDocs() {
     <TemplateDataTable
       caption={
         <h4 className={styles.header}>
-          Alert template data <span>Available only when in the context of an Alert (e.g. inside .Alerts loop)</span>
+          警报模板数据 <span>仅在警报上下文中可用（例如，在 .警报循环）</span>
         </h4>
       }
       dataItems={AlertTemplateData}
@@ -32,7 +32,7 @@ export function TemplateDataDocs() {
   return (
     <Stack gap={2} flexGrow={1}>
       <TemplateDataTable
-        caption={<h4 className={styles.header}>Template Data</h4>}
+        caption={<h4 className={styles.header}>模板数据</h4>}
         dataItems={GlobalTemplateData}
         typeRenderer={(type) =>
           type === '[]Alert' ? (

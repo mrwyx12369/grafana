@@ -61,8 +61,8 @@ export function VariableEditorList({
               >
                 <thead>
                   <tr>
-                    <th>Variable</th>
-                    <th>Definition</th>
+                    <th>变量</th>
+                    <th>定义</th>
                     <th colSpan={5} />
                   </tr>
                 </thead>
@@ -96,7 +96,7 @@ export function VariableEditorList({
                 onClick={onAdd}
                 icon="plus"
               >
-                New variable
+                新增变量
               </Button>
             </Stack>
           </Stack>
@@ -110,22 +110,20 @@ function EmptyVariablesList({ onAdd }: { onAdd: () => void }): ReactElement {
   return (
     <div>
       <EmptyListCTA
-        title="There are no variables yet"
+        title="还没有变量"
         buttonIcon="calculator-alt"
-        buttonTitle="Add variable"
+        buttonTitle="添加变量"
         infoBox={{
           __html: ` <p>
-                    Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server
-                    or sensor names in your metric queries you can use variables in their place. Variables are shown as
-                    list boxes at the top of the dashboard. These drop-down lists make it easy to change the data
-                    being displayed in your dashboard. Check out the
-                    <a class="external-link" href="https://grafana.com/docs/grafana/latest/variables/" target="_blank">
-                      Templates and variables documentation
+                  变量可实现更具交互性和动态性的仪表板。而不是像服务器这样硬编码的东西或指标查询中的传感器名称，可以在其位置使用变量。变量显示为
+                  仪表板顶部的列表框。这些下拉列表使更改数据变得容易显示在仪表板中。查看
+                    <a class="external-link" href="https://www.smxyi,com/docs/datav/latest/variables/" target="_blank">
+                      模板和变量文档
                     </a>
-                    for more information.
+                    获取详细信息.
                   </p>`,
         }}
-        infoBoxTitle="What do variables do?"
+        infoBoxTitle="变量有什么作用？"
         onClick={(event) => {
           event.preventDefault();
           onAdd();

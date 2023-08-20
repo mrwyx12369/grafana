@@ -29,14 +29,14 @@ function NotificationPreviewByAlertManager({
 
   if (error) {
     return (
-      <Alert title="Cannot load Alertmanager configuration" severity="error">
+      <Alert title="无法加载警报管理器配置" severity="error">
         {error.message}
       </Alert>
     );
   }
 
   if (loading) {
-    return <LoadingPlaceholder text="Loading routing preview..." />;
+    return <LoadingPlaceholder text="正在加载路由预览..." />;
   }
 
   const matchingPoliciesFound = matchingMap.size > 0;

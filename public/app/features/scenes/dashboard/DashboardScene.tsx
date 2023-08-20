@@ -95,7 +95,7 @@ export class DashboardScene extends SceneObjectBase<DashboardSceneState> {
 
     if (this.state.viewPanelKey) {
       pageNav = {
-        text: 'View panel',
+        text: '查看面板',
         parentItem: pageNav,
       };
     }

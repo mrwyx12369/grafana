@@ -55,7 +55,7 @@ interface TransformationsEditorProps extends Themeable {
 
 type viewAllType = 'viewAll';
 const viewAllValue = 'viewAll';
-const viewAllLabel = 'View all';
+const viewAllLabel = '查看所有';
 
 type FilterCategory = TransformerCategory | viewAllType;
 
@@ -327,7 +327,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
             onClick={() => {
               this.setState({ search: '' });
             }}
-            tooltip="Clear search"
+            tooltip="清除搜索"
           />
         </>
       );
@@ -345,7 +345,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
           onClick={() => {
             this.setState({ showPicker: false });
           }}
-          tooltip="Close picker"
+          tooltip="关闭选取器"
         />
       );
     }
@@ -362,18 +362,16 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
 
                 return (
                   <Alert
-                    title="Transformations"
+                    title="转换器"
                     severity="info"
                     onRemove={() => {
                       onDismiss(true);
                     }}
                   >
                     <p>
-                      Transformations allow you to join, calculate, re-order, hide, and rename your query results before
-                      they are visualized. <br />
-                      Many transforms are not suitable if you&apos;re using the Graph visualization, as it currently
-                      only supports time series data. <br />
-                      It can help to switch to the Table visualization to understand what a transformation is doing.{' '}
+                      转换允许您在之前联接、计算、重新排序、隐藏和重命名查询结果它们是可视化的。 <br />
+                      如果您使用的是图形可视化效果，则许多转换不适合，因为它目前仅支持时序数据。 <br />
+                      切换到表可视化效果有助于了解转换正在执行的操作。{' '}
                     </p>
                     <a
                       href={getDocsLink(DocsId.Transformations)}
@@ -381,7 +379,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Read more
+                    阅读更多
                     </a>
                   </Alert>
                 );
@@ -402,7 +400,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
                       this.setState({ showPicker: false });
                     }}
                   >
-                    Go back to&nbsp;<i>Transformations in use</i>
+                    返回至&nbsp;<i>当前转换</i>
                   </Button>
                 )}
                 <div className={styles.pickerInformationLine}>
@@ -412,10 +410,10 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <span className={styles.pickerInformationLineHighlight}>Transformations</span>{' '}
+                    <span className={styles.pickerInformationLineHighlight}>转换</span>{' '}
                     <Icon name="external-link-alt" />
                   </a>
-                  &nbsp;allow you to manipulate your data before a visualization is applied.
+                  &nbsp;允许您在应用可视化之前操作数据。
                 </div>
               </>
             )}
@@ -425,7 +423,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
                   data-testid={selectors.components.Transforms.searchInput}
                   value={search ?? ''}
                   autoFocus={!noTransforms}
-                  placeholder="Search for transformation"
+                  placeholder="搜索转换"
                   onChange={this.onSearchChange}
                   onKeyDown={this.onSearchKeyDown}
                   suffix={suffix}
@@ -452,13 +450,13 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
                     className={styles.searchInput}
                     value={search ?? ''}
                     autoFocus={!noTransforms}
-                    placeholder="Search for transformation"
+                    placeholder="搜索转换"
                     onChange={this.onSearchChange}
                     onKeyDown={this.onSearchKeyDown}
                     suffix={suffix}
                   />
                   <div className={styles.showImages}>
-                    <span className={styles.illustationSwitchLabel}>Show images</span>{' '}
+                    <span className={styles.illustationSwitchLabel}>显示图片</span>{' '}
                     <Switch
                       value={this.state.showIllustrations}
                       onChange={() => this.setState({ showIllustrations: !this.state.showIllustrations })}
@@ -502,7 +500,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
             }}
             data-testid={selectors.components.Transforms.addTransformationButton}
           >
-            Add{config.featureToggles.transformationsRedesign ? ' another ' : ' '}transformation
+            新增{config.featureToggles.transformationsRedesign ? ' 另外 ' : ' '}转换器
           </Button>
         )}
       </>
@@ -519,7 +517,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
     const hasTransforms = transformations.length > 0;
 
     if (!hasTransforms && alert) {
-      return <PanelNotSupported message="Transformations can't be used on a panel with existing alerts" />;
+      return <PanelNotSupported message="不能在具有现有警报的面板上使用转换" />;
     }
 
     return (
@@ -529,12 +527,12 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
             {hasTransforms && alert ? (
               <Alert
                 severity={AppNotificationSeverity.Error}
-                title="Transformations can't be used on a panel with alerts"
+                title="不能在带有警报的面板上使用转换"
               />
             ) : null}
             {hasTransforms && config.featureToggles.transformationsRedesign && !this.state.showPicker && (
               <div className={styles.listInformationLineWrapper}>
-                <span className={styles.listInformationLineText}>Transformations in use</span>{' '}
+                <span className={styles.listInformationLineText}>当前使用的转换器</span>{' '}
                 <Button
                   size="sm"
                   variant="secondary"
@@ -542,13 +540,13 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
                     this.setState({ showRemoveAllModal: true });
                   }}
                 >
-                  Delete all transformations
+                  删除所有转换
                 </Button>
                 <ConfirmModal
                   isOpen={Boolean(this.state.showRemoveAllModal)}
-                  title="Delete all transformations?"
-                  body="By deleting all transformations, you will go back to the main selection screen."
-                  confirmText="Delete all"
+                  title="删除所有转换?"
+                  body="通过删除所有转换，您将返回到主选择屏幕。"
+                  confirmText="确定"
                   onConfirm={() => this.onTransformationRemoveAll()}
                   onDismiss={() => this.setState({ showRemoveAllModal: false })}
                 />

@@ -16,8 +16,8 @@ export const GrafanaCommonChannelSettings = ({
       <Field>
         <Checkbox
           {...register(`${pathPrefix}disableResolveMessage`)}
-          label="Disable resolved message"
-          description="Disable the resolve message [OK] that is sent when alerting state returns to false"
+          label="禁用已解决的消息"
+          description="禁用警报状态返回 false 时发送的解析消息 [OK]"
           disabled={readOnly}
         />
       </Field>

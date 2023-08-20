@@ -42,7 +42,7 @@ const AnnotationHeaderField = ({
                       {annotationLabels[annotation] && (
                         <span className={styles.annotationTitle} data-testid={`annotation-key-${index}`}>
                           {annotationLabels[annotation]}
-                          {' (optional)'}
+                          {' (可选)'}
                         </span>
                       )}
                       {!annotationLabels[annotation] && <CustomAnnotationHeaderField field={field} />}
@@ -51,7 +51,7 @@ const AnnotationHeaderField = ({
               }
             }}
             control={control}
-            rules={{ required: { value: !!annotations[index]?.value, message: 'Required.' } }}
+            rules={{ required: { value: !!annotations[index]?.value, message: '必填项.' } }}
           />
         }
       </label>

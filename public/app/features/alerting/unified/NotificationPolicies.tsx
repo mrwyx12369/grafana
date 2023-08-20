@@ -155,7 +155,7 @@ const AmRoutes = () => {
         },
         oldConfig: result,
         alertManagerSourceName: selectedAlertmanager!,
-        successMessage: 'Updated notification policies',
+        successMessage: '更新的通知策略',
       })
     )
       .unwrap()
@@ -205,7 +205,7 @@ const AmRoutes = () => {
     <>
       <TabsBar>
         <Tab
-          label={'Notification Policies'}
+          label={'通知策略'}
           active={policyTreeTabActive}
           onChangeTab={() => {
             setActiveTab(ActiveTab.NotificationPolicies);
@@ -213,7 +213,7 @@ const AmRoutes = () => {
           }}
         />
         <Tab
-          label={'Mute Timings'}
+          label={'静音计时'}
           active={muteTimingsTabActive}
           counter={numberOfMuteTimings}
           onChangeTab={() => {
@@ -223,10 +223,10 @@ const AmRoutes = () => {
         />
       </TabsBar>
       <TabContent className={styles.tabContent}>
-        {isFetching && <LoadingPlaceholder text="Loading Alertmanager config..." />}
+        {isFetching && <LoadingPlaceholder text="正在加载警报管理器配置..." />}
         {haveError && (
-          <Alert severity="error" title="Error loading Alertmanager config">
-            {resultError.message || 'Unknown error.'}
+          <Alert severity="error" title="加载警报管理器配置时出错">
+            {resultError.message || '未知错误。'}
           </Alert>
         )}
         {haveData && (

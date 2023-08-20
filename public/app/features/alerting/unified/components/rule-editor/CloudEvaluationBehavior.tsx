@@ -30,15 +30,15 @@ export const CloudEvaluationBehavior = () => {
   }
 
   return (
-    <RuleEditorSection stepNo={3} title="Set alert evaluation behavior">
+    <RuleEditorSection stepNo={3} title="设置警报评估行为">
       <Field
-        label="Pending period"
-        description="Period in which an alert rule can be in breach of the condition until the alert rule fires."
+        label="待定时间"
+        description="警报规则可能违反条件的时间段，直到警报规则触发。"
       >
         <div className={styles.flexRow}>
           <Field invalid={!!errors.forTime?.message} error={errors.forTime?.message} className={styles.inlineField}>
             <Input
-              {...register('forTime', { pattern: { value: /^\d+$/, message: 'Must be a positive integer.' } })}
+              {...register('forTime', { pattern: { value: /^\d+$/, message: '必须是正整数。' } })}
               width={8}
             />
           </Field>

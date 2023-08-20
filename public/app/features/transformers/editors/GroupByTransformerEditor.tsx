@@ -64,8 +64,8 @@ export const GroupByTransformerEditor = ({
 };
 
 const options = [
-  { label: 'Group by', value: GroupByOperationID.groupBy },
-  { label: 'Calculate', value: GroupByOperationID.aggregate },
+  { label: '分组字段', value: GroupByOperationID.groupBy },
+  { label: '计算', value: GroupByOperationID.aggregate },
 ];
 
 export const GroupByFieldConfiguration = ({ fieldName, config, onConfigChange }: FieldProps) => {
@@ -92,7 +92,7 @@ export const GroupByFieldConfiguration = ({ fieldName, config, onConfigChange }:
         {config?.operation === GroupByOperationID.aggregate && (
           <StatsPicker
             className={styles.aggregations}
-            placeholder="Select Stats"
+            placeholder="选择统计数字"
             allowMultiple
             stats={config.aggregations}
             onChange={(stats) => {

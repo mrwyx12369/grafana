@@ -32,12 +32,12 @@ export const AlertManagerPicker = ({ disabled = false }: Props) => {
   return (
     <InlineField
       className={styles.field}
-      label={disabled ? 'Alertmanager' : 'Choose Alertmanager'}
+      label={disabled ? '警报管理器' : '选择警报管理器'}
       disabled={disabled || options.length === 1}
       data-testid="alertmanager-picker"
     >
       <Select
-        aria-label={disabled ? 'Alertmanager' : 'Choose Alertmanager'}
+        aria-label={disabled ? '警报管理器' : '选择警报管理器'}
         width={29}
         className="ds-picker select-container"
         backspaceRemovesValue={false}

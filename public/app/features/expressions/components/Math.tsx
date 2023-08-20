@@ -15,8 +15,8 @@ interface Props {
 }
 
 const mathPlaceholder =
-  'Math operations on one or more queries. You reference the query by ${refId} ie. $A, $B, $C etc\n' +
-  'The sum of two scalar values: $A + $B > 10';
+  '对一个或多个查询的数学运算。你通过${refId}引用查询，即。$A、$B、$C等n' +
+  '两个标量值的总和：$A + $B > 10';
 
 export const Math = ({ labelWidth, onChange, query, onRunQuery }: Props) => {
   const onExpressionChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -41,71 +41,71 @@ export const Math = ({ labelWidth, onChange, query, onRunQuery }: Props) => {
               content={
                 <div className={styles.documentationContainer}>
                   <div>
-                    Run math operations on one or more queries. You reference the query by {'${refId}'} ie. $A, $B, $C
-                    etc.
+                    对一个或多个查询运行数学运算。你引用查询 {'${refId}'} 即。$A、$B$C {'${refId}'} ie. $A, $B, $C
+                    等.
                     <br />
-                    Example: <code>$A + $B</code>
+                    例如: <code>$A + $B</code>
                   </div>
-                  <header className={styles.documentationHeader}>Available Math functions</header>
+                  <header className={styles.documentationHeader}>可用的数学函数</header>
                   <div className={styles.documentationFunctions}>
                     <DocumentedFunction
                       name="abs"
-                      description="returns the absolute value of its argument which can be a number or a series"
+                      description="返回其参数的绝对值，可以是数字或序列"
                     />
                     <DocumentedFunction
                       name="is_inf"
-                      description="returns 1 for Inf values (negative or positive) and 0 for other values. It's able to operate on series or scalar values."
+                      description="对于Inf值（负值或正值），返回 1，为其他值返回 0。它能够对系列或标量值进行操作。"
                     />
                     <DocumentedFunction
                       name="is_nan"
-                      description="returns 1 for NaN values and 0 for other values. It's able to operate on series or scalar values."
+                      description="对于 NaN 值返回 1，对于其他值返回 0。它能够对系列或标量值进行操作。"
                     />
                     <DocumentedFunction
                       name="is_null"
-                      description="returns 1 for null values and 0 for other values. It's able to operate on series or scalar values."
+                      description="对于 null 值返回 1，为其他值返回 0。它能够对系列或标量值进行操作。"
                     />
                     <DocumentedFunction
                       name="is_number"
-                      description="returns 1 for all real number values and 0 for non-number. It's able to operate on series or scalar values."
+                      description="对于所有实数值返回 1，对于非数字返回 0。它能够对系列或标量值进行操作。"
                     />
                     <DocumentedFunction
                       name="log"
-                      description="returns the natural logarithm of its argument, which can be a number or a series"
+                      description="返回其参数的自然对数，可以是数字或序列"
                     />
                     <DocumentedFunction
                       name="inf, infn, nan, and null"
-                      description="The inf for infinity positive, infn for infinity negative, nan, and null functions all return a single scalar value that matches its name."
+                      description="inf 表示无穷大正数，infn 表示无穷大负数，nan 和 null 函数都返回与其名称匹配的单个标量值。"
                     />
                     <DocumentedFunction
                       name="round"
-                      description="returns a rounded integer value. It's able to operate on series or escalar values."
+                      description="返回舍入整数值。它能够对系列或标量值进行操作。"
                     />
                     <DocumentedFunction
                       name="ceil"
-                      description="rounds the number up to the nearest integer value. It's able to operate on series or escalar values."
+                      description="将数字向上舍入为最接近的整数值。它能够对系列或标量值进行操作。"
                     />
                     <DocumentedFunction
                       name="floor"
-                      description="rounds the number down to the nearest integer value. It's able to operate on series or escalar values."
+                      description="将数字向下舍入到最接近的整数值。它能够对系列或标量值进行操作。"
                     />
                   </div>
                 </div>
               }
               title={
                 <Stack gap={1} direction="row">
-                  <Icon name="book-open" /> Math operator
+                  <Icon name="book-open" /> 数学运算符
                 </Stack>
               }
               footer={
                 <div>
-                  See our additional documentation on{' '}
+                  请参阅有关{' '}的其他文档
                   <a
                     className={styles.documentationLink}
                     target="_blank"
-                    href="https://grafana.com/docs/grafana/latest/panels/query-a-data-source/use-expressions-to-manipulate-data/about-expressions/#math"
+                    href="https://www.smxyi.com/docs/datav/latest/panels/query-a-data-source/use-expressions-to-manipulate-data/about-expressions/#math"
                     rel="noreferrer"
                   >
-                    <Icon size="xs" name="external-link-alt" /> Math expressions
+                    <Icon size="xs" name="external-link-alt" /> 数学表达式
                   </a>
                   .
                 </div>
@@ -114,7 +114,7 @@ export const Math = ({ labelWidth, onChange, query, onRunQuery }: Props) => {
               placement="bottom-start"
             >
               <div className={styles.info}>
-                Expression <Icon name="info-circle" />
+                表达式 <Icon name="info-circle" />
               </div>
             </Toggletip>
           </InlineLabel>

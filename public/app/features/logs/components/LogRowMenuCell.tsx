@@ -67,7 +67,7 @@ export const LogRowMenuCell = React.memo(
             size="md"
             name="gf-pin"
             onClick={() => onUnpinLine && onUnpinLine(row)}
-            tooltip="Unpin line"
+            tooltip="取消固定行"
             tooltipPlacement="top"
             aria-label="Unpin line"
             tabIndex={0}
@@ -80,7 +80,7 @@ export const LogRowMenuCell = React.memo(
                 size="md"
                 name="gf-show-context"
                 onClick={onShowContextClick}
-                tooltip="Show context"
+                tooltip="显示上下文"
                 tooltipPlacement="top"
                 aria-label="Show context"
                 tabIndex={0}
@@ -93,7 +93,7 @@ export const LogRowMenuCell = React.memo(
               fill="text"
               size="md"
               getText={getLogText}
-              tooltip="Copy to clipboard"
+              tooltip="复制到剪贴板"
               tooltipPlacement="top"
               tabIndex={0}
             />
@@ -103,7 +103,7 @@ export const LogRowMenuCell = React.memo(
                 size="md"
                 name="gf-pin"
                 onClick={() => onUnpinLine && onUnpinLine(row)}
-                tooltip="Unpin line"
+                tooltip="取消固定行"
                 tooltipPlacement="top"
                 aria-label="Unpin line"
                 tabIndex={0}

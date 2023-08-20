@@ -211,7 +211,7 @@ function LastNotify({ lastNotifyDate }: { lastNotifyDate: string }) {
   } else {
     return (
       <Stack alignItems="center">
-        <div>{`${dateTime(lastNotifyDate).locale('en').fromNow(true)} ago`}</div>
+        <div>{`${dateTime(lastNotifyDate).locale('zh').fromNow(true)} 之前`}</div>
         <Icon name="clock-nine" />
         <div>{`${dateTimeFormat(lastNotifyDate, { format: 'YYYY-MM-DD HH:mm:ss' })}`}</div>
       </Stack>
@@ -227,7 +227,7 @@ function NotifiersTable({ notifiersState }: NotifiersTableProps) {
     return [
       {
         id: 'health',
-        label: 'Health',
+        label: '健康状态',
         renderCell: ({ data: { lastError, lastNotify } }) => {
           return (
             <NotifierHealth
@@ -241,19 +241,19 @@ function NotifiersTable({ notifiersState }: NotifiersTableProps) {
       },
       {
         id: 'name',
-        label: 'Name',
+        label: '名称',
         renderCell: ({ data: { type }, id }) => <>{`${type}[${id}]`}</>,
         size: 1,
       },
       {
         id: 'lastNotify',
-        label: 'Last delivery attempt',
+        label: '上次传递尝试',
         renderCell: ({ data: { lastNotify } }) => <LastNotify lastNotifyDate={lastNotify} />,
         size: 3,
       },
       {
         id: 'lastNotifyDuration',
-        label: 'Last duration',
+        label: '上次持续时间',
         renderCell: ({ data: { lastNotify, lastNotifyDuration } }) => (
           <>{isLastNotifyNullDate(lastNotify) && durationIsNull(lastNotifyDuration) ? '-' : lastNotifyDuration}</>
         ),
@@ -261,7 +261,7 @@ function NotifiersTable({ notifiersState }: NotifiersTableProps) {
       },
       {
         id: 'sendResolved',
-        label: 'Send resolved',
+        label: '发送已解决',
         renderCell: ({ data: { sendResolved } }) => <>{String(Boolean(sendResolved))}</>,
         size: 1,
       },
@@ -359,10 +359,10 @@ export const ReceiversTable = ({ config, alertManagerName }: Props) => {
 
   return (
     <ReceiversSection
-      title="Contact points"
-      description="Define where notifications are sent, for example, email or Slack."
+      title="联系点"
+      description="定义通知的发送位置，例如电子邮件或QQ、微信。"
       showButton={!isVanillaAM && contextSrv.hasPermission(permissions.create)}
-      addButtonLabel={'Add contact point'}
+      addButtonLabel={'添加联系点'}
       addButtonTo={makeAMLink('/alerting/notifications/receivers/new', alertManagerName)}
       exportLink={
         showExport
@@ -389,16 +389,15 @@ export const ReceiversTable = ({ config, alertManagerName }: Props) => {
       {!!showCannotDeleteReceiverModal && (
         <Modal
           isOpen={true}
-          title="Cannot delete contact point"
+          title="无法删除联系点"
           onDismiss={() => setShowCannotDeleteReceiverModal(false)}
         >
           <p>
-            Contact point cannot be deleted because it is used in more policies. Please update or delete these policies
-            first.
+            无法删除联系点，因为它在更多策略中使用。请先更新或删除这些政策.
           </p>
           <Modal.ButtonRow>
             <Button variant="secondary" onClick={() => setShowCannotDeleteReceiverModal(false)} fill="outline">
-              Close
+              选择
             </Button>
           </Modal.ButtonRow>
         </Modal>
@@ -406,9 +405,9 @@ export const ReceiversTable = ({ config, alertManagerName }: Props) => {
       {!!receiverToDelete && (
         <ConfirmModal
           isOpen={true}
-          title="Delete contact point"
-          body={`Are you sure you want to delete contact point "${receiverToDelete}"?`}
-          confirmText="Yes, delete"
+          title="删除联系点"
+          body={`是否确实要删除联系点 "${receiverToDelete}"?`}
+          confirmText="确定"
           onConfirm={deleteReceiver}
           onDismiss={() => setReceiverToDelete(undefined)}
         />
@@ -458,7 +457,7 @@ function useGetColumns(
   const baseColumns: RowTableColumnProps[] = [
     {
       id: 'name',
-      label: 'Contact point name',
+      label: '联系点名称',
       renderCell: ({ data: { name, provisioned } }) => (
         <>
           <div>{name}</div>
@@ -470,7 +469,7 @@ function useGetColumns(
     },
     {
       id: 'type',
-      label: 'Type',
+      label: '联系点类型',
       renderCell: ({ data: { types, grafanaAppReceiverType } }) => (
         <>{grafanaAppReceiverType ? <GrafanaAppBadge grafanaAppType={grafanaAppReceiverType} /> : types.join(', ')}</>
       ),
@@ -479,7 +478,7 @@ function useGetColumns(
   ];
   const healthColumn: RowTableColumnProps = {
     id: 'health',
-    label: 'Health',
+    label: '健康状态',
     renderCell: ({ data: { name } }) => {
       if (configHealth.contactPoints[name]?.matchingRoutes === 0) {
         return <UnusedContactPointBadge />;
@@ -503,7 +502,7 @@ function useGetColumns(
     ...(enableHealthColumn ? [healthColumn] : []),
     {
       id: 'actions',
-      label: 'Actions',
+      label: '操作',
       renderCell: ({ data: { provisioned, name } }) => (
         <Authorize
           actions={[
@@ -540,10 +539,10 @@ function useGetColumns(
 function UnusedContactPointBadge() {
   return (
     <Badge
-      text="Unused"
+      text="未使用"
       color="orange"
       icon="exclamation-triangle"
-      tooltip="This contact point is not used in any notification policy and it will not receive any alerts"
+      tooltip="此联系点未在任何通知策略中使用，也不会收到任何警报"
     />
   );
 }

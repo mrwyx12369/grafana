@@ -80,7 +80,7 @@ export function RuleViewerVisualization({
                 target="_blank"
                 href={createExploreLink(dsSettings, model)}
               >
-                View in Explore
+                在“探索”中查看
               </LinkButton>
             )}
           </Authorize>

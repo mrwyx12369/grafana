@@ -111,7 +111,7 @@ const RuleList = withErrorBoundary(
                     variant="secondary"
                     onClick={() => setExpandAll(!expandAll)}
                   >
-                    {expandAll ? 'Collapse all' : 'Expand all'}
+                    {expandAll ? '全部关闭' : '全部打开'}
                   </Button>
                 )}
                 <RuleStats namespaces={filteredNamespaces} />

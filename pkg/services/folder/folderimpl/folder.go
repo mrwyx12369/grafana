@@ -191,7 +191,7 @@ func (s *Service) GetChildren(ctx context.Context, cmd *folder.GetChildrenQuery)
 
 	dashFolders, err := s.dashboardFolderStore.GetFolders(ctx, cmd.OrgID, childrenUIDs)
 	if err != nil {
-		return nil, folder.ErrInternal.Errorf("failed to fetch subfolders from dashboard store: %w", err)
+		return nil, folder.ErrInternal.Errorf("无法从仪表板存储中获取子文件夹： %w", err)
 	}
 
 	filtered := make([]*folder.Folder, 0, len(children))
@@ -199,7 +199,7 @@ func (s *Service) GetChildren(ctx context.Context, cmd *folder.GetChildrenQuery)
 		// fetch folder from dashboard store
 		dashFolder, ok := dashFolders[f.UID]
 		if !ok {
-			s.log.Error("failed to fetch folder by UID from dashboard store", "uid", f.UID)
+			s.log.Error("无法通过 UID 从仪表板存储中获取文件夹", "uid", f.UID)
 			continue
 		}
 

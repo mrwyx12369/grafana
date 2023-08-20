@@ -62,7 +62,7 @@ export function parseQueryToFilter(
 
 function getFilterFromSyntaxNode(query: string, filterExpressionNode: SyntaxNode): { type?: number; value?: string } {
   if (filterExpressionNode.type.id !== terms.FilterExpression) {
-    throw new Error('Invalid node provided. Only FilterExpression nodes are supported');
+    throw new Error('提供的节点无效。仅支持筛选器表达式节点');
   }
 
   const filterTokenNode = filterExpressionNode.firstChild;

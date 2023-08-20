@@ -87,13 +87,13 @@ const getContentText = (ruleFormType: RuleFormType, isEditing: boolean, dataSour
   if (isEditing) {
     if (ruleFormType === RuleFormType.grafana) {
       return {
-        contentText: `Grafana-managed alert rules allow you to create alerts that can act on data from any of our supported data sources, including having multiple data sources in the same rule. You can also add expressions to transform your data and set alert conditions. Using images in alert notifications is also supported. `,
-        title: `This alert rule is managed by Grafana.`,
+        contentText: `通过系统管理的警报规则，可以创建可对来自任何受支持数据源的数据执行操作的警报，包括在同一规则中具有多个数据源。您还可以添加表达式来转换数据并设置警报条件。还支持在警报通知中使用图像。`,
+        title: `此警报规则由系统管理。`,
       };
     } else {
       return {
-        contentText: `Data source-managed alert rules can be used for Grafana Mimir or Grafana Loki data sources which have been configured to support rule creation. The use of expressions or multiple queries is not supported.`,
-        title: `This alert rule is managed by the data source ${dataSourceName}.`,
+        contentText: `数据源管理的警报规则可用于已配置为支持规则创建的 Grafana Mimir 或 Grafana Loki 数据源。不支持使用表达式或多个查询。`,
+        title: `此警报规则由数据源管理 ${dataSourceName}.`,
       };
     }
   }
@@ -101,21 +101,21 @@ const getContentText = (ruleFormType: RuleFormType, isEditing: boolean, dataSour
     if (ruleFormType === RuleFormType.cloudAlerting) {
       return {
         contentText:
-          'Data source-managed alert rules can be used for Grafana Mimir or Grafana Loki data sources which have been configured to support rule creation. The use of expressions or multiple queries is not supported.',
-        title: `This alert rule is managed by the data source ${dataSourceName}. If you want to use expressions or have multiple queries, switch to a Grafana-managed alert rule.`,
+          '数据源管理的警报规则可用于已配置为支持规则创建的 Grafana Mimir 或 Grafana Loki 数据源。不支持使用表达式或多个查询。',
+        title: `此警报规则由数据源${dataSourceName}管理. 如果要使用表达式或有多个查询，请切换到系统管理的警报规则。`,
       };
     } else {
       return {
         contentText:
-          'Grafana-managed alert rules allow you to create alerts that can act on data from any of our supported data sources, including having multiple data sources in the same rule. You can also add expressions to transform your data and set alert conditions. Using images in alert notifications is also supported.',
-        title: `This alert rule will be managed by Grafana. The selected data source is configured to support rule creation.`,
+          '通过系统管理的警报规则，可以创建可对来自任何受支持数据源的数据执行操作的警报，包括在同一规则中具有多个数据源。您还可以添加表达式来转换数据并设置警报条件。还支持在警报通知中使用图像。',
+        title: `此警报规则将由系统管理。所选数据源配置为支持规则创建。`,
       };
     }
   } else {
     // it can be only grafana rule
     return {
-      contentText: `Grafana-managed alert rules allow you to create alerts that can act on data from any of our supported data sources, including having multiple data sources in the same rule. You can also add expressions to transform your data and set alert conditions. Using images in alert notifications is also supported.`,
-      title: `Based on the data sources selected, this alert rule is managed by Grafana.`,
+      contentText: `通过系统管理的警报规则，可以创建可对来自任何受支持数据源的数据执行操作的警报，包括在同一规则中具有多个数据源。您还可以添加表达式来转换数据并设置警报条件。还支持在警报通知中使用图像。`,
+      title: `根据所选数据源，此警报规则由系统管理。`,
     };
   }
 };
@@ -134,8 +134,8 @@ export function SmartAlertTypeDetector({
   const canSwitch = getCanSwitch({ queries, ruleFormType, editingExistingRule, rulesSourcesWithRuler });
 
   const typeTitle =
-    ruleFormType === RuleFormType.cloudAlerting ? 'Data source-managed alert rule' : 'Grafana-managed alert rule';
-  const switchToLabel = ruleFormType !== RuleFormType.cloudAlerting ? 'data source-managed' : 'Grafana-managed';
+    ruleFormType === RuleFormType.cloudAlerting ? '数据源管理的警报规则' : '系统管理的警报规则';
+  const switchToLabel = ruleFormType !== RuleFormType.cloudAlerting ? '数据源管理' : '系统管理';
 
   const content = ruleFormType
     ? getContentText(ruleFormType, editingExistingRule, dataSourceName ?? '', canSwitch)
@@ -147,16 +147,16 @@ export function SmartAlertTypeDetector({
         severity="info"
         title={typeTitle}
         onRemove={canSwitch ? onClickSwitch : undefined}
-        buttonContent={`Switch to ${switchToLabel} alert rule`}
+        buttonContent={`切换${switchToLabel}规则`}
       >
         <Stack gap={0.5} direction="row" alignItems={'baseline'}>
           <div className={styles.alertText}>{content?.title}</div>
           <div className={styles.needInfo}>
             <NeedHelpInfo
               contentText={content?.contentText ?? ''}
-              externalLink={`https://grafana.com/docs/grafana/latest/alerting/fundamentals/alert-rules/alert-rule-types/`}
-              linkText={`Read about alert rule types`}
-              title=" Alert rule types"
+              externalLink={`https://www.smxyi.com/datav/alert-rules/alert-rule-types/`}
+              linkText={`阅读有关警报规则类型的信息`}
+              title=" 报规则类型"
             />
           </div>
         </Stack>

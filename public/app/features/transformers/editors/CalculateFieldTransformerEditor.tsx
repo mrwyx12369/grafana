@@ -36,9 +36,9 @@ interface CalculateFieldTransformerEditorState {
 }
 
 const calculationModes = [
-  { value: CalculateFieldMode.BinaryOperation, label: 'Binary operation' },
-  { value: CalculateFieldMode.ReduceRow, label: 'Reduce row' },
-  { value: CalculateFieldMode.Index, label: 'Row index' },
+  { value: CalculateFieldMode.BinaryOperation, label: '二进制操作' },
+  { value: CalculateFieldMode.ReduceRow, label: '减少行' },
+  { value: CalculateFieldMode.Index, label: '行索引' },
 ];
 
 const okTypes = new Set<FieldType>([FieldType.time, FieldType.number, FieldType.string]);

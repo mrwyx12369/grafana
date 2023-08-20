@@ -229,7 +229,7 @@ const VariableEditor = (props: Props) => {
   return (
     <>
       <InlineField
-        label="Select query type"
+        label="选择查询类型"
         labelWidth={20}
         data-testid={selectors.components.variableEditor.queryType.input}
       >
@@ -255,7 +255,7 @@ const VariableEditor = (props: Props) => {
           {errorMessage && (
             <>
               <Space v={2} />
-              <Alert severity="error" title="An error occurred while requesting metadata from Azure Monitor">
+              <Alert severity="error" title="从Azure Monito 请求元数据时出错r">
                 {errorMessage instanceof Error ? errorMessage.message : errorMessage}
               </Alert>
             </>
@@ -267,7 +267,7 @@ const VariableEditor = (props: Props) => {
       )}
       {requireSubscription && (
         <InlineField
-          label="Select subscription"
+          label="选择订阅"
           labelWidth={20}
           data-testid={selectors.components.variableEditor.subscription.input}
         >
@@ -282,7 +282,7 @@ const VariableEditor = (props: Props) => {
       )}
       {(requireResourceGroup || hasResourceGroup) && (
         <InlineField
-          label="Select resource group"
+          label="选择资源组"
           labelWidth={20}
           data-testid={selectors.components.variableEditor.resourceGroup.input}
         >
@@ -302,7 +302,7 @@ const VariableEditor = (props: Props) => {
       )}
       {(requireNamespace || hasNamespace) && (
         <InlineField
-          label="Select namespace"
+          label="选择命名空间"
           labelWidth={20}
           data-testid={selectors.components.variableEditor.namespace.input}
         >
@@ -322,7 +322,7 @@ const VariableEditor = (props: Props) => {
       )}
       {hasRegion && (
         <InlineField
-          label="Select region"
+          label="选择地区"
           labelWidth={20}
           data-testid={selectors.components.variableEditor.region.input}
         >
@@ -338,7 +338,7 @@ const VariableEditor = (props: Props) => {
       )}
       {requireResource && (
         <InlineField
-          label="Select resource"
+          label="选择资源"
           labelWidth={20}
           data-testid={selectors.components.variableEditor.resource.input}
         >
@@ -364,7 +364,7 @@ const VariableEditor = (props: Props) => {
           {errorMessage && (
             <>
               <Space v={2} />
-              <Alert severity="error" title="An error occurred while requesting metadata from Azure Monitor">
+              <Alert severity="error" title="从 Azure 监视器请求元数据时出错">
                 {errorMessage instanceof Error ? errorMessage.message : errorMessage}
               </Alert>
             </>

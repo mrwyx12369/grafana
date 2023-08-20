@@ -15,47 +15,47 @@ export const GlobalTemplateData: TemplateDataItem[] = [
   {
     name: 'Receiver',
     type: 'string',
-    notes: 'Name of the contact point that the notification is being sent to.',
+    notes: '要向其发送通知的联系人的名称。',
   },
   {
     name: 'Status',
     type: 'string',
-    notes: 'firing if at least one alert is firing, otherwise resolved',
+    notes: '如果至少有一个警报正在触发，则触发，否则已解决',
   },
   {
     name: 'Alerts',
     type: '[]Alert',
-    notes: 'List of alert objects that are included in this notification.',
+    notes: '此通知中包含的警报对象列表.',
   },
   {
     name: 'Alerts.Firing',
     type: '[]Alert',
-    notes: 'List of firing alerts',
+    notes: '触发警报列表',
   },
   {
     name: 'Alerts.Resolved',
     type: '[]Alert',
-    notes: 'List of resolved alerts',
+    notes: '已解决警报的列表',
   },
   {
     name: 'GroupLabels',
     type: 'KeyValue',
-    notes: 'Labels these alerts were grouped by.',
+    notes: '这些警报的标签是按其分组的。',
   },
   {
     name: 'CommonLabels',
     type: 'KeyValue',
-    notes: 'Labels common to all the alerts included in this notification.',
+    notes: '此通知中包含的所有警报通用的标签。',
   },
   {
     name: 'CommonAnnotations',
     type: 'KeyValue',
-    notes: 'Annotations common to all the alerts included in this notification.',
+    notes: '此通知中包含的所有警报通用的注解。',
   },
   {
     name: 'ExternalURL',
     type: 'string',
-    notes: 'Back link to the Grafana that sent the notification.',
+    notes: '指向发送通知的格拉法纳的反向链接。',
   },
 ];
 
@@ -63,22 +63,22 @@ export const AlertTemplatePreviewData: TemplateDataItem[] = [
   {
     name: 'Labels',
     type: 'KeyValue',
-    notes: 'Set of labels attached to the alert.',
+    notes: '附加到警报的标签集。',
   },
   {
     name: 'Annotations',
     type: 'KeyValue',
-    notes: 'Set of annotations attached to the alert.',
+    notes: '附加到警报的注解集。',
   },
   {
     name: 'StartsAt',
     type: 'time.Time',
-    notes: 'Time the alert started firing.',
+    notes: '警报开始触发的时间。',
   },
   {
     name: 'EndsAt',
     type: 'time.Time',
-    notes: 'Time the alert ends firing.',
+    notes: '警报结束触发的时间。',
   },
 ];
 
@@ -86,64 +86,63 @@ export const AlertTemplateData: TemplateDataItem[] = [
   {
     name: 'Status',
     type: 'string',
-    notes: 'firing or resolved.',
+    notes: '触发或解决。',
   },
   {
     name: 'Labels',
     type: 'KeyValue',
-    notes: 'Set of labels attached to the alert.',
+    notes: '附加到警报的标签集。',
   },
   {
     name: 'Annotations',
     type: 'KeyValue',
-    notes: 'Set of annotations attached to the alert.',
+    notes: '附加到警报的注解集。',
   },
   {
     name: 'Values',
     type: 'KeyValue',
     notes:
-      'The values of all instant queries, reduce and math expressions, and classic conditions for the alert. It does not contain time series data.',
+      '警报的所有即时查询、归约表达式和数学表达式以及经典条件的值。它不包含时间序列数据。',
   },
   {
     name: 'StartsAt',
     type: 'time.Time',
-    notes: 'Time the alert started firing.',
+    notes: '警报开始触发的时间。',
   },
   {
     name: 'EndsAt',
     type: 'time.Time',
-    notes:
-      'Only set if the end time of an alert is known. Otherwise set to a configurable timeout period from the time since the last alert was received.',
+    notes:'仅当警报的结束时间已知时才设置。否则，设置为自收到上次警报以来的可配置超时期限。',
   },
   {
     name: 'GeneratorURL',
     type: 'string',
-    notes: 'A back link to Grafana or external Alertmanager.',
+    notes: '指向系统或外部警报管理器的反向链接。',
   },
   {
     name: 'SilenceURL',
     type: 'string',
-    notes: 'Link to Grafana silence for with labels for this alert pre-filled. Only for Grafana managed alerts.',
+    notes: '链接到系统静默，并预先填充了此警报的标签。仅适用于格拉法纳托管警报。',
   },
   {
     name: 'DashboardURL',
     type: 'string',
-    notes: 'Link to Grafana dashboard, if alert rule belongs to one. Only for Grafana managed alerts.',
+    notes: '链接到系统仪表板（如果警报规则属于一个）。仅适用于格拉法纳托管警报。',
   },
   {
     name: 'PanelURL',
     type: 'string',
-    notes: 'Link to Grafana dashboard panel, if alert rule belongs to one. Only for Grafana managed alerts.',
+    notes: '链接到系统仪表板面板（如果警报规则属于一个）。仅适用于格拉法纳托管警报。',
   },
   {
     name: 'Fingerprint',
     type: 'string',
-    notes: 'Fingerprint that can be used to identify the alert.',
+    notes: '可用于识别警报的指纹。',
   },
   {
     name: 'ValueString',
     type: 'string',
-    notes: 'String that contains the labels and value of each reduced expression in the alert.',
+    notes: '包含警报中每个简化表达式的标签和值的字符串。',
   },
 ];
 
@@ -151,28 +150,28 @@ export const KeyValueTemplateFunctions: TemplateFunctionItem[] = [
   {
     name: 'SortedPairs',
     returns: 'KeyValue',
-    notes: 'Returns sorted list of key & value string pairs',
+    notes: '返回键和值字符串对的排序列表',
   },
   {
     name: 'Remove',
     args: '[]string',
     returns: 'KeyValue',
-    notes: 'Returns a copy of the Key/Value map without the given keys.',
+    notes: '返回不带给定键的键/值映射的副本。',
   },
   {
     name: 'Names',
     returns: '[]string',
-    notes: 'List of label names',
+    notes: '标签名称列表',
   },
   {
     name: 'Values',
     returns: '[]string',
-    notes: 'List of label values',
+    notes: '标签值列表',
   },
 ];
 
 export const KeyValueCodeSnippet = `{
-  "summary": "alert summary",
-  "description": "alert description"
+  "summary": "警报摘要",
+  "description": "警报说明"
 }
 `;

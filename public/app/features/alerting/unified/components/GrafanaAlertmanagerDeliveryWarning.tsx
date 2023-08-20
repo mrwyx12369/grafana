@@ -32,12 +32,10 @@ export function GrafanaAlertmanagerDeliveryWarning({ currentAlertmanager }: Graf
 
   if (amChoiceStatus.alertmanagersChoice === AlertmanagerChoice.External) {
     return (
-      <Alert title="Grafana alerts are not delivered to Grafana Alertmanager">
-        Grafana is configured to send alerts to external Alertmanagers only. Changing Grafana Alertmanager configuration
-        will not affect delivery of your alerts.
+      <Alert title="系统警报不会传递到系统警报管理器">
+        系统配置为仅向外部警报管理器发送警报。更改系统警报管理器配置不会影响警报的传递。
         <div className={styles.adminHint}>
-          To change your Alertmanager setup, go to the Alerting Admin page. If you do not have access, contact your
-          Administrator.
+        要更改警报管理器设置，请转到警报管理员页面。如果您没有访问权限，请联系您的管理员。
         </div>
       </Alert>
     );
@@ -45,12 +43,10 @@ export function GrafanaAlertmanagerDeliveryWarning({ currentAlertmanager }: Graf
 
   if (amChoiceStatus.alertmanagersChoice === AlertmanagerChoice.All && hasActiveExternalAMs) {
     return (
-      <Alert title="You have additional Alertmanagers to configure" severity="warning">
-        Ensure you make configuration changes in the correct Alertmanagers; both internal and external. Changing one
-        will not affect the others.
+      <Alert title="您需要配置其他警报管理器" severity="warning">
+         确保在正确的警报管理器中进行配置更改;内部和外部。改变一个不会影响其他人。
         <div className={styles.adminHint}>
-          To change your Alertmanager setup, go to the Alerting Admin page. If you do not have access, contact your
-          Administrator.
+          要更改警报管理器设置，请转到警报管理员页面。如果您没有访问权限，请联系您的管理员。
         </div>
       </Alert>
     );

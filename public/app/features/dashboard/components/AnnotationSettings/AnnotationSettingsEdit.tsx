@@ -160,7 +160,7 @@ export const AnnotationSettingsEdit = ({ editIdx, dashboard }: Props) => {
   return (
     <div>
       <FieldSet className={styles.settingsForm}>
-        <Field label="Name">
+        <Field label="名称">
           <Input
             aria-label={selectors.pages.Dashboard.Settings.Annotations.Settings.name}
             name="name"
@@ -170,24 +170,24 @@ export const AnnotationSettingsEdit = ({ editIdx, dashboard }: Props) => {
             onChange={onNameChange}
           />
         </Field>
-        <Field label="Data source" htmlFor="data-source-picker">
+        <Field label="数据源" htmlFor="data-source-picker">
           <DataSourcePicker annotations variables current={annotation.datasource} onChange={onDataSourceChange} />
         </Field>
-        <Field label="Enabled" description="When enabled the annotation query is issued every dashboard refresh">
+        <Field label="启用" description="启用后，每次仪表板刷新都会发出注释查询">
           <Checkbox name="enable" id="enable" value={annotation.enable} onChange={onChange} />
         </Field>
         <Field
-          label="Hidden"
-          description="Annotation queries can be toggled on or off at the top of the dashboard. With this option checked this toggle will be hidden."
+          label="隐藏"
+          description="可以在仪表板顶部打开或关闭注释查询。选中此选项后，此切换将被隐藏。"
         >
           <Checkbox name="hide" id="hide" value={annotation.hide} onChange={onChange} />
         </Field>
-        <Field label="Color" description="Color to use for the annotation event markers">
+        <Field label="Color" description="用于注释事件标记的颜色">
           <HorizontalGroup>
             <ColorValueEditor value={annotation?.iconColor} onChange={onColorChange} />
           </HorizontalGroup>
         </Field>
-        <Field label="Show in" aria-label={selectors.pages.Dashboard.Settings.Annotations.NewAnnotation.showInLabel}>
+        <Field label="显示于" aria-label={selectors.pages.Dashboard.Settings.Annotations.NewAnnotation.showInLabel}>
           <>
             <Select
               options={panelFilters}
@@ -201,7 +201,7 @@ export const AnnotationSettingsEdit = ({ editIdx, dashboard }: Props) => {
                 value={panels.filter((panel) => annotation.filter?.ids.includes(panel.value!))}
                 onChange={onAddFilterPanelID}
                 isClearable={true}
-                placeholder="Choose panels"
+                placeholder="选择面板"
                 width={100}
                 closeMenuOnSelect={false}
                 className={styles.select}
@@ -226,7 +226,7 @@ export const AnnotationSettingsEdit = ({ editIdx, dashboard }: Props) => {
       <Stack>
         {!annotation.builtIn && (
           <Button variant="destructive" onClick={onDelete}>
-            Delete
+            删除
           </Button>
         )}
         <Button
@@ -234,10 +234,10 @@ export const AnnotationSettingsEdit = ({ editIdx, dashboard }: Props) => {
           onClick={onPreview}
           data-testid={selectors.pages.Dashboard.Settings.Annotations.NewAnnotation.previewInDashboard}
         >
-          Preview in dashboard
+          在仪表板中预览
         </Button>
         <Button variant="primary" onClick={onApply}>
-          Apply
+          应用
         </Button>
       </Stack>
     </div>

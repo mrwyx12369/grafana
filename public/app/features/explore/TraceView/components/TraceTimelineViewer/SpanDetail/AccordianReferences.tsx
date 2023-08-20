@@ -216,7 +216,7 @@ const AccordianReferences = ({
       <HeaderComponent className={styles.AccordianReferencesHeader} {...headerProps}>
         {arrow}
         <strong>
-          <span>References</span>
+          <span>引用</span>
         </strong>{' '}
         ({data.length})
       </HeaderComponent>

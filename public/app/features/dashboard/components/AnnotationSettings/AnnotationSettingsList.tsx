@@ -109,17 +109,17 @@ export const AnnotationSettingsList = ({ dashboard, onNew, onEdit }: Props) => {
       {showEmptyListCTA && (
         <EmptyListCTA
           onClick={onNew}
-          title="没有添加自定义注释查询t"
+          title="没有添加自定义注解查询t"
           buttonIcon="comment-alt"
-          buttonTitle="添加注释查询"
-          infoBoxTitle="什么是注释查询?"
+          buttonTitle="添加注解查询"
+          infoBoxTitle="什么是注解查询?"
           infoBox={{
-            __html: `<p>批注提供了一种将事件数据集成到图表中的方法。它们被可视化为垂直线和所有图形面板上的图标。当您将鼠标悬停在注释图标上时，您可以获得事件文本和标签
-            事件。您可以通过按住 CTRL 或 CMD + 单击图形（或拖动区域）。这些将存储在格拉法纳的注释数据库中。
+            __html: `<p>注解提供了一种将事件数据集成到图表中的方法。它们被可视化为垂直线和所有图形面板上的图标。当您将鼠标悬停在注解图标上时，您可以获得事件文本和标签
+            事件。您可以通过按住 CTRL 或 CMD + 单击图形（或拖动区域）。这些将存储在格拉法纳的注解数据库中。
         </p>
         详见
         <a class='external-link' target='_blank' href='#'
-          >注释文档</a
+          >注解文档</a
         >`,
           }}
         />

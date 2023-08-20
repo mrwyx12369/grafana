@@ -33,8 +33,8 @@ export const LdapUserTeams = ({ teams, showAttributeMapping }: Props) => {
                         <>
                           <td />
                           <td>
-                            <span className="text-warning">No match</span>
-                            <Tooltip placement="top" content="No matching teams found" theme={'info'}>
+                            <span className="text-warning">无匹配</span>
+                            <Tooltip placement="top" content="未找到匹配的团队" theme={'info'}>
                               <Icon name="info-circle" />
                             </Tooltip>
                           </td>

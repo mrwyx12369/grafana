@@ -18,7 +18,7 @@ export const UnsavedChangesModal = ({ dashboard, onSaveSuccess, onDiscard, onDis
   return (
     <Modal
       isOpen={true}
-      title="Unsaved changes"
+      title="未保存的更改"
       onDismiss={onDismiss}
       icon="exclamation-triangle"
       className={css`
@@ -28,10 +28,10 @@ export const UnsavedChangesModal = ({ dashboard, onSaveSuccess, onDiscard, onDis
       <h5>Do you want to save your changes?</h5>
       <Modal.ButtonRow>
         <Button variant="secondary" onClick={onDismiss} fill="outline">
-          Cancel
+          取消
         </Button>
         <Button variant="destructive" onClick={onDiscard}>
-          Discard
+          丢弃
         </Button>
         <SaveDashboardButton dashboard={dashboard} onSaveSuccess={onSaveSuccess} />
       </Modal.ButtonRow>

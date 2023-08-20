@@ -130,7 +130,7 @@ const RawListItem = ({ listItemData, listKey, totalNumberOfValues, valueLabels, 
       <div key={listKey} className={styles.rowWrapper}>
         <span className={styles.copyToClipboardWrapper}>
           <IconButton
-            tooltip="Copy to clipboard"
+            tooltip="复制到剪贴板"
             onClick={() => {
               reportInteraction('grafana_explore_prometheus_instant_query_ui_raw_toggle_expand');
               copyToClipboard(stringRep);

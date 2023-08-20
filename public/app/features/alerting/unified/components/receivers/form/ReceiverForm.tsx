@@ -102,24 +102,24 @@ export function ReceiverForm<R extends ChannelValues>({
   return (
     <FormProvider {...formAPI}>
       {!config.alertmanager_config.route && (
-        <Alert severity="warning" title="Attention">
-          Because there is no default policy configured yet, this contact point will automatically be set as default.
+        <Alert severity="warning" title="注意">
+          由于尚未配置默认策略，因此此联系点将自动设置为默认策略。
         </Alert>
       )}
       <form onSubmit={handleSubmit(submitCallback, onInvalid)}>
         <h4 className={styles.heading}>
-          {!isEditable ? 'Contact point' : initialValues ? 'Update contact point' : 'Create contact point'}
+          {!isEditable ? '联系点' : initialValues ? '更新联系点' : '创建联系点'}
         </h4>
-        <Field label="Name" invalid={!!errors.name} error={errors.name && errors.name.message} required>
+        <Field label="名称" invalid={!!errors.name} error={errors.name && errors.name.message} required>
           <Input
             readOnly={!isEditable}
             id="name"
             {...register('name', {
-              required: 'Name is required',
+              required: '名称为必填项',
               validate: { nameIsAvailable: validateNameIsAvailable },
             })}
             width={39}
-            placeholder="Name"
+            placeholder="名称"
           />
         </Field>
         {fields.map((field, index) => {
@@ -163,7 +163,7 @@ export function ReceiverForm<R extends ChannelValues>({
               variant="secondary"
               onClick={() => append({ ...defaultItem, __id: String(Math.random()) } as R)}
             >
-              Add contact point integration
+              添加要集成的联系点
             </Button>
           )}
           <div className={styles.buttons}>
@@ -171,10 +171,10 @@ export function ReceiverForm<R extends ChannelValues>({
               <>
                 {loading && (
                   <Button disabled={true} icon="fa fa-spinner" variant="primary">
-                    Saving...
+                    保存中...
                   </Button>
                 )}
-                {!loading && <Button type="submit">Save contact point</Button>}
+                {!loading && <Button type="submit">保存</Button>}
               </>
             )}
             <LinkButton
@@ -183,7 +183,7 @@ export function ReceiverForm<R extends ChannelValues>({
               data-testid="cancel-button"
               href={makeAMLink('alerting/notifications', alertManagerSourceName)}
             >
-              Cancel
+              取消
             </LinkButton>
           </div>
         </>

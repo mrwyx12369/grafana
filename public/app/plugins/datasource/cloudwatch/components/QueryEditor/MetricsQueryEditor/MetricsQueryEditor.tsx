@@ -160,7 +160,7 @@ export const MetricsQueryEditor = (props: Props) => {
           label="ID"
           width={26}
           optional
-          tooltip="ID can be used to reference other queries in math expressions. The ID can include numbers, letters, and underscore, and must start with a lowercase letter."
+          tooltip="ID 可用于引用数学表达式中的其他查询。ID 可以包含数字、字母和下划线，并且必须以小写字母开头。"
           invalid={!!query.id && !/^$|^[a-z][a-zA-Z0-9_]*$/.test(query.id)}
         >
           <Input
@@ -171,7 +171,7 @@ export const MetricsQueryEditor = (props: Props) => {
           />
         </EditorField>
 
-        <EditorField label="Period" width={26} tooltip="Minimum interval between points in seconds.">
+        <EditorField label="Period" width={26} tooltip="点之间的最小间隔（以秒为单位）。">
           <Input
             id={`${query.refId}-cloudwatch-metric-query-editor-period`}
             value={query.period || ''}
@@ -186,7 +186,7 @@ export const MetricsQueryEditor = (props: Props) => {
           label="Label"
           width={26}
           optional
-          tooltip="Change time series legend name using Dynamic labels. See documentation for details."
+          tooltip="使用动态标注更改时间序列图例名称。有关详细信息，请参阅文档。"
         >
           <DynamicLabelsField
             width={52}

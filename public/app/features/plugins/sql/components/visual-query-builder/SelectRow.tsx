@@ -28,8 +28,8 @@ export function SelectRow({ sql, format, columns, onSqlChange, functions }: Sele
   // Add necessary alias options for time series format
   // when that format has been selected
   if (format === QueryFormat.Timeseries) {
-    timeSeriesAliasOpts.push({ label: 'time', value: 'time' });
-    timeSeriesAliasOpts.push({ label: 'value', value: 'value' });
+    timeSeriesAliasOpts.push({ label: '时间', value: 'time' });
+    timeSeriesAliasOpts.push({ label: '数值', value: 'value' });
   }
 
   const onColumnChange = useCallback(

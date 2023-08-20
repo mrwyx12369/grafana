@@ -187,11 +187,10 @@ export class JaegerDatasource extends DataSourceApi<JaegerQuery, JaegerJsonData>
           const values: any[] = res?.data?.data || [];
           const testResult =
             values.length > 0
-              ? { status: 'success', message: 'Data source connected and services found.' }
+              ? { status: 'success', message: '数据源已连接，服务已找到。' }
               : {
                   status: 'error',
-                  message:
-                    'Data source connected, but no services received. Verify that Jaeger is configured properly.',
+                  message: '数据源已连接，但未收到任何服务。验证 Jaeger 配置是否正确。',
                 };
           return testResult;
         }),
@@ -200,7 +199,7 @@ export class JaegerDatasource extends DataSourceApi<JaegerQuery, JaegerJsonData>
           if (err.statusText) {
             message += err.statusText;
           } else {
-            message += 'Cannot connect to Jaeger';
+            message += '无法连接到积家';
           }
 
           if (err.status) {

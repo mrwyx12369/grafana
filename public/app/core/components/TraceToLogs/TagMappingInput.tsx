@@ -22,7 +22,7 @@ export const TagMappingInput = ({ values, onChange, id }: Props) => {
           <div className={styles.pair} key={idx}>
             <SegmentInput
               id={`${id}-key-${idx}`}
-              placeholder={'Tag name'}
+              placeholder={'标签名'}
               value={value.key}
               onChange={(e) => {
                 onChange(
@@ -40,7 +40,7 @@ export const TagMappingInput = ({ values, onChange, id }: Props) => {
             </InlineLabel>
             <SegmentInput
               id={`${id}-value-${idx}`}
-              placeholder={'New name (optional)'}
+              placeholder={'新名称（可选）'}
               value={value.value || ''}
               onChange={(e) => {
                 onChange(

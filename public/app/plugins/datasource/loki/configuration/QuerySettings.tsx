@@ -21,7 +21,7 @@ export const QuerySettings = (props: Props) => {
       title="Queries"
       description={
         <ConfigDescriptionLink
-          description="Additional options to customize your querying experience. "
+          description="用于自定义查询体验的其他选项。 "
           suffix="loki/#configure-the-data-source"
           feature="query settings"
         />
@@ -45,9 +45,7 @@ export const QuerySettings = (props: Props) => {
             }
             tooltip={
               <>
-                Loki queries must contain a limit of the maximum number of lines returned (default: 1000). Increase this
-                limit to have a bigger result set for ad-hoc analysis. Decrease this limit if your browser becomes
-                sluggish when displaying the log results.
+              Loki 查询必须包含返回的最大行数限制（默认值：1000）。增加这个限制为具有更大的结果集以进行即席分析。如果您的浏览器成为显示日志结果时缓慢。
               </>
             }
           />
@@ -57,7 +55,7 @@ export const QuerySettings = (props: Props) => {
         <div className="gf-form-inline">
           <div className="gf-form">
             <FormField
-              label="Predefined operations"
+              label="预定义操作"
               labelWidth={11}
               inputEl={
                 <input

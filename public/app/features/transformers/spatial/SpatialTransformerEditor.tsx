@@ -35,15 +35,15 @@ const supplier = (
       options: [
         {
           value: SpatialAction.Prepare,
-          label: 'Prepare spatial field',
-          description: 'Set a geometry field based on the results of other fields',
+          label: '准备空间字段',
+          description: '根据其他字段的结果设置几何字段',
         },
         {
           value: SpatialAction.Calculate,
-          label: 'Calculate value',
-          description: 'Use the geometry to define a new field (heading/distance/area)',
+          label: '计算值',
+          description: '使用几何图形定义新字段（航向/距离/面积）)',
         },
-        { value: SpatialAction.Modify, label: 'Transform', description: 'Apply spatial operations to the geometry' },
+        { value: SpatialAction.Modify, label: '转换', description: '将空间操作应用于几何图形' },
       ],
     },
   });
@@ -56,9 +56,9 @@ const supplier = (
       defaultValue: SpatialCalculation.Heading,
       settings: {
         options: [
-          { value: SpatialCalculation.Heading, label: 'Heading' },
-          { value: SpatialCalculation.Area, label: 'Area' },
-          { value: SpatialCalculation.Distance, label: 'Distance' },
+          { value: SpatialCalculation.Heading, label: '点' },
+          { value: SpatialCalculation.Area, label: '面积' },
+          { value: SpatialCalculation.Distance, label: '距离' },
         ],
       },
     });
@@ -72,13 +72,13 @@ const supplier = (
         options: [
           {
             value: SpatialOperation.AsLine,
-            label: 'As line',
-            description: 'Create a single line feature with a vertex at each row',
+            label: '作为线',
+            description: '创建每行都有一个折点的单线要素',
           },
           {
             value: SpatialOperation.LineBuilder,
-            label: 'Line builder',
-            description: 'Create a line between two points',
+            label: '线性构造器',
+            description: '在两点之间创建一条线',
           },
         ],
       },

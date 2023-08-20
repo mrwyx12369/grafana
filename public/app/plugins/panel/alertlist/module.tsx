@@ -38,13 +38,13 @@ const alertList = new PanelPlugin<AlertListOptions>(AlertList)
           ],
         },
         defaultValue: ShowOption.Current,
-        category: ['Options'],
+        category: ['选项'],
       })
       .addNumberInput({
         name: '最大项目数',
         path: 'maxItems',
         defaultValue: 10,
-        category: ['Options'],
+        category: ['选项'],
       })
       .addSelect({
         name: '排序顺序',
@@ -59,26 +59,26 @@ const alertList = new PanelPlugin<AlertListOptions>(AlertList)
           ],
         },
         defaultValue: SortOrder.AlphaAsc,
-        category: ['Options'],
+        category: ['选项'],
       })
       .addBooleanSwitch({
         path: 'dashboardAlerts',
         name: 'Alerts from this dashboard',
         defaultValue: false,
-        category: ['Options'],
+        category: ['选项'],
       })
       .addTextInput({
         path: 'alertName',
         name: '警报名称',
         defaultValue: '',
-        category: ['Filter'],
+        category: ['过滤器'],
         showIf: showIfCurrentState,
       })
       .addTextInput({
         path: 'dashboardTitle',
         name: '仪表板标题',
         defaultValue: '',
-        category: ['Filter'],
+        category: ['过滤器'],
         showIf: showIfCurrentState,
       })
       .addCustomEditor({
@@ -95,7 +95,7 @@ const alertList = new PanelPlugin<AlertListOptions>(AlertList)
             />
           );
         },
-        category: ['Filter'],
+        category: ['过滤器'],
         showIf: showIfCurrentState,
       })
       .addCustomEditor({
@@ -107,49 +107,49 @@ const alertList = new PanelPlugin<AlertListOptions>(AlertList)
         editor(props) {
           return <TagsInput tags={props.value} onChange={props.onChange} />;
         },
-        category: ['Filter'],
+        category: ['过滤器'],
         showIf: showIfCurrentState,
       })
       .addBooleanSwitch({
         path: 'stateFilter.ok',
         name: 'Ok',
         defaultValue: false,
-        category: ['State filter'],
+        category: ['状态过滤器'],
         showIf: showIfCurrentState,
       })
       .addBooleanSwitch({
         path: 'stateFilter.paused',
         name: '暂停',
         defaultValue: false,
-        category: ['State filter'],
+        category: ['状态过滤器'],
         showIf: showIfCurrentState,
       })
       .addBooleanSwitch({
         path: 'stateFilter.no_data',
         name: '暂无数据',
         defaultValue: false,
-        category: ['State filter'],
+        category: ['状态过滤器'],
         showIf: showIfCurrentState,
       })
       .addBooleanSwitch({
         path: 'stateFilter.execution_error',
         name: '执行错误',
         defaultValue: false,
-        category: ['State filter'],
+        category: ['状态过滤器'],
         showIf: showIfCurrentState,
       })
       .addBooleanSwitch({
         path: 'stateFilter.alerting',
         name: '警报',
         defaultValue: false,
-        category: ['State filter'],
+        category: ['状态过滤器'],
         showIf: showIfCurrentState,
       })
       .addBooleanSwitch({
         path: 'stateFilter.pending',
         name: '等待',
         defaultValue: false,
-        category: ['State filter'],
+        category: ['状态过滤器'],
         showIf: showIfCurrentState,
       });
   })
@@ -169,7 +169,7 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
           { label: '数字', value: ViewMode.Stat },
         ],
       },
-      category: ['Options'],
+      category: ['选项'],
     })
     .addRadio({
       path: 'groupMode',
@@ -182,7 +182,7 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
           { value: GroupMode.Custom, label: '自定义分组' },
         ],
       },
-      category: ['Options'],
+      category: ['选项'],
     })
     .addCustomEditor({
       path: 'groupBy',
@@ -191,7 +191,7 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
       id: 'groupBy',
       defaultValue: [],
       showIf: (options) => options.groupMode === GroupMode.Custom,
-      category: ['Options'],
+      category: ['选项'],
       editor: (props) => {
         return (
           <GroupBy
@@ -208,7 +208,7 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
       path: 'maxItems',
       description: '要显示的最大警报数',
       defaultValue: 20,
-      category: ['Options'],
+      category: ['选项'],
     })
     .addSelect({
       name: '排序顺序',
@@ -224,28 +224,28 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
         ],
       },
       defaultValue: SortOrder.AlphaAsc,
-      category: ['Options'],
+      category: ['选项'],
     })
     .addBooleanSwitch({
       path: 'dashboardAlerts',
       name: '来自此仪表板的警报',
       description: '显示来自此仪表板的警报',
       defaultValue: false,
-      category: ['Options'],
+      category: ['选项'],
     })
     .addTextInput({
       path: 'alertName',
       name: '警报名称',
       description: '筛选包含此文本的警报',
       defaultValue: '',
-      category: ['Filter'],
+      category: ['过滤器'],
     })
     .addTextInput({
       path: 'alertInstanceLabelFilter',
       name: '报警实例标签',
       description: '使用标签查询筛选警报实例，例如：{severity="critical", instance=~"cluster-us-.+"}',
       defaultValue: '',
-      category: ['Filter'],
+      category: ['过滤器'],
     })
     .addCustomEditor({
       path: 'datasource',
@@ -265,7 +265,7 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
           />
         );
       },
-      category: ['Filter'],
+      category: ['过滤器'],
     })
     .addCustomEditor({
       showIf: (options) => options.datasource === GRAFANA_DATASOURCE_NAME || !Boolean(options.datasource),
@@ -288,37 +288,37 @@ const unifiedAlertList = new PanelPlugin<UnifiedAlertListOptions>(UnifiedAlertLi
           />
         );
       },
-      category: ['Filter'],
+      category: ['过滤器'],
     })
     .addBooleanSwitch({
       path: 'stateFilter.firing',
       name: '警报/触发',
       defaultValue: true,
-      category: ['Alert state filter'],
+      category: ['警报状态过滤器'],
     })
     .addBooleanSwitch({
       path: 'stateFilter.pending',
       name: '等待',
       defaultValue: true,
-      category: ['Alert state filter'],
+      category: ['警报状态过滤器'],
     })
     .addBooleanSwitch({
       path: 'stateFilter.noData',
       name: '暂无数据',
       defaultValue: false,
-      category: ['Alert state filter'],
+      category: ['警报状态过滤器'],
     })
     .addBooleanSwitch({
       path: 'stateFilter.normal',
       name: '正常',
       defaultValue: false,
-      category: ['Alert state filter'],
+      category: ['警报状态过滤器'],
     })
     .addBooleanSwitch({
       path: 'stateFilter.error',
       name: '错误',
       defaultValue: true,
-      category: ['Alert state filter'],
+      category: ['警报状态过滤器'],
     });
 });
 

@@ -17,17 +17,17 @@ export function getGlobalSuggestions(monaco: Monaco): SuggestionDefinition[] {
 
   return [
     {
-      label: 'Alerts',
+      label: '警告',
       kind,
       detail: 'Alert[]',
-      documentation: { value: 'An Array containing all alerts' },
+      documentation: { value: '包含所有警报的数组' },
     },
-    { label: 'Receiver', kind, detail: 'string' },
-    { label: 'Status', kind, detail: 'string' },
-    { label: 'GroupLabels', kind, detail: '[]KeyValue' },
-    { label: 'CommonLabels', kind, detail: '[]KeyValue' },
-    { label: 'CommonAnnotations', kind, detail: '[]KeyValue' },
-    { label: 'ExternalURL', kind, detail: 'string' },
+    { label: '接收人', kind, detail: 'string' },
+    { label: '状态', kind, detail: 'string' },
+    { label: '组标签', kind, detail: '[]KeyValue' },
+    { label: '通用标签', kind, detail: '[]KeyValue' },
+    { label: '通用注解', kind, detail: '[]KeyValue' },
+    { label: '外部URL', kind, detail: 'string' },
   ];
 }
 
@@ -40,13 +40,13 @@ export function getAlertSuggestions(monaco: Monaco): SuggestionDefinition[] {
       label: { label: 'Status', detail: '(Alert)', description: 'string' },
       kind,
       detail: 'string',
-      documentation: { value: 'Status of the alert. It can be `firing` or `resolved`' },
+      documentation: { value: '警报的状态。它可以是“触发”或“解决”' },
     },
     {
-      label: { label: 'Labels', detail: '(Alert)' },
+      label: { label: '标签', detail: '(Alert)' },
       kind,
       detail: '[]KeyValue',
-      documentation: { value: 'A set of labels attached to the alert.' },
+      documentation: { value: '附加到警报的一组标签。' },
     },
     {
       label: { label: 'Annotations', detail: '(Alert)' },
@@ -55,54 +55,53 @@ export function getAlertSuggestions(monaco: Monaco): SuggestionDefinition[] {
       documentation: 'A set of annotations attached to the alert.',
     },
     {
-      label: { label: 'StartsAt', detail: '(Alert)' },
+      label: { label: '开始于', detail: '(警报)' },
       kind,
       detail: 'time.Time',
-      documentation: 'Time the alert started firing.',
+      documentation: '警报开始触发的时间。',
     },
     {
-      label: { label: 'EndsAt', detail: '(Alert)' },
+      label: { label: '结束于', detail: '(警报)' },
       kind,
       detail: 'time.Time',
       documentation:
-        'Only set if the end time of an alert is known. Otherwise set to a configurable timeout period from the time since the last alert was received.',
+        '仅当警报的结束时间已知时才设置。否则，设置为自收到上次警报以来的可配置超时期限。',
     },
     {
-      label: { label: 'GeneratorURL', detail: '(Alert)' },
+      label: { label: '生成器URL', detail: '(警报)' },
       kind,
       detail: 'string',
-      documentation: 'Back link to Grafana or external Alertmanager.',
+      documentation: '反向链接到 Grafana 或外部警报管理器。',
     },
     {
-      label: { label: 'SilenceURL', detail: '(Alert)' },
+      label: { label: '静默URL', detail: '(警报)' },
       kind,
       detail: 'string',
-      documentation:
-        'Link to Grafana silence for with labels for this alert pre-filled. Only for Grafana managed alerts.',
+      documentation: '链接到 Grafana 静音，并预先填充了此警报的标签。仅适用于格拉法纳托管警报。',
     },
     {
-      label: { label: 'DashboardURL', detail: '(Alert)' },
+      label: { label: '仪表板URL', detail: '(警报)' },
       kind,
       detail: 'string',
-      documentation: 'Link to Grafana dashboard, if alert rule belongs to one. Only for Grafana managed alerts.',
+      documentation: '链接到 Grafana 仪表板（如果警报规则属于一个）。仅适用于格拉法纳托管警报。',
     },
     {
-      label: { label: 'PanelURL', detail: '(Alert)' },
+      label: { label: '面板URL', detail: '(警报)' },
       kind,
       detail: 'string',
-      documentation: 'Link to Grafana dashboard panel, if alert rule belongs to one. Only for Grafana managed alerts.',
+      documentation: '链接到 Grafana 仪表板面板（如果警报规则属于一个）。仅适用于格拉法纳托管警报。',
     },
     {
-      label: { label: 'Fingerprint', detail: '(Alert)' },
+      label: { label: '指纹', detail: '(警报' },
       kind,
       detail: 'string',
-      documentation: 'Fingerprint that can be used to identify the alert.',
+      documentation: '可用于识别警报的指纹。',
     },
     {
-      label: { label: 'ValueString', detail: '(Alert)' },
+      label: { label: '值字符串', detail: '(警报)' },
       kind,
       detail: 'string',
-      documentation: 'String that contains labels and values of each reduced expression in the alert.',
+      documentation: '包含警报中每个简化表达式的标签和值的字符串。',
     },
   ];
 }
@@ -112,8 +111,8 @@ export function getAlertsSuggestions(monaco: Monaco): SuggestionDefinition[] {
   const kind = monaco.languages.CompletionItemKind.Field;
 
   return [
-    { label: 'Firing', kind, detail: 'Alert[]' },
-    { label: 'Resolved', kind, detail: 'Alert[]' },
+    { label: '触发', kind, detail: 'Alert[]' },
+    { label: '解决', kind, detail: 'Alert[]' },
   ];
 }
 
@@ -135,38 +134,38 @@ export function getKeyValueSuggestions(monaco: Monaco): SuggestionDefinition[] {
 
 export const snippets = {
   alerts: {
-    label: 'alertsloop',
-    description: 'Renders a loop through alerts',
+    label: '警报循环',
+    description: '呈现警报循环',
     snippet: alertsLoopSnippet,
   },
   alertDetails: {
-    label: 'alertdetails',
-    description: 'Renders all information available about the alert',
+    label: '警报详细信息',
+    description: '呈现有关警报的所有可用信息',
     snippet: alertDetailsSnippet,
   },
   groupLabels: {
-    label: 'grouplabelsloop',
-    description: 'Renders a loop through group labels',
+    label: '组标签循环',
+    description: '呈现通过组标签的循环s',
     snippet: groupLabelsLoopSnippet,
   },
   commonLabels: {
-    label: 'commonlabelsloop',
-    description: 'Renders a loop through common labels',
+    label: '公共标签循环',
+    description: '呈现通过公共标签的循环',
     snippet: commonLabelsLoopSnippet,
   },
   commonAnnotations: {
-    label: 'commonannotationsloop',
-    description: 'Renders a loop through common annotations',
+    label: '公共注解循环',
+    description: '通过公共注解呈现循环',
     snippet: commonAnnotationsLoopSnippet,
   },
   labels: {
-    label: 'labelsloop',
-    description: 'Renders a loop through labels',
+    label: '标签循环',
+    description: '呈现通过标签的循环',
     snippet: labelsLoopSnippet,
   },
   annotations: {
-    label: 'annotationsloop',
-    description: 'Renders a loop through annotations',
+    label: '注解循环',
+    description: '通过注解呈现循环',
     snippet: annotationsLoopSnippet,
   },
 };

@@ -57,7 +57,7 @@ class CustomVariableEditorUnconnected extends PureComponent<Props> {
           width={52}
           testId={selectors.pages.Dashboard.Settings.Variables.Edit.CustomVariable.customValueInput}
         />
-        <VariableLegend>Selection options</VariableLegend>
+        <VariableLegend>选择选项</VariableLegend>
         <SelectionOptionsEditor
           variable={this.props.variable}
           onPropChange={this.onSelectionOptionsChange}

@@ -86,9 +86,9 @@ export const FieldColorEditor = ({ value, onChange, item, id }: Props) => {
 
   if (item.settings?.bySeriesSupport && colorMode.isByValue) {
     const seriesModes: Array<SelectableValue<FieldColorSeriesByMode>> = [
-      { label: 'Last', value: 'last' },
-      { label: 'Min', value: 'min' },
-      { label: 'Max', value: 'max' },
+      { label: '最新值', value: 'last' },
+      { label: '最小值', value: 'min' },
+      { label: '最大值', value: 'max' },
     ];
 
     return (

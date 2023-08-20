@@ -96,7 +96,7 @@ export const SearchItem = ({ item, isSelected, editable, onToggleChecked, onTagS
           )}
         </Card.Meta>
         <Card.Tags>
-          <TagList tags={item.tags ?? []} onClick={tagSelected} getAriaLabel={(tag) => `Filter by tag "${tag}"`} />
+          <TagList tags={item.tags ?? []} onClick={tagSelected} getAriaLabel={(tag) => `按标签筛选 "${tag}"`} />
         </Card.Tags>
       </Card>
     </div>

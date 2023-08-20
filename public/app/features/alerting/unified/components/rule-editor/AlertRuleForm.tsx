@@ -56,21 +56,21 @@ const AlertRuleNameInput = () => {
 
   const ruleFormType = watch('type');
   return (
-    <RuleEditorSection stepNo={1} title="Set alert rule name.">
+    <RuleEditorSection stepNo={1} title="设置警报规则名称。">
       <Field
         className={styles.formInput}
-        label="Rule name"
-        description="Name for the alert rule."
+        label="规则名称"
+        description="警报规则的名称。"
         error={errors?.name?.message}
         invalid={!!errors.name?.message}
       >
         <Input
           id="name"
           {...register('name', {
-            required: { value: true, message: 'Must enter an alert name' },
+            required: { value: true, message: '必须输入警报名称' },
             pattern: ruleFormType === RuleFormType.cloudRecording ? recordingRuleNameValidationPattern : undefined,
           })}
-          placeholder="Give your alert rule a name."
+          placeholder="为警报规则命名。"
         />
       </Field>
     </RuleEditorSection>
@@ -191,7 +191,7 @@ export const AlertRuleForm = ({ existing, prefill }: Props) => {
         error: Object.keys(errors).toString(),
       });
     }
-    notifyApp.error('There are errors in the form. Please correct them and try again!');
+    notifyApp.error('表单中有错误。请更正它们，然后重试！');
   };
 
   const cancelRuleCreation = () => {
@@ -210,7 +210,7 @@ export const AlertRuleForm = ({ existing, prefill }: Props) => {
         disabled={submitState.loading}
       >
         {submitState.loading && <Spinner className={styles.buttonSpinner} inline={true} />}
-        Save rule
+        保存
       </Button>
       <Button
         variant="primary"
@@ -220,16 +220,16 @@ export const AlertRuleForm = ({ existing, prefill }: Props) => {
         disabled={submitState.loading}
       >
         {submitState.loading && <Spinner className={styles.buttonSpinner} inline={true} />}
-        Save rule and exit
+        保存病退出
       </Button>
       <Link to={returnTo}>
         <Button variant="secondary" disabled={submitState.loading} type="button" onClick={cancelRuleCreation} size="sm">
-          Cancel
+          取消
         </Button>
       </Link>
       {existing ? (
         <Button fill="outline" variant="destructive" type="button" onClick={() => setShowDeleteModal(true)} size="sm">
-          Delete
+          删除
         </Button>
       ) : null}
 
@@ -241,7 +241,7 @@ export const AlertRuleForm = ({ existing, prefill }: Props) => {
           disabled={submitState.loading}
           size="sm"
         >
-          {isCortexLokiOrRecordingRule(watch) ? 'Edit YAML' : 'View YAML'}
+          {isCortexLokiOrRecordingRule(watch) ? '编辑YAML文件' : '查看YAML文件'}
         </Button>
       ) : null}
     </HorizontalGroup>
@@ -278,9 +278,9 @@ export const AlertRuleForm = ({ existing, prefill }: Props) => {
       {showDeleteModal ? (
         <ConfirmModal
           isOpen={true}
-          title="Delete rule"
-          body="Deleting this rule will permanently remove it. Are you sure you want to delete this rule?"
-          confirmText="Yes, delete"
+          title="删除规则"
+          body="删除此规则将永久删除它。是否确实要删除此规则？"
+          confirmText="确定"
           icon="exclamation-triangle"
           onConfirm={deleteRule}
           onDismiss={() => setShowDeleteModal(false)}

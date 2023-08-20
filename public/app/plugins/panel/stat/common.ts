@@ -14,16 +14,16 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
   builder: PanelOptionsEditorBuilder<T>,
   includeFieldMatcher = true
 ) {
-  const valueOptionsCategory = ['Value options'];
+  const valueOptionsCategory = ['值选项'];
 
   builder.addRadio({
     path: 'reduceOptions.values',
-    name: 'Show',
-    description: 'Calculate a single value per column or series or show each row',
+    name: '显示',
+    description: '计算每列或系列的单个值或显示每一行',
     settings: {
       options: [
-        { value: false, label: 'Calculate' },
-        { value: true, label: 'All values' },
+        { value: false, label: '计算' },
+        { value: true, label: '所有值' },
       ],
     },
     category: valueOptionsCategory,
@@ -32,8 +32,8 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
 
   builder.addNumberInput({
     path: 'reduceOptions.limit',
-    name: 'Limit',
-    description: 'Max number of rows to display',
+    name: '显示限制',
+    description: '要显示的最大行数',
     category: valueOptionsCategory,
     settings: {
       placeholder: '25',
@@ -47,8 +47,8 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
   builder.addCustomEditor({
     id: 'reduceOptions.calcs',
     path: 'reduceOptions.calcs',
-    name: 'Calculation',
-    description: 'Choose a reducer function / calculation',
+    name: '计算',
+    description: '选择Reduce功能/计算',
     category: valueOptionsCategory,
     editor: standardEditorsRegistry.get('stats-picker').editor,
     // TODO: Get ReducerID from generated schema one day?
@@ -60,16 +60,16 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
   if (includeFieldMatcher) {
     builder.addSelect({
       path: 'reduceOptions.fields',
-      name: 'Fields',
-      description: 'Select the fields that should be included in the panel',
+      name: '字段',
+      description: '选择应包含在面板中的字段',
       category: valueOptionsCategory,
       settings: {
         allowCustomValue: true,
         options: [],
         getOptions: async (context: FieldOverrideContext) => {
           const options = [
-            { value: '', label: 'Numeric Fields' },
-            { value: '/.*/', label: 'All Fields' },
+            { value: '', label: '数值字段' },
+            { value: '/.*/', label: '所有字段' },
           ];
           if (context && context.data) {
             for (const frame of context.data) {
@@ -94,14 +94,14 @@ export function addOrientationOption<T extends SingleStatBaseOptions>(
 ) {
   builder.addRadio({
     path: 'orientation',
-    name: 'Orientation',
-    description: 'Layout orientation',
+    name: '方向',
+    description: '布局方向',
     category,
     settings: {
       options: [
-        { value: VizOrientation.Auto, label: 'Auto' },
-        { value: VizOrientation.Horizontal, label: 'Horizontal' },
-        { value: VizOrientation.Vertical, label: 'Vertical' },
+        { value: VizOrientation.Auto, label: '自动' },
+        { value: VizOrientation.Horizontal, label: '水平' },
+        { value: VizOrientation.Vertical, label: '垂直' },
       ],
     },
     defaultValue: VizOrientation.Auto,

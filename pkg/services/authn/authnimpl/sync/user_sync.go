@@ -75,13 +75,13 @@ func (s *UserSync) SyncUserHook(ctx context.Context, id *authn.Identity, _ *auth
 	// Does user exist in the database?
 	usr, userAuth, errUserInDB := s.getUser(ctx, id)
 	if errUserInDB != nil && !errors.Is(errUserInDB, user.ErrUserNotFound) {
-		s.log.FromContext(ctx).Error("Failed to fetch user", "error", errUserInDB, "auth_module", id.AuthenticatedBy, "auth_id", id.AuthID)
+		s.log.FromContext(ctx).Error("无法获取用户", "error", errUserInDB, "auth_module", id.AuthenticatedBy, "auth_id", id.AuthID)
 		return errSyncUserInternal.Errorf("unable to retrieve user")
 	}
 
 	if errors.Is(errUserInDB, user.ErrUserNotFound) {
 		if !id.ClientParams.AllowSignUp {
-			s.log.FromContext(ctx).Warn("Failed to create user, signup is not allowed for module", "auth_module", id.AuthenticatedBy, "auth_id", id.AuthID)
+			s.log.FromContext(ctx).Warn("创建用户失败，模块不允许注册", "auth_module", id.AuthenticatedBy, "auth_id", id.AuthID)
 			return errUserSignupDisabled.Errorf("%w", login.ErrSignupNotAllowed)
 		}
 
@@ -89,14 +89,14 @@ func (s *UserSync) SyncUserHook(ctx context.Context, id *authn.Identity, _ *auth
 		var errCreate error
 		usr, errCreate = s.createUser(ctx, id)
 		if errCreate != nil {
-			s.log.FromContext(ctx).Error("Failed to create user", "error", errCreate, "auth_module", id.AuthenticatedBy, "auth_id", id.AuthID)
-			return errSyncUserInternal.Errorf("unable to create user")
+			s.log.FromContext(ctx).Error("创建用户失败", "error", errCreate, "auth_module", id.AuthenticatedBy, "auth_id", id.AuthID)
+			return errSyncUserInternal.Errorf("无法创建用户")
 		}
 	} else {
 		// update user
 		if errUpdate := s.updateUserAttributes(ctx, usr, id, userAuth); errUpdate != nil {
-			s.log.FromContext(ctx).Error("Failed to update user", "error", errUpdate, "auth_module", id.AuthenticatedBy, "auth_id", id.AuthID)
-			return errSyncUserInternal.Errorf("unable to update user")
+			s.log.FromContext(ctx).Error("无法更新用户", "error", errUpdate, "auth_module", id.AuthenticatedBy, "auth_id", id.AuthID)
+			return errSyncUserInternal.Errorf("无法更新用户")
 		}
 	}
 

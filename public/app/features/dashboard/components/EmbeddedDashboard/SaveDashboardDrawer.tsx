@@ -42,14 +42,14 @@ export const SaveDashboardDrawer = ({ dashboard, onDismiss, dashboardJson, onSav
 
   return (
     <Drawer
-      title={'Save dashboard'}
+      title={'保存仪表板'}
       onClose={onDismiss}
       subtitle={dashboard.title}
       tabs={
         <TabsBar>
-          <Tab label={'Details'} active={!showDiff} onChangeTab={() => setShowDiff(false)} />
+          <Tab label={'详细'} active={!showDiff} onChangeTab={() => setShowDiff(false)} />
           {data.hasChanges && (
-            <Tab label={'Changes'} active={showDiff} onChangeTab={() => setShowDiff(true)} counter={data.diffCount} />
+            <Tab label={'变更'} active={showDiff} onChangeTab={() => setShowDiff(true)} counter={data.diffCount} />
           )}
         </TabsBar>
       }

@@ -292,7 +292,7 @@ export default function SpanDetail(props: SpanDetailProps) {
         <div>
           <AccordianKeyValues
             data={tags}
-            label="Span Attributes"
+            label="跨度属性"
             linksGetter={linksGetter}
             isOpen={isTagsOpen}
             onToggle={() => tagsToggle(spanID)}
@@ -301,7 +301,7 @@ export default function SpanDetail(props: SpanDetailProps) {
             <AccordianKeyValues
               className={ubMb1}
               data={process.tags}
-              label="Resource Attributes"
+              label="资源属性"
               linksGetter={linksGetter}
               isOpen={isProcessOpen}
               onToggle={() => processToggle(spanID)}
@@ -331,7 +331,7 @@ export default function SpanDetail(props: SpanDetailProps) {
         )}
         {stackTraces?.length ? (
           <AccordianText
-            label="Stack trace"
+            label="堆栈跟踪"
             data={stackTraces}
             isOpen={isStackTracesOpen}
             TextComponent={(textComponentProps) => {

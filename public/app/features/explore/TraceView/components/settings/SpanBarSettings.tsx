@@ -34,7 +34,7 @@ export default function SpanBarSettings({ options, onOptionsChange }: Props) {
   return (
     <div className={css({ width: '100%' })}>
       <InlineFieldRow className={styles.row}>
-        <InlineField label="Label" labelWidth={26} tooltip="Default: duration" grow>
+        <InlineField label="Label" labelWidth={26} tooltip="默认值：持续时间" grow>
           <Select
             inputId="label"
             options={selectOptions}
@@ -45,7 +45,7 @@ export default function SpanBarSettings({ options, onOptionsChange }: Props) {
                 type: v?.value ?? '',
               });
             }}
-            placeholder="Duration"
+            placeholder="期间"
             isClearable
             aria-label={'select-label-name'}
             width={40}
@@ -55,13 +55,13 @@ export default function SpanBarSettings({ options, onOptionsChange }: Props) {
       {options.jsonData.spanBar?.type === TAG && (
         <InlineFieldRow className={styles.row}>
           <InlineField
-            label="Tag key"
+            label="标签键"
             labelWidth={26}
-            tooltip="Tag key which will be used to get the tag value. A span's attributes and resources will be searched for the tag key"
+            tooltip="将用于获取标签值的标签键。将在跨度的属性和资源中搜索标签键"
           >
             <Input
               type="text"
-              placeholder="Enter tag key"
+              placeholder="输入标签键"
               onChange={(v) =>
                 updateDatasourcePluginJsonDataOption({ onOptionsChange, options }, 'spanBar', {
                   ...options.jsonData.spanBar,
@@ -84,7 +84,7 @@ export const SpanBarSection = ({ options, onOptionsChange }: DataSourcePluginOpt
       title="Span bar"
       description={
         <ConfigDescriptionLink
-          description="Add additional info next to the service and operation on a span bar row in the trace view."
+          description="在跟踪视图中跨度线行的服务和操作旁边添加附加信息。"
           suffix={`${options.type}/#span-bar`}
           feature="the span bar"
         />

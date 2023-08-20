@@ -10,9 +10,9 @@ interface Props {
 }
 
 const HIDE_OPTIONS = [
-  { label: 'Label and value', value: VariableHide.dontHide },
-  { label: 'Value', value: VariableHide.hideLabel },
-  { label: 'Nothing', value: VariableHide.hideVariable },
+  { label: '标签和值', value: VariableHide.dontHide },
+  { label: '值', value: VariableHide.hideLabel },
+  { label: '无', value: VariableHide.hideVariable },
 ];
 
 export function VariableHideSelect({ onChange, hide, type }: PropsWithChildren<Props>) {
@@ -23,7 +23,7 @@ export function VariableHideSelect({ onChange, hide, type }: PropsWithChildren<P
   }
 
   return (
-    <Field label="Show on dashboard">
+    <Field label="在仪表板上显示">
       <RadioButtonGroup options={HIDE_OPTIONS} onChange={onChange} value={value} />
     </Field>
   );

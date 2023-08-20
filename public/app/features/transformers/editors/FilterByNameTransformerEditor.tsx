@@ -170,13 +170,13 @@ export class FilterByNameTransformerEditor extends React.PureComponent<
           <HorizontalGroup spacing="xs" align="flex-start" wrap>
             <Field
               invalid={!isRegexValid}
-              error={!isRegexValid ? 'Invalid pattern' : undefined}
+              error={!isRegexValid ? '无效模式' : undefined}
               className={css`
                 margin-bottom: 0;
               `}
             >
               <Input
-                placeholder="Regular expression pattern"
+                placeholder="正则表达式模式"
                 value={this.state.regex || ''}
                 onChange={(e) => this.setState({ regex: e.currentTarget.value })}
                 onBlur={this.onInputBlur}

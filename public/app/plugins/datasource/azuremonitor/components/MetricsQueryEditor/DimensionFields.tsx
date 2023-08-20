@@ -157,7 +157,7 @@ const DimensionFields = ({ data, query, dimensionOptions, onQueryChange }: Dimen
         />
         <Select
           menuShouldPortal
-          placeholder="Operation"
+          placeholder="操作"
           value={item.operator}
           options={getValidOperators(item.operator || 'eq')}
           onChange={(e) => onFieldChange('operator', item, e.value ?? '', onChange)}
@@ -166,7 +166,7 @@ const DimensionFields = ({ data, query, dimensionOptions, onQueryChange }: Dimen
         {item.operator === 'eq' || item.operator === 'ne' ? (
           <MultiSelect
             menuShouldPortal
-            placeholder="Select value(s)"
+            placeholder="选择值"
             value={item.filters}
             options={getValidMultiSelectOptions(item.filters, item.dimension ?? '')}
             onChange={(e) =>
@@ -184,7 +184,7 @@ const DimensionFields = ({ data, query, dimensionOptions, onQueryChange }: Dimen
           // The API does not currently allow for multiple "starts with" clauses to be used.
           <Select
             menuShouldPortal
-            placeholder="Select value"
+            placeholder="选择值"
             value={item.filters ? item.filters[0] : ''}
             allowCustomValue
             options={getValidFilterOptions(item.filters ? item.filters[0] : '', item.dimension ?? '')}
@@ -198,7 +198,7 @@ const DimensionFields = ({ data, query, dimensionOptions, onQueryChange }: Dimen
   };
 
   return (
-    <Field label="Dimensions">
+    <Field label="立方体">
       <EditorList items={dimensionFilters} onChange={changedFunc} renderItem={renderFilters} />
     </Field>
   );

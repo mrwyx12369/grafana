@@ -151,7 +151,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
         <form aria-label="Variable editor Form" onSubmit={this.onHandleSubmit}>
           <VariableTypeSelect onChange={this.onTypeChange} type={this.props.variable.type} />
 
-          <VariableLegend>General</VariableLegend>
+          <VariableLegend>通用</VariableLegend>
           <VariableTextField
             value={this.props.editor.name}
             onChange={this.onNameChange}

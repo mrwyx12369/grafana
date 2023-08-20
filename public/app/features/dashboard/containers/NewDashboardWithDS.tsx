@@ -43,7 +43,7 @@ export default function NewDashboardWithDS(props: GrafanaRouteComponentProps<{ d
     return (
       <Page navId="dashboards">
         <Page.Contents>
-          <div>Data source with UID &quot;{datasourceUid}&quot; not found.</div>
+          <div>具有 UID &quot;{datasourceUid}&quot; 的数据源未找到.</div>
         </Page.Contents>
       </Page>
     );

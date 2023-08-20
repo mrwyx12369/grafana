@@ -20,7 +20,7 @@ export const NavToolbarActions = React.memo<Props>(({ dashboard }) => {
     toolbarActions.push(
       <DashNavButton
         key="button-scenes"
-        tooltip={'View as dashboard'}
+        tooltip={'作为仪表板查看'}
         icon="apps"
         onClick={() => locationService.push(`/d/${uid}`)}
       />
@@ -50,7 +50,7 @@ export const NavToolbarActions = React.memo<Props>(({ dashboard }) => {
     toolbarActions.push(
       <Button
         onClick={dashboard.onEnterEditMode}
-        tooltip="Enter edit mode"
+        tooltip="进入编辑模式"
         key="edit"
         variant="primary"
         icon="pen"
@@ -63,17 +63,17 @@ export const NavToolbarActions = React.memo<Props>(({ dashboard }) => {
     // TODO check permissions
     toolbarActions.push(
       <Button onClick={dashboard.onEnterEditMode} tooltip="Save as copy" fill="text" key="save-as">
-        Save as
+        另存为
       </Button>
     );
     toolbarActions.push(
-      <Button onClick={dashboard.onDiscard} tooltip="Save changes" fill="text" key="discard" variant="destructive">
-        Discard
+      <Button onClick={dashboard.onDiscard} tooltip="保存更改" fill="text" key="discard" variant="destructive">
+        丢弃
       </Button>
     );
     toolbarActions.push(
-      <Button onClick={dashboard.onEnterEditMode} tooltip="Save changes" key="save" disabled={!isDirty}>
-        Save
+      <Button onClick={dashboard.onEnterEditMode} tooltip="保存更改" key="save" disabled={!isDirty}>
+        保存
       </Button>
     );
   }

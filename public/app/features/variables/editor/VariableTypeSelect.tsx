@@ -17,7 +17,7 @@ export function VariableTypeSelect({ onChange, type }: PropsWithChildren<Props>)
 
   return (
     <VariableSelectField
-      name="Select variable type"
+      name="选择变量类型"
       value={value}
       options={options}
       onChange={onChange}

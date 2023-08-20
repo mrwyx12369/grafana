@@ -85,7 +85,7 @@ export const DataLinksInlineEditor = ({ links, onChange, getSuggestions, data }:
 
       {isEditing && editIndex !== null && (
         <Modal
-          title="Edit link"
+          title="编辑连接"
           isOpen={true}
           closeOnBackdropClick={false}
           onDismiss={() => {
@@ -104,7 +104,7 @@ export const DataLinksInlineEditor = ({ links, onChange, getSuggestions, data }:
       )}
 
       <Button size="sm" icon="plus" onClick={onDataLinkAdd} variant="secondary">
-        Add link
+        添加链接
       </Button>
     </>
   );

@@ -81,7 +81,7 @@ export const CreateTokenModal = ({ isOpen, token, serviceAccountLogin, onCreateT
     onClose();
   };
 
-  const modalTitle = !token ? 'Add service account token' : 'Service account token created';
+  const modalTitle = !token ? '添加服务帐户令牌' : '已创建服务帐户令牌';
 
   return (
     <Modal
@@ -94,8 +94,8 @@ export const CreateTokenModal = ({ isOpen, token, serviceAccountLogin, onCreateT
       {!token ? (
         <div>
           <Field
-            label="Display name"
-            description="Name to easily identify the token"
+            label="显示名称"
+            description="用于轻松识别令牌的名称"
             // for now this is required
             // need to make this optional in backend as well
             required={true}
@@ -109,7 +109,7 @@ export const CreateTokenModal = ({ isOpen, token, serviceAccountLogin, onCreateT
               }}
             />
           </Field>
-          <Field label="Expiration">
+          <Field label="到期">
             <RadioButtonGroup
               options={EXPIRATION_OPTIONS}
               value={isWithExpirationDate}
@@ -118,7 +118,7 @@ export const CreateTokenModal = ({ isOpen, token, serviceAccountLogin, onCreateT
             />
           </Field>
           {isWithExpirationDate && (
-            <Field label="Expiration date">
+            <Field label="有效期">
               <DatePickerWithInput
                 onChange={onExpirationDateChange}
                 value={newTokenExpirationDate}
@@ -130,7 +130,7 @@ export const CreateTokenModal = ({ isOpen, token, serviceAccountLogin, onCreateT
           )}
           <Modal.ButtonRow>
             <Button onClick={onGenerateToken} disabled={isWithExpirationDate && !isExpirationDateValid}>
-              Generate token
+              生成令牌
             </Button>
           </Modal.ButtonRow>
         </div>
@@ -138,7 +138,7 @@ export const CreateTokenModal = ({ isOpen, token, serviceAccountLogin, onCreateT
         <>
           <Field
             label="Token"
-            description="Copy the token now as you will not be able to see it again. Losing a token requires creating a new one."
+            description="立即复制令牌，因为您将无法再次看到它。丢失令牌需要创建一个新令牌。"
           >
             <div className={styles.modalTokenRow}>
               <Input name="tokenValue" value={token} readOnly />
@@ -149,16 +149,16 @@ export const CreateTokenModal = ({ isOpen, token, serviceAccountLogin, onCreateT
                 icon="copy"
                 getText={() => token}
               >
-                Copy clipboard
+                复制剪贴板
               </ClipboardButton>
             </div>
           </Field>
           <Modal.ButtonRow>
             <ClipboardButton variant="primary" getText={() => token} onClipboardCopy={onCloseInternal}>
-              Copy to clipboard and close
+              复制到剪贴板并关闭
             </ClipboardButton>
             <Button variant="secondary" onClick={onCloseInternal}>
-              Close
+              关闭
             </Button>
           </Modal.ButtonRow>
         </>

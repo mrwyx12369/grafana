@@ -325,44 +325,44 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
     let editorActions = [
       <Button
         onClick={this.onDiscard}
-        title="Undo all changes"
+        title="撤消所有更改"
         key="discard"
         size={size}
         variant="destructive"
         fill="outline"
       >
-        Discard
+        废弃
       </Button>,
       this.props.panel.libraryPanel ? (
         <Button
           onClick={this.onSaveLibraryPanel}
           variant="primary"
           size={size}
-          title="Apply changes and save library panel"
+          title="应用更改和保存库面板"
           key="save-panel"
         >
-          Save library panel
+          保存库面板
         </Button>
       ) : (
         <Button
           onClick={this.onSaveDashboard}
-          title="Apply changes and save dashboard"
+          title="应用更改并保存仪表板"
           key="save"
           size={size}
           variant="secondary"
         >
-          Save
+          保存
         </Button>
       ),
       <Button
         onClick={this.onBack}
         variant="primary"
-        title="Apply changes and go back to dashboard"
+        title="应用更改并返回仪表板"
         data-testid={selectors.components.PanelEditor.applyButton}
         key="apply"
         size={size}
       >
-        Apply
+        应用
       </Button>,
     ];
 
@@ -384,10 +384,10 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
                     isOpen: true,
                   });
                 }}
-                title="Disconnects this panel from the library panel so that you can edit it regularly."
+                title="断开此面板与库面板的连接，以便您可以定期对其进行编辑。"
                 key="unlink"
               >
-                Unlink
+                取消连接
               </ToolbarButton>
             );
           }}

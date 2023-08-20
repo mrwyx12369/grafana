@@ -12,13 +12,13 @@ interface Props {
 }
 
 const SORT_OPTIONS = [
-  { label: 'Disabled', value: VariableSort.disabled },
-  { label: 'Alphabetical (asc)', value: VariableSort.alphabeticalAsc },
-  { label: 'Alphabetical (desc)', value: VariableSort.alphabeticalDesc },
-  { label: 'Numerical (asc)', value: VariableSort.numericalAsc },
-  { label: 'Numerical (desc)', value: VariableSort.numericalDesc },
-  { label: 'Alphabetical (case-insensitive, asc)', value: VariableSort.alphabeticalCaseInsensitiveAsc },
-  { label: 'Alphabetical (case-insensitive, desc)', value: VariableSort.alphabeticalCaseInsensitiveDesc },
+  { label: '禁用', value: VariableSort.disabled },
+  { label: '按字母顺序(升序)', value: VariableSort.alphabeticalAsc },
+  { label: '按字母顺序(降序)', value: VariableSort.alphabeticalDesc },
+  { label: '数值(升序)', value: VariableSort.numericalAsc },
+  { label: '数值(降序)', value: VariableSort.numericalDesc },
+  { label: '按字母顺序((大小写敏感, 升序)', value: VariableSort.alphabeticalCaseInsensitiveAsc },
+  { label: '按字母顺序(大小写敏感, 降序)', value: VariableSort.alphabeticalCaseInsensitiveDesc },
 ];
 
 export function QueryVariableSortSelect({ onChange, sort }: PropsWithChildren<Props>) {
@@ -27,7 +27,7 @@ export function QueryVariableSortSelect({ onChange, sort }: PropsWithChildren<Pr
   return (
     <VariableSelectField
       name="Sort"
-      description="How to sort the values of this variable"
+      description="如何对此变量的值进行排序"
       value={value}
       options={SORT_OPTIONS}
       onChange={onChange}

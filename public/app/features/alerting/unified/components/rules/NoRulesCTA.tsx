@@ -13,17 +13,17 @@ export const NoRulesSplash = () => {
   if (canCreateGrafanaRules || canCreateCloudRules) {
     return (
       <EmptyListCTA
-        title="You haven't created any alert rules yet"
+        title="尚未创建任何警报规则"
         buttonIcon="bell"
         buttonLink={'alerting/new/alerting'}
-        buttonTitle="New alert rule"
-        proTip="you can also create alert rules from existing panels and queries."
-        proTipLink="https://grafana.com/docs/"
-        proTipLinkTitle="Learn more"
+        buttonTitle="新警报规则"
+        proTip="还可以从现有面板和查询创建警报规则。"
+        proTipLink="https://www.smxyi.com/datav/docs/"
+        proTipLinkTitle="详情"
         proTipTarget="_blank"
         onClick={() => logInfo(LogMessages.alertRuleFromScratch)}
       />
     );
   }
-  return <CallToActionCard message="No rules exist yet." callToActionElement={<div />} />;
+  return <CallToActionCard message="尚不存在任何规则。" callToActionElement={<div />} />;
 };

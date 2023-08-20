@@ -36,7 +36,7 @@ export function NeedHelpInfo({ contentText, externalLink, linkText, title }: Nee
     >
       <div className={styles.helpInfo}>
         <Icon name="question-circle" />
-        <div className={styles.helpInfoText}>Need help?</div>
+        <div className={styles.helpInfoText}>需要帮助吗？</div>
       </div>
     </Toggletip>
   );

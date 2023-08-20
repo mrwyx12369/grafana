@@ -15,19 +15,19 @@ func init() {
 	alerting.RegisterNotifier(&alerting.NotifierPlugin{
 		Type:        "email",
 		Name:        "Email",
-		Description: "Sends notifications using Grafana server configured SMTP settings",
+		Description: "使用系统服务器配置的SMTP设置发送通知",
 		Factory:     NewEmailNotifier,
-		Heading:     "Email settings",
+		Heading:     "电子邮件设置",
 		Options: []alerting.NotifierOption{
 			{
-				Label:        "Single email",
-				Description:  "Send a single email to all recipients",
+				Label:        "单个电子邮件",
+				Description:  "向所有收件人发送一封电子邮件",
 				Element:      alerting.ElementTypeCheckbox,
 				PropertyName: "singleEmail",
 			},
 			{
-				Label:        "Addresses",
-				Description:  "You can enter multiple email addresses using a \";\" separator",
+				Label:        "地址(可多个)",
+				Description:  "您可以使用 “;” 输入多个电子邮件地址分隔符",
 				Element:      alerting.ElementTypeTextArea,
 				PropertyName: "addresses",
 				Required:     true,

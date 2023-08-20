@@ -151,7 +151,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
 
     if (isLegacyQueryEditor(VariableQueryEditor, datasource)) {
       return (
-        <Field label="Query">
+        <Field label="查询">
           <VariableQueryEditor
             key={datasource.uid}
             datasource={datasource}
@@ -167,7 +167,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
 
     if (isQueryEditor(VariableQueryEditor, datasource)) {
       return (
-        <Field label="Query">
+        <Field label="查询">
           <VariableQueryEditor
             key={datasource.uid}
             datasource={datasource}
@@ -196,7 +196,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
             onChange={this.onDataSourceChange}
             variables={true}
             width={30}
-          />
+          /> 
         </Field>
 
         {this.renderQueryEditor()}
@@ -211,7 +211,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
               命名捕获组可用于分隔显示文本和值 (
               <a
                 className="external-link"
-                href="https://grafana.com/docs/grafana/latest/variables/filter-variables-with-regex#filter-and-modify-using-named-text-and-value-capture-groups"
+                href="https://www.smxyi.com/docs/datav/latest/variables/filter-variables-with-regex#filter-and-modify-using-named-text-and-value-capture-groups"
                 target="__blank"
               >
                 示例
@@ -230,7 +230,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
 
         <QueryVariableRefreshSelect onChange={this.onRefreshChange} refresh={this.props.variable.refresh} />
 
-        <VariableLegend>Selection options</VariableLegend>
+        <VariableLegend>选择选项</VariableLegend>
         <SelectionOptionsEditor
           variable={this.props.variable}
           onPropChange={this.onSelectionOptionsChange}

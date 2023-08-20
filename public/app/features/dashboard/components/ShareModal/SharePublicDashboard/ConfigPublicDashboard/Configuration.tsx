@@ -60,7 +60,7 @@ export const Configuration = ({
               }}
               data-testid={selectors.EnableAnnotationsSwitch}
             />
-            <Label description="在公共仪表板上显示注释">显示批注</Label>
+            <Label description="在公共仪表板上显示注解">显示注解</Label>
           </Layout>
         </VerticalGroup>
       </FieldSet>

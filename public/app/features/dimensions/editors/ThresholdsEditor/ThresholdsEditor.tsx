@@ -23,11 +23,11 @@ import {
 } from '@grafana/ui';
 
 const modes: Array<SelectableValue<ThresholdsMode>> = [
-  { value: ThresholdsMode.Absolute, label: 'Absolute', description: 'Pick thresholds based on the absolute values' },
+  { value: ThresholdsMode.Absolute, label: '绝对值', description: '基于绝对值的选取阈值' },
   {
     value: ThresholdsMode.Percentage,
-    label: 'Percentage',
-    description: 'Pick threshold based on the percent between min/max',
+    label: '百分比',
+    description: '基于最小/最大值之间的百分比的拣选阈值',
   },
 ];
 
@@ -202,7 +202,7 @@ export class ThresholdsEditor extends PureComponent<Props, State> {
             className={styles.trashIcon}
             name="trash-alt"
             onClick={() => this.onRemoveThreshold(threshold)}
-            tooltip={`Remove ${ariaLabel}`}
+            tooltip={`移除${ariaLabel}`}
           />
         }
       />
@@ -227,7 +227,7 @@ export class ThresholdsEditor extends PureComponent<Props, State> {
                 className={styles.addButton}
                 fullWidth
               >
-                Add threshold
+                添加阈值
               </Button>
               <div className={styles.thresholds}>
                 {steps
@@ -241,7 +241,7 @@ export class ThresholdsEditor extends PureComponent<Props, State> {
               </div>
 
               <div>
-                <Label description="Percentage means thresholds relative to min & max">Thresholds mode</Label>
+                <Label description="百分比表示相对于最小值和最大值的阈值">阈值模式</Label>
                 <RadioButtonGroup options={modes} onChange={this.onModeChanged} value={thresholds.mode} />
               </div>
             </div>

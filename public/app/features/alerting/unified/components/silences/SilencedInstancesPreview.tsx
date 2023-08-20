@@ -43,18 +43,18 @@ export const SilencedInstancesPreview = ({ amSourceName, matchers }: Props) => {
   return (
     <div>
       <h4 className={styles.title}>
-        Affected alert instances
+        受影响的警报实例
         {tableItemAlerts.length > 0 ? (
           <Badge className={styles.badge} color="blue" text={tableItemAlerts.length} />
         ) : null}
       </h4>
-      {!hasValidMatchers && <span>Add a valid matcher to see affected alerts</span>}
+      {!hasValidMatchers && <span>添加有效的匹配器以查看受影响的警报</span>}
       {isError && (
-        <Alert title="Preview not available" severity="error">
-          Error occured when generating affected alerts preview. Are you matchers valid?
+        <Alert title="预览不可用" severity="error">
+          生成受影响的警报预览时出错。匹配器有效吗？
         </Alert>
       )}
-      {isFetching && <LoadingPlaceholder text="Loading..." />}
+      {isFetching && <LoadingPlaceholder text="加载..." />}
       {!isFetching && !isError && hasValidMatchers && (
         <div className={styles.table}>
           {tableItemAlerts.length > 0 ? (
@@ -65,7 +65,7 @@ export const SilencedInstancesPreview = ({ amSourceName, matchers }: Props) => {
               pagination={{ itemsPerPage: 10 }}
             />
           ) : (
-            <span>No matching alert instances found</span>
+            <span>未找到匹配的警报实例</span>
           )}
         </div>
       )}

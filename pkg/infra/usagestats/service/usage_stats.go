@@ -82,7 +82,7 @@ func (uss *UsageStats) runMetricsFunc(ctx context.Context, fn usagestats.Metrics
 
 	fnMetrics, err := fn(ctx)
 	if err != nil {
-		uss.log.FromContext(ctx).Error("Failed to fetch usage stats from provider", "error", err, "duration", time.Since(start), "function", fnName)
+		uss.log.FromContext(ctx).Error("无法从提供程序获取使用情况统计信息", "error", err, "duration", time.Since(start), "function", fnName)
 		span.SetStatus(codes.Error, fmt.Sprintf("failed to fetch usage stats from provider: %v", err))
 		return nil, err
 	}

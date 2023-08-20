@@ -38,32 +38,28 @@ export const NotificationsStep = ({ alertUid }: NotificationsStepProps) => {
   const NotificationsStepDescription = () => {
     return (
       <div className={styles.stepDescription}>
-        <div>Add custom labels to change the way your notifications are routed.</div>
+        <div>添加自定义标签以更改通知的路由方式。</div>
 
         <NeedHelpInfo
           contentText={
             <Stack gap={1}>
               <Stack direction="row" gap={0}>
                 <>
-                  Firing alert rule instances are routed to notification policies based on matching labels. All alert
-                  rules and instances, irrespective of their labels, match the default notification policy. If there are
-                  no nested policies, or no nested policies match the labels in the alert rule or alert instance, then
-                  the default notification policy is the matching policy.
+                触发警报规则实例将根据匹配的标签路由到通知策略。所有警报规则和实例（无论其标签如何）都与默认通知策略匹配。如果有没有嵌套策略，或者没有与警报规则或警报实例中的标签匹配的嵌套策略，则默认通知策略是匹配策略。
                 </>
                 <a
-                  href={`https://grafana.com/docs/grafana/latest/alerting/fundamentals/notification-policies/notifications/`}
+                  href={`https://www.smxyi.com/datav/alerting/fundamentals/notification-policies/notifications/`}
                   target="_blank"
                   rel="noreferrer"
                 >
                   <div className={styles.infoLink}>
-                    Read about notification routing. <Icon name="external-link-alt" />
+                    阅读有关通知路由的信息. <Icon name="external-link-alt" />
                   </div>
                 </a>
               </Stack>
               <Stack direction="row" gap={0}>
                 <>
-                  Custom labels change the way your notifications are routed. First, add labels to your alert rule and
-                  then connect them to your notification policy by adding label matchers.
+                自定义标签会更改通知的递送方式。首先，将标签添加到警报规则，然后然后通过添加标签匹配器将它们连接到通知策略。
                 </>
                 <a
                   href={`https://grafana.com/docs/grafana/latest/alerting/fundamentals/annotation-label/`}
@@ -71,13 +67,13 @@ export const NotificationsStep = ({ alertUid }: NotificationsStepProps) => {
                   rel="noreferrer"
                 >
                   <div className={styles.infoLink}>
-                    Read about Labels and annotations. <Icon name="external-link-alt" />
+                    阅读有关标签和注解的信息。 <Icon name="external-link-alt" />
                   </div>
                 </a>
               </Stack>
             </Stack>
           }
-          title="Notification routing"
+          title="通知路由"
         />
       </div>
     );
@@ -86,10 +82,10 @@ export const NotificationsStep = ({ alertUid }: NotificationsStepProps) => {
   return (
     <RuleEditorSection
       stepNo={type === RuleFormType.cloudRecording ? 4 : 5}
-      title={type === RuleFormType.cloudRecording ? 'Add labels' : 'Configure notifications'}
+      title={type === RuleFormType.cloudRecording ? '添加标签' : '配置通知'}
       description={
         type === RuleFormType.cloudRecording ? (
-          'Add labels to help you better manage your recording rules'
+          '添加标签以帮助您更好地管理录制规则'
         ) : (
           <NotificationsStepDescription />
         )
@@ -99,11 +95,10 @@ export const NotificationsStep = ({ alertUid }: NotificationsStepProps) => {
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           {!hasLabelsDefined && type !== RuleFormType.cloudRecording && (
             <Card className={styles.card}>
-              <Card.Heading>Default policy</Card.Heading>
+              <Card.Heading>默认策略</Card.Heading>
               <Card.Description>
-                All alert instances are handled by the default policy if no other matching policies are found. To view
-                and edit the default policy, go to <Link href="/alerting/routes">Notification Policies</Link>
-                &nbsp;or contact your Admin if you are using provisioning.
+              如果未找到其他匹配的策略，则所有警报实例都由默认策略处理。要查看并编辑默认策略，转到<Link href="/alerting/routes">通知策略</Link>
+                &nbsp;或者，如果您使用的是预配，请联系您的管理员。
               </Card.Description>
             </Card>
           )}

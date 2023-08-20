@@ -165,7 +165,7 @@ const getTimeRange = (query: AlertQuery, queries: AlertQuery[]): TimeRange => {
   }
 
   if (!query.relativeTimeRange) {
-    console.warn(`Query with refId: ${query.refId} did not have any relative time range, using default.`);
+    console.warn(`使用 refId 查询： ${query.refId} 没有任何相对时间范围，使用默认值。`);
     return getDefaultTimeRange();
   }
 

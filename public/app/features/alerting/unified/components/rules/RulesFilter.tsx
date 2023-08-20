@@ -20,36 +20,36 @@ import { MultipleDataSourcePicker } from './MultipleDataSourcePicker';
 const ViewOptions: SelectableValue[] = [
   {
     icon: 'folder',
-    label: 'Grouped',
+    label: '分组',
     value: 'grouped',
   },
   {
     icon: 'list-ul',
-    label: 'List',
+    label: '列表',
     value: 'list',
   },
   {
     icon: 'heart-rate',
-    label: 'State',
+    label: '状态',
     value: 'state',
   },
 ];
 
 const RuleTypeOptions: SelectableValue[] = [
   {
-    label: 'Alert ',
+    label: '警报 ',
     value: PromRuleType.Alerting,
   },
   {
-    label: 'Recording ',
+    label: '记录 ',
     value: PromRuleType.Recording,
   },
 ];
 
 const RuleHealthOptions: SelectableValue[] = [
-  { label: 'Ok', value: RuleHealth.Ok },
-  { label: 'No Data', value: RuleHealth.NoData },
-  { label: 'Error', value: RuleHealth.Error },
+  { label: '确定', value: RuleHealth.Ok },
+  { label: '无数据', value: RuleHealth.NoData },
+  { label: '错误', value: RuleHealth.Error },
 ];
 
 interface RulesFilerProps {
@@ -135,17 +135,15 @@ const RulesFilter = ({ onFilterCleared = () => undefined }: RulesFilerProps) => 
             label={
               <Label htmlFor="data-source-picker">
                 <Stack gap={0.5}>
-                  <span>Search by data sources</span>
+                  <span>按数据源搜索</span>
                   <Tooltip
                     content={
                       <div>
                         <p>
-                          Data sources containing configured alert rules are Mimir or Loki data sources where alert
-                          rules are stored and evaluated in the data source itself.
+                        包含已配置警报规则的数据源是 Mimir 或 Loki 数据源，其中警报规则在数据源本身中存储和计算。
                         </p>
                         <p>
-                          In these data sources, you can select Manage alerts via Alerting UI to be able to manage these
-                          alert rules in the Grafana UI as well as in the data source where they were configured.
+                        在这些数据源中，可以选择“通过警报 UI 管理警报”，以便能够管理这些警报警报规则在 Grafana UI 以及配置它们的数据源中。
                         </p>
                       </div>
                     }
@@ -160,7 +158,7 @@ const RulesFilter = ({ onFilterCleared = () => undefined }: RulesFilerProps) => 
               key={dataSourceKey}
               alerting
               noDefault
-              placeholder="All data sources"
+              placeholder="所有数据源"
               current={filterState.dataSourceNames}
               onChange={handleDataSourceChange}
               onClear={clearDataSource}
@@ -168,7 +166,7 @@ const RulesFilter = ({ onFilterCleared = () => undefined }: RulesFilerProps) => 
           </Field>
 
           <div>
-            <Label>State</Label>
+            <Label>状态</Label>
             <RadioButtonGroup
               options={RuleStateOptions}
               value={filterState.ruleState}
@@ -176,11 +174,11 @@ const RulesFilter = ({ onFilterCleared = () => undefined }: RulesFilerProps) => 
             />
           </div>
           <div>
-            <Label>Rule type</Label>
+            <Label>规则类型</Label>
             <RadioButtonGroup options={RuleTypeOptions} value={filterState.ruleType} onChange={handleRuleTypeChange} />
           </div>
           <div>
-            <Label>Health</Label>
+            <Label>健康状态</Label>
             <RadioButtonGroup
               options={RuleHealthOptions}
               value={filterState.ruleHealth}
@@ -201,7 +199,7 @@ const RulesFilter = ({ onFilterCleared = () => undefined }: RulesFilerProps) => 
                 label={
                   <Label htmlFor="rulesSearchInput">
                     <Stack gap={0.5}>
-                      <span>Search</span>
+                      <span>搜索</span>
                       <HoverCard content={<SearchQueryHelp />}>
                         <Icon name="info-circle" size="sm" tabIndex={0} />
                       </HoverCard>
@@ -218,14 +216,14 @@ const RulesFilter = ({ onFilterCleared = () => undefined }: RulesFilerProps) => 
                     searchQueryRef.current = e;
                   }}
                   {...rest}
-                  placeholder="Search"
+                  placeholder="搜索"
                   data-testid="search-query-input"
                 />
               </Field>
               <input type="submit" hidden />
             </form>
             <div>
-              <Label>View as</Label>
+              <Label>查看为</Label>
               <RadioButtonGroup
                 options={ViewOptions}
                 value={String(queryParams['view'] ?? ViewOptions[0].value)}
@@ -236,7 +234,7 @@ const RulesFilter = ({ onFilterCleared = () => undefined }: RulesFilerProps) => 
           {hasActiveFilters && (
             <div>
               <Button fullWidth={false} icon="times" variant="secondary" onClick={handleClearFiltersClick}>
-                Clear filters
+                清除过滤器
               </Button>
             </div>
           )}
@@ -268,19 +266,19 @@ function SearchQueryHelp() {
 
   return (
     <div>
-      <div>Search syntax allows to query alert rules by the parameters defined below.</div>
+      <div>搜索语法允许通过下面定义的参数查询警报规则。</div>
       <hr />
       <div className={styles.grid}>
-        <div>Filter type</div>
-        <div>Expression</div>
-        <HelpRow title="Datasources" expr="datasource:mimir datasource:prometheus" />
-        <HelpRow title="Folder/Namespace" expr="namespace:global" />
-        <HelpRow title="Group" expr="group:cpu-usage" />
-        <HelpRow title="Rule" expr='rule:"cpu 80%"' />
-        <HelpRow title="Labels" expr="label:team=A label:cluster=a1" />
-        <HelpRow title="State" expr="state:firing|normal|pending" />
-        <HelpRow title="Type" expr="type:alerting|recording" />
-        <HelpRow title="Health" expr="health:ok|nodata|error" />
+        <div>过滤器类型</div>
+        <div>表达式</div>
+        <HelpRow title="数据源" expr="datasource:mimir datasource:prometheus" />
+        <HelpRow title="文件夹/命名空间" expr="namespace:global" />
+        <HelpRow title="群组" expr="group:cpu-usage" />
+        <HelpRow title="规则" expr='rule:"cpu 80%"' />
+        <HelpRow title="标签" expr="label:team=A label:cluster=a1" />
+        <HelpRow title="状态" expr="state:firing|normal|pending" />
+        <HelpRow title="类型" expr="type:alerting|recording" />
+        <HelpRow title="健康" expr="health:ok|nodata|error" />
       </div>
     </div>
   );

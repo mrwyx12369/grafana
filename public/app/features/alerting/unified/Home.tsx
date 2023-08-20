@@ -18,14 +18,14 @@ export default function Home() {
         <WelcomeHeader className={styles.ctaContainer} />
         <ContentBox className={styles.flowBlock}>
           <div>
-            <h3>How it works</h3>
+            <h3>工作原理</h3>
             <ul className={styles.list}>
               <li>
-                Grafana alerting periodically queries data sources and evaluates the condition defined in the alert rule
+                系统警报会定期查询数据源并评估警报规则中定义的条件
               </li>
-              <li>If the condition is breached, an alert instance fires</li>
-              <li>Firing instances are routed to notification policies based on matching labels</li>
-              <li>Notifications are sent out to the contact points specified in the notification policy</li>
+              <li>如果违反条件，则会触发警报实例</li>
+              <li>触发实例根据匹配标签路由到通知策略</li>
+              <li>通知将发送到通知策略中指定的联系点</li>
             </ul>
           </div>
           <SVG
@@ -35,25 +35,25 @@ export default function Home() {
           />
         </ContentBox>
         <ContentBox className={styles.gettingStartedBlock}>
-          <h3>Get started</h3>
+          <h3>开始使用</h3>
           <Stack direction="column" alignItems="space-between">
             <ul className={styles.list}>
               <li>
-                <strong>Create an alert rule</strong> by adding queries and expressions from multiple data sources.
+              通过添加来自多个数据源的查询和表达式来<strong>创建警报规则</strong>.
               </li>
               <li>
-                <strong>Add labels</strong> to your alert rules{' '}
-                <strong>to connect them to notification policies</strong>
+                <strong>添加标签</strong> 到警报规则{' '}
+                <strong>并连接到通知策略</strong>
               </li>
               <li>
-                <strong>Configure contact points</strong> to define where to send your notifications to.
+                <strong>配置联系点</strong>来定义将通知发送到的位置.
               </li>
               <li>
-                <strong>Configure notification policies</strong> to route your alert instances to contact points.
+                <strong>配置通知策略</strong>将警报实例路由到联系点.
               </li>
             </ul>
             <div>
-              <ArrowLink href="https://grafana.com/docs/grafana/latest/alerting/" title="Read more in the Docs" />
+              <ArrowLink href="#" title="详细参考" />
             </div>
           </Stack>
         </ContentBox>
@@ -138,24 +138,24 @@ function WelcomeHeader({ className }: { className?: string }) {
   return (
     <ContentBox className={cx(styles.ctaContainer, className)}>
       <WelcomeCTABox
-        title="Alert rules"
-        description="Define the condition that must be met before an alert rule fires"
+        title="警报规则"
+        description="定义触发警报规则之前必须满足的条件"
         href="/alerting/list"
-        hrefText="Manage alert rules"
+        hrefText="管理警报规则"
       />
       <div className={styles.separator} />
       <WelcomeCTABox
-        title="Contact points"
-        description="Configure who receives notifications and how they are sent"
+        title="联系点"
+        description="确定谁接收通知以及如何发送通知"
         href="/alerting/notifications"
-        hrefText="Manage contact points"
+        hrefText="管理联系点"
       />
       <div className={styles.separator} />
       <WelcomeCTABox
-        title="Notification policies"
-        description="Configure how firing alert instances are routed to contact points"
+        title="通知策略"
+        description="配置如何将触发警报实例路由到联系点"
         href="/alerting/routes"
-        hrefText="Manage notification policies"
+        hrefText="管理通知策略"
       />
     </ContentBox>
   );

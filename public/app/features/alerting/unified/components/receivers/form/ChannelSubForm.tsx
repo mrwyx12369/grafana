@@ -96,7 +96,7 @@ export function ChannelSubForm<R extends ChannelValues>({
     <div className={styles.wrapper} data-testid="item-container">
       <div className={styles.topRow}>
         <div>
-          <Field label="Integration" htmlFor={contactPointTypeInputId} data-testid={`${pathPrefix}type`}>
+          <Field label="通讯集成" htmlFor={contactPointTypeInputId} data-testid={`${pathPrefix}type`}>
             <InputControl
               name={name('type')}
               defaultValue={defaultValues.type}
@@ -125,13 +125,13 @@ export function ChannelSubForm<R extends ChannelValues>({
               onClick={() => handleTest()}
               icon={testingReceiver ? 'fa fa-spinner' : 'message'}
             >
-              Test
+              测试
             </Button>
           )}
           {isEditable && (
             <>
               <Button size="xs" variant="secondary" type="button" onClick={() => onDuplicate()} icon="copy">
-                Duplicate
+                复制
               </Button>
               {onDelete && (
                 <Button
@@ -142,7 +142,7 @@ export function ChannelSubForm<R extends ChannelValues>({
                   onClick={() => onDelete()}
                   icon="trash-alt"
                 >
-                  Delete
+                  删除
                 </Button>
               )}
             </>
@@ -161,7 +161,7 @@ export function ChannelSubForm<R extends ChannelValues>({
             readOnly={!isEditable}
           />
           {!!(mandatoryOptions?.length && optionalOptions?.length) && (
-            <CollapsibleSection label={`Optional ${notifier.name} settings`}>
+            <CollapsibleSection label={`${notifier.name}-可选设置`}>
               {notifier.info !== '' && (
                 <Alert title="" severity="info">
                   {notifier.info}
@@ -178,7 +178,7 @@ export function ChannelSubForm<R extends ChannelValues>({
               />
             </CollapsibleSection>
           )}
-          <CollapsibleSection label="Notification settings">
+          <CollapsibleSection label="通知设置">
             <CommonSettingsComponent pathPrefix={pathPrefix} readOnly={!isEditable} />
           </CollapsibleSection>
         </div>

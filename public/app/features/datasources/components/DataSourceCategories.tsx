@@ -34,7 +34,7 @@ export function DataSourceCategories({ categories, onClickDataSourceType }: Prop
       {/* Find more */}
       <div className="add-data-source-more">
         <LinkButton variant="secondary" href={moreDataSourcesLink} target="_self" rel="noopener">
-          Find more data source plugins
+          查找更多数据源插件
         </LinkButton>
       </div>
     </>

@@ -89,7 +89,7 @@ export const ValueMappingsEditor = React.memo((props: Props) => {
 
       <Button variant="secondary" size="sm" fullWidth onClick={() => setIsEditorOpen(true)}>
         {rows.length > 0 && <span>Edit value mappings</span>}
-        {rows.length === 0 && <span>Add value mappings</span>}
+        {rows.length === 0 && <span>添加值映射</span>}
       </Button>
       <Modal
         isOpen={isEditorOpen}

@@ -184,7 +184,7 @@ function ExpressionPreview({ refId, model, evalData, isAlertCondition }: Express
         return <ThresholdExpressionViewer model={model} />;
 
       default:
-        return <>Expression not supported: {model.type}</>;
+        return <>不支持的表达式： {model.type}</>;
     }
   }
 
@@ -217,7 +217,7 @@ function QueryBox({ refId, headerItems = [], children, isAlertCondition, classNa
         ))}
         {isAlertCondition && (
           <div className={styles.conditionIndicator}>
-            <Badge color="green" icon="check" text="Alert condition" />
+            <Badge color="green" icon="check" text="警报条件" />
           </div>
         )}
       </header>
@@ -272,7 +272,7 @@ function ClassicConditionViewer({ model }: { model: ExpressionQuery }) {
               {index === 0 ? 'WHEN' : !!operator?.type && evalOperators[operator?.type]?.text}
             </div>
             <div className={styles.bold}>{reducer?.type && reducerFunctions[reducer.type]?.text}</div>
-            <div className={styles.blue}>OF</div>
+            <div className={styles.blue}>属于</div>
             <div className={styles.bold}>{query.params[0]}</div>
             <div className={styles.blue}>{evalFunctions[evaluator.type].text}</div>
             <div className={styles.bold}>
@@ -306,13 +306,13 @@ function ReduceConditionViewer({ model }: { model: ExpressionQuery }) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.label}>Function</div>
+      <div className={styles.label}>函数</div>
       <div className={styles.value}>{reducerType?.label}</div>
 
-      <div className={styles.label}>Input</div>
+      <div className={styles.label}>输入</div>
       <div className={styles.value}>{expression}</div>
 
-      <div className={styles.label}>Mode</div>
+      <div className={styles.label}>模式</div>
       <div className={styles.value}>{modeName?.label}</div>
     </div>
   );
@@ -342,16 +342,16 @@ function ResampleExpressionViewer({ model }: { model: ExpressionQuery }) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.label}>Input</div>
+      <div className={styles.label}>输入</div>
       <div className={styles.value}>{expression}</div>
 
-      <div className={styles.label}>Resample to</div>
+      <div className={styles.label}>重采样至</div>
       <div className={styles.value}>{window}</div>
 
-      <div className={styles.label}>Downsample</div>
+      <div className={styles.label}>下采样</div>
       <div className={styles.value}>{downsamplerType?.label}</div>
 
-      <div className={styles.label}>Upsample</div>
+      <div className={styles.label}>上采样</div>
       <div className={styles.value}>{upsamplerType?.label}</div>
     </div>
   );

@@ -30,7 +30,7 @@ export const VariableValuesPreview = ({ variable: { options } }: VariableValuesP
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', marginTop: '16px' }}>
-      <h5>Preview of values</h5>
+      <h5>值预览</h5>
       <InlineFieldRow>
         {previewOptions.map((o, index) => (
           <InlineFieldRow key={`${o.value}-${index}`} className={styles.optionContainer}>
@@ -48,7 +48,7 @@ export const VariableValuesPreview = ({ variable: { options } }: VariableValuesP
             size="sm"
             aria-label="Variable editor Preview of Values Show More link"
           >
-            Show more
+            详细
           </Button>
         </InlineFieldRow>
       )}

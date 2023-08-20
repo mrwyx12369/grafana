@@ -22,18 +22,18 @@ export enum Annotation {
 }
 
 export const annotationLabels: Record<Annotation, string> = {
-  [Annotation.description]: 'Description',
-  [Annotation.summary]: 'Summary',
-  [Annotation.runbookURL]: 'Runbook URL',
-  [Annotation.dashboardUID]: 'Dashboard UID',
-  [Annotation.panelID]: 'Panel ID',
-  [Annotation.alertId]: 'Alert ID',
+  [Annotation.description]: '描述',
+  [Annotation.summary]: '摘要',
+  [Annotation.runbookURL]: '运行手册URL',
+  [Annotation.dashboardUID]: '仪表板UID',
+  [Annotation.panelID]: '面板ID',
+  [Annotation.alertId]: '警报ID',
 };
 
 export const annotationDescriptions: Record<Annotation, string> = {
-  [Annotation.description]: 'Description of what the alert rule does.',
-  [Annotation.summary]: 'Short summary of what happened and why.',
-  [Annotation.runbookURL]: 'Webpage where you keep your runbook for the alert.',
+  [Annotation.description]: '警报规则功能的说明。',
+  [Annotation.summary]: '注解摘要：“对发生的事情和原因的简短摘要。',
+  [Annotation.runbookURL]: '用于保存警报运行手册的网页。',
   [Annotation.dashboardUID]: '',
   [Annotation.panelID]: '',
   [Annotation.alertId]: '',

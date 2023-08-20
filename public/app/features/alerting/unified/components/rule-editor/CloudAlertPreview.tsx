@@ -20,14 +20,14 @@ export function CloudAlertPreview({ preview }: CloudAlertPreviewProps) {
   return (
     <table className={styles.table}>
       <caption>
-        <div>Alerts preview</div>
-        <span>Preview based on the result of running the query for this moment.</span>
+        <div>警报预览</div>
+        <span>根据此时刻运行查询的结果进行预览。</span>
       </caption>
       <thead>
         <tr>
-          <th>State</th>
-          <th>Labels</th>
-          <th>Info</th>
+          <th>状态</th>
+          <th>标签</th>
+          <th>信息</th>
         </tr>
       </thead>
       <tbody>

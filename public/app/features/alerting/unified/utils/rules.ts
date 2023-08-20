@@ -103,9 +103,14 @@ export function getRuleHealth(health: string): RuleHealth | undefined {
 
 export function alertStateToReadable(state: PromAlertingRuleState | GrafanaAlertStateWithReason | AlertState): string {
   if (state === PromAlertingRuleState.Inactive) {
-    return 'Normal';
+    return '正常';
+  } else if (state === PromAlertingRuleState.Firing){
+    return '触发';
+  } else if (state === PromAlertingRuleState.Pending){
+    return '等待';
+  } else {
+    return capitalize(state);
   }
-  return capitalize(state);
 }
 
 export const flattenRules = (rules: RuleNamespace[]) => {

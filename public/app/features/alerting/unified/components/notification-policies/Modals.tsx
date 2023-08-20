@@ -52,7 +52,7 @@ const useAddPolicyModal = (
           onDismiss={handleDismiss}
           closeOnBackdropClick={true}
           closeOnEscape={true}
-          title="Add notification policy"
+          title="添加通知策略"
         >
           <AmRoutesExpandedForm
             receivers={AmRouteReceivers}
@@ -63,9 +63,9 @@ const useAddPolicyModal = (
             actionButtons={
               <Modal.ButtonRow>
                 <Button type="button" variant="secondary" onClick={handleDismiss} fill="outline">
-                  Cancel
+                  取消
                 </Button>
-                <Button type="submit">Save policy</Button>
+                <Button type="submit">保存</Button>
               </Modal.ButtonRow>
             }
           />
@@ -109,7 +109,7 @@ const useEditPolicyModal = (
           onDismiss={handleDismiss}
           closeOnBackdropClick={true}
           closeOnEscape={true}
-          title="Edit notification policy"
+          title="编辑通知策略"
         >
           {isDefaultPolicy && route && (
             <AmRootRouteForm
@@ -122,9 +122,9 @@ const useEditPolicyModal = (
               actionButtons={
                 <Modal.ButtonRow>
                   <Button type="button" variant="secondary" onClick={handleDismiss} fill="outline">
-                    Cancel
+                    取消
                   </Button>
-                  <Button type="submit">Update default policy</Button>
+                  <Button type="submit">更新默认策略</Button>
                 </Modal.ButtonRow>
               }
             />
@@ -137,9 +137,9 @@ const useEditPolicyModal = (
               actionButtons={
                 <Modal.ButtonRow>
                   <Button type="button" variant="secondary" onClick={handleDismiss} fill="outline">
-                    Cancel
+                    取消
                   </Button>
-                  <Button type="submit">Update policy</Button>
+                  <Button type="submit">更新</Button>
                 </Modal.ButtonRow>
               }
             />

@@ -15,15 +15,15 @@ export const AlertStateFilter = ({ onStateFilterChange, stateFilter }: Props) =>
   const alertStateOptions: SelectableValue[] = Object.entries(AlertState)
     .sort(([labelA], [labelB]) => (labelA < labelB ? -1 : 1))
     .map(([label, state]) => ({
-      label,
+      label: label.valueOf() === 'Unprocessed' ? '未处理' : (label.valueOf() === 'Active' ?'活动中':'已抑制'),
       value: state,
     }));
 
   return (
-    <div className={styles.wrapper}>
-      <Label>State</Label>
-      <RadioButtonGroup options={alertStateOptions} value={stateFilter} onChange={onStateFilterChange} />
-    </div>
+    <div className= { styles.wrapper } >
+    <Label>状态</Label>
+    < RadioButtonGroup options = { alertStateOptions } value = { stateFilter } onChange = { onStateFilterChange } />
+      </div>
   );
 };
 

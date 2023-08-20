@@ -126,8 +126,8 @@ export function FolderAndGroup({ groupfoldersForGrafana }: { groupfoldersForGraf
         {
           <Field
             label={
-              <Label htmlFor="folder" description={'Select a folder to store your rule.'}>
-                Folder
+              <Label htmlFor="folder" description={'选择要存储规则的文件夹。'}>
+                文件夹
               </Label>
             }
             className={styles.formInput}
@@ -150,18 +150,18 @@ export function FolderAndGroup({ groupfoldersForGrafana }: { groupfoldersForGraf
                 )}
                 name="folder"
                 rules={{
-                  required: { value: true, message: 'Select a folder' },
+                  required: { value: true, message: '选择文件夹' },
                   validate: {
                     pathSeparator: (folder: Folder) => checkForPathSeparator(folder.title),
                   },
                 }}
               />
-            )) || <div>Creating new folder...</div>}
+            )) || <div>正在创建新文件夹...</div>}
           </Field>
         }
 
         <div className={styles.addButton}>
-          <span>or</span>
+          <span>或</span>
           <Button
             onClick={onOpenFolderCreationModal}
             type="button"
@@ -170,7 +170,7 @@ export function FolderAndGroup({ groupfoldersForGrafana }: { groupfoldersForGraf
             variant="secondary"
             disabled={!contextSrv.hasPermission(AccessControlAction.FoldersCreate)}
           >
-            New folder
+            新建文件夹
           </Button>
         </div>
         {isCreatingFolder && (
@@ -180,9 +180,9 @@ export function FolderAndGroup({ groupfoldersForGrafana }: { groupfoldersForGraf
 
       <div className={styles.evaluationGroupsContainer}>
         <Field
-          label="Evaluation group"
+          label="评估组"
           data-testid="group-picker"
-          description="Rules within the same group are evaluated sequentially over the same time interval."
+          description="同一组中的规则将在同一时间间隔内按顺序进行评估。"
           className={styles.formInput}
           error={errors.group?.message}
           invalid={!!errors.group?.message}
@@ -201,7 +201,7 @@ export function FolderAndGroup({ groupfoldersForGrafana }: { groupfoldersForGraf
                 invalid={Boolean(folder) && !group && Boolean(fieldState.error)}
                 loadOptions={debouncedSearch}
                 cacheOptions
-                loadingMessage={'Loading groups...'}
+                loadingMessage={'加载组...'}
                 defaultValue={defaultGroupValue}
                 defaultOptions={groupOptions}
                 getOptionLabel={(option: SelectableValue<string>) => (
@@ -216,13 +216,13 @@ export function FolderAndGroup({ groupfoldersForGrafana }: { groupfoldersForGraf
                     )}
                   </div>
                 )}
-                placeholder={'Select an evaluation group...'}
+                placeholder={'选择评估组...'}
               />
             )}
             name="group"
             control={control}
             rules={{
-              required: { value: true, message: 'Must enter a group name' },
+              required: { value: true, message: '必须输入组名称' },
               validate: {
                 pathSeparator: (group_: string) => checkForPathSeparator(group_),
               },
@@ -231,7 +231,7 @@ export function FolderAndGroup({ groupfoldersForGrafana }: { groupfoldersForGraf
         </Field>
 
         <div className={styles.addButton}>
-          <span>or</span>
+          <span>或</span>
           <Button
             onClick={onOpenEvaluationGroupCreationModal}
             type="button"
@@ -240,7 +240,7 @@ export function FolderAndGroup({ groupfoldersForGrafana }: { groupfoldersForGraf
             variant="secondary"
             disabled={!folder}
           >
-            New evaluation group
+            新建评估组
           </Button>
         </div>
         {isCreatingEvaluationGroup && (
@@ -268,13 +268,13 @@ function FolderCreationModal({
   const onSubmit = async () => {
     const newFolder = await createFolder({ title: title });
     if (!newFolder.uid) {
-      appEvents.emit(AppEvents.alertError, ['Folder could not be created']);
+      appEvents.emit(AppEvents.alertError, ['无法创建文件夹']);
       return;
     }
 
     const folder: Folder = { title: newFolder.title, uid: newFolder.uid };
     onCreate(folder);
-    appEvents.emit(AppEvents.alertSuccess, ['Folder Created', 'OK']);
+    appEvents.emit(AppEvents.alertSuccess, ['已创建文件夹', '确定']);
   };
 
   const error = containsSlashes(title);
@@ -286,13 +286,13 @@ function FolderCreationModal({
       <form onSubmit={onSubmit}>
         <Field
           label={<Label htmlFor="folder">Folder name</Label>}
-          error={"The folder name can't contain slashes"}
+          error={"文件夹名称不能包含斜杠"}
           invalid={error}
         >
           <Input
             autoFocus={true}
             id="folderName"
-            placeholder="Enter a name"
+            placeholder="输入名称"
             value={title}
             onChange={(e) => setTitle(e.currentTarget.value)}
             className={styles.formInput}
@@ -301,10 +301,10 @@ function FolderCreationModal({
 
         <Modal.ButtonRow>
           <Button variant="secondary" type="button" onClick={onClose}>
-            Cancel
+            取消
           </Button>
           <Button type="submit" disabled={!title || error}>
-            Create
+            创建
           </Button>
         </Modal.ButtonRow>
       </form>
@@ -350,16 +350,16 @@ function EvaluationGroupCreationModal({
     <Modal
       className={styles.modal}
       isOpen={true}
-      title={'New evaluation group'}
+      title={'新的评估组'}
       onDismiss={onCancel}
       onClickBackdrop={onCancel}
     >
-      <div className={styles.modalTitle}>Create a new evaluation group to use for this alert rule.</div>
+      <div className={styles.modalTitle}>创建用于此警报规则的新评估组。</div>
 
       <FormProvider {...formAPI}>
         <form onSubmit={handleSubmit(() => onSubmit())}>
           <Field
-            label={<Label htmlFor={'group'}>Evaluation group name</Label>}
+            label={<Label htmlFor={'group'}>评估组名称</Label>}
             error={formState.errors.group?.message}
             invalid={!!formState.errors.group}
           >
@@ -367,8 +367,8 @@ function EvaluationGroupCreationModal({
               className={styles.formInput}
               autoFocus={true}
               id={'group'}
-              placeholder="Enter a name"
-              {...register('group', { required: { value: true, message: 'Required.' } })}
+              placeholder="输入名称"
+              {...register('group', { required: { value: true, message: '必填项.' } })}
             />
           </Field>
 
@@ -378,25 +378,25 @@ function EvaluationGroupCreationModal({
             label={
               <Label
                 htmlFor={evaluateEveryId}
-                description="How often is the rule evaluated. Applies to every rule within the group."
+                description="评估规则的频率。应用于组中的每个规则。"
               >
-                Evaluation interval
+                评估间隔
               </Label>
             }
           >
             <Input
               className={styles.formInput}
               id={evaluateEveryId}
-              placeholder="e.g. 5m"
+              placeholder="例如: 5m"
               {...register('evaluateEvery', evaluateEveryValidationOptions(groupRules))}
             />
           </Field>
           <Modal.ButtonRow>
             <Button variant="secondary" type="button" onClick={onCancel}>
-              Cancel
+              取消
             </Button>
             <Button type="submit" disabled={!formState.isValid}>
-              Create
+              创建
             </Button>
           </Modal.ButtonRow>
         </form>

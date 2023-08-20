@@ -9,15 +9,14 @@ interface Props {
 }
 
 const NoAlertManagersAvailable = () => (
-  <Alert title="No Alertmanager found" severity="warning">
-    We could not find any external Alertmanagers and you may not have access to the built-in Grafana Alertmanager.
+  <Alert title="未找到警报管理器" severity="warning">
+    我们找不到任何外部警报管理器，您可能无法访问内置的系统警报管理器.
   </Alert>
 );
 
 const OtherAlertManagersAvailable = () => (
-  <Alert title="Selected Alertmanager not found." severity="warning">
-    The selected Alertmanager no longer exists or you may not have permission to access it. You can select a different
-    Alertmanager from the dropdown.
+  <Alert title="未找到选定的警报管理器。" severity="warning">
+    选定的警报管理器不再存在，或者您可能没有访问它的权限。您可以选择不同的下拉列表中的警报管理器。
   </Alert>
 );
 

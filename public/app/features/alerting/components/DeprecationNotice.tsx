@@ -5,17 +5,16 @@ import { Alert } from '@grafana/ui';
 export const LOCAL_STORAGE_KEY = 'grafana.legacyalerting.unifiedalertingpromo';
 
 const DeprecationNotice = () => (
-  <Alert severity="warning" title="Grafana legacy alerting is deprecated and will be removed in a future release.">
+  <Alert severity="warning" title="系统旧版警报已弃用，并将在将来的版本中删除。">
     <p>
-      You are using Grafana legacy alerting, which has been deprecated since Grafana 9.0. The codebase is now staying as
-      is and will be removed in Grafana 11.0.
+      您正在使用系统旧版警报，该功能自 Grafana 9.0 起已弃用。代码库现在保持为是并将在 Grafana 11.0 中删除。
       <br />
-      We recommend upgrading to Grafana Alerting as soon as possible.
+      我们建议尽快升级到格拉法纳警报。
     </p>
     <p>
       See{' '}
       <a href="https://grafana.com/docs/grafana/latest/alerting/migrating-alerts/">
-        how to upgrade to Grafana Alerting
+        如何升级到系统警报
       </a>{' '}
       to learn more.
     </p>

@@ -51,7 +51,7 @@ export function PanelEditorTableView({ width, height, panel, dashboard }: Props)
 
   const errorMessage = data?.errors
     ? data.errors.length > 1
-      ? 'Multiple errors found. Click for more details'
+      ? '发现多个错误。点击查看更多详情发现多个错误。点击查看更多详情'
       : data.errors[0].message
     : data?.error?.message;
   return (
@@ -60,7 +60,7 @@ export function PanelEditorTableView({ width, height, panel, dashboard }: Props)
         <>
           <PanelHeaderCorner panel={panel} error={errorMessage} />
           <PanelRenderer
-            title="Raw data"
+            title="原始数据"
             pluginId="table"
             width={innerWidth}
             height={innerHeight}

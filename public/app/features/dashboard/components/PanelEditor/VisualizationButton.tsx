@@ -38,7 +38,7 @@ export const VisualizationButton = ({ panel }: Props) => {
       <ButtonGroup>
         <ToolbarButton
           className={styles.vizButton}
-          tooltip="Click to change visualization"
+          tooltip="单击以更改可视化效果"
           imgSrc={plugin.meta.info.logos.small}
           isOpen={isVizPickerOpen}
           onClick={onToggleOpen}
@@ -50,12 +50,12 @@ export const VisualizationButton = ({ panel }: Props) => {
           {plugin.meta.name}
         </ToolbarButton>
         <ToolbarButton
-          tooltip={isPanelOptionsVisible ? 'Close options pane' : 'Show options pane'}
+          tooltip={isPanelOptionsVisible ? '关闭选项窗格' : '显示选项窗格'}
           icon={isPanelOptionsVisible ? 'angle-right' : 'angle-left'}
           onClick={onToggleOptionsPane}
           variant="canvas"
           data-testid={selectors.components.PanelEditor.toggleVizOptions}
-          aria-label={isPanelOptionsVisible ? 'Close options pane' : 'Show options pane'}
+          aria-label={isPanelOptionsVisible ? '关闭选项窗格' : '显示选项窗格'}
         />
       </ButtonGroup>
     </div>

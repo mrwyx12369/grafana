@@ -71,9 +71,9 @@ const QueryHeader = ({
     <>
       <EditorHeader>
         <InlineSelect
-          label="Region"
+          label="区域"
           value={region}
-          placeholder="Select region"
+          placeholder="选择地区"
           allowCustomValue
           onChange={({ value: region }) => region && onRegionChange(region)}
           options={regions}
@@ -96,9 +96,9 @@ const QueryHeader = ({
         {shouldDisplayMonitoringBadge && (
           <>
             <Badge
-              text="Monitoring account"
+              text="监控账户"
               color="blue"
-              tooltip="AWS monitoring accounts view data from source accounts so you can centralize monitoring and troubleshoot activities"
+              tooltip="AWS 监控账户查看来自源账户的数据，以便您可以集中监控和排查活动问题"
             ></Badge>
           </>
         )}

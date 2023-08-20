@@ -84,13 +84,13 @@ export const AmRoutesExpandedForm = ({
             {({ fields, append, remove }) => (
               <>
                 <Stack direction="column" alignItems="flex-start">
-                  <div>Matching labels</div>
+                  <div>匹配标签</div>
                   {fields.length === 0 && (
                     <Badge
                       color="orange"
                       className={styles.noMatchersWarning}
                       icon="exclamation-triangle"
-                      text="If no matchers are specified, this notification policy will handle all alert instances."
+                      text="如果未指定匹配器，则此通知策略将处理所有警报实例。"
                     />
                   )}
                   {fields.length > 0 && (
@@ -99,18 +99,18 @@ export const AmRoutesExpandedForm = ({
                         return (
                           <Stack direction="row" key={field.id} alignItems="center">
                             <Field
-                              label="Label"
+                              label="标签"
                               invalid={!!errors.object_matchers?.[index]?.name}
                               error={errors.object_matchers?.[index]?.name?.message}
                             >
                               <Input
-                                {...register(`object_matchers.${index}.name`, { required: 'Field is required' })}
+                                {...register(`object_matchers.${index}.name`, { required: '字段为必填项' })}
                                 defaultValue={field.name}
-                                placeholder="label"
+                                placeholder="标签"
                                 autoFocus
                               />
                             </Field>
-                            <Field label={'Operator'}>
+                            <Field label={'操作'}>
                               <InputControl
                                 render={({ field: { onChange, ref, ...field } }) => (
                                   <Select
@@ -124,22 +124,22 @@ export const AmRoutesExpandedForm = ({
                                 defaultValue={field.operator}
                                 control={control}
                                 name={`object_matchers.${index}.operator`}
-                                rules={{ required: { value: true, message: 'Required.' } }}
+                                rules={{ required: { value: true, message: '必填项.' } }}
                               />
                             </Field>
                             <Field
-                              label="Value"
+                              label="值"
                               invalid={!!errors.object_matchers?.[index]?.value}
                               error={errors.object_matchers?.[index]?.value?.message}
                             >
                               <Input
-                                {...register(`object_matchers.${index}.value`, { required: 'Field is required' })}
+                                {...register(`object_matchers.${index}.value`, { required: '必填项' })}
                                 defaultValue={field.value}
-                                placeholder="value"
+                                placeholder="值"
                               />
                             </Field>
-                            <IconButton tooltip="Remove matcher" name={'trash-alt'} onClick={() => remove(index)}>
-                              Remove
+                            <IconButton tooltip="删除匹配器" name={'trash-alt'} onClick={() => remove(index)}>
+                              删除
                             </IconButton>
                           </Stack>
                         );
@@ -153,17 +153,17 @@ export const AmRoutesExpandedForm = ({
                     variant="secondary"
                     type="button"
                   >
-                    Add matcher
+                    添加匹配器
                   </Button>
                 </Stack>
               </>
             )}
           </FieldArray>
-          <Field label="Contact point">
+          <Field label="联系点">
             <InputControl
               render={({ field: { onChange, ref, ...field } }) => (
                 <Select
-                  aria-label="Contact point"
+                  aria-label="联系点"
                   {...field}
                   className={formStyles.input}
                   onChange={(value) => onChange(mapSelectValueToString(value))}
@@ -175,22 +175,22 @@ export const AmRoutesExpandedForm = ({
               name="receiver"
             />
           </Field>
-          <Field label="Continue matching subsequent sibling nodes">
+          <Field label="继续匹配后续同级节点">
             <Switch id="continue-toggle" {...register('continue')} />
           </Field>
-          <Field label="Override grouping">
+          <Field label="覆盖分组">
             <Switch id="override-grouping-toggle" {...register('overrideGrouping')} />
           </Field>
           {watch().overrideGrouping && (
             <Field
-              label="Group by"
-              description="Group alerts when you receive a notification based on labels. If empty it will be inherited from the parent policy."
+              label="分组依据"
+              description="收到基于标签的通知时对警报进行分组。如果为空，它将从父策略继承。"
             >
               <InputControl
                 rules={{
                   validate: (value) => {
                     if (!value || value.length === 0) {
-                      return 'At least one group by option is required.';
+                      return '至少需要一个分组依据选项。';
                     }
                     return true;
                   },
@@ -220,14 +220,14 @@ export const AmRoutesExpandedForm = ({
               />
             </Field>
           )}
-          <Field label="Override general timings">
+          <Field label="覆盖常规计时">
             <Switch id="override-timings-toggle" {...register('overrideTimings')} />
           </Field>
           {watch().overrideTimings && (
             <>
               <Field
-                label="Group wait"
-                description="The waiting time until the initial notification is sent for a new group created by an incoming alert. If empty it will be inherited from the parent policy."
+                label="分组等待"
+                description="为传入警报创建的新组发送初始通知之前的等待时间。如果为空，它将从父策略继承。"
                 invalid={!!errors.groupWaitValue}
                 error={errors.groupWaitValue?.message}
               >
@@ -238,8 +238,8 @@ export const AmRoutesExpandedForm = ({
                 />
               </Field>
               <Field
-                label="Group interval"
-                description="The waiting time to send a batch of new alerts for that group after the first notification was sent. If empty it will be inherited from the parent policy."
+                label="分组间隔"
+                description="发送第一个通知后为该组发送一批新警报的等待时间。如果为空，它将从父策略继承。"
                 invalid={!!errors.groupIntervalValue}
                 error={errors.groupIntervalValue?.message}
               >
@@ -250,8 +250,8 @@ export const AmRoutesExpandedForm = ({
                 />
               </Field>
               <Field
-                label="Repeat interval"
-                description="The waiting time to resend an alert after they have successfully been sent."
+                label="重复间隔"
+                description="成功发送警报后重新发送警报的等待时间。"
                 invalid={!!errors.repeatIntervalValue}
                 error={errors.repeatIntervalValue?.message}
               >
@@ -269,9 +269,9 @@ export const AmRoutesExpandedForm = ({
             </>
           )}
           <Field
-            label="Mute timings"
+            label="静音计时"
             data-testid="am-mute-timing-select"
-            description="Add mute timing to policy"
+            description="将静音计时添加到策略"
             invalid={!!errors.muteTimeIntervals}
           >
             <InputControl

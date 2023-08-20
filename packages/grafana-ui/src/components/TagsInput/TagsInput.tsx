@@ -26,7 +26,7 @@ export interface Props {
 }
 
 export const TagsInput = ({
-  placeholder = 'New tag (enter key to add)',
+  placeholder = '新标签（输入要添加的键）',
   tags = [],
   onChange,
   width,
@@ -87,7 +87,7 @@ export const TagsInput = ({
             size="md"
             disabled={newTagName.length <= 0}
           >
-            Add
+            增加
           </Button>
         }
       />

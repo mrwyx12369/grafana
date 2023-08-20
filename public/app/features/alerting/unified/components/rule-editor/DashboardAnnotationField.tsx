@@ -42,15 +42,15 @@ const DashboardAnnotationField = ({
         </a>
       )}
 
-      {!dashboard && <span className={styles.noLink}>Dashboard {dashboardUid} </span>}
+      {!dashboard && <span className={styles.noLink}>仪表板 {dashboardUid} </span>}
 
       {panel && (
         <a href={panelLink} className={styles.link} target="_blank" rel="noreferrer" data-testid="panel-annotation">
-          {panel.title || '<No title>'} <Icon name={'external-link-alt'} />
+          {panel.title || '<无标题>'} <Icon name={'external-link-alt'} />
         </a>
       )}
 
-      {!panel && <span className={styles.noLink}> - Panel {panelId}</span>}
+      {!panel && <span className={styles.noLink}> - 面板 {panelId}</span>}
 
       {(dashboard || panel) && (
         <>

@@ -4,11 +4,10 @@ import { config } from '@grafana/runtime';
 import { Alert } from '@grafana/ui';
 
 const EvaluationIntervalLimitExceeded = () => (
-  <Alert severity="warning" title="Global evalutation interval limit exceeded">
-    A minimum evaluation interval of <strong>{config.unifiedAlerting.minInterval}</strong> has been configured in
-    Grafana.
+  <Alert severity="warning" title="超出全局评估间隔限制">
+    <strong>{config.unifiedAlerting.minInterval}</strong>的最小评估间隔已在系统中配置。.
     <br />
-    Please contact the administrator to configure a lower interval.
+    请联系管理员以配置较低的间隔。
   </Alert>
 );
 

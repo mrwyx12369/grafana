@@ -168,9 +168,9 @@ function ForInput({ evaluateEvery }: { evaluateEvery: string }) {
         label={
           <Label
             htmlFor="evaluateFor"
-            description="Period in which an alert rule can be in breach of the condition until the alert rule fires."
+            description="警报规则可能违反条件的时间段，直到警报规则触发。"
           >
-            Pending period
+            等待时限
           </Label>
         }
         className={styles.inlineField}
@@ -185,16 +185,16 @@ function ForInput({ evaluateEvery }: { evaluateEvery: string }) {
 }
 
 function getDescription() {
-  const textToRender = 'Define how the alert rule is evaluated.';
-  const docsLink = 'https://grafana.com/docs/grafana/latest/alerting/fundamentals/alert-rules/rule-evaluation/';
+  const textToRender = '定义如何评估警报规则。';
+  const docsLink = 'https://www.smxyi.com/datav/alerting/fundamentals/alert-rules/rule-evaluation/';
   return (
     <Stack gap={0.5}>
       {`${textToRender}`}
       <NeedHelpInfo
-        contentText="Evaluation groups are containers for evaluating alert and recording rules. An evaluation group defines an evaluation interval - how often a rule is checked. Alert rules within the same evaluation group are evaluated sequentially"
+        contentText="评估组是用于评估警报和记录规则的容器。评估组定义评估间隔 - 检查规则的频率。按顺序评估同一评估组中的警报规则"
         externalLink={docsLink}
-        linkText={`Read about evaluation`}
-        title="Evaluation"
+        linkText={`阅读有关评估的信息`}
+        title="评估"
       />
     </Stack>
   );
@@ -218,7 +218,7 @@ export function GrafanaEvaluationBehavior({
 
   return (
     // TODO remove "and alert condition" for recording rules
-    <RuleEditorSection stepNo={3} title="Set alert evaluation behavior" description={getDescription()}>
+    <RuleEditorSection stepNo={3} title="设置警报评估行为" description={getDescription()}>
       <Stack direction="column" justify-content="flex-start" align-items="flex-start">
         <FolderGroupAndEvaluationInterval setEvaluateEvery={setEvaluateEvery} evaluateEvery={evaluateEvery} />
         <ForInput evaluateEvery={evaluateEvery} />
@@ -236,8 +236,8 @@ export function GrafanaEvaluationBehavior({
                     value={Boolean(isPaused)}
                   />
                   <label htmlFor="pause-alert" className={styles.switchLabel}>
-                    Pause evaluation
-                    <Tooltip placement="top" content="Turn on to pause evaluation for this alert rule." theme={'info'}>
+                     暂停评估
+                    <Tooltip placement="top" content="启用此选项可暂停此警报规则的评估。" theme={'info'}>
                       <Icon tabIndex={0} name="info-circle" size="sm" className={styles.infoIcon} />
                     </Tooltip>
                   </label>
@@ -251,12 +251,12 @@ export function GrafanaEvaluationBehavior({
       <CollapseToggle
         isCollapsed={!showErrorHandling}
         onToggle={(collapsed) => setShowErrorHandling(!collapsed)}
-        text="Configure no data and error handling"
+        text="不配置数据和错误处理"
         className={styles.collapseToggle}
       />
       {showErrorHandling && (
         <>
-          <Field htmlFor="no-data-state-input" label="Alert state if no data or all values are null">
+          <Field htmlFor="no-data-state-input" label="没有数据或所有值都为空时的警报状态">
             <InputControl
               render={({ field: { onChange, ref, ...field } }) => (
                 <GrafanaAlertStatePicker
@@ -271,7 +271,7 @@ export function GrafanaEvaluationBehavior({
               name="noDataState"
             />
           </Field>
-          <Field htmlFor="exec-err-state-input" label="Alert state if execution error or timeout">
+          <Field htmlFor="exec-err-state-input" label="执行错误或超时时的警报状态">
             <InputControl
               render={({ field: { onChange, ref, ...field } }) => (
                 <GrafanaAlertStatePicker

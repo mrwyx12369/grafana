@@ -121,8 +121,8 @@ export const MultipleDataSourcePicker = (props: MultipleDataSourcePickerProps) =
       }));
 
     const groupedOptions = [
-      { label: 'Data sources with configured alert rules', options: alertManagingDs, expanded: true },
-      { label: 'Other data sources', options: nonAlertManagingDs, expanded: true },
+      { label: '配置了警报规则的数据源', options: alertManagingDs, expanded: true },
+      { label: '其他数据源', options: nonAlertManagingDs, expanded: true },
     ];
 
     return groupedOptions;

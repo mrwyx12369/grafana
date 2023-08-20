@@ -11,7 +11,7 @@ import { AlertTemplatePreviewData } from './TemplateData';
 import { TemplateDataTable } from './TemplateDataDocs';
 import { GenerateAlertDataModal } from './form/GenerateAlertDataModal';
 
-export const RESET_TO_DEFAULT = 'Reset to default';
+export const RESET_TO_DEFAULT = '重置为默认值';
 
 export function PayloadEditor({
   payload,
@@ -82,7 +82,7 @@ export function PayloadEditor({
     <div className={styles.wrapper}>
       <div className={styles.editor}>
         <div className={styles.title}>
-          Payload data
+          有效负载数据
           <Tooltip placement="top" content={<AlertTemplateDataTable />} theme="info">
             <Icon name="info-circle" className={styles.tooltip} size="xl" />
           </Tooltip>
@@ -113,7 +113,7 @@ export function PayloadEditor({
             disabled={errorInPayloadJson}
             onClick={onOpenAlertSelectorModal}
           >
-            Select alert instances
+            选择警报实例
           </Button>
 
           <Button
@@ -124,7 +124,7 @@ export function PayloadEditor({
             variant="secondary"
             disabled={errorInPayloadJson}
           >
-            Add custom alerts
+            添加自定义警报
           </Button>
           <Button onClick={onReset} className={styles.button} icon="arrow-up" type="button" variant="destructive">
             {RESET_TO_DEFAULT}
@@ -134,8 +134,8 @@ export function PayloadEditor({
             <Badge
               color="orange"
               icon="exclamation-triangle"
-              text={'JSON Error'}
-              tooltip={'Fix errors in payload, and click Refresh preview button'}
+              text={'JSON 错误'}
+              tooltip={'修复有效负载中的错误，然后单击刷新预览按钮'}
             />
           )}
         </div>
@@ -156,7 +156,7 @@ const AlertTemplateDataTable = () => {
     <TemplateDataTable
       caption={
         <h4 className={styles.templateDataDocsHeader}>
-          Alert template data <span>This is the list of alert data fields used in the preview.</span>
+          警报模板数据 <span>这是预览中使用的警报数据字段的列表。</span>
         </h4>
       }
       dataItems={AlertTemplatePreviewData}

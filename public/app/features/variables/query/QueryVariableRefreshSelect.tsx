@@ -10,8 +10,8 @@ interface Props {
 }
 
 const REFRESH_OPTIONS = [
-  { label: 'On dashboard load', value: VariableRefresh.onDashboardLoad },
-  { label: 'On time range change', value: VariableRefresh.onTimeRangeChanged },
+  { label: '加载仪表板时', value: VariableRefresh.onDashboardLoad },
+  { label: '时间范围更改', value: VariableRefresh.onTimeRangeChanged },
 ];
 
 export function QueryVariableRefreshSelect({ onChange, refresh }: PropsWithChildren<Props>) {
@@ -31,7 +31,7 @@ export function QueryVariableRefreshSelect({ onChange, refresh }: PropsWithChild
   );
 
   return (
-    <Field label="Refresh" description="When to update the values of this variable">
+    <Field label="刷新" description="何时更新此变量的值">
       <RadioButtonGroup
         options={REFRESH_OPTIONS}
         onChange={onChange}

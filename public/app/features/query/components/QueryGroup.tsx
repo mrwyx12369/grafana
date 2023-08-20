@@ -219,7 +219,7 @@ export class QueryGroup extends PureComponent<Props, State> {
       <div>
         <div className={styles.dataSourceRow}>
           <InlineFormLabel htmlFor="data-source-picker" width={'auto'}>
-            Data source
+            数据源
           </InlineFormLabel>
           <div className={styles.dataSourceRowItem}>{this.renderDataSourcePickerWithPrompt()}</div>
           {dataSource && (
@@ -374,7 +374,7 @@ export class QueryGroup extends PureComponent<Props, State> {
             aria-label={selectors.components.QueryTab.addQuery}
             data-testid="query-tab-add-query"
           >
-            Query
+            查询
           </Button>
         )}
         {config.expressionsEnabled && this.isExpressionsSupported(dsSettings) && (
@@ -385,7 +385,7 @@ export class QueryGroup extends PureComponent<Props, State> {
             className={styles.expressionButton}
             data-testid="query-tab-add-expression"
           >
-            <span>Expression&nbsp;</span>
+            <span>表达式&nbsp;</span>
           </Button>
         )}
         {this.renderExtraActions()}
@@ -410,7 +410,7 @@ export class QueryGroup extends PureComponent<Props, State> {
               <div className={styles.queriesWrapper}>{this.renderQueries(dsSettings)}</div>
               {this.renderAddQueryRow(dsSettings, styles)}
               {isHelpOpen && (
-                <Modal title="Data source help" isOpen={true} onDismiss={this.onCloseHelp}>
+                <Modal title="数据源帮助" isOpen={true} onDismiss={this.onCloseHelp}>
                   <PluginHelp pluginId={dsSettings.meta.id} />
                 </Modal>
               )}

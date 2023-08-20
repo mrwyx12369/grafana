@@ -23,13 +23,13 @@ export const AlertConditionIndicator = ({ enabled = false, error, warning, onSet
   }
 
   if (enabled && !error && !warning) {
-    return <Badge color="green" icon="check" text="Alert condition" />;
+    return <Badge color="green" icon="check" text="警报条件" />;
   }
 
   if (!enabled) {
     return (
       <button type="button" className={styles.actionLink} onClick={() => onSetCondition && onSetCondition()}>
-        Set as alert condition
+        设置为警报条件
       </button>
     );
   }

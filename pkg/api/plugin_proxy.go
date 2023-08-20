@@ -46,7 +46,7 @@ func (hs *HTTPServer) ProxyPluginRequest(c *contextmodel.ReqContext) {
 	query := pluginsettings.GetByPluginIDArgs{OrgID: c.OrgID, PluginID: plugin.ID}
 	ps, err := hs.PluginSettings.GetPluginSettingByPluginID(c.Req.Context(), &query)
 	if err != nil {
-		c.JsonApiErr(http.StatusInternalServerError, "Failed to fetch plugin settings", err)
+		c.JsonApiErr(http.StatusInternalServerError, "无法获取插件设置", err)
 		return
 	}
 

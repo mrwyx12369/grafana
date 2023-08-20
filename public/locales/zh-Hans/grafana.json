@@ -286,7 +286,7 @@
     },
     "alerting-groups": {
       "subtitle": "查看来自警报管理器实例的分组警报",
-      "title": "组"
+      "title": "分组警报"
     },
     "alerting-home": {
       "title": "首页"

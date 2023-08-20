@@ -58,11 +58,11 @@ const NotificationPoliciesFilter = ({
         label={
           <LabelElement>
             <Stack gap={0.5}>
-              <span>Search by matchers</span>
+              <span>按匹配器搜索</span>
               <Tooltip
                 content={
                   <div>
-                    Filter silences by matchers using a comma separated list of matchers, ie:
+                    使用逗号分隔的匹配器列表按匹配器过滤静音，如：
                     <pre>{`severity=critical, instance=~cluster-us-.+`}</pre>
                   </div>
                 }
@@ -73,12 +73,12 @@ const NotificationPoliciesFilter = ({
           </LabelElement>
         }
         invalid={inputInvalid}
-        error={inputInvalid ? 'Query must use valid matcher syntax' : null}
+        error={inputInvalid ? '查询必须使用有效的匹配器语法' : null}
       >
         <Input
           ref={searchInputRef}
           data-testid="search-query-input"
-          placeholder="Search"
+          placeholder="搜索"
           width={46}
           prefix={<Icon name="search" />}
           onChange={(event) => {
@@ -87,7 +87,7 @@ const NotificationPoliciesFilter = ({
           defaultValue={queryString}
         />
       </Field>
-      <Field label="Search by contact point" style={{ marginBottom: 0 }}>
+      <Field label="按联系点搜索" style={{ marginBottom: 0 }}>
         <Select
           id="receiver"
           aria-label="Search by contact point"
@@ -102,7 +102,7 @@ const NotificationPoliciesFilter = ({
       </Field>
       {hasFilters && (
         <Button variant="secondary" icon="times" onClick={clearFilters} style={{ marginTop: 19 }}>
-          Clear filters
+          清除过滤器
         </Button>
       )}
     </Stack>

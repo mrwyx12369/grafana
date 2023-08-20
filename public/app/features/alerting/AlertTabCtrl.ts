@@ -276,7 +276,7 @@ export class AlertTabCtrl {
 
     if (!this.alert.frequency.match(/^\d+([dhms])$/)) {
       this.frequencyWarning =
-        'Invalid frequency, has to be numeric followed by one of the following units: "d, h, m, s"';
+        '频率无效，必须为数字，后跟以下单位之一： "d, h, m, s"';
       return;
     }
 

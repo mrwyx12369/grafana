@@ -73,7 +73,7 @@ func (srv RulerSrv) RouteDeleteAlertRules(c *contextmodel.ReqContext, namespaceT
 
 	provenances, err := srv.provenanceStore.GetProvenances(c.Req.Context(), c.SignedInUser.OrgID, (&ngmodels.AlertRule{}).ResourceType())
 	if err != nil {
-		return ErrResp(http.StatusInternalServerError, err, "failed to fetch provenances of alert rules")
+		return ErrResp(http.StatusInternalServerError, err, "无法获取警报规则的来源")
 	}
 
 	deletedGroups := make(map[ngmodels.AlertRuleGroupKey][]ngmodels.AlertRuleKey)

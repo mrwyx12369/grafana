@@ -299,8 +299,8 @@ function legacyCreateSpanLinkFactory(
 
         links!.push({
           href: link.href,
-          title: reference.span ? reference.span.operationName : 'View linked span',
-          content: <Icon name="link" title="View linked span" />,
+          title: reference.span ? reference.span.operationName : '查看链接跨度',
+          content: <Icon name="link" title="查看链接跨度" />,
           onClick: link.onClick,
           field: link.origin,
           type: SpanLinkType.Traces,
@@ -314,8 +314,8 @@ function legacyCreateSpanLinkFactory(
 
         links!.push({
           href: link.href,
-          title: reference.span ? reference.span.operationName : 'View linked span',
-          content: <Icon name="link" title="View linked span" />,
+          title: reference.span ? reference.span.operationName : '查看链接跨度',
+          content: <Icon name="link" title="查看链接跨度" />,
           onClick: link.onClick,
           field: link.origin,
           type: SpanLinkType.Traces,

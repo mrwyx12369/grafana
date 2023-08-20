@@ -34,10 +34,10 @@ export const DataLinks = (props: Props) => {
 
   return (
     <ConfigSubSection
-      title="Data links"
+      title="数据连接"
       description={
         <ConfigDescriptionLink
-          description="Add links to existing fields. Links will be shown in log row details next to the field value."
+          description="添加指向现有字段的链接。链接将显示在字段值旁边的日志行详细信息中。"
           suffix="elasticsearch/#data-links"
           feature="Elasticsearch data links"
         />
@@ -65,8 +65,8 @@ export const DataLinks = (props: Props) => {
                   suggestions={[
                     {
                       value: DataLinkBuiltInVars.valueRaw,
-                      label: 'Raw value',
-                      documentation: 'Raw value of the field',
+                      label: '原始值',
+                      documentation: '字段的原始值',
                       origin: VariableOrigin.Value,
                     },
                   ]}

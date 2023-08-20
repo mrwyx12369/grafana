@@ -46,7 +46,7 @@ export const AmRootRouteForm = ({
     <Form defaultValues={{ ...defaultValues, overrideTimings: true, overrideGrouping: true }} onSubmit={onSubmit}>
       {({ register, control, errors, setValue, getValues }) => (
         <>
-          <Field label="Default contact point" invalid={!!errors.receiver} error={errors.receiver?.message}>
+          <Field label="默认联系点" invalid={!!errors.receiver} error={errors.receiver?.message}>
             <>
               <div className={styles.container} data-testid="am-receiver-select">
                 <InputControl
@@ -61,21 +61,21 @@ export const AmRootRouteForm = ({
                   )}
                   control={control}
                   name="receiver"
-                  rules={{ required: { value: true, message: 'Required.' } }}
+                  rules={{ required: { value: true, message: '必填项.' } }}
                 />
-                <span>or</span>
+                <span>或</span>
                 <Link
                   className={styles.linkText}
                   href={makeAMLink('/alerting/notifications/receivers/new', alertManagerSourceName)}
                 >
-                  Create a contact point
+                  创建联系点
                 </Link>
               </div>
             </>
           </Field>
           <Field
-            label="Group by"
-            description="Group alerts when you receive a notification based on labels."
+            label="分组依据"
+            description="收到基于标签的通知时对警报进行分组。"
             data-testid="am-group-select"
           >
             {/* @ts-ignore-check: react-hook-form made me do this */}
@@ -104,13 +104,13 @@ export const AmRootRouteForm = ({
             collapsible
             className={styles.collapse}
             isOpen={isTimingOptionsExpanded}
-            label="Timing options"
+            label="定时选项"
             onToggle={setIsTimingOptionsExpanded}
           >
             <div className={styles.timingFormContainer}>
               <Field
-                label="Group wait"
-                description="The waiting time until the initial notification is sent for a new group created by an incoming alert. Default 30 seconds."
+                label="分组等待"
+                description="为传入警报创建的新组发送初始通知之前的等待时间。默认为 30 秒。"
                 invalid={!!errors.groupWaitValue}
                 error={errors.groupWaitValue?.message}
                 data-testid="am-group-wait"
@@ -123,8 +123,8 @@ export const AmRootRouteForm = ({
                 />
               </Field>
               <Field
-                label="Group interval"
-                description="The waiting time to send a batch of new alerts for that group after the first notification was sent. Default 5 minutes."
+                label="分组间隔"
+                description="发送第一个通知后为该组发送一批新警报的等待时间。默认为 5 分钟。"
                 invalid={!!errors.groupIntervalValue}
                 error={errors.groupIntervalValue?.message}
                 data-testid="am-group-interval"
@@ -137,8 +137,8 @@ export const AmRootRouteForm = ({
                 />
               </Field>
               <Field
-                label="Repeat interval"
-                description="The waiting time to resend an alert after they have successfully been sent. Default 4 hours."
+                label="重复间隔"
+                description="成功发送警报后重新发送警报的等待时间。默认为 4 小时。"
                 invalid={!!errors.repeatIntervalValue}
                 error={errors.repeatIntervalValue?.message}
                 data-testid="am-repeat-interval"

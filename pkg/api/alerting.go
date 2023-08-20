@@ -67,7 +67,7 @@ func (hs *HTTPServer) GetAlertStatesForDashboard(c *contextmodel.ReqContext) res
 
 	res, err := hs.AlertEngine.AlertStore.GetAlertStatesForDashboard(c.Req.Context(), &query)
 	if err != nil {
-		return response.Error(500, "Failed to fetch alert states", err)
+		return response.Error(500, "无法提取警报状态", err)
 	}
 
 	return response.JSON(http.StatusOK, res)

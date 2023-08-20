@@ -58,8 +58,8 @@ export const ExpressionEditor = ({
   const dsi = getDataSourceSrv().getInstanceSettings(dataSourceName);
 
   if (error || !dataSource || !dataSource?.components?.QueryEditor || !dsi) {
-    const errorMessage = error?.message || 'Data source plugin does not export any Query Editor component';
-    return <div>Could not load query editor due to: {errorMessage}</div>;
+    const errorMessage = error?.message || '数据源插件不导出任何查询编辑器组件';
+    return <div>由于以下原因无法加载查询编辑器： {errorMessage}</div>;
   }
 
   const previewLoaded = alertPreview?.data.state === LoadingState.Done;
@@ -90,11 +90,11 @@ export const ExpressionEditor = ({
             onClick={onRunQueriesClick}
             disabled={alertPreview?.data.state === LoadingState.Loading}
           >
-            Preview alerts
+            预览警报
           </Button>
           {previewLoaded && !previewHasAlerts && (
-            <Alert title="Alerts preview" severity="info" className={styles.previewAlert}>
-              There are no firing alerts for your query.
+            <Alert title="警报预览" severity="info" className={styles.previewAlert}>
+              查询没有触发警报。
             </Alert>
           )}
           {previewHasAlerts && <CloudAlertPreview preview={previewDataFrame} />}
@@ -131,7 +131,7 @@ export function useQueryMappers(dataSourceName: string): QueryMappers {
           mapToQuery: (existing: DataQuery, value: string | undefined) => ({ ...existing, expr: value }),
         };
       default:
-        throw new Error(`${dataSourceName} is not supported as an expression editor`);
+        throw new Error(`${dataSourceName} 不支持作为表达式编辑器`);
     }
   }, [dataSourceName]);
 }

@@ -52,7 +52,7 @@ export function RuleListErrors(): ReactElement {
     dataSourceConfigErrors.forEach(({ dataSource, error }) => {
       result.push(
         <>
-          Failed to load the data source configuration for{' '}
+          无法加载 的数据源配置{' '}
           <a href={makeDataSourceLink(dataSource)} className={styles.dsLink}>
             {dataSource.name}
           </a>
@@ -64,11 +64,11 @@ export function RuleListErrors(): ReactElement {
     promRequestErrors.forEach(({ dataSource, error }) =>
       result.push(
         <>
-          Failed to load rules state from{' '}
+          无法从中加载规则状态{' '}
           <a href={makeDataSourceLink(dataSource)} className={styles.dsLink}>
             {dataSource.name}
           </a>
-          : {error.message || 'Unknown error.'}
+          : {error.message || '未知错误。'}
         </>
       )
     );
@@ -76,11 +76,11 @@ export function RuleListErrors(): ReactElement {
     rulerRequestErrors.forEach(({ dataSource, error }) =>
       result.push(
         <>
-          Failed to load rules config from{' '}
+          无法从中加载规则配置{' '}
           <a href={makeDataSourceLink(dataSource)} className={styles.dsLink}>
             {dataSource.name}
           </a>
-          : {error.message || 'Unknown error.'}
+          : {error.message || '未知错误。'}
         </>
       )
     );

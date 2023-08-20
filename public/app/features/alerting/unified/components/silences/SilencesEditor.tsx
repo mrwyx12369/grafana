@@ -133,7 +133,7 @@ export const SilencesEditor = ({ silence, alertManagerSourceName }: Props) => {
         alertManagerSourceName,
         payload,
         exitOnSave: true,
-        successMessage: `Silence ${payload.id ? 'updated' : 'created'}`,
+        successMessage: `静默 ${payload.id ? '已更新' : '创建'}`,
       })
     );
   };
@@ -186,15 +186,15 @@ export const SilencesEditor = ({ silence, alertManagerSourceName }: Props) => {
   return (
     <FormProvider {...formAPI}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FieldSet label={`${silence ? 'Recreate silence' : 'Create silence'}`}>
+        <FieldSet label={`${silence ? '重建静默' : '新建静默'}`}>
           <div className={cx(styles.flexRow, styles.silencePeriod)}>
             <SilencePeriod />
             <Field
-              label="Duration"
+              label="持续时间"
               invalid={!!formState.errors.duration}
               error={
                 formState.errors.duration &&
-                (formState.errors.duration.type === 'required' ? 'Required field' : formState.errors.duration.message)
+                (formState.errors.duration.type === 'required' ? '必填项.' : formState.errors.duration.message)
               }
             >
               <Input
@@ -202,7 +202,7 @@ export const SilencesEditor = ({ silence, alertManagerSourceName }: Props) => {
                 {...register('duration', {
                   validate: (value) =>
                     Object.keys(parseDuration(value)).length === 0
-                      ? 'Invalid duration. Valid example: 1d 4h (Available units: y, M, w, d, h, m, s)'
+                      ? '持续时间无效。有效示例：1d 4h（可用单 y, M, w, d, h, m, s)'
                       : undefined,
                 })}
                 id="duration"
@@ -213,28 +213,28 @@ export const SilencesEditor = ({ silence, alertManagerSourceName }: Props) => {
           <MatchersField />
           <Field
             className={cx(styles.field, styles.textArea)}
-            label="Comment"
+            label="评论"
             required
             error={formState.errors.comment?.message}
             invalid={!!formState.errors.comment}
           >
             <TextArea
-              {...register('comment', { required: { value: true, message: 'Required.' } })}
+              {...register('comment', { required: { value: true, message: '必填项.' } })}
               rows={5}
-              placeholder="Details about the silence"
+              placeholder="有关静默的详细信息"
             />
           </Field>
           {!userLogged && (
             <Field
               className={cx(styles.field, styles.createdBy)}
-              label="Created By"
+              label="创建人"
               required
               error={formState.errors.createdBy?.message}
               invalid={!!formState.errors.createdBy}
             >
               <Input
-                {...register('createdBy', { required: { value: true, message: 'Required.' } })}
-                placeholder="Who's creating the silence"
+                {...register('createdBy', { required: { value: true, message: '必填项.' } })}
+                placeholder="创建静默的用户"
               />
             </Field>
           )}
@@ -243,12 +243,12 @@ export const SilencesEditor = ({ silence, alertManagerSourceName }: Props) => {
         <div className={styles.flexRow}>
           {loading && (
             <Button disabled={true} icon="fa fa-spinner" variant="primary">
-              Saving...
+              保存...
             </Button>
           )}
-          {!loading && <Button type="submit">Save silence</Button>}
+          {!loading && <Button type="submit">保存静默</Button>}
           <LinkButton href={makeAMLink('alerting/silences', alertManagerSourceName)} variant={'secondary'}>
-            Cancel
+              取消
           </LinkButton>
         </div>
       </form>

@@ -43,23 +43,23 @@ export function ExistingRuleEditor({ identifier, id }: ExistingRuleEditorProps) 
   }, [dispatched, dispatch, identifier]);
 
   if (loading || isEditable === undefined) {
-    return <LoadingPlaceholder text="Loading rule..." />;
+    return <LoadingPlaceholder text="加载规则..." />;
   }
 
   if (error) {
     return (
-      <Alert severity="error" title="Failed to load rule">
+      <Alert severity="error" title="无法加载规则">
         {error.message}
       </Alert>
     );
   }
 
   if (!result) {
-    return <AlertWarning title="Rule not found">Sorry! This rule does not exist.</AlertWarning>;
+    return <AlertWarning title="未找到规则">不好意思！此规则不存在。</AlertWarning>;
   }
 
   if (isEditable === false) {
-    return <AlertWarning title="Cannot edit rule">Sorry! You do not have permission to edit this rule.</AlertWarning>;
+    return <AlertWarning title="无法编辑规则">不好意思！您没有编辑此规则的权限。</AlertWarning>;
   }
 
   return <AlertRuleForm existing={result} />;

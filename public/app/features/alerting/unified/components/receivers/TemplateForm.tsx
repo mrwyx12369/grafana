@@ -66,10 +66,10 @@ export const isDuplicating = (location: Location) => location.pathname.endsWith(
 const DEFAULT_PAYLOAD = `[
   {
     "annotations": {
-      "summary": "Instance instance1 has been down for more than 5 minutes"
+      "summary": "实例实例 1 已关闭超过 5 分钟"
     },
     "labels": {
-      "instance": "instance1"
+      "instance": "实例1"
     },
     "startsAt": "${subDays(new Date(), 1).toISOString()}"
   }]
@@ -127,7 +127,7 @@ export const TemplateForm = ({ existing, alertManagerSourceName, config, provena
         alertManagerSourceName,
         newConfig,
         oldConfig: config,
-        successMessage: 'Template saved.',
+        successMessage: '模板已保存。',
         redirectPath: '/alerting/notifications',
       })
     );
@@ -149,28 +149,28 @@ export const TemplateForm = ({ existing, alertManagerSourceName, config, provena
   const validateNameIsUnique: Validate<string> = (name: string) => {
     return !config.template_files[name] || existing?.name === name
       ? true
-      : 'Another template with this name already exists.';
+      : '具有此名称的另一个模板已存在。';
   };
   const isGrafanaAlertManager = alertManagerSourceName === GRAFANA_RULES_SOURCE_NAME;
 
   return (
     <FormProvider {...formApi}>
       <form onSubmit={handleSubmit(submit)}>
-        <h4>{existing && !isduplicating ? 'Edit notification template' : 'Create notification template'}</h4>
+        <h4>{existing && !isduplicating ? '编辑通知模板' : '创建通知模板'}</h4>
         {error && (
-          <Alert severity="error" title="Error saving template">
+          <Alert severity="error" title="保存模板时出错">
             {error.message || (error as any)?.data?.message || String(error)}
           </Alert>
         )}
         {provenance && <ProvisioningAlert resource={ProvisionedResource.Template} />}
         <FieldSet disabled={Boolean(provenance)}>
-          <Field label="Template name" error={errors?.name?.message} invalid={!!errors.name?.message} required>
+          <Field label="模板名称" error={errors?.name?.message} invalid={!!errors.name?.message} required>
             <Input
               {...register('name', {
-                required: { value: true, message: 'Required.' },
+                required: { value: true, message: '必填项.' },
                 validate: { nameIsUnique: validateNameIsUnique },
               })}
-              placeholder="Give your template a name"
+              placeholder="为模板命名"
               width={42}
               autoFocus={true}
             />
@@ -179,9 +179,9 @@ export const TemplateForm = ({ existing, alertManagerSourceName, config, provena
           <div className={styles.editorsWrapper}>
             <div className={styles.contentContainer}>
               <TabsBar>
-                <Tab label="Content" active={view === 'content'} onChangeTab={() => setView('content')} />
+                <Tab label="内容" active={view === 'content'} onChangeTab={() => setView('content')} />
                 {isGrafanaAlertManager && (
-                  <Tab label="Preview" active={view === 'preview'} onChangeTab={() => setView('preview')} />
+                  <Tab label="预览" active={view === 'preview'} onChangeTab={() => setView('preview')} />
                 )}
               </TabsBar>
               <div className={styles.contentContainerEditor}>
@@ -203,12 +203,12 @@ export const TemplateForm = ({ existing, alertManagerSourceName, config, provena
                           <div className={styles.buttons}>
                             {loading && (
                               <Button disabled={true} icon="fa fa-spinner" variant="primary">
-                                Saving...
+                                保存...
                               </Button>
                             )}
                             {!loading && (
                               <Button type="submit" variant="primary">
-                                Save template
+                                保存
                               </Button>
                             )}
                             <LinkButton
@@ -217,7 +217,7 @@ export const TemplateForm = ({ existing, alertManagerSourceName, config, provena
                               variant="secondary"
                               type="button"
                             >
-                              Cancel
+                              取消
                             </LinkButton>
                           </div>
                         </div>
@@ -247,7 +247,7 @@ export const TemplateForm = ({ existing, alertManagerSourceName, config, provena
             )}
           </div>
         </FieldSet>
-        <CollapsableSection label="Data cheat sheet" isOpen={false} className={styles.collapsableSection}>
+        <CollapsableSection label="数据备忘单" isOpen={false} className={styles.collapsableSection}>
           <TemplateDataDocs />
         </CollapsableSection>
       </form>
@@ -259,27 +259,27 @@ function TemplatingGuideline() {
   const styles = useStyles2(getStyles);
 
   return (
-    <Alert title="Templating guideline" severity="info">
+    <Alert title="模板指南" severity="info">
       <Stack direction="row">
         <div>
-          Grafana uses Go templating language to create notification messages.
+          系统使用Golang模板语言来创建通知消息。
           <br />
-          To find out more about templating please visit our documentation.
+          要了解有关模板的更多信息，请访问我们的文档。
         </div>
         <div>
           <LinkButton
-            href="https://grafana.com/docs/grafana/latest/alerting/manage-notifications/template-notifications/"
+            href="https://www.smxy.com/docs/datav/latest/alerting/manage-notifications/template-notifications/"
             target="_blank"
             icon="external-link-alt"
             variant="secondary"
           >
-            Templating documentation
+            模板化文档
           </LinkButton>
         </div>
       </Stack>
 
       <div className={styles.snippets}>
-        To make templating easier, we provide a few snippets in the content editor to help you speed up your workflow.
+        为了使模板化更容易，我们在内容编辑器中提供了一些代码段，以帮助您加快工作流程。
         <div className={styles.code}>
           {Object.values(snippets)
             .map((s) => s.label)
@@ -296,7 +296,7 @@ function getResultsToRender(results: TemplatePreviewResult[]) {
   const moreThanOne = filteredResults.length > 1;
 
   const preview = (result: TemplatePreviewResult) => {
-    const previewForLabel = `Preview for ${result.name}:`;
+    const previewForLabel = `预览: ${result.name}:`;
     const separatorStart = '='.repeat(previewForLabel.length).concat('>');
     const separatorEnd = '<'.concat('='.repeat(previewForLabel.length));
     if (moreThanOne) {
@@ -317,15 +317,15 @@ function getErrorsToRender(results: TemplatePreviewErrors[]) {
   return results
     .map((result: TemplatePreviewErrors) => {
       if (result.name) {
-        return `ERROR in ${result.name}:\n`.concat(`${result.kind}\n${result.message}\n`);
+        return `错误: ${result.name}:\n`.concat(`${result.kind}\n${result.message}\n`);
       } else {
-        return `ERROR:\n${result.kind}\n${result.message}\n`;
+        return `错误:\n${result.kind}\n${result.message}\n`;
       }
     })
     .join(`\n`);
 }
 
-export const PREVIEW_NOT_AVAILABLE = 'Preview request failed. Check if the payload data has the correct structure.';
+export const PREVIEW_NOT_AVAILABLE = '预览请求失败。检查有效负载数据是否具有正确的结构。';
 
 function getPreviewTorender(
   isPreviewError: boolean,

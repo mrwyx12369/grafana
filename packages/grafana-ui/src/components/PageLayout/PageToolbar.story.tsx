@@ -35,7 +35,7 @@ export const Examples = () => {
           parentHref=""
           leftItems={[
             <IconButton name="share-alt" size="lg" key="share" tooltip="共享" />,
-            <IconButton name="favorite" iconType="mono" size="lg" key="favorite" tooltip="Add to favourites" />,
+            <IconButton name="favorite" iconType="mono" size="lg" key="favorite" tooltip="添加到收藏夹" />,
           ]}
         >
           <ToolbarButton icon="panel-add" />
@@ -45,7 +45,7 @@ export const Examples = () => {
         </PageToolbar>
       </StoryExample>
       <StoryExample name="Go back version">
-        <PageToolbar title="Service overview / Edit panel" onGoBack={() => action('Go back')}>
+        <PageToolbar title="服务概述/编辑面板" onGoBack={() => action('Go back')}>
           <ToolbarButton icon="cog" />
           <ToolbarButton icon="save" />
           <ToolbarButton>弃用</ToolbarButton>

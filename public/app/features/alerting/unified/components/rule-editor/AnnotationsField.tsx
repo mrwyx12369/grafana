@@ -135,8 +135,8 @@ const AnnotationsField = () => {
                         placeholder={
                           isUrl
                             ? 'https://'
-                            : (annotationField.key && `Enter a ${annotationField.key}...`) ||
-                              'Enter custom annotation content...'
+                            : (annotationField.key && `输入一个值...`) ||
+                              '输入自定义注解内容...'
                         }
                         defaultValue={annotationField.value}
                       />
@@ -167,11 +167,11 @@ const AnnotationsField = () => {
                 append({ key: '', value: '' });
               }}
             >
-              Add custom annotation
+              添加自定义注解
             </Button>
             {!selectedDashboard && (
               <Button type="button" variant="secondary" icon="dashboard" onClick={() => setShowPanelSelector(true)}>
-                Link dashboard and panel
+                链接仪表板和面板
               </Button>
             )}
           </div>

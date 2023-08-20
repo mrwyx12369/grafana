@@ -111,8 +111,8 @@ export function TraceToLogsSettings({ options, onOptionsChange }: Props) {
     <div className={css({ width: '100%' })}>
       <InlineFieldRow>
         <InlineField
-          tooltip="The logs data source the trace is going to navigate to"
-          label="Data source"
+          tooltip="跟踪将导航到的日志数据源"
+          label="数据源"
           labelWidth={26}
         >
           <DataSourcePicker
@@ -156,8 +156,8 @@ export function TraceToLogsSettings({ options, onOptionsChange }: Props) {
 
       <InlineFieldRow>
         <InlineField
-          tooltip="Tags that will be used in the query. Default tags: 'cluster', 'hostname', 'namespace', 'pod', 'service.name', 'service.namespace', 'deployment.environment'"
-          label="Tags"
+          tooltip="将在查询中使用的标记。默认标记： “集群”， “主机名”， “命名空间”， “pod”， “service.name”， “服务.命名空间”， “部署.环境”"
+          label="标签"
           labelWidth={26}
         >
           <TagMappingInput values={tags ?? []} onChange={(v) => updateTracesToLogs({ tags: v })} />
@@ -181,8 +181,8 @@ export function TraceToLogsSettings({ options, onOptionsChange }: Props) {
 
       <InlineFieldRow>
         <InlineField
-          tooltip="Use a custom query with the possibility to interpolate variables from the trace or span"
-          label="Use custom query"
+          tooltip="使用自定义查询，可以从跟踪或范围插值变量"
+          label="使用自定义查询"
           labelWidth={26}
         >
           <InlineSwitch
@@ -199,11 +199,11 @@ export function TraceToLogsSettings({ options, onOptionsChange }: Props) {
         <InlineField
           label="Query"
           labelWidth={26}
-          tooltip="The query that will run when navigating from a trace to logs data source. Interpolate tags using the `$__tags` keyword"
+          tooltip="从跟踪导航到日志数据源时将运行的查询。使用“$__tags”关键字插值标签"
           grow
         >
           <Input
-            label="Query"
+            label="查询"
             type="text"
             allowFullScreen
             value={query}
@@ -227,10 +227,10 @@ function IdFilter(props: IdFilterProps) {
     <InlineFieldRow>
       <InlineField
         disabled={props.disabled}
-        label={`Filter by ${props.type} ID`}
+        label={`过滤按 ${props.type}的ID`}
         labelWidth={26}
         grow
-        tooltip={`Filters logs by ${props.type} ID`}
+        tooltip={`过滤日志通过${props.type} ID`}
       >
         <InlineSwitch
           id={props.id}
@@ -243,7 +243,7 @@ function IdFilter(props: IdFilterProps) {
 }
 
 export const getTimeShiftLabel = (type: 'start' | 'end') => {
-  return `Span ${type} time shift`;
+  return `跨越${type}时间移动`;
 };
 
 export const getTimeShiftTooltip = (type: 'start' | 'end', defaultVal: string) => {

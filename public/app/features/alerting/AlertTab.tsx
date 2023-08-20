@@ -170,15 +170,15 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
       <ConfirmModal
         isOpen={true}
         icon="trash-alt"
-        title="Delete"
+        title="删除"
         body={
           <div>
             Are you sure you want to delete this alert rule?
             <br />
-            <small>You need to save dashboard for the delete to take effect.</small>
+            <small>您需要保存仪表板才能使删除生效。</small>
           </div>
         }
-        confirmText="Delete alert"
+        confirmText="确定"
         onDismiss={onDismiss}
         onConfirm={() => {
           delete panel.alert;
@@ -219,10 +219,10 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
     }
 
     const model = {
-      title: 'Panel has no alert rule defined',
+      title: '面板未定义警报规则',
       buttonIcon: 'bell' as const,
       onClick: this.onAddAlert,
-      buttonTitle: 'Create Alert',
+      buttonTitle: '创建警报',
     };
 
     return (
@@ -233,7 +233,7 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
               {alert && hasTransformations && (
                 <Alert
                   severity={AppNotificationSeverity.Error}
-                  title="Transformations are not supported in alert queries"
+                  title="警报查询中不支持转换"
                 />
               )}
 

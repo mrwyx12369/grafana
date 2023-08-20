@@ -48,7 +48,7 @@ export const ConfigEditor = ({
           <>
             <Field
               disabled={loading}
-              label="Configuration"
+              label="配置"
               invalid={!!errors.configJSON}
               error={errors.configJSON?.message}
               data-testid={readOnly ? 'readonly-config' : 'config'}
@@ -73,11 +73,11 @@ export const ConfigEditor = ({
             {!readOnly && (
               <HorizontalGroup>
                 <Button type="submit" variant="primary" disabled={loading}>
-                  Save configuration
+                  保存配置
                 </Button>
                 {onReset && (
                   <Button type="button" disabled={loading} variant="destructive" onClick={onReset}>
-                    Reset configuration
+                    重置配置
                   </Button>
                 )}
               </HorizontalGroup>
@@ -86,13 +86,13 @@ export const ConfigEditor = ({
             {Boolean(showConfirmDeleteAMConfig) && onConfirmReset && onDismiss && (
               <ConfirmModal
                 isOpen={true}
-                title="Reset Alertmanager configuration"
-                body={`Are you sure you want to reset configuration ${
+                title="重置警报管理器配置"
+                body={`是否确实要重置配置 ${
                   alertManagerSourceName === GRAFANA_RULES_SOURCE_NAME
-                    ? 'for the Grafana Alertmanager'
-                    : `for "${alertManagerSourceName}"`
-                }? Contact points and notification policies will be reset to their defaults.`}
-                confirmText="Yes, reset configuration"
+                    ? '-警报管理器'
+                    : `-"${alertManagerSourceName}"`
+                }? 联系点和通知策略将重置为其默认值。`}
+                confirmText="确定"
                 onConfirm={onConfirmReset}
                 onDismiss={onDismiss}
               />

@@ -56,7 +56,7 @@ export const SaveLibraryPanelModal = ({
     onDiscard();
   }, [onDiscard]);
 
-  const title = isUnsavedPrompt ? 'Unsaved library panel changes' : 'Save library panel';
+  const title = isUnsavedPrompt ? '未保存的库面板更改' : '“存储库”面板';
 
   return (
     <Modal title={title} icon="save" onDismiss={onDismiss} isOpen={true}>
@@ -65,14 +65,14 @@ export const SaveLibraryPanelModal = ({
           {'This update will affect '}
           <strong>
             {panel.libraryPanel.meta?.connectedDashboards}{' '}
-            {panel.libraryPanel.meta?.connectedDashboards === 1 ? 'dashboard' : 'dashboards'}.
+            {panel.libraryPanel.meta?.connectedDashboards === 1 ? '个仪表板' : '个仪表板'}.
           </strong>
           The following dashboards using the panel will be affected:
         </p>
         <Input
           className={styles.dashboardSearch}
           prefix={<Icon name="search" />}
-          placeholder="Search affected dashboards"
+          placeholder="搜索受影响的仪表板"
           value={searchString}
           onChange={(e) => setSearchString(e.currentTarget.value)}
         />
@@ -82,7 +82,7 @@ export const SaveLibraryPanelModal = ({
           <table className={styles.myTable}>
             <thead>
               <tr>
-                <th>Dashboard name</th>
+                <th>仪表板名称</th>
               </tr>
             </thead>
             <tbody>
@@ -96,11 +96,11 @@ export const SaveLibraryPanelModal = ({
         )}
         <Modal.ButtonRow>
           <Button variant="secondary" onClick={onDismiss} fill="outline">
-            Cancel
+            取消
           </Button>
           {isUnsavedPrompt && (
             <Button variant="destructive" onClick={discardAndClose}>
-              Discard
+              丢弃
             </Button>
           )}
           <Button

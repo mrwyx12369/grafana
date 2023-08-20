@@ -16,13 +16,13 @@ export function useSilenceNavData() {
       setPageNav({
         ...defaultPageNav,
         id: 'silence-new',
-        text: 'Add silence',
+        text: '新建静默',
       });
     } else if (path === '/alerting/silence/:id/edit') {
       setPageNav({
         ...defaultPageNav,
         id: 'silence-edit',
-        text: 'Edit silence',
+        text: '编辑静默',
       });
     }
   }, [path, isExact]);

@@ -66,7 +66,7 @@ export function DashboardSettings({ dashboard, editview, pageNav, sectionNav }: 
       size={size}
       onClick={onClose}
     >
-      Close
+      关闭
     </Button>,
     canSaveAs && (
       <SaveDashboardAsButton
@@ -100,24 +100,24 @@ function getSettingsPages(dashboard: DashboardModel) {
     });
 
     pages.push({
-      title: '注释',
+      title: '注解',
       id: 'annotations',
       icon: 'comment-alt',
       component: AnnotationsSettings,
       subTitle:
-        '注释查询返回的事件可可视化为仪表板图形中的事件标记。',
+        '注解查询返回的事件可可视化为仪表板图形中的事件标记。',
     });
 
     pages.push({
-      title: 'Variables',
+      title: '变量',
       id: 'templating',
       icon: 'calculator-alt',
       component: VariableEditorContainer,
-      subTitle: 'Variables can make your dashboard more dynamic and act as global filters.',
+      subTitle: '变量可以使仪表板更具动态性，并充当全局筛选器。',
     });
 
     pages.push({
-      title: 'Links',
+      title: '连接',
       id: 'links',
       icon: 'link',
       component: LinksSettings,
@@ -126,7 +126,7 @@ function getSettingsPages(dashboard: DashboardModel) {
 
   if (dashboard.meta.canMakeEditable) {
     pages.push({
-      title: 'General',
+      title: '通用',
       icon: 'sliders-v-alt',
       id: 'settings',
       component: MakeEditable,
@@ -135,7 +135,7 @@ function getSettingsPages(dashboard: DashboardModel) {
 
   if (dashboard.id && dashboard.meta.canSave) {
     pages.push({
-      title: 'Versions',
+      title: '版本',
       id: 'versions',
       icon: 'history',
       component: VersionsSettings,
@@ -145,14 +145,14 @@ function getSettingsPages(dashboard: DashboardModel) {
   if (dashboard.id && dashboard.meta.canAdmin) {
     if (!config.rbacEnabled) {
       pages.push({
-        title: 'Permissions',
+        title: '权限',
         id: 'permissions',
         icon: 'lock',
         component: DashboardPermissions,
       });
     } else if (contextSrv.hasPermission(AccessControlAction.DashboardsPermissionsRead)) {
       pages.push({
-        title: 'Permissions',
+        title: '权限',
         id: 'permissions',
         icon: 'lock',
         component: AccessControlDashboardPermissions,
@@ -161,7 +161,7 @@ function getSettingsPages(dashboard: DashboardModel) {
   }
 
   pages.push({
-    title: 'JSON Model',
+    title: 'JSON模型',
     id: 'dashboard_json',
     icon: 'arrow',
     component: JsonEditorSettings,
@@ -185,7 +185,7 @@ function getSectionNav(
   location: H.Location
 ): NavModel {
   const main: NavModelItem = {
-    text: 'Settings',
+    text: '设置',
     children: [],
     icon: 'apps',
     hideFromBreadcrumbs: true,
@@ -216,7 +216,7 @@ function MakeEditable({ dashboard, sectionNav }: SettingsPageProps) {
     <Page navModel={sectionNav}>
       <div className="dashboard-settings__header">Dashboard not editable</div>
       <Button type="submit" onClick={() => dashboard.makeEditable()}>
-        Make editable
+       标记可编辑
       </Button>
     </Page>
   );

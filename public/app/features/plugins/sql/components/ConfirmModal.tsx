@@ -31,19 +31,18 @@ export function ConfirmModal({ isOpen, onCancel, onDiscard, onCopy }: ConfirmMod
       isOpen={isOpen}
     >
       <p>
-        Builder mode does not display changes made in code. The query builder will display the last changes you made in
-        builder mode.
+      生成器模式不显示代码中所做的更改。查询生成器将显示您上次所做的更改构建器模式。
       </p>
-      <p>Do you want to copy your code to the clipboard?</p>
+      <p>是否要将代码复制到剪贴板？</p>
       <Modal.ButtonRow>
         <Button type="button" variant="secondary" onClick={onCancel} fill="outline">
-          Cancel
+          取消
         </Button>
         <Button variant="destructive" type="button" onClick={onDiscard} ref={buttonRef}>
-          Discard code and switch
+          丢弃代码并切换
         </Button>
         <Button variant="primary" onClick={onCopy}>
-          Copy code and switch
+          复制代码并切换
         </Button>
       </Modal.ButtonRow>
     </Modal>

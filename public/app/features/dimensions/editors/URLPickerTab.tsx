@@ -31,7 +31,7 @@ export const URLPickerTab = (props: Props) => {
         <Input onChange={(e) => setNewValue(e.currentTarget.value)} value={newValue} />
       </Field>
       <div className={styles.iconContainer}>
-        <Field label="Preview">
+        <Field label="预览">
           <div className={styles.iconPreview}>
             {mediaType === MediaType.Icon && <SanitizedSVG src={imgSrc} className={styles.img} />}
             {mediaType === MediaType.Image && newValue && (

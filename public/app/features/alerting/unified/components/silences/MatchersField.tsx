@@ -26,26 +26,26 @@ const MatchersField = ({ className }: Props) => {
 
   return (
     <div className={cx(className, styles.wrapper)}>
-      <Field label="Matching labels" required>
+      <Field label="匹配标签" required>
         <div>
           <div className={styles.matchers}>
             {matchers.map((matcher, index) => {
               return (
                 <div className={styles.row} key={`${matcher.id}`} data-testid="matcher">
                   <Field
-                    label="Label"
+                    label="标签"
                     invalid={!!errors?.matchers?.[index]?.name}
                     error={errors?.matchers?.[index]?.name?.message}
                   >
                     <Input
                       {...register(`matchers.${index}.name` as const, {
-                        required: { value: true, message: 'Required.' },
+                        required: { value: true, message: '必填项.' },
                       })}
                       defaultValue={matcher.name}
-                      placeholder="label"
+                      placeholder="标签"
                     />
                   </Field>
-                  <Field label={'Operator'}>
+                  <Field label={'操作'}>
                     <InputControl
                       control={control}
                       render={({ field: { onChange, ref, ...field } }) => (
@@ -63,26 +63,26 @@ const MatchersField = ({ className }: Props) => {
                     />
                   </Field>
                   <Field
-                    label="Value"
+                    label="值"
                     invalid={!!errors?.matchers?.[index]?.value}
                     error={errors?.matchers?.[index]?.value?.message}
                   >
                     <Input
                       {...register(`matchers.${index}.value` as const, {
-                        required: { value: true, message: 'Required.' },
+                        required: { value: true, message: '必填项.' },
                       })}
                       defaultValue={matcher.value}
-                      placeholder="value"
+                      placeholder="值"
                     />
                   </Field>
                   {matchers.length > 1 && (
                     <IconButton
                       className={styles.removeButton}
-                      tooltip="Remove matcher"
+                      tooltip="删除匹配器"
                       name="trash-alt"
                       onClick={() => remove(index)}
                     >
-                      Remove
+                      删除匹配器
                     </IconButton>
                   )}
                 </div>
@@ -98,7 +98,7 @@ const MatchersField = ({ className }: Props) => {
               append(newMatcher);
             }}
           >
-            Add matcher
+            添加匹配器
           </Button>
         </div>
       </Field>

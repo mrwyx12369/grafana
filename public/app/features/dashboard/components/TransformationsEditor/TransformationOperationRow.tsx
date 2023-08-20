@@ -96,34 +96,34 @@ export const TransformationOperationRow = ({
       <HorizontalGroup align="center" width="auto">
         {uiConfig.state && <PluginStateInfo state={uiConfig.state} />}
         <QueryOperationToggleAction
-          title="Show transform help"
+          title="显示转换帮助"
           icon="info-circle"
           onClick={instrumentToggleCallback(toggleHelp, 'help', showHelp)}
           active={showHelp}
         />
         {showFilter && (
           <QueryOperationToggleAction
-            title="Filter"
+            title="过滤器"
             icon="filter"
             onClick={instrumentToggleCallback(toggleFilter, 'filter', filter)}
             active={filter}
           />
         )}
         <QueryOperationToggleAction
-          title="Debug"
+          title="调试信息"
           disabled={!isOpen}
           icon="bug"
           onClick={instrumentToggleCallback(toggleDebug, 'debug', showDebug)}
           active={showDebug}
         />
         <QueryOperationToggleAction
-          title="Disable transformation"
+          title="禁用转换"
           icon={disabled ? 'eye-slash' : 'eye'}
           onClick={instrumentToggleCallback(() => onDisableToggle(index), 'disabled', disabled)}
           active={disabled}
         />
         <QueryOperationAction
-          title="Remove"
+          title="删除"
           icon="trash-alt"
           onClick={() => (config.featureToggles.transformationsRedesign ? setShowDeleteModal(true) : onRemove(index))}
         />
@@ -131,9 +131,9 @@ export const TransformationOperationRow = ({
         {config.featureToggles.transformationsRedesign && (
           <ConfirmModal
             isOpen={showDeleteModal}
-            title={`Delete ${uiConfig.name}?`}
-            body="Note that removing one transformation may break others. If there is only a single transformation, you will go back to the main selection screen."
-            confirmText="Delete"
+            title={`删除${uiConfig.name}?`}
+            body="请注意，删除一个转换可能会破坏其他转换。如果只有一个转换，您将返回到主选择屏幕。"
+            confirmText="确定"
             onConfirm={() => {
               setShowDeleteModal(false);
               onRemove(index);

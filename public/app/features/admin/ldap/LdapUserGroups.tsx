@@ -20,7 +20,7 @@ export const LdapUserGroups = ({ groups, showAttributeMapping }: Props) => {
               {showAttributeMapping && <th>LDAP Group</th>}
               <th>
                 Organization
-                <Tooltip placement="top" content="Only the first match for an Organization will be used" theme={'info'}>
+                <Tooltip placement="top" content="仅使用组织的第一个匹配项" theme={'info'}>
                   <Icon name="info-circle" />
                 </Tooltip>
               </th>
@@ -38,7 +38,7 @@ export const LdapUserGroups = ({ groups, showAttributeMapping }: Props) => {
                   ) : (
                     <td>
                       <span className="text-warning">No match</span>
-                      <Tooltip placement="top" content="No matching groups found" theme={'info'}>
+                      <Tooltip placement="top" content="未找到匹配的组" theme={'info'}>
                         <Icon name="info-circle" />
                       </Tooltip>
                     </td>

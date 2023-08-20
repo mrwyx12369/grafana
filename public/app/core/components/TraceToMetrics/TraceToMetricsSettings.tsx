@@ -43,8 +43,8 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
     <div className={css({ width: '100%' })}>
       <InlineFieldRow className={styles.row}>
         <InlineField
-          tooltip="Prometheus跟踪将导航到的普罗米修斯数据源"
-          label="Data source"
+          tooltip="Prometheus跟踪将导航到的系统数据源"
+          label="数据源"
           labelWidth={26}
         >
           <DataSourcePicker

@@ -41,13 +41,13 @@ export const LinkSettingsList = ({ dashboard, onNew, onEdit }: LinkSettingsListP
       <div>
         <EmptyListCTA
           onClick={onNew}
-          title="There are no dashboard links added yet"
+          title="尚未添加仪表板链接"
           buttonIcon="link"
-          buttonTitle="Add dashboard link"
-          infoBoxTitle="What are dashboard links?"
+          buttonTitle="添加仪表板链接"
+          infoBoxTitle="什么是仪表板链接？"
           infoBox={{
             __html:
-              '<p>Dashboard Links allow you to place links to other dashboards and web sites directly below the dashboard header.</p>',
+              '<p>仪表板链接允许您将指向其他仪表板和网站的链接直接放在仪表板标题下方。</p>',
           }}
         />
       </div>
@@ -59,8 +59,8 @@ export const LinkSettingsList = ({ dashboard, onNew, onEdit }: LinkSettingsListP
       <table role="grid" className="filter-table filter-table--hover">
         <thead>
           <tr>
-            <th>Type</th>
-            <th>Info</th>
+            <th>类型</th>
+            <th>信息</th>
             <th colSpan={3} />
           </tr>
         </thead>
@@ -78,15 +78,15 @@ export const LinkSettingsList = ({ dashboard, onNew, onEdit }: LinkSettingsListP
                 </HorizontalGroup>
               </td>
               <td style={{ width: '1%' }} role="gridcell">
-                {idx !== 0 && <IconButton name="arrow-up" onClick={() => moveLink(idx, -1)} tooltip="Move link up" />}
+                {idx !== 0 && <IconButton name="arrow-up" onClick={() => moveLink(idx, -1)} tooltip="上移链接" />}
               </td>
               <td style={{ width: '1%' }} role="gridcell">
                 {links.length > 1 && idx !== links.length - 1 ? (
-                  <IconButton name="arrow-down" onClick={() => moveLink(idx, 1)} tooltip="Move link down" />
+                  <IconButton name="arrow-down" onClick={() => moveLink(idx, 1)} tooltip="下移链接" />
                 ) : null}
               </td>
               <td style={{ width: '1%' }} role="gridcell">
-                <IconButton name="copy" onClick={() => duplicateLink(link, idx)} tooltip="Copy link" />
+                <IconButton name="copy" onClick={() => duplicateLink(link, idx)} tooltip="复制链接" />
               </td>
               <td style={{ width: '1%' }} role="gridcell">
                 <DeleteButton
@@ -99,7 +99,7 @@ export const LinkSettingsList = ({ dashboard, onNew, onEdit }: LinkSettingsListP
           ))}
         </tbody>
       </table>
-      <ListNewButton onClick={onNew}>New link</ListNewButton>
+      <ListNewButton onClick={onNew}>新连接</ListNewButton>
     </>
   );
 };

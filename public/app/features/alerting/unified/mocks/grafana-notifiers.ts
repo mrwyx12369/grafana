@@ -219,8 +219,8 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
       {
         element: 'textarea',
         inputType: '',
-        label: 'Addresses',
-        description: 'You can enter multiple email addresses using a ";" separator',
+        label: '地址',
+        description: '您可以使用“;”分隔符输入多个电子邮件地址',
         placeholder: '',
         propertyName: 'addresses',
         selectOptions: null,
@@ -234,17 +234,16 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
   },
   {
     type: 'slack',
-    name: 'Slack',
-    heading: 'Slack settings',
-    description: 'Sends notifications to Slack',
+    name: 'Slack通讯',
+    heading: 'Slack设置',
+    description: '向 Slack 发送通知',
     info: '',
     options: [
       {
         element: 'input',
         inputType: 'text',
-        label: 'Recipient',
-        description:
-          'Specify channel or user, use #channel-name, @username (has to be all lowercase, no whitespace), or user/channel Slack ID - required unless you provide a webhook',
+        label: '收件人',
+        description:'指定频道或用户，使用 #channel 名称、@username（必须全部小写，无空格）或用户/频道 Slack ID - 必需，除非您提供网络钩子',
         placeholder: '',
         propertyName: 'recipient',
         selectOptions: null,
@@ -257,8 +256,8 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
       {
         element: 'input',
         inputType: 'text',
-        label: 'Token',
-        description: 'Provide a Slack API token (starts with "xoxb") - required unless you provide a webhook',
+        label: '令牌',
+        description: '提供SlackAPI令牌（以“xoxb”开头） - 除非您提供 webhook，否则需要',
         placeholder: '',
         propertyName: 'token',
         selectOptions: null,
@@ -271,8 +270,8 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
       {
         element: 'input',
         inputType: 'text',
-        label: 'Username',
-        description: "Set the username for the bot's message",
+        label: '账号',
+        description: "设置机器人消息的用户名",
         placeholder: '',
         propertyName: 'username',
         selectOptions: null,
@@ -285,8 +284,8 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
       {
         element: 'input',
         inputType: 'text',
-        label: 'Icon emoji',
-        description: "Provide an emoji to use as the icon for the bot's message. Overrides the icon URL.",
+        label: 'Emoji表情符',
+        description: "提供要用作机器人消息图标的表情符号。覆盖图标网址。",
         placeholder: '',
         propertyName: 'iconEmoji',
         selectOptions: null,
@@ -299,8 +298,8 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
       {
         element: 'input',
         inputType: 'text',
-        label: 'Icon URL',
-        description: "Provide a URL to an image to use as the icon for the bot's message",
+        label: '图标URL',
+        description: "提供图像的 URL 以用作机器人消息的图标",
         placeholder: '',
         propertyName: 'iconUrl',
         selectOptions: null,
@@ -313,9 +312,8 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
       {
         element: 'input',
         inputType: 'text',
-        label: 'Mention Users',
-        description:
-          "Mention one or more users (comma separated) when notifying in a channel, by ID (you can copy this from the user's Slack profile)",
+        label: '涉及用户',
+        description:'在频道中按 ID 通知时提及一个或多个用户（逗号分隔）（您可以从用户的 Slack 个人资料中复制此内容）',
         placeholder: '',
         propertyName: 'mentionUsers',
         selectOptions: null,
@@ -328,9 +326,8 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
       {
         element: 'input',
         inputType: 'text',
-        label: 'Mention Groups',
-        description:
-          "Mention one or more groups (comma separated) when notifying in a channel (you can copy this from the group's Slack profile URL)",
+        label: '涉及用户组',
+        description:'在频道中通知时提及一个或多个组（逗号分隔）（可以从组的 Slack 个人资料 URL 复制此内容）',
         placeholder: '',
         propertyName: 'mentionGroups',
         selectOptions: null,
@@ -343,14 +340,14 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
       {
         element: 'select',
         inputType: '',
-        label: 'Mention Channel',
-        description: 'Mention whole channel or just active members when notifying',
+        label: '涉及频道',
+        description: '通知时提及整个频道或仅提及活跃成员',
         placeholder: '',
         propertyName: 'mentionChannel',
         selectOptions: [
-          { value: '', label: 'Disabled' },
-          { value: 'here', label: 'Every active channel member' },
-          { value: 'channel', label: 'Every channel member' },
+          { value: '', label: '禁用' },
+          { value: 'here', label: '每个活跃的频道成员' },
+          { value: 'channel', label: '每个频道成员' },
         ],
         showWhen: { field: '', is: '' },
         required: false,
@@ -361,10 +358,9 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
       {
         element: 'input',
         inputType: 'text',
-        label: 'Webhook URL',
-        description:
-          "Optionally provide a Slack incoming webhook URL for sending messages, in this case the token isn't necessary",
-        placeholder: 'Slack incoming webhook URL',
+        label: '钩子URL',
+        description:'（可选）提供用于发送消息的 Slack 传入 Webhook URL，在这种情况下，令牌不是必需的',
+        placeholder: 'Slack传入网络钩子网址',
         propertyName: 'url',
         selectOptions: null,
         showWhen: { field: '', is: '' },

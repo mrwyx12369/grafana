@@ -54,7 +54,7 @@ func (srv ConfigSrv) RouteGetNGalertConfig(c *contextmodel.ReqContext) response.
 			return ErrResp(http.StatusNotFound, err, "")
 		}
 
-		msg := "failed to fetch admin configuration from the database"
+		msg := "无法从数据库中获取管理员配置"
 		srv.log.Error(msg, "error", err)
 		return ErrResp(http.StatusInternalServerError, err, msg)
 	}
@@ -123,7 +123,7 @@ func (srv ConfigSrv) externalAlertmanagers(ctx context.Context, orgID int64) ([]
 	}
 	dataSources, err := srv.datasourceService.GetDataSourcesByType(ctx, query)
 	if err != nil {
-		return nil, fmt.Errorf("failed to fetch datasources for org: %w", err)
+		return nil, fmt.Errorf("无法获取组织的数据源： %w", err)
 	}
 	for _, ds := range dataSources {
 		if ds.JsonData.Get(apimodels.HandleGrafanaManagedAlerts).MustBool(false) {

@@ -25,7 +25,7 @@ export const isRangeValid = (relative: string, now = Date.now()): RangeValidatio
   if (!isRelativeFormat(relative)) {
     return {
       isValid: false,
-      errorMessage: 'Value not in relative time format.',
+      errorMessage: '值不是相对时间格式。',
     };
   }
 
@@ -34,7 +34,7 @@ export const isRangeValid = (relative: string, now = Date.now()): RangeValidatio
   if (seconds > Math.ceil(now / 1000)) {
     return {
       isValid: false,
-      errorMessage: 'Can not enter value prior to January 1, 1970.',
+      errorMessage: '不能输入 1970 年 1 月 1 日之前的值。',
     };
   }
 

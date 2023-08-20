@@ -47,7 +47,7 @@ export const SaveDashboardAsForm = ({
   onSuccess,
 }: SaveDashboardAsFormProps) => {
   const defaultValues: SaveDashboardAsFormDTO = {
-    title: isNew ? dashboard.title : `${dashboard.title} Copy`,
+    title: isNew ? dashboard.title : `${dashboard.title}拷贝`,
     $folder: {
       uid: dashboard.meta.folderUid,
       title: dashboard.meta.folderTitle,
@@ -57,14 +57,14 @@ export const SaveDashboardAsForm = ({
 
   const validateDashboardName = (getFormValues: () => SaveDashboardAsFormDTO) => async (dashboardName: string) => {
     if (dashboardName && dashboardName === getFormValues().$folder.title?.trim()) {
-      return 'Dashboard name cannot be the same as folder name';
+      return '仪表板名称不能与文件夹名称相同';
     }
 
     try {
       await validationSrv.validateNewDashboardName(getFormValues().$folder.uid ?? 'general', dashboardName);
       return true;
     } catch (e) {
-      return e instanceof Error ? e.message : 'Dashboard name is invalid';
+      return e instanceof Error ? e.message : '仪表板名称无效';
     }
   };
 
@@ -97,7 +97,7 @@ export const SaveDashboardAsForm = ({
     >
       {({ register, control, errors, getValues }) => (
         <>
-          <Field label="Dashboard name" invalid={!!errors.title} error={errors.title?.message}>
+          <Field label="仪表板名称" invalid={!!errors.title} error={errors.title?.message}>
             <Input
               {...register('title', {
                 validate: validateDashboardName(getValues),
@@ -106,7 +106,7 @@ export const SaveDashboardAsForm = ({
               autoFocus
             />
           </Field>
-          <Field label="Folder">
+          <Field label="文件夹">
             <InputControl
               render={({ field: { ref, ...field } }) => (
                 <FolderPicker
@@ -130,10 +130,10 @@ export const SaveDashboardAsForm = ({
           )}
           <HorizontalGroup>
             <Button type="button" variant="secondary" onClick={onCancel} fill="outline">
-              Cancel
+              取消
             </Button>
             <Button disabled={isLoading} type="submit" aria-label="Save dashboard button">
-              {isLoading ? 'Saving...' : 'Save'}
+              {isLoading ? '保存...' : '保存'}
             </Button>
           </HorizontalGroup>
         </>

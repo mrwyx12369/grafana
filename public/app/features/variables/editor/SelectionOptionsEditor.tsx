@@ -46,22 +46,22 @@ export const SelectionOptionsEditor = ({
     <VerticalGroup spacing="md" height="inherit">
       <VariableCheckboxField
         value={variable.multi}
-        name="Multi-value"
-        description="Enables multiple values to be selected at the same time"
+        name="多值"
+        description="允许同时选择多个值"
         onChange={onMultiChanged}
       />
       <VariableCheckboxField
         value={variable.includeAll}
-        name="Include All option"
-        description="Enables an option to include all variables"
+        name="包括全部选项"
+        description="启用包含所有变量的选项"
         onChange={onIncludeAllChanged}
       />
       {variable.includeAll && (
         <VariableTextField
           value={variable.allValue ?? ''}
           onChange={onAllValueChanged}
-          name="Custom all value"
-          placeholder="blank = auto"
+          name="自定义所有值"
+          placeholder="留空表示自动"
           testId={selectors.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsCustomAllInputV2}
         />
       )}

@@ -18,56 +18,54 @@ export enum ExpressionQueryType {
 export const getExpressionLabel = (type: ExpressionQueryType) => {
   switch (type) {
     case ExpressionQueryType.math:
-      return 'Math';
+      return '数学函数';
     case ExpressionQueryType.reduce:
-      return 'Reduce';
+      return 'Reduce函数';
     case ExpressionQueryType.resample:
-      return 'Resample';
+      return '重新抽样';
     case ExpressionQueryType.classic:
-      return 'Classic condition';
+      return '经典条件';
     case ExpressionQueryType.threshold:
-      return 'Threshold';
+      return '阀值';
   }
 };
 
 export const expressionTypes: Array<SelectableValue<ExpressionQueryType>> = [
   {
     value: ExpressionQueryType.math,
-    label: 'Math',
-    description: 'Free-form math formulas on time series or number data.',
+    label: '数学公式',
+    description: '时间序列或数字数据上的自由格式数学公式。',
   },
   {
     value: ExpressionQueryType.reduce,
-    label: 'Reduce',
+    label: 'Reduce函数',
     description:
-      'Takes one or more time series returned from a query or an expression and turns each series into a single number.',
+      '获取从查询或表达式返回的一个或多个时序，并将每个时序转换为单个数字。',
   },
   {
     value: ExpressionQueryType.resample,
-    label: 'Resample',
-    description: 'Changes the time stamps in each time series to have a consistent time interval.',
+    label: '重新抽样',
+    description: '更改每个时序中的时间戳以具有一致的时间间隔。',
   },
   {
     value: ExpressionQueryType.classic,
-    label: 'Classic condition',
-    description:
-      'Takes one or more time series returned from a query or an expression and checks if any of the series match the condition. Disables multi-dimensional alerts for this rule.',
+    label: '经典条件',
+    description: '获取从查询或表达式返回的一个或多个时序，并检查是否有任何序列与条件匹配。禁用此规则的多维警报。',
   },
   {
     value: ExpressionQueryType.threshold,
-    label: 'Threshold',
-    description:
-      'Takes one or more time series returned from a query or an expression and checks if any of the series match the threshold condition.',
+    label: '阈值',
+    description: '获取从查询或表达式返回的一个或多个时序，并检查是否有任何序列与阈值条件匹配。',
   },
 ];
 
 export const reducerTypes: Array<SelectableValue<string>> = [
-  { value: ReducerID.min, label: 'Min', description: 'Get the minimum value' },
-  { value: ReducerID.max, label: 'Max', description: 'Get the maximum value' },
-  { value: ReducerID.mean, label: 'Mean', description: 'Get the average value' },
-  { value: ReducerID.sum, label: 'Sum', description: 'Get the sum of all values' },
-  { value: ReducerID.count, label: 'Count', description: 'Get the number of values' },
-  { value: ReducerID.last, label: 'Last', description: 'Get the last value' },
+  { value: ReducerID.min, label: '最小', description: '获取最小值' },
+  { value: ReducerID.max, label: '最大', description: '获取最大值' },
+  { value: ReducerID.mean, label: '平均', description: '获取平均值' },
+  { value: ReducerID.sum, label: '合计', description: '获取合计值' },
+  { value: ReducerID.count, label: '计数', description: '获取值的数量' },
+  { value: ReducerID.last, label: '最后值', description: '获取最后一个值' },
 ];
 
 export enum ReducerMode {
@@ -79,40 +77,40 @@ export enum ReducerMode {
 export const reducerModes: Array<SelectableValue<ReducerMode>> = [
   {
     value: ReducerMode.Strict,
-    label: 'Strict',
-    description: 'Result can be NaN if series contains non-numeric data',
+    label: '严格',
+    description: '如果序列包含非数字数据，则结果可以是 NaN',
   },
   {
     value: ReducerMode.DropNonNumbers,
-    label: 'Drop Non-numeric Values',
-    description: 'Drop NaN, +/-Inf and null from input series before reducing',
+    label: '删除非数值',
+    description: '在减少之前从输入序列中删除 NaN、+/-Inf 和零',
   },
   {
     value: ReducerMode.ReplaceNonNumbers,
-    label: 'Replace Non-numeric Values',
-    description: 'Replace NaN, +/-Inf and null with a constant value before reducing',
+    label: '替换非数值',
+    description: '在减少之前将 NaN、+/-Inf 和 null 替换为常量值',
   },
 ];
 
 export const downsamplingTypes: Array<SelectableValue<string>> = [
-  { value: ReducerID.last, label: 'Last', description: 'Fill with the last value' },
-  { value: ReducerID.min, label: 'Min', description: 'Fill with the minimum value' },
-  { value: ReducerID.max, label: 'Max', description: 'Fill with the maximum value' },
-  { value: ReducerID.mean, label: 'Mean', description: 'Fill with the average value' },
-  { value: ReducerID.sum, label: 'Sum', description: 'Fill with the sum of all values' },
+  { value: ReducerID.last, label: '最后值', description: '用最后一个值填充' },
+  { value: ReducerID.min, label: '最小', description: '填充最小值' },
+  { value: ReducerID.max, label: '最大', description: '用最大值填充' },
+  { value: ReducerID.mean, label: '平均', description: '填充平均值' },
+  { value: ReducerID.sum, label: '合计', description: '填充所有值的总和' },
 ];
 
 export const upsamplingTypes: Array<SelectableValue<string>> = [
-  { value: 'pad', label: 'pad', description: 'fill with the last known value' },
-  { value: 'backfilling', label: 'backfilling', description: 'fill with the next known value' },
-  { value: 'fillna', label: 'fillna', description: 'Fill with NaNs' },
+  { value: 'pad', label: '最后一个已值填充', description: '填充最后一个已知值' },
+  { value: 'backfilling', label: '下一个已知值回填', description: '填充下一个已知值' },
+  { value: 'fillna', label: '采用NaN(空值)填充NaN ', description: '填充NaN' },
 ];
 
 export const thresholdFunctions: Array<SelectableValue<EvalFunction>> = [
-  { value: EvalFunction.IsAbove, label: 'Is above' },
-  { value: EvalFunction.IsBelow, label: 'Is below' },
-  { value: EvalFunction.IsWithinRange, label: 'Is within range' },
-  { value: EvalFunction.IsOutsideRange, label: 'Is outside range' },
+  { value: EvalFunction.IsAbove, label: '以上' },
+  { value: EvalFunction.IsBelow, label: '以下' },
+  { value: EvalFunction.IsWithinRange, label: '范围之内' },
+  { value: EvalFunction.IsOutsideRange, label: '越界' },
 ];
 
 /**

@@ -168,7 +168,7 @@ const Policy: FC<PolicyComponentProps> = ({
                           disabled={provisioned}
                           type="button"
                         >
-                          New nested policy
+                          新的嵌套策略
                         </Button>
                       </ConditionalWrap>
                     )}
@@ -181,7 +181,7 @@ const Policy: FC<PolicyComponentProps> = ({
                               <Menu.Item
                                 icon="edit"
                                 disabled={!isEditable || provisioned}
-                                label="Edit"
+                                label="编辑"
                                 onClick={() => onEditPolicy(currentRoute, isDefaultPolicy)}
                               />
                             </ConditionalWrap>
@@ -189,7 +189,7 @@ const Policy: FC<PolicyComponentProps> = ({
                           {showExport && (
                             <Menu.Item
                               icon="download-alt"
-                              label="Export"
+                              label="导出"
                               url={createUrl('/api/v1/provisioning/policies/export', {
                                 download: 'true',
                                 format: 'yaml',
@@ -205,7 +205,7 @@ const Policy: FC<PolicyComponentProps> = ({
                                   destructive
                                   icon="trash-alt"
                                   disabled={!isDeletable || provisioned}
-                                  label="Delete"
+                                  label="删除"
                                   onClick={() => onDeletePolicy(currentRoute)}
                                 />
                               </ConditionalWrap>
@@ -240,12 +240,12 @@ const Policy: FC<PolicyComponentProps> = ({
                     data-testid="matching-instances"
                   >
                     <Strong>{numberOfAlertInstances ?? '-'}</Strong>
-                    <span>{pluralize('instance', numberOfAlertInstances)}</span>
+                    <span>{pluralize('实例', numberOfAlertInstances)}</span>
                   </MetaText>
                 )}
                 {contactPoint && (
                   <MetaText icon="at" data-testid="contact-point">
-                    <span>Delivered to</span>
+                    <span>转第至</span>
                     <ContactPointsHoverDetails
                       alertManagerSourceName={alertManagerSourceName}
                       receivers={receivers}
@@ -257,25 +257,25 @@ const Policy: FC<PolicyComponentProps> = ({
                   <>
                     {customGrouping && (
                       <MetaText icon="layer-group" data-testid="grouping">
-                        <span>Grouped by</span>
+                        <span>分组依据</span>
                         <Strong>{groupBy.join(', ')}</Strong>
                       </MetaText>
                     )}
                     {singleGroup && (
                       <MetaText icon="layer-group">
-                        <span>Single group</span>
+                        <span>单一分组</span>
                       </MetaText>
                     )}
                     {noGrouping && (
                       <MetaText icon="layer-group">
-                        <span>Not grouping</span>
+                        <span>不分组</span>
                       </MetaText>
                     )}
                   </>
                 )}
                 {hasMuteTimings && (
                   <MetaText icon="calendar-slash" data-testid="mute-timings">
-                    <span>Muted when</span>
+                    <span>静音时</span>
                     <MuteTimings timings={muteTimings} alertManagerSourceName={alertManagerSourceName} />
                   </MetaText>
                 )}
@@ -285,7 +285,7 @@ const Policy: FC<PolicyComponentProps> = ({
                 {hasInheritedProperties && (
                   <>
                     <MetaText icon="corner-down-right-alt" data-testid="inherited-properties">
-                      <span>Inherited</span>
+                      <span>继承</span>
                       <InheritedProperties properties={inheritedProperties} />
                     </MetaText>
                   </>
@@ -326,7 +326,7 @@ const Policy: FC<PolicyComponentProps> = ({
 };
 
 const ProvisionedTooltip = (children: ReactNode) => (
-  <Tooltip content="Provisioned items cannot be edited in the UI" placement="top">
+  <Tooltip content="无法在 UI 中编辑预配的项目" placement="top">
     <span>{children}</span>
   </Tooltip>
 );
@@ -375,9 +375,9 @@ const DefaultPolicyIndicator: FC = () => {
   const styles = useStyles2(getStyles);
   return (
     <>
-      <strong>Default policy</strong>
+      <strong>默认策略</strong>
       <span className={styles.metadata}>
-        All alert instances will be handled by the default policy if no other matching policies are found.
+        如果未找到其他匹配策略，则所有警报实例将由默认策略处理。
       </span>
     </>
   );
@@ -446,21 +446,21 @@ const TimingOptionsMeta: FC<{ timingOptions: TimingOptions }> = ({ timingOptions
 
   return (
     <MetaText icon="hourglass" data-testid="timing-options">
-      <span>Wait</span>
+      <span>等待</span>
       <Tooltip
         placement="top"
-        content="How long to initially wait to send a notification for a group of alert instances."
+        content="最初等待为一组警报实例发送通知的时间。"
       >
         <span>
-          <Strong>{groupWait}</Strong> <span>to group instances</span>,
+          <Strong>{groupWait}</Strong> <span>对实例进行分组</span>,
         </span>
       </Tooltip>
       <Tooltip
         placement="top"
-        content="How long to wait before sending a notification about new alerts that are added to a group of alerts for which an initial notification has already been sent."
+        content="在发送有关已发送初始通知的一组警报的新警报的通知之前要等待的时间。"
       >
         <span>
-          <Strong>{groupInterval}</Strong> <span>before sending updates</span>
+          <Strong>{groupInterval}</Strong> <span>发送更新之前</span>
         </span>
       </Tooltip>
     </MetaText>
@@ -505,7 +505,7 @@ const ContactPointsHoverDetails: FC<ContactPointDetailsProps> = ({
       placement="top"
       header={
         <MetaText icon="at">
-          <div>Contact Point</div>
+          <div>联系点</div>
           <Strong>{contactPoint}</Strong>
         </MetaText>
       }
@@ -540,7 +540,7 @@ function getContactPointErrors(contactPoint: string, contactPointsState: Receive
         <Label
           icon="at"
           key={uniqueId()}
-          label={`Contact Point › ${status.name}`}
+          label={`联系点 › ${status.name}`}
           value={status.lastNotifyAttemptError}
         />
       ));
@@ -554,17 +554,17 @@ function getContactPointErrors(contactPoint: string, contactPointsState: Receive
 const routePropertyToLabel = (key: keyof InhertitableProperties | string): string => {
   switch (key) {
     case 'receiver':
-      return 'Contact Point';
+      return '联系点';
     case 'group_by':
-      return 'Group by';
+      return '分组依据';
     case 'group_interval':
-      return 'Group interval';
+      return '分组间隔';
     case 'group_wait':
-      return 'Group wait';
+      return '分组等待';
     case 'mute_time_intervals':
-      return 'Mute timings';
+      return '静音计时';
     case 'repeat_interval':
-      return 'Repeat interval';
+      return '重复间隔';
     default:
       return key;
   }
@@ -580,7 +580,7 @@ const routePropertyToValue = (
   if (isNotGrouping) {
     return (
       <Text variant="bodySmall" color="secondary">
-        Not grouping
+        不分组
       </Text>
     );
   }
@@ -588,7 +588,7 @@ const routePropertyToValue = (
   if (isSingleGroup) {
     return (
       <Text variant="bodySmall" color="secondary">
-        Single group
+        单一分组
       </Text>
     );
   }

@@ -49,9 +49,9 @@ export const TemplatesTable = ({ config, alertManagerName }: Props) => {
 
   return (
     <ReceiversSection
-      title="Notification templates"
-      description="Create notification templates to customize your notifications."
-      addButtonLabel="Add template"
+      title="通知模板"
+      description="创建通知模板以自定义通知。"
+      addButtonLabel="添加模板"
       addButtonTo={makeAMLink('/alerting/notifications/templates/new', alertManagerName)}
       showButton={contextSrv.hasPermission(permissions.create)}
     >
@@ -64,16 +64,16 @@ export const TemplatesTable = ({ config, alertManagerName }: Props) => {
         <thead>
           <tr>
             <th></th>
-            <th>Template</th>
+            <th>模板</th>
             <Authorize actions={[permissions.update, permissions.delete]}>
-              <th>Actions</th>
+              <th>操作</th>
             </Authorize>
           </tr>
         </thead>
         <tbody>
           {!templateRows.length && (
             <tr className={tableStyles.evenRow}>
-              <td colSpan={3}>No templates defined.</td>
+              <td colSpan={3}>未定义模板。</td>
             </tr>
           )}
           {templateRows.map(({ name, template, provenance }, idx) => {
@@ -97,7 +97,7 @@ export const TemplatesTable = ({ config, alertManagerName }: Props) => {
                           `/alerting/notifications/templates/${encodeURIComponent(name)}/edit`,
                           alertManagerName
                         )}
-                        tooltip="view template"
+                        tooltip="查看模板"
                         icon="file-alt"
                       />
                     )}
@@ -108,7 +108,7 @@ export const TemplatesTable = ({ config, alertManagerName }: Props) => {
                             `/alerting/notifications/templates/${encodeURIComponent(name)}/edit`,
                             alertManagerName
                           )}
-                          tooltip="edit template"
+                          tooltip="编辑模板"
                           icon="pen"
                         />
                       </Authorize>
@@ -119,7 +119,7 @@ export const TemplatesTable = ({ config, alertManagerName }: Props) => {
                           `/alerting/notifications/templates/${encodeURIComponent(name)}/duplicate`,
                           alertManagerName
                         )}
-                        tooltip="Copy template"
+                        tooltip="复制模板"
                         icon="copy"
                       />
                     )}
@@ -128,7 +128,7 @@ export const TemplatesTable = ({ config, alertManagerName }: Props) => {
                       <Authorize actions={[permissions.delete]}>
                         <ActionIcon
                           onClick={() => setTemplateToDelete(name)}
-                          tooltip="delete template"
+                          tooltip="删除模板"
                           icon="trash-alt"
                         />
                       </Authorize>
@@ -139,7 +139,7 @@ export const TemplatesTable = ({ config, alertManagerName }: Props) => {
                   <tr className={idx % 2 === 0 ? tableStyles.evenRow : undefined}>
                     <td></td>
                     <td colSpan={2}>
-                      <DetailsField label="Description" horizontal={true}>
+                      <DetailsField label="描述" horizontal={true}>
                         <TemplateEditor
                           width={'auto'}
                           height={'auto'}

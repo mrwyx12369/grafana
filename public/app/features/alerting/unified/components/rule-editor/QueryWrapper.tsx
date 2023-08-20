@@ -89,8 +89,7 @@ export const QueryWrapper = ({
         <Tooltip
           content={
             <>
-              Not finding the data source you want? Some data sources are not supported for alerting. Click on the icon
-              for more information.
+            找不到所需的数据源？某些数据源不支持警报。点击图标了解更多信息。
             </>
           }
         >
@@ -210,12 +209,11 @@ export function MaxDataPointsOption({
         width={8}
         tooltip={
           <>
-            The maximum data points per series. Used directly by some data sources and used in calculation of auto
-            interval. With streaming data this value is used for the rolling buffer.
+            每个系列的最大数据点。由某些数据源直接使用，用于自动计算间隔。对于流数据，此值用于滚动缓冲区。
           </>
         }
       >
-        Max data points
+        最大数据点
       </InlineFormLabel>
       <Input
         type="number"
@@ -254,12 +252,11 @@ export function MinIntervalOption({
         width={8}
         tooltip={
           <>
-            A lower limit for the interval. Recommended to be set to write frequency, for example <code>1m</code> if
-            your data is written every minute.
+            间隔的下限。建议设置为写入频率，例如 <code>1m</code> 如果您的数据每分钟写入一次。
           </>
         }
       >
-        Min interval
+        最小间隔
       </InlineFormLabel>
       <Input
         type="text"

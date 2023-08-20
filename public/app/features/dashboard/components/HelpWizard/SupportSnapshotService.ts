@@ -108,8 +108,8 @@ export class SupportSnapshotService extends StateManagerBase<SupportSnapshotStat
     if (markdownText.length > maxLen) {
       this.setState({
         error: {
-          title: 'Copy to clipboard failed',
-          message: 'Snapshot is too large, consider download and attaching a file instead',
+          title: '复制到剪贴板失败',
+          message: '快照太大，请考虑下载并附加文件',
         },
       });
 

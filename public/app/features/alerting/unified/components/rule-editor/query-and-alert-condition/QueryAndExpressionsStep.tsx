@@ -435,8 +435,8 @@ export const QueryAndExpressionsStep = ({ editingExistingRule, onDataChange }: P
             onClickSwitch={onClickSwitch}
           />
           {/* Expression Queries */}
-          <Text element="h5">Expressions</Text>
-          <div className={styles.mutedText}>Manipulate data returned from queries with math and other operations.</div>
+          <Text element="h5">表达式</Text>
+          <div className={styles.mutedText}>使用数学和其他操作从查询返回的数据。</div>
           <ExpressionsEditor
             queries={queries}
             panelData={queryPreviewData}

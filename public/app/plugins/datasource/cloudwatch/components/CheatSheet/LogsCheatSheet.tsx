@@ -23,12 +23,12 @@ const QUERIES: QueryExample[] = [
     category: 'Lambda',
     examples: [
       {
-        title: 'View latency statistics for 5-minute intervals',
+        title: '查看 5 分钟间隔的延迟统计信息',
         expr: stripIndents`filter @type = "REPORT" |
                            stats avg(@duration), max(@duration), min(@duration) by bin(5m)`,
       },
       {
-        title: 'Determine the amount of overprovisioned memory',
+        title: '确定过度配置的内存量',
         expr: stripIndent`filter @type = "REPORT"
         | stats max(@memorySize / 1000 / 1000) as provisionedMemoryMB,
           min(@maxMemoryUsed / 1000 / 1000) as smallestMemoryRequestMB,
@@ -38,7 +38,7 @@ const QUERIES: QueryExample[] = [
         `,
       },
       {
-        title: 'Find the most expensive requests',
+        title: '查找最昂贵的请求',
         expr: stripIndents`filter @type = "REPORT"
         | fields @requestId, @billedDuration
         | sort by @billedDuration desc`,
@@ -50,34 +50,34 @@ const QUERIES: QueryExample[] = [
     category: 'VPC Flow Logs',
     examples: [
       {
-        title: 'Average, min, and max byte transfers by source and destination IP addresses',
+        title: '按源和目标 IP 地址划分的平均、最小和最大字节传输',
         expr: `stats avg(bytes), min(bytes), max(bytes) by srcAddr, dstAddr`,
       },
       {
-        title: 'IP addresses using UDP transfer protocol',
+        title: '使用 UDP 传输协议的 IP 地址',
         expr: 'filter protocol=17 | stats count(*) by srcAddr',
       },
       {
-        title: 'Top 10 byte transfers by source and destination IP addresses',
+        title: '按源和目标 IP 地址划分的前 10 个字节传输',
         expr: stripIndents`stats sum(bytes) as bytesTransferred by srcAddr, dstAddr |
                            sort bytesTransferred desc |
                            limit 10`,
       },
       {
-        title: 'Top 20 source IP addresses with highest number of rejected requests',
+        title: '被拒绝请求数最多的前 20 个源 IP 地址',
         expr: stripIndents`filter action="REJECT" |
                            stats count(*) as numRejections by srcAddr |
                            sort numRejections desc |
                            limit 20`,
       },
       {
-        title: 'Find the top 15 packet transfers across hosts',
+        title: '查找跨主机的前 15 个数据包传输',
         expr: stripIndents`stats sum(packets) as packetsTransferred by srcAddr, dstAddr
         | sort packetsTransferred  desc
         | limit 15`,
       },
       {
-        title: 'Find the IP addresses where flow records were skipped during the capture window',
+        title: '查找在捕获窗口期间跳过流记录的 IP 地址',
         expr: stripIndents`filter logStatus="SKIPDATA"
         | stats count(*) by bin(1h) as t
         | sort t`,

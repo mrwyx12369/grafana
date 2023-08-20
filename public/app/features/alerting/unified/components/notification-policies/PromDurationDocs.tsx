@@ -10,15 +10,15 @@ export function PromDurationDocs() {
   const styles = useStyles2(getPromDurationStyles);
   return (
     <div>
-      Prometheus duration format consist of a number followed by a time unit.
+      Prometheus持续时间格式由一个数字后跟一个时间单位组成。
       <br />
-      Different units can be combined for more granularity.
+      可以组合不同的单元以获得更精细的粒度。
       <hr />
       <div className={styles.list}>
         <div className={styles.header}>
-          <div>Symbol</div>
-          <div>Time unit</div>
-          <div>Example</div>
+          <div>符号</div>
+          <div>时间单位</div>
+          <div>示例</div>
         </div>
         <PromDurationDocsTimeUnit unit={TimeOptions.seconds} name="seconds" example="20s" />
         <PromDurationDocsTimeUnit unit={TimeOptions.minutes} name="minutes" example="10m" />
@@ -26,7 +26,7 @@ export function PromDurationDocs() {
         <PromDurationDocsTimeUnit unit={TimeOptions.days} name="days" example="3d" />
         <PromDurationDocsTimeUnit unit={TimeOptions.weeks} name="weeks" example="2w" />
         <div className={styles.examples}>
-          <div>Multiple units combined</div>
+          <div>多个单位组合</div>
           <code>1m30s, 2h30m20s, 1w2d</code>
         </div>
       </div>

@@ -36,7 +36,7 @@ export function PreviewRuleResult(props: Props): React.ReactElement | null {
   if (data.state === LoadingState.Loading) {
     return (
       <div className={styles.container}>
-        <span>Loading preview...</span>
+        <span>正在加载预览...</span>
       </div>
     );
   }
@@ -51,8 +51,8 @@ export function PreviewRuleResult(props: Props): React.ReactElement | null {
   return (
     <div className={styles.container}>
       <span>
-        Preview based on the result of running the query, for this moment.{' '}
-        {ruleType === RuleFormType.grafana ? 'Configuration for `no data` and `error handling` is not applied.' : null}
+        目前，根据运行查询的结果进行预览。{' '}
+        {ruleType === RuleFormType.grafana ? '不应用“无数据”和“错误处理”的配置。' : null}
       </span>
       <div className={styles.table}>
         <AutoSizer>

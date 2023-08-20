@@ -86,12 +86,12 @@ class UnThemedTestRuleResult extends PureComponent<Props, State> {
 
     const collapse = (
       <>
-        <Icon name="minus-circle" /> Collapse All
+        <Icon name="minus-circle" /> 全部关闭
       </>
     );
     const expand = (
       <>
-        <Icon name="plus-circle" /> Expand All
+        <Icon name="plus-circle" /> 全部打开
       </>
     );
     return allNodesExpanded ? collapse : expand;
@@ -102,7 +102,7 @@ class UnThemedTestRuleResult extends PureComponent<Props, State> {
     const clearButton = clearButtonStyles(this.props.theme);
 
     if (isLoading === true) {
-      return <LoadingPlaceholder text="Evaluating rule" />;
+      return <LoadingPlaceholder text="评估规则" />;
     }
 
     const openNodes = this.getNrOfOpenNodes();
@@ -115,7 +115,7 @@ class UnThemedTestRuleResult extends PureComponent<Props, State> {
               {this.renderExpandCollapse()}
             </button>
             <ClipboardButton getText={this.getTextForClipboard} icon="copy">
-              Copy to Clipboard
+              复制到剪贴板
             </ClipboardButton>
           </HorizontalGroup>
         </div>

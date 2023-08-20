@@ -33,7 +33,7 @@ export const LegacyVariableQueryEditor = ({ onChange, query }: VariableQueryEdit
       value={value}
       onChange={onValueChange}
       onBlur={onBlur}
-      placeholder="Metric name or tags query"
+      placeholder="指标名称或标签查询"
       required
       aria-label={selectors.pages.Dashboard.Settings.Variables.Edit.QueryVariable.queryOptionsQueryInput}
       cols={52}

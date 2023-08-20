@@ -32,7 +32,7 @@ export class ExpressionDatasourceApi extends DataSourceWithBackend<ExpressionQue
   }
 
   getCollapsedText(query: ExpressionQuery) {
-    return `Expression: ${query.type}`;
+    return `表达式: ${query.type}`;
   }
 
   query(request: DataQueryRequest<ExpressionQuery>): Observable<DataQueryResponse> {
@@ -80,7 +80,7 @@ export const instanceSettings: DataSourceInstanceSettings = {
         small: 'public/img/icn-datasource.svg',
         large: 'public/img/icn-datasource.svg',
       },
-      description: 'Adds expression support to Grafana',
+      description: '向系统添加表达式支持',
       screenshots: [],
       links: [],
       updated: '',

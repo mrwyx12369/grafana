@@ -95,17 +95,17 @@ export function GeneralSettingsUnconnected({
     <Page navModel={sectionNav}>
       <div style={{ maxWidth: '600px' }}>
         <div className="gf-form-group">
-          <Field label="Name">
+          <Field label="名称">
             <Input id="title-input" name="title" onBlur={onBlur} defaultValue={dashboard.title} />
           </Field>
-          <Field label="Description">
+          <Field label="描述">
             <Input id="description-input" name="description" onBlur={onBlur} defaultValue={dashboard.description} />
           </Field>
-          <Field label="Tags">
+          <Field label="标签">
             <TagsInput id="tags-input" tags={dashboard.tags} onChange={onTagsChange} width={40} />
           </Field>
 
-          <Field label="Folder">
+          <Field label="文件夹">
             <FolderPicker
               value={dashboard.meta.folderUid}
               onChange={onFolderChange}
@@ -119,8 +119,8 @@ export function GeneralSettingsUnconnected({
           </Field>
 
           <Field
-            label="Editable"
-            description="Set to read-only to disable all editing. Reload the dashboard for changes to take effect"
+            label="编辑"
+            description="设置为只读以禁用所有编辑。重新加载仪表板以使更改生效"
           >
             <RadioButtonGroup value={dashboard.editable} options={editableOptions} onChange={onEditableChange} />
           </Field>

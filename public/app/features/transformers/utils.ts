@@ -39,11 +39,11 @@ export function getDistinctLabels(input: DataFrame[]): Set<string> {
 }
 
 export const categoriesLabels: { [K in TransformerCategory]: string } = {
-  combine: 'Combine',
-  calculateNewFields: 'Calculate new fields',
-  createNewVisualization: 'Create new visualization',
-  filter: 'Filter',
-  performSpatialOperations: 'Perform spatial operations',
-  reformat: 'Reformat',
-  reorderAndRename: 'Reorder and rename',
+  combine: '组合',
+  calculateNewFields: '计算新字段',
+  createNewVisualization: '创建新的可视化',
+  filter: '过滤',
+  performSpatialOperations: '执行空间操作',
+  reformat: '重新格式化',
+  reorderAndRename: '重新排序和重命名',
 };

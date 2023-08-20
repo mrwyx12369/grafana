@@ -93,7 +93,7 @@ export const Expression: FC<ExpressionProps> = ({
           return <Threshold onChange={onChangeQuery} query={query} labelWidth={'auto'} refIds={availableRefIds} />;
 
         default:
-          return <>Expression not supported: {query.type}</>;
+          return <>不支持的表达式： {query.type}</>;
       }
     },
     [onChangeQuery, queries]
@@ -313,7 +313,7 @@ const Header: FC<HeaderProps> = ({
           variant="secondary"
           className={styles.mutedIcon}
           onClick={onRemoveExpression}
-          tooltip="Remove expression"
+          tooltip="删除表达式"
         />
       </Stack>
     </header>
@@ -397,8 +397,8 @@ const TimeseriesRow: FC<FrameProps & { index: number }> = ({ frame, index }) => 
               <table className={styles.timeseriesTable}>
                 <thead>
                   <tr>
-                    <th>Timestamp</th>
-                    <th>Value</th>
+                    <th>时间序列</th>
+                    <th>数值</th>
                   </tr>
                 </thead>
                 <tbody>

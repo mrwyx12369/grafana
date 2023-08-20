@@ -25,9 +25,9 @@ const defaultPageNav: Partial<NavModelItem> = {
 
 const getPageNav = (state: 'edit' | 'add') => {
   if (state === 'edit') {
-    return { ...defaultPageNav, id: 'alert-rule-edit', text: 'Edit rule' };
+    return { ...defaultPageNav, id: 'alert-rule-edit', text: '编辑规则' };
   } else if (state === 'add') {
-    return { ...defaultPageNav, id: 'alert-rule-add', text: 'Add rule' };
+    return { ...defaultPageNav, id: 'alert-rule-add', text: '新增规则' };
   }
   return undefined;
 };
@@ -56,11 +56,11 @@ const RuleEditor = ({ match }: RuleEditorProps) => {
     }
 
     if (!identifier && !canCreateGrafanaRules && !canCreateCloudRules) {
-      return <AlertWarning title="Cannot create rules">Sorry! You are not allowed to create rules.</AlertWarning>;
+      return <AlertWarning title="无法创建规则">Sorry! You are not allowed to create rules.</AlertWarning>;
     }
 
     if (identifier && !canEditRules(identifier.ruleSourceName)) {
-      return <AlertWarning title="Cannot edit rules">Sorry! You are not allowed to edit rules.</AlertWarning>;
+      return <AlertWarning title="无法编辑规则">Sorry! You are not allowed to edit rules.</AlertWarning>;
     }
 
     if (identifier) {

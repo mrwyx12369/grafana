@@ -66,28 +66,27 @@ export const NotificationPreview = ({
     <Stack direction="column" gap={2}>
       <div className={styles.routePreviewHeaderRow}>
         <div className={styles.previewHeader}>
-          <Text element="h4">Alert instance routing preview</Text>
+          <Text element="h4">警报实例路由预览</Text>
         </div>
         <div className={styles.button}>
           <Button icon="sync" variant="secondary" type="button" onClick={onPreview}>
-            Preview routing
+            预览路由
           </Button>
         </div>
       </div>
       {!renderHowToPreview && (
         <div className={styles.textMuted}>
-          Based on the labels added, alert instances are routed to the following notification policies. Expand each
-          notification policy below to view more details.
+          根据添加的标签，警报实例将路由到以下通知策略。展开每个下面的通知政策以查看更多详细信息。
         </div>
       )}
       {isLoading && <div className={styles.textMuted}>Loading...</div>}
       {renderHowToPreview && (
         <div className={styles.previewHowToText}>
-          {`When your query and labels are configured, click "Preview routing" to see the results here.`}
+          {`配置查询和标签后，单击“预览路由”以查看此处的结果。`}
         </div>
       )}
       {!isLoading && !previewUninitialized && potentialInstances.length > 0 && (
-        <Suspense fallback={<LoadingPlaceholder text="Loading preview..." />}>
+        <Suspense fallback={<LoadingPlaceholder text="正在加载预览..." />}>
           {alertManagerSourceNamesAndImage.map((alertManagerSource) => (
             <NotificationPreviewByAlertManager
               alertManagerSource={alertManagerSource}

@@ -1,122 +1,122 @@
 package channels_config
 
 import (
-	"os"
+	//"os"
 
-	alertingOpsgenie "github.com/grafana/alerting/receivers/opsgenie"
+	//alertingOpsgenie "github.com/grafana/alerting/receivers/opsgenie"
 	alertingTemplates "github.com/grafana/alerting/templates"
 )
 
 // GetAvailableNotifiers returns the metadata of all the notification channels that can be configured.
 func GetAvailableNotifiers() []*NotifierPlugin {
-	hostname, _ := os.Hostname()
+	//hostname, _ := os.Hostname()
 
-	pushoverSoundOptions := []SelectOption{
-		{
-			Value: "default",
-			Label: "Default",
-		},
-		{
-			Value: "pushover",
-			Label: "Pushover",
-		}, {
-			Value: "bike",
-			Label: "Bike",
-		}, {
-			Value: "bugle",
-			Label: "Bugle",
-		}, {
-			Value: "cashregister",
-			Label: "Cashregister",
-		}, {
-			Value: "classical",
-			Label: "Classical",
-		}, {
-			Value: "cosmic",
-			Label: "Cosmic",
-		}, {
-			Value: "falling",
-			Label: "Falling",
-		}, {
-			Value: "gamelan",
-			Label: "Gamelan",
-		}, {
-			Value: "incoming",
-			Label: "Incoming",
-		}, {
-			Value: "intermission",
-			Label: "Intermission",
-		}, {
-			Value: "magic",
-			Label: "Magic",
-		}, {
-			Value: "mechanical",
-			Label: "Mechanical",
-		}, {
-			Value: "pianobar",
-			Label: "Pianobar",
-		}, {
-			Value: "siren",
-			Label: "Siren",
-		}, {
-			Value: "spacealarm",
-			Label: "Spacealarm",
-		}, {
-			Value: "tugboat",
-			Label: "Tugboat",
-		}, {
-			Value: "alien",
-			Label: "Alien",
-		}, {
-			Value: "climb",
-			Label: "Climb",
-		}, {
-			Value: "persistent",
-			Label: "Persistent",
-		}, {
-			Value: "echo",
-			Label: "Echo",
-		}, {
-			Value: "updown",
-			Label: "Updown",
-		}, {
-			Value: "none",
-			Label: "None",
-		},
-	}
+	// pushoverSoundOptions := []SelectOption{
+	// 	{
+	// 		Value: "default",
+	// 		Label: "系统默认",
+	// 	},
+	// 	{
+	// 		Value: "pushover",
+	// 		Label: "Pushover",
+	// 	}, {
+	// 		Value: "bike",
+	// 		Label: "Bike",
+	// 	}, {
+	// 		Value: "bugle",
+	// 		Label: "Bugle",
+	// 	}, {
+	// 		Value: "cashregister",
+	// 		Label: "Cashregister",
+	// 	}, {
+	// 		Value: "classical",
+	// 		Label: "Classical",
+	// 	}, {
+	// 		Value: "cosmic",
+	// 		Label: "Cosmic",
+	// 	}, {
+	// 		Value: "falling",
+	// 		Label: "Falling",
+	// 	}, {
+	// 		Value: "gamelan",
+	// 		Label: "Gamelan",
+	// 	}, {
+	// 		Value: "incoming",
+	// 		Label: "Incoming",
+	// 	}, {
+	// 		Value: "intermission",
+	// 		Label: "Intermission",
+	// 	}, {
+	// 		Value: "magic",
+	// 		Label: "Magic",
+	// 	}, {
+	// 		Value: "mechanical",
+	// 		Label: "Mechanical",
+	// 	}, {
+	// 		Value: "pianobar",
+	// 		Label: "Pianobar",
+	// 	}, {
+	// 		Value: "siren",
+	// 		Label: "Siren",
+	// 	}, {
+	// 		Value: "spacealarm",
+	// 		Label: "Spacealarm",
+	// 	}, {
+	// 		Value: "tugboat",
+	// 		Label: "Tugboat",
+	// 	}, {
+	// 		Value: "alien",
+	// 		Label: "Alien",
+	// 	}, {
+	// 		Value: "climb",
+	// 		Label: "Climb",
+	// 	}, {
+	// 		Value: "persistent",
+	// 		Label: "Persistent",
+	// 	}, {
+	// 		Value: "echo",
+	// 		Label: "Echo",
+	// 	}, {
+	// 		Value: "updown",
+	// 		Label: "Updown",
+	// 	}, {
+	// 		Value: "none",
+	// 		Label: "无",
+	// 	},
+	// }
 
-	pushoverPriorityOptions := []SelectOption{
-		{
-			Value: "2",
-			Label: "Emergency",
-		},
-		{
-			Value: "1",
-			Label: "High",
-		},
-		{
-			Value: "0",
-			Label: "Normal",
-		},
-		{
-			Value: "-1",
-			Label: "Low",
-		},
-		{
-			Value: "-2",
-			Label: "Lowest",
-		},
-	}
+	// pushoverPriorityOptions := []SelectOption{
+	// 	{
+	// 		Value: "2",
+	// 		Label: "紧急",
+	// 	},
+	// 	{
+	// 		Value: "1",
+	// 		Label: "高危",
+	// 	},
+	// 	{
+	// 		Value: "0",
+	// 		Label: "正常",
+	// 	},
+	// 	{
+	// 		Value: "-1",
+	// 		Label: "低风险",
+	// 	},
+	// 	{
+	// 		Value: "-2",
+	// 		Label: "最小风险",
+	// 	},
+	// }
 
 	return []*NotifierPlugin{
 		{
 			Type:        "dingding",
-			Name:        "DingDing",
-			Description: "Sends HTTP POST request to DingDing",
-			Heading:     "DingDing settings",
+			Name:        "叮叮通讯",
+			Description: "向叮叮发送 HTTP POST 请求",
+			Heading:     "叮叮设置",
 			Options: []NotifierOption{
 				{
-					Label:        "URL",
+					Label:        "URL地址",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "https://oapi.dingtalk.com/robot/send?access_token=xxxxxxxxx",
@@ -124,31 +124,31 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					Required:     true,
 				},
 				{
-					Label:        "Message Type",
+					Label:        "消息类型",
 					Element:      ElementTypeSelect,
 					PropertyName: "msgType",
 					SelectOptions: []SelectOption{
 						{
 							Value: "link",
-							Label: "Link"},
+							Label: "链接"},
 						{
 							Value: "actionCard",
-							Label: "ActionCard",
+							Label: "操作卡",
 						},
 					},
 				},
 				{ // New in 9.3.
-					Label:        "Title",
+					Label:        "标题",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Description:  "Templated title of the message",
+					Description:  "消息的模板化标题",
 					Placeholder:  alertingTemplates.DefaultMessageTitleEmbed,
 					PropertyName: "title",
 				},
 				{ // New in 8.0.
-					Label:        "Message",
+					Label:        "消息",
 					Element:      ElementTypeTextArea,
-					Description:  "Custom DingDing message. You can use template variables.",
+					Description:  "自定义叮叮当当消息。您可以使用模板变量。",
 					Placeholder:  alertingTemplates.DefaultMessageEmbed,
 					PropertyName: "message",
 				},
@@ -156,21 +156,21 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 		},
 		{
 			Type:        "kafka",
-			Name:        "Kafka REST Proxy",
-			Description: "Sends notifications to Kafka Rest Proxy",
+			Name:        "Kafka REST代理",
+			Description: "向Kafka Rest代理发送通知",
 			Heading:     "Kafka settings",
 			Options: []NotifierOption{
 				{
-					Label:        "Kafka REST Proxy",
+					Label:        "Kafka REST代理",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Description:  "Hint: If you are directly using v3 APIs hosted on a Confluent Kafka Server, you must append /kafka to the URL here. Example: https://localhost:8082/kafka",
+					Description:  "提示：如果您直接使用托管在 Confluent Kafka 服务器上的 v3 API，则必须在此处将 /kafka 附加到 URL 中。示例：https://localhost:8082/kafka",
 					Placeholder:  "http://localhost:8082",
 					PropertyName: "kafkaRestProxy",
 					Required:     true,
 				},
 				{
-					Label:        "Topic",
+					Label:        "主题(Topic)",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "topic1",
@@ -178,44 +178,44 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					Required:     true,
 				},
 				{
-					Label:        "Username",
+					Label:        "用户账号",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					PropertyName: "username",
 					Required:     false,
 				},
 				{
-					Label:        "Password",
+					Label:        "用户密码",
 					Element:      ElementTypeInput,
 					InputType:    InputTypePassword,
-					Description:  "The password to use when making a call to the Kafka REST Proxy",
+					Description:  "调用 Kafka REST 代理时使用的密码",
 					PropertyName: "password",
 					Required:     false,
 					Secure:       true,
 				},
 				{
-					Label:        "API version",
+					Label:        "API版本",
 					Element:      ElementTypeSelect,
 					InputType:    InputTypeText,
-					Description:  "The API version to use when contacting the Kafka REST Server. By default v2 will be used.",
+					Description:  "联系Kafka REST服务器时要使用的API版本。默认情况下将使用 v2。",
 					PropertyName: "apiVersion",
 					Required:     false,
 					SelectOptions: []SelectOption{
 						{
 							Value: "v2",
-							Label: "v2",
+							Label: "v2版",
 						},
 						{
 							Value: "v3",
-							Label: "v3",
+							Label: "v3版",
 						},
 					},
 				},
 				{
-					Label:        "Cluster ID",
+					Label:        "集群ID",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Description:  "v3 APIs require a clusterID to be specified.",
+					Description:  "v3版 API 需要指定群集 ID。",
 					Placeholder:  "lkc-abcde",
 					PropertyName: "kafkaClusterId",
 					Required:     true,
@@ -225,17 +225,17 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					},
 				},
 				{
-					Label:        "Description",
+					Label:        "描述",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Description:  "Templated description of the Kafka message",
+					Description:  "Kafka消息的模板化描述",
 					PropertyName: "description",
 					Placeholder:  alertingTemplates.DefaultMessageTitleEmbed,
 				},
 				{
-					Label:        "Details",
+					Label:        "详细",
 					Element:      ElementTypeTextArea,
-					Description:  "Custom details to include with the message. You can use template variables.",
+					Description:  "要包含在消息中的自定义详细信息。您可以使用模板变量。",
 					PropertyName: "details",
 					Placeholder:  alertingTemplates.DefaultMessageEmbed,
 				},
@@ -243,119 +243,120 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 		},
 		{
 			Type:        "email",
-			Name:        "Email",
-			Description: "Sends notifications using Grafana server configured SMTP settings",
+			Name:        "电子邮件",
+			Description: "使用系统服务器配置的 SMTP 设置发送通知",
 			Heading:     "Email settings",
 			Options: []NotifierOption{
 				{
-					Label:        "Single email",
-					Description:  "Send a single email to all recipients",
+					Label:        "单个电子邮件",
+					Description:  "向所有收件人发送一封电子邮件",
 					Element:      ElementTypeCheckbox,
 					PropertyName: "singleEmail",
 				},
 				{
-					Label:        "Addresses",
-					Description:  "You can enter multiple email addresses using a \";\", \"\\n\" or  \",\" separator",
+					Label:        "地址(可多个)",
+					Description:  "您可以使用 “;” 输入多个电子邮件地址分隔符",
 					Element:      ElementTypeTextArea,
 					PropertyName: "addresses",
 					Required:     true,
 				},
 				{ // New in 8.0.
-					Label:        "Message",
-					Description:  "Optional message. You can use templates to customize this field. Using a custom message will replace the default message",
+					Label:        "消息",
+					Description:  "可选消息。您可以使用模板自定义此字段。使用自定义消息将替换默认消息",
 					Element:      ElementTypeTextArea,
 					PropertyName: "message",
 				},
 				{ // New in 9.0.
-					Label:        "Subject",
+					Label:        "主题",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Description:  "Optional subject. You can use templates to customize this field",
+					Description:  "可选主题。您可以使用模板自定义此字段",
 					PropertyName: "subject",
 					Placeholder:  alertingTemplates.DefaultMessageTitleEmbed,
 				},
 			},
 		},
+		/**
 		{
 			Type:        "pagerduty",
 			Name:        "PagerDuty",
-			Description: "Sends notifications to PagerDuty",
-			Heading:     "PagerDuty settings",
+			Description: "将通知发送到PagerDuty",
+			Heading:     "PagerDuty设置",
 			Options: []NotifierOption{
 				{
-					Label:        "Integration Key",
+					Label:        "集成密钥",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Placeholder:  "Pagerduty Integration Key",
+					Placeholder:  "Pagerduty集成密钥",
 					PropertyName: "integrationKey",
 					Required:     true,
 					Secure:       true,
 				},
 				{
-					Label:        "Severity",
+					Label:        "事件的严重性",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "critical",
-					Description:  "Severity of the event. It must be critical, error, warning, info - otherwise, the default is set which is critical. You can use templates",
+					Description:  "事件的严重性。它必须是关键，错误，警告，信息 - 否则，设置默认值为关键。您可以使用模板",
 					PropertyName: "severity",
 				},
 				{ // New in 8.0.
-					Label:        "Class",
-					Description:  "The class/type of the event, for example 'ping failure' or 'cpu load'",
+					Label:        "类别",
+					Description:  "事件的类/类型，例如“ping 失败”或“CPU 负载”",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					PropertyName: "class",
 				},
 				{ // New in 8.0.
-					Label:        "Component",
-					Description:  "Component of the source machine that is responsible for the event, for example mysql or eth0",
+					Label:        "组件",
+					Description:  "负责事件的源计算机组件，例如 mysql 或 eth0",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Placeholder:  "Grafana",
+					Placeholder:  "系统",
 					PropertyName: "component",
 				},
 				{ // New in 8.0.
-					Label:        "Group",
-					Description:  "Logical grouping of components of a service, for example 'app-stack'",
+					Label:        "群组",
+					Description:  "服务组件的逻辑分组，例如“应用程序堆栈”",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					PropertyName: "group",
 				},
 				{ // New in 8.0.
-					Label:        "Summary",
-					Description:  "You can use templates for summary",
+					Label:        "摘要",
+					Description:  "您可以使用模板进行摘要",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  alertingTemplates.DefaultMessageTitleEmbed,
 					PropertyName: "summary",
 				},
 				{ // New in 9.4.
-					Label:        "Source",
-					Description:  "The unique location of the affected system, preferably a hostname or FQDN. You can use templates",
+					Label:        "来源",
+					Description:  "受影响系统的唯一位置，最好是主机名或 FQDN。您可以使用模板",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  hostname,
 					PropertyName: "source",
 				},
 				{ // New in 9.4.
-					Label:        "Client",
-					Description:  "The name of the monitoring client that is triggering this event. You can use templates",
+					Label:        "客户端",
+					Description:  "触发此事件的监视客户端的名称。您可以使用模板",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Placeholder:  "Grafana",
+					Placeholder:  "系统",
 					PropertyName: "client",
 				},
 				{ // New in 9.4.
-					Label:        "Client URL",
-					Description:  "The URL of the monitoring client that is triggering this event. You can use templates",
+					Label:        "客户端URL",
+					Description:  "触发此事件的监视客户端的 URL。您可以使用模板",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "{{ .ExternalURL }}",
 					PropertyName: "client_url",
 				},
 				{ // New in 9.5.
-					Label:        "Details",
-					Description:  "A set of arbitrary key/value pairs that provide further detail about the incident.",
+					Label:        "详细",
+					Description:  "一组任意键/值对，提供有关事件的更多详细信息。",
 					Element:      ElementTypeKeyValueMap,
 					InputType:    InputTypeText,
 					PropertyName: "details",
@@ -365,44 +366,45 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 		{
 			Type:        "victorops",
 			Name:        "VictorOps",
-			Description: "Sends notifications to VictorOps",
+			Description: "向VictorOps发送通知",
 			Heading:     "VictorOps settings",
 			Options: []NotifierOption{
 				{
 					Label:        "URL",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Placeholder:  "VictorOps url",
+					Placeholder:  "VictorOps地址",
 					PropertyName: "url",
 					Required:     true,
 				},
 				{ // New in 8.0.
-					Label:        "Message Type",
+					Label:        "消息类型",
 					Element:      ElementTypeSelect,
 					PropertyName: "messageType",
 					SelectOptions: []SelectOption{
 						{
 							Value: "CRITICAL",
-							Label: "CRITICAL"},
+							Label: "严重",
+						},
 						{
 							Value: "WARNING",
-							Label: "WARNING",
+							Label: "警告",
 						},
 					},
 				},
 				{ // New in 9.3.
-					Label:        "Title",
+					Label:        "标题",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Description:  "Templated title to display",
+					Description:  "要显示的模板化标题",
 					PropertyName: "title",
 					Placeholder:  alertingTemplates.DefaultMessageTitleEmbed,
 				},
 				{ // New in 9.3.
-					Label:        "Description",
+					Label:        "描述",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Description:  "Templated description of the message",
+					Description:  "消息的模板化描述",
 					PropertyName: "description",
 					Placeholder:  alertingTemplates.DefaultMessageEmbed,
 				},
@@ -411,11 +413,11 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 		{
 			Type:        "pushover",
 			Name:        "Pushover",
-			Description: "Sends HTTP POST request to the Pushover API",
+			Description: "将 HTTP POST 请求发送到 Pushover API",
 			Heading:     "Pushover settings",
 			Options: []NotifierOption{
 				{
-					Label:        "API Token",
+					Label:        "接口令牌",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "Application token",
@@ -424,7 +426,7 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					Secure:       true,
 				},
 				{
-					Label:        "User key(s)",
+					Label:        "用户密钥",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "comma-separated list",
@@ -433,61 +435,61 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					Secure:       true,
 				},
 				{
-					Label:        "Device(s) (optional)",
+					Label:        "设备（可选）",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Placeholder:  "comma-separated list; leave empty to send to all devices",
+					Placeholder:  "逗号分隔的列表;留空以发送到所有设备",
 					PropertyName: "device",
 				},
 				{
-					Label:         "Alerting priority",
+					Label:         "警报优先级",
 					Element:       ElementTypeSelect,
 					SelectOptions: pushoverPriorityOptions,
 					PropertyName:  "priority",
 				},
 				{
-					Label:         "OK priority",
+					Label:         "良好优先级",
 					Element:       ElementTypeSelect,
 					SelectOptions: pushoverPriorityOptions,
 					PropertyName:  "okPriority",
 				},
 				{
-					Description:  "How often (in seconds) the Pushover servers will send the same alerting or OK notification to the user.",
-					Label:        "Retry (Only used for Emergency Priority)",
+					Description:  "Pushover 服务器向用户发送相同警报或确定通知的频率（以秒为单位）。",
+					Label:        "重试（仅用于紧急优先级）",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Placeholder:  "minimum 30 seconds",
+					Placeholder:  "最少 30 秒",
 					PropertyName: "retry",
 				},
 				{
-					Description:  "How many seconds the alerting or OK notification will continue to be retried.",
-					Label:        "Expire (Only used for Emergency Priority)",
+					Description:  "警报或确定通知将继续重试的秒数。",
+					Label:        "过期（仅用于紧急优先级）",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Placeholder:  "maximum 86400 seconds",
+					Placeholder:  "最大 86400 秒",
 					PropertyName: "expire",
 				},
 				{
-					Label:         "Alerting sound",
+					Label:         "警报声音",
 					Element:       ElementTypeSelect,
 					SelectOptions: pushoverSoundOptions,
 					PropertyName:  "sound",
 				},
 				{
-					Label:         "OK sound",
+					Label:         "状态良好声音",
 					Element:       ElementTypeSelect,
 					SelectOptions: pushoverSoundOptions,
 					PropertyName:  "okSound",
 				},
 				{ // New in 9.3.
-					Label:        "Title",
+					Label:        "标题",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  alertingTemplates.DefaultMessageTitleEmbed,
 					PropertyName: "title",
 				},
 				{ // New in 8.0.
-					Label:        "Message",
+					Label:        "消息",
 					Element:      ElementTypeTextArea,
 					Placeholder:  alertingTemplates.DefaultMessageEmbed,
 					PropertyName: "message",
@@ -497,8 +499,8 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 		{
 			Type:        "slack",
 			Name:        "Slack",
-			Description: "Sends notifications to Slack",
-			Heading:     "Slack settings",
+			Description: "向 Slack 发送通知",
+			Heading:     "Slack设置",
 			Options: []NotifierOption{
 				{
 					Label:        "Recipient",
@@ -770,21 +772,22 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 				},
 			},
 		},
+		*/
 		{
 			Type:        "webhook",
-			Name:        "Webhook",
-			Description: "Sends HTTP POST request to a URL",
-			Heading:     "Webhook settings",
+			Name:        "Web钩子（Webhook）",
+			Description: "将 HTTP POST 请求发送到 URL",
+			Heading:     "Web钩子设置",
 			Options: []NotifierOption{
 				{
-					Label:        "URL",
+					Label:        "URL地址",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					PropertyName: "url",
 					Required:     true,
 				},
 				{
-					Label:   "HTTP Method",
+					Label:   "HTTP方法",
 					Element: ElementTypeSelect,
 					SelectOptions: []SelectOption{
 						{
@@ -799,52 +802,52 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					PropertyName: "httpMethod",
 				},
 				{
-					Label:        "HTTP Basic Authentication - Username",
+					Label:        "HTTP Basic身份认证 - 用户账号",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					PropertyName: "username",
 				},
 				{
-					Label:        "HTTP Basic Authentication - Password",
+					Label:        "HTTP Basic身份认证 - 用户密码",
 					Element:      ElementTypeInput,
 					InputType:    InputTypePassword,
 					PropertyName: "password",
 					Secure:       true,
 				},
 				{ // New in 9.1
-					Label:        "Authorization Header - Scheme",
-					Description:  "Optionally provide a scheme for the Authorization Request Header. Default is Bearer.",
+					Label:        "Authorization授权标头 - 模式",
+					Description:  "（可选）为授权请求标头提供方案。默认值为持有者。",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					PropertyName: "authorization_scheme",
 					Placeholder:  "Bearer",
 				},
 				{ // New in 9.1
-					Label:        "Authorization Header - Credentials",
-					Description:  "Credentials for the Authorization Request header. Only one of HTTP Basic Authentication or Authorization Request Header can be set.",
+					Label:        "Authorization授权标头 - 凭据",
+					Description:  "授权请求标头的凭据。只能设置 HTTP 基本身份验证或授权请求标头之一。",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					PropertyName: "authorization_credentials",
 					Secure:       true,
 				},
 				{ // New in 8.0. TODO: How to enforce only numbers?
-					Label:        "Max Alerts",
-					Description:  "Max alerts to include in a notification. Remaining alerts in the same batch will be ignored above this number. 0 means no limit.",
+					Label:        "最大警报数",
+					Description:  "要包含在通知中的最大警报数。超过此数字的其余警报将被忽略。0 表示无限制。",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					PropertyName: "maxAlerts",
 				},
 				{ // New in 9.3.
-					Label:        "Title",
-					Description:  "Templated title of the message.",
+					Label:        "标题",
+					Description:  "消息的模板化标题。",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					PropertyName: "title",
 					Placeholder:  alertingTemplates.DefaultMessageTitleEmbed,
 				},
 				{ // New in 9.3.
-					Label:        "Message",
-					Description:  "Custom message. You can use template variables.",
+					Label:        "消息",
+					Description:  "自定义消息。您可以使用模板变量。",
 					Element:      ElementTypeTextArea,
 					PropertyName: "message",
 					Placeholder:  alertingTemplates.DefaultMessageEmbed,
@@ -853,13 +856,13 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 		},
 		{
 			Type:        "wecom",
-			Name:        "WeCom",
-			Description: "Send alerts generated by Grafana to WeCom",
-			Heading:     "WeCom settings",
+			Name:        "微信通讯",
+			Description: "将系统生成的警报发送到微信",
+			Heading:     "微信设置",
 			Options: []NotifierOption{
 				{
-					Label:        "Webhook URL",
-					Description:  "Required if using GroupRobot",
+					Label:        "钩子（Webhook） URL地址",
+					Description:  "如果使用组机器人，则为必需",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxxxxx",
@@ -869,8 +872,8 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					DependsOn:    "secret",
 				},
 				{
-					Label:        "Agent ID",
-					Description:  "Required if using APIAPP, see https://work.weixin.qq.com/wework_admin/frame#apps create ApiApp",
+					Label:        "代理ID",
+					Description:  "如果使用 APIAPP，则需要，请参阅创建 ApiApp https://work.weixin.qq.com/wework_admin/frame#apps",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "1000002",
@@ -879,8 +882,8 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					DependsOn:    "url",
 				},
 				{
-					Label:        "Corp ID",
-					Description:  "Required if using APIAPP, see https://work.weixin.qq.com/wework_admin/frame#profile",
+					Label:        "机构ID",
+					Description:  "如果使用 APIAPP，则为必需，请参阅 https://work.weixin.qq.com/wework_admin/frame#profile",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "wwxxxxxxxxx",
@@ -889,8 +892,8 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					DependsOn:    "url",
 				},
 				{
-					Label:        "Secret",
-					Description:  "Required if using APIAPP",
+					Label:        "密钥",
+					Description:  "如果使用 APIAPP 时必需",
 					Element:      ElementTypeInput,
 					InputType:    InputTypePassword,
 					Placeholder:  "secret",
@@ -900,38 +903,38 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					DependsOn:    "url",
 				},
 				{
-					Label:        "Message Type",
+					Label:        "消息类型",
 					Element:      ElementTypeSelect,
 					PropertyName: "msgtype",
 					SelectOptions: []SelectOption{
 						{
 							Value: "text",
-							Label: "Text",
+							Label: "文本格式",
 						},
 						{
 							Value: "markdown",
-							Label: "Markdown",
+							Label: "Markdown格式",
 						},
 					},
-					Placeholder: "Text",
+					Placeholder: "文本",
 				},
 				{
-					Label:        "Message",
-					Description:  "Custom WeCom message. You can use template variables.",
+					Label:        "消息",
+					Description:  "自定义微信消息。您可以使用模板变量。",
 					Element:      ElementTypeTextArea,
 					Placeholder:  alertingTemplates.DefaultMessageEmbed,
 					PropertyName: "message",
 				},
 				{ // New in 9.1.
-					Label:        "Title",
+					Label:        "标题",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
-					Description:  "Templated title of the message",
+					Description:  "消息的模板化标题",
 					PropertyName: "title",
 					Placeholder:  alertingTemplates.DefaultMessageTitleEmbed,
 				},
 				{
-					Label:        "To User",
+					Label:        "接收用户",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "@all",
@@ -941,12 +944,12 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 		},
 		{
 			Type:        "prometheus-alertmanager",
-			Name:        "Alertmanager",
-			Description: "Sends notifications to Alertmanager",
-			Heading:     "Alertmanager Settings",
+			Name:        "警报管理器",
+			Description: "向警报管理器发送通知",
+			Heading:     "警报管理器设置",
 			Options: []NotifierOption{
 				{
-					Label:        "URL",
+					Label:        "URL地址",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					Placeholder:  "http://localhost:9093",
@@ -954,13 +957,13 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 					Required:     true,
 				},
 				{
-					Label:        "Basic Auth User",
+					Label:        "Basic认证用户",
 					Element:      ElementTypeInput,
 					InputType:    InputTypeText,
 					PropertyName: "basicAuthUser",
 				},
 				{
-					Label:        "Basic Auth Password",
+					Label:        "Basic认证密码",
 					Element:      ElementTypeInput,
 					InputType:    InputTypePassword,
 					PropertyName: "basicAuthPassword",
@@ -968,6 +971,7 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 				},
 			},
 		},
+		/**
 		{
 			Type:        "discord",
 			Name:        "Discord",
@@ -1245,5 +1249,6 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 				},
 			},
 		},
+		*/
 	}
 }
