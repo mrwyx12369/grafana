@@ -33,8 +33,8 @@ FROM ${GO_IMAGE} as go-builder
 
 ARG COMMIT_SHA=""
 ARG BUILD_BRANCH=""
-ARG GO_BUILD_TAGS="22.0.0"
-ARG WIRE_TAGS="22.0.0"
+ARG GO_BUILD_TAGS="oss"
+ARG WIRE_TAGS="oss"
 ARG BINGO="true"
 
 # Install build dependencies
