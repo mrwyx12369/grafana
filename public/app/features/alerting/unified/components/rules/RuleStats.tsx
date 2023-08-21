@@ -101,16 +101,16 @@ export function getComponentsFromStats(
   }
 
   if (stats.error) {
-    statsComponents.push(<Badge color="red" key="errors" text={`${stats.error} errors`} />);
+    statsComponents.push(<Badge color="red" key="errors" text={`${stats.error} 错误`} />);
   }
 
   if (stats.nodata) {
-    statsComponents.push(<Badge color="blue" key="nodata" text={`${stats.nodata} no data`} />);
+    statsComponents.push(<Badge color="blue" key="nodata" text={`${stats.nodata} 无数据`} />);
   }
 
   if (stats[AlertInstanceTotalState.Pending]) {
     statsComponents.push(
-      <Badge color={'orange'} key="pending" text={`${stats[AlertInstanceTotalState.Pending]} pending`} />
+      <Badge color={'orange'} key="pending" text={`${stats[AlertInstanceTotalState.Pending]} 等待`} />
     );
   }
 
@@ -119,19 +119,19 @@ export function getComponentsFromStats(
       <Badge
         color="green"
         key="paused"
-        text={`${stats[AlertInstanceTotalState.Normal]} normal (${stats.paused} paused)`}
+        text={`${stats[AlertInstanceTotalState.Normal]} normal (${stats.paused} 暂停)`}
       />
     );
   }
 
   if (stats[AlertInstanceTotalState.Normal] && !stats.paused) {
     statsComponents.push(
-      <Badge color="green" key="inactive" text={`${stats[AlertInstanceTotalState.Normal]} normal`} />
+      <Badge color="green" key="inactive" text={`${stats[AlertInstanceTotalState.Normal]} 正常`} />
     );
   }
 
   if (stats.recording) {
-    statsComponents.push(<Badge color="purple" key="recording" text={`${stats.recording} recording`} />);
+    statsComponents.push(<Badge color="purple" key="recording" text={`${stats.recording} 记录中`} />);
   }
 
   return statsComponents;

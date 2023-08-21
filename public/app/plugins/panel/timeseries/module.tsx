@@ -17,9 +17,9 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TimeSeriesPanel)
 
     builder.addCustomEditor({
       id: 'timezone',
-      name: 'Time zone',
+      name: '时区',
       path: 'timezone',
-      category: ['Axis'],
+      category: ['坐标轴'],
       editor: TimezonesEditor,
       defaultValue: undefined,
     });

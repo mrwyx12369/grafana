@@ -23,7 +23,7 @@ export function OrgRolePicker({ value, onChange, 'aria-label': ariaLabel, inputI
       value={value}
       options={options}
       onChange={(val) => onChange(val.value as OrgRole)}
-      placeholder="Choose role..."
+      placeholder="选择角色..."
       aria-label={ariaLabel}
       autoFocus={autoFocus}
       {...restProps}

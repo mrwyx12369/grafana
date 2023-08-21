@@ -1,12 +1,12 @@
 {
   "type": "panel",
-  "name": "Trend",
+  "name": "趋势图",
   "id": "trend",
 
   "state": "beta",
 
   "info": {
-    "description": "Like timeseries, but when x != time",
+    "description": "像时间序列，但是当 x ！= 时间",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

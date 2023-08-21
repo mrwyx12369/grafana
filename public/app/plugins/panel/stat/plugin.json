@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Stat",
+  "name": "统计数字图",
   "id": "stat",
 
   "info": {
-    "description": "Big stat values & sparklines",
+    "description": "大统计值和迷你图",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

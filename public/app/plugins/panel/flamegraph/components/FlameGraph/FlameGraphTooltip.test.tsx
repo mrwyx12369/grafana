@@ -39,7 +39,7 @@ describe('FlameGraphTooltip', () => {
     expect(tooltipData).toEqual({
       percentSelf: 0.01,
       percentValue: 100,
-      unitTitle: 'RAM',
+      unitTitle: '内存',
       unitSelf: '955 KiB',
       unitValue: '8.03 GiB',
       samples: '8,624,078,250',
@@ -121,21 +121,21 @@ describe('getDiffTooltipData', () => {
     expect(tooltipData).toEqual([
       {
         rowId: '1',
-        label: '% of total',
+        label: '占比',
         baseline: '50%',
         comparison: '40%',
         diff: '-20%',
       },
       {
         rowId: '2',
-        label: 'Value',
+        label: '值',
         baseline: '50',
         comparison: '40',
         diff: '-10',
       },
       {
         rowId: '3',
-        label: 'Samples',
+        label: '样本',
         baseline: '50',
         comparison: '40',
         diff: '-10',

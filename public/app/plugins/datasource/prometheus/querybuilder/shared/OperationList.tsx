@@ -123,11 +123,11 @@ export function OperationList<T extends QueryWithOperations>({
               autoFocus={true}
               alwaysOpen={true}
               hideActiveLevelLabel={true}
-              placeholder={'Search'}
+              placeholder={'搜索'}
             />
           ) : (
-            <Button icon={'plus'} variant={'secondary'} onClick={() => setCascaderOpen(true)} title={'Add operation'}>
-              Operations
+            <Button icon={'plus'} variant={'secondary'} onClick={() => setCascaderOpen(true)} title={'新增操作'}>
+              操作
             </Button>
           )}
         </div>
@@ -182,19 +182,19 @@ function isSameOp(op1?: string, op2?: string) {
 const getStyles = (theme: GrafanaTheme2) => {
   return {
     heading: css({
-      label: 'heading',
+      label: '标题',
       fontSize: 12,
       fontWeight: theme.typography.fontWeightMedium,
       marginBottom: 0,
     }),
     operationList: css({
-      label: 'operationList',
+      label: '操作列表',
       display: 'flex',
       flexWrap: 'wrap',
       gap: theme.spacing(2),
     }),
     addButton: css({
-      label: 'addButton',
+      label: '新增按钮',
       width: 126,
       paddingBottom: theme.spacing(1),
     }),

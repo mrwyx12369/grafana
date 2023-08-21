@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Logs",
+  "name": "日志",
   "id": "logs",
 
   "info": {

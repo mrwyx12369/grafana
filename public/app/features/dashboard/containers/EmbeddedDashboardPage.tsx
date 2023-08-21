@@ -78,7 +78,7 @@ export default function EmbeddedDashboardPage({ route, queryParams }: Props) {
   }
 
   if (dashboard.meta.dashboardNotFound) {
-    return <p>Not available</p>;
+    return <p>不存在</p>;
   }
 
   return (
@@ -131,7 +131,7 @@ const Toolbar = ({ dashboard, callbackUrl, dashboardJson }: ToolbarProps) => {
               });
             }}
           >
-            Save
+            保存
           </Button>
         )}
       </ModalsController>

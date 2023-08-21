@@ -5,13 +5,13 @@
     {
       "type": "panel",
       "id": "gauge",
-      "name": "Gauge",
+      "name": "仪表图",
       "version": ""
     },
     {
       "type": "panel",
       "id": "geomap",
-      "name": "Geomap",
+      "name": "地理地图",
       "version": ""
     },
     {
@@ -23,19 +23,19 @@
     {
       "type": "datasource",
       "id": "grafana-azure-monitor-datasource",
-      "name": "Azure Monitor",
+      "name": "Azure监控",
       "version": "1.0.0"
     },
     {
       "type": "panel",
       "id": "stat",
-      "name": "Stat",
+      "name": "统计数字",
       "version": ""
     },
     {
       "type": "panel",
       "id": "timeseries",
-      "name": "Time series",
+      "name": "时间序列",
       "version": ""
     }
   ],

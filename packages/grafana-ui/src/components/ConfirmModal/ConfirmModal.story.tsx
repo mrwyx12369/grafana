@@ -75,12 +75,12 @@ Basic.parameters = {
 };
 
 Basic.args = {
-  title: 'Delete user',
-  body: 'Are you sure you want to delete this user?',
-  description: 'Removing the user will not remove any dashboards the user has created',
-  confirmText: 'Delete',
+  title: '删除用户',
+  body: '是否确实要删除此用户？',
+  description: '删除用户不会删除用户创建的任何仪表板',
+  confirmText: '删除',
   confirmButtonVariant: 'destructive',
-  dismissText: 'Cancel',
+  dismissText: '取消',
   icon: 'exclamation-triangle',
   isOpen: true,
 };

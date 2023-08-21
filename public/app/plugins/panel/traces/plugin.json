@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Traces",
+  "name": "跟踪面板",
   "id": "traces",
 
   "info": {

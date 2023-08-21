@@ -64,21 +64,17 @@ export const VisualizationSelectPane = ({ panel, data }: Props) => {
   }
 
   const radioOptions: Array<SelectableValue<VisualizationSelectPaneTab>> = [
-    { label: 'Visualizations', value: VisualizationSelectPaneTab.Visualizations },
-    { label: 'Suggestions', value: VisualizationSelectPaneTab.Suggestions },
-    {
-      label: 'Library panels',
-      value: VisualizationSelectPaneTab.LibraryPanels,
-      description: 'Reusable panels you can share between multiple dashboards.',
+    { label: '可视化图表', value: VisualizationSelectPaneTab.Visualizations },
+    { label: '建议图表', value: VisualizationSelectPaneTab.Suggestions },
+    { 
+      label: '库面板', value: VisualizationSelectPaneTab.LibraryPanels, description: '可在多个仪表板之间共享的可重用面板。',
     },
   ];
 
   const radioOptionsWidgetFlow: Array<SelectableValue<VisualizationSelectPaneTab>> = [
-    { label: 'Widgets', value: VisualizationSelectPaneTab.Widgets },
+    { label: '小部件', value: VisualizationSelectPaneTab.Widgets },
     {
-      label: 'Library panels',
-      value: VisualizationSelectPaneTab.LibraryPanels,
-      description: 'Reusable panels you can share between multiple dashboards.',
+      label: '库面板', value: VisualizationSelectPaneTab.LibraryPanels, description: '可在多个仪表板之间共享的可重用面板。',
     },
   ];
 
@@ -91,10 +87,10 @@ export const VisualizationSelectPane = ({ panel, data }: Props) => {
             onChange={setSearchQuery}
             ref={searchRef}
             autoFocus={true}
-            placeholder="Search for..."
+            placeholder="搜索..."
           />
           <Button
-            title="Close"
+            title="关闭"
             variant="secondary"
             icon="angle-up"
             className={styles.closeButton}

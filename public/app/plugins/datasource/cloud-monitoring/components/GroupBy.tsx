@@ -36,13 +36,13 @@ export const GroupBy = ({
   return (
     <EditorFieldGroup>
       <EditorField
-        label="Group by"
-        tooltip="You can reduce the amount of data returned for a metric by combining different time series. To combine multiple time series, you can specify a grouping and a function. Grouping is done on the basis of labels. The grouping function is used to combine the time series in the group into a single time series."
+        label="分组依据"
+        tooltip="您可以通过组合不同的时间序列来减少为指标返回的数据量。若要合并多个时间序列，可以指定分组和函数。分组是在标签的基础上完成的。分组函数用于将组中的时间序列合并为单个时间序列。"
       >
         <MultiSelect
           inputId={`${refId}-group-by`}
           width="auto"
-          placeholder="Choose label"
+          placeholder="选择标签"
           options={options}
           value={query.groupBys ?? []}
           onChange={(options) => {

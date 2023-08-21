@@ -146,7 +146,7 @@ export const dataSourceSettingsReducer = (
     return {
       ...state,
       testingStatus: {
-        message: 'Testing... this could take up to a couple of minutes',
+        message: '测试... 这可能需要几分钟时间',
         status: 'info',
       },
     };

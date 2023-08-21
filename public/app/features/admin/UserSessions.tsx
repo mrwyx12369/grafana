@@ -62,10 +62,10 @@ class BaseUserSessions extends PureComponent<Props, State> {
             <table className="filter-table form-inline">
               <thead>
                 <tr>
-                  <th>Last seen</th>
-                  <th>Logged on</th>
-                  <th>IP address</th>
-                  <th colSpan={2}>Browser and OS</th>
+                  <th>上次出现时间</th>
+                  <th>已登录</th>
+                  <th>IP地址</th>
+                  <th colSpan={2}>浏览器和操作系统</th>
                 </tr>
               </thead>
               <tbody>
@@ -85,7 +85,7 @@ class BaseUserSessions extends PureComponent<Props, State> {
                               onConfirm={this.onSessionRevoke(session.id)}
                               autoFocus
                             >
-                              Force logout
+                              强制注销
                             </ConfirmButton>
                           )}
                         </div>
@@ -98,14 +98,14 @@ class BaseUserSessions extends PureComponent<Props, State> {
           <div className={logoutFromAllDevicesClass}>
             {canLogout && sessions.length > 0 && (
               <Button variant="secondary" onClick={this.showLogoutConfirmationModal} ref={this.forceAllLogoutButton}>
-                Force logout from all devices
+                强制从所有设备注销
               </Button>
             )}
             <ConfirmModal
               isOpen={showLogoutModal}
-              title="Force logout from all devices"
-              body="Are you sure you want to force logout from all devices?"
-              confirmText="Force logout"
+              title="强制从所有设备注销"
+              body="是否确实要强制从所有设备注销？"
+              confirmText="确定"
               onConfirm={this.onAllSessionsRevoke}
               onDismiss={this.dismissLogoutConfirmationModal}
             />

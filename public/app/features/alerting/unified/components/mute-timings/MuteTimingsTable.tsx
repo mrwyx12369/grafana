@@ -83,8 +83,8 @@ export const MuteTimingsTable = ({ alertManagerSourceName, muteTimingNames, hide
         <DynamicTable items={items} cols={columns} />
       ) : !hideActions ? (
         <EmptyAreaWithCTA
-          text="You haven't created any mute timings yet"
-          buttonLabel="Add mute timing"
+          text="您尚未创建任何静音计时"
+          buttonLabel="添加静音计时"
           buttonIcon="plus"
           buttonSize="lg"
           href={makeAMLink('alerting/routes/mute-timing/new', alertManagerSourceName)}
@@ -96,8 +96,8 @@ export const MuteTimingsTable = ({ alertManagerSourceName, muteTimingNames, hide
       {!hideActions && (
         <ConfirmModal
           isOpen={!!muteTimingName}
-          title="Delete mute timing"
-          body={`Are you sure you would like to delete "${muteTimingName}"`}
+          title="删除静音计时"
+          body={`您确定要删除"${muteTimingName}"吗？ `}
           confirmText="Delete"
           onConfirm={() => {
             dispatch(deleteMuteTimingAction(alertManagerSourceName, muteTimingName));
@@ -121,7 +121,7 @@ function useColumns(alertManagerSourceName: string, hideActions = false, setMute
     const columns: Array<DynamicTableColumnProps<MuteTimeInterval>> = [
       {
         id: 'name',
-        label: 'Name',
+        label: '名称',
         renderCell: function renderName({ data }) {
           return (
             <>
@@ -133,7 +133,7 @@ function useColumns(alertManagerSourceName: string, hideActions = false, setMute
       },
       {
         id: 'timeRange',
-        label: 'Time range',
+        label: '时间范围',
         renderCell: ({ data }) => {
           return renderTimeIntervals(data);
         },
@@ -142,7 +142,7 @@ function useColumns(alertManagerSourceName: string, hideActions = false, setMute
     if (showActions) {
       columns.push({
         id: 'actions',
-        label: 'Actions',
+        label: '操作',
         renderCell: function renderActions({ data }) {
           if (data.provenance) {
             return (
@@ -152,7 +152,7 @@ function useColumns(alertManagerSourceName: string, hideActions = false, setMute
                     muteName: data.name,
                   })}
                 >
-                  <IconButton name="file-alt" tooltip="View mute timing" />
+                  <IconButton name="file-alt" tooltip="查看静音计时" />
                 </Link>
               </div>
             );
@@ -165,7 +165,7 @@ function useColumns(alertManagerSourceName: string, hideActions = false, setMute
                     muteName: data.name,
                   })}
                 >
-                  <IconButton name="edit" tooltip="Edit mute timing" />
+                  <IconButton name="edit" tooltip="编辑静音计时" />
                 </Link>
               </Authorize>
               <Authorize actions={[permissions.delete]}>

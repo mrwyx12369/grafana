@@ -28,7 +28,7 @@ const TextDisplay = (props: CanvasElementProps<TextConfig, TextData>) => {
   }
   return (
     <div className={styles.container}>
-      <span className={styles.span}>{data?.text ? data.text : 'Double click to set text'}</span>
+      <span className={styles.span}>{data?.text ? data.text : '双击以设置文本'}</span>
     </div>
   );
 };
@@ -119,8 +119,8 @@ const getStyles = (data: TextData | undefined) => (theme: GrafanaTheme2) => ({
 
 export const textItem: CanvasElementItem<TextConfig, TextData> = {
   id: 'text',
-  name: 'Text',
-  description: 'Display text',
+  name: '文本',
+  description: '显示文本',
 
   display: TextDisplay,
 
@@ -165,20 +165,20 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
   },
 
   registerOptionsUI: (builder) => {
-    const category = ['Text'];
+    const category = ['文本'];
     builder
       .addCustomEditor({
         category,
         id: 'textSelector',
         path: 'config.text',
-        name: 'Text',
+        name: '文本',
         editor: TextDimensionEditor,
       })
       .addCustomEditor({
         category,
         id: 'config.color',
         path: 'config.color',
-        name: 'Text color',
+        name: '文本颜色',
         editor: ColorDimensionEditor,
         settings: {},
         defaultValue: {},
@@ -186,12 +186,12 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
       .addRadio({
         category,
         path: 'config.align',
-        name: 'Align text',
+        name: '文本对齐',
         settings: {
           options: [
-            { value: Align.Left, label: 'Left' },
-            { value: Align.Center, label: 'Center' },
-            { value: Align.Right, label: 'Right' },
+            { value: Align.Left, label: '左对齐' },
+            { value: Align.Center, label: '居中' },
+            { value: Align.Right, label: '右对齐' },
           ],
         },
         defaultValue: Align.Left,
@@ -199,12 +199,12 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
       .addRadio({
         category,
         path: 'config.valign',
-        name: 'Vertical align',
+        name: '垂直对齐',
         settings: {
           options: [
-            { value: VAlign.Top, label: 'Top' },
-            { value: VAlign.Middle, label: 'Middle' },
-            { value: VAlign.Bottom, label: 'Bottom' },
+            { value: VAlign.Top, label: '顶部对齐' },
+            { value: VAlign.Middle, label: '中间对齐' },
+            { value: VAlign.Bottom, label: '底部对齐' },
           ],
         },
         defaultValue: VAlign.Middle,
@@ -212,9 +212,9 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
       .addNumberInput({
         category,
         path: 'config.size',
-        name: 'Text size',
+        name: '文本大小',
         settings: {
-          placeholder: 'Auto',
+          placeholder: '自动',
         },
       });
   },

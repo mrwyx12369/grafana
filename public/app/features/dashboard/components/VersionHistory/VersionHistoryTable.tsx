@@ -18,10 +18,10 @@ export const VersionHistoryTable = ({ versions, canCompare, onCheck }: VersionsT
     <thead>
       <tr>
         <th className="width-4"></th>
-        <th className="width-4">Version</th>
-        <th className="width-14">Date</th>
-        <th className="width-10">Updated by</th>
-        <th>Notes</th>
+        <th className="width-4">版本</th>
+        <th className="width-14">日期</th>
+        <th className="width-10">操作用户</th>
+        <th>备注</th>
         <th></th>
       </tr>
     </thead>
@@ -45,7 +45,7 @@ export const VersionHistoryTable = ({ versions, canCompare, onCheck }: VersionsT
           <td>{version.message}</td>
           <td className="text-right">
             {idx === 0 ? (
-              <Tag name="Latest" colorIndex={17} />
+              <Tag name="最新版本" colorIndex={17} />
             ) : (
               <ModalsController>
                 {({ showModal, hideModal }) => (
@@ -60,7 +60,7 @@ export const VersionHistoryTable = ({ versions, canCompare, onCheck }: VersionsT
                       });
                     }}
                   >
-                    Restore
+                    恢复
                   </Button>
                 )}
               </ModalsController>

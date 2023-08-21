@@ -11,15 +11,15 @@ import { Options } from './panelcfg.gen';
 export const addStandardCanvasEditorOptions = (builder: PanelOptionsEditorBuilder<Options>) => {
   builder.addBooleanSwitch({
     path: 'inlineEditing',
-    name: 'Inline editing',
-    description: 'Enable editing the panel directly',
+    name: '内联编辑',
+    description: '启用直接编辑面板',
     defaultValue: true,
   });
 
   builder.addBooleanSwitch({
     path: 'showAdvancedTypes',
-    name: 'Experimental element types',
-    description: 'Enable selection of experimental element types',
+    name: '实验元素类型',
+    description: '启用实验元素类型的选择',
     defaultValue: true,
   });
 };
@@ -52,7 +52,7 @@ export const plugin = new PanelPlugin<Options>(CanvasPanel)
         if (!(element instanceof FrameState)) {
           builder.addNestedOptions(
             getElementEditor({
-              category: [`Selected element (${element.options.name})`],
+              category: [`所选元素 (${element.options.name})`],
               element,
               scene: state.scene,
             })
@@ -63,7 +63,7 @@ export const plugin = new PanelPlugin<Options>(CanvasPanel)
       if (connectionSelection) {
         builder.addNestedOptions(
           getConnectionEditor({
-            category: ['Selected connection'],
+            category: ['选定的连接'],
             connection: connectionSelection,
             scene: state.scene,
           })

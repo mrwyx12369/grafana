@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Bar chart",
+  "name": "条形图",
   "id": "barchart",
 
   "info": {
-    "description": "Categorical charts with group support",
+    "description": "具有组支持的分类图",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

@@ -1,13 +1,13 @@
 {
   "id": null,
-  "title": "Templated Graphs Nested",
+  "title": "嵌套的模板化图形",
   "tags": ["showcase", "templated"],
   "style": "dark",
   "timezone": "browser",
   "editable": true,
   "rows": [
     {
-      "title": "Row1",
+      "title": "行1",
       "height": "350px",
       "editable": true,
       "collapse": false,
@@ -87,7 +87,7 @@
       "notice": false
     },
     {
-      "title": "Row1",
+      "title": "行1",
       "height": "350px",
       "editable": true,
       "collapse": false,

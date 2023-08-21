@@ -86,7 +86,7 @@ const StateHistory = ({ alertId }: Props) => {
                 <Tooltip
                   content={
                     <div>
-                      Filter each state history group either by exact match or a regular expression, ex:{' '}
+                      按完全匹配或正则表达式筛选每个状态历史记录组，例如：{' '}
                       <code>{`region=eu-west-1`}</code> or <code>{`/region=us-.+/`}</code>
                     </div>
                   }

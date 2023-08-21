@@ -29,9 +29,9 @@ const FlameGraphTooltip = ({ data, item, totalTicks, position }: Props) => {
         className={styles.tooltipTable}
         columns={[
           { id: 'label', header: '' },
-          { id: 'baseline', header: 'Baseline' },
-          { id: 'comparison', header: 'Comparison' },
-          { id: 'diff', header: 'Diff' },
+          { id: 'baseline', header: '基线' },
+          { id: 'comparison', header: '比较' },
+          { id: 'diff', header: '差异' },
         ]}
         data={tableData}
         getRowId={(originalRow) => originalRow.rowId}

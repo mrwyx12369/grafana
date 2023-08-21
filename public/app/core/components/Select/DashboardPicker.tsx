@@ -38,8 +38,8 @@ const getDashboards = debounce(findDashboards, 250, { leading: true });
 export const DashboardPicker = ({
   value,
   onChange,
-  placeholder = 'Select dashboard',
-  noOptionsMessage = 'No dashboards found',
+  placeholder = '选择仪表板',
+  noOptionsMessage = '未找到仪表板',
   ...props
 }: Props) => {
   const [current, setCurrent] = useState<SelectableValue<DashboardPickerDTO>>();

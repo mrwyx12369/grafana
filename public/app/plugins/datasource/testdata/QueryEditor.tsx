@@ -189,7 +189,7 @@ export const QueryEditor = ({ query, datasource, onChange, onRunQuery }: Props) 
   return (
     <>
       <InlineFieldRow aria-label={selectors.scenarioSelectContainer}>
-        <InlineField labelWidth={14} label="Scenario">
+        <InlineField labelWidth={14} label="场景">
           <Select
             inputId={`test-data-scenario-select-${query.refId}`}
             options={options}
@@ -199,7 +199,7 @@ export const QueryEditor = ({ query, datasource, onChange, onRunQuery }: Props) 
           />
         </InlineField>
         {currentScenario?.stringInput && (
-          <InlineField label="String Input">
+          <InlineField label="字符串输入">
             <Input
               width={32}
               id={`stringInput-${query.refId}`}
@@ -216,7 +216,7 @@ export const QueryEditor = ({ query, datasource, onChange, onRunQuery }: Props) 
               width={32}
               id={`alias-${query.refId}`}
               type="text"
-              placeholder="optional"
+              placeholder="可选"
               pattern='[^<>&\\"]+'
               name="alias"
               value={query.alias}
@@ -225,7 +225,7 @@ export const QueryEditor = ({ query, datasource, onChange, onRunQuery }: Props) 
           </InlineField>
         )}
         {show.dropPercent && (
-          <InlineField label="Drop" tooltip={'Drop a random set of points'}>
+          <InlineField label="Drop" tooltip={'随机丢弃一组点'}>
             <Input
               type="number"
               min={0}
@@ -242,7 +242,7 @@ export const QueryEditor = ({ query, datasource, onChange, onRunQuery }: Props) 
         )}
         {show.labels && (
           <InlineField
-            label="Labels"
+            label="标签"
             labelWidth={14}
             tooltip={
               <>
@@ -254,9 +254,9 @@ export const QueryEditor = ({ query, datasource, onChange, onRunQuery }: Props) 
                 <br />
                 key=value, key2=value
                 <br />
-                Value can contain templates:
+                值可以包含模板：
                 <br />
-                $seriesIndex - replaced with index of the series
+                $seriesIndex - 替换为系列的索引
               </>
             }
           >

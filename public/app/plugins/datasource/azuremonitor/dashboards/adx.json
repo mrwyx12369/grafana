@@ -125,23 +125,23 @@
             "timeGrain": "auto",
             "timeGrains": [
               {
-                "text": "auto",
+                "text": "自动",
                 "value": "auto"
               },
               {
-                "text": "1 minute",
+                "text": "1分钟",
                 "value": "PT1M"
               },
               {
-                "text": "5 minutes",
+                "text": "5分钟",
                 "value": "PT5M"
               },
               {
-                "text": "15 minutes",
+                "text": "15分钟",
                 "value": "PT15M"
               },
               {
-                "text": "30 minutes",
+                "text": "30分钟",
                 "value": "PT30M"
               },
               {
@@ -149,15 +149,15 @@
                 "value": "PT1H"
               },
               {
-                "text": "6 hours",
+                "text": "6小时",
                 "value": "PT6H"
               },
               {
-                "text": "12 hours",
+                "text": "12小时",
                 "value": "PT12H"
               },
               {
-                "text": "1 day",
+                "text": "1天",
                 "value": "P1D"
               }
             ],
@@ -174,7 +174,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Keep Alive (Avg)",
+      "title": "保持活动(平均)",
       "type": "stat"
     },
     {

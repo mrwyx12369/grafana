@@ -25,7 +25,7 @@ export const UnsavedChangesModal = ({ dashboard, onSaveSuccess, onDiscard, onDis
         width: 500px;
       `}
     >
-      <h5>Do you want to save your changes?</h5>
+      <h5>是否要保存更改?</h5>
       <Modal.ButtonRow>
         <Button variant="secondary" onClick={onDismiss} fill="outline">
           取消

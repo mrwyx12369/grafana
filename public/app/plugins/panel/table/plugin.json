@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Table",
+  "name": "数据表格",
   "id": "table",
 
   "info": {
-    "description": "Supports many column styles",
+    "description": "支持多种列样式",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

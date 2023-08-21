@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Bar gauge",
+  "name": "条形图",
   "id": "bargauge",
 
   "info": {
-    "description": "Horizontal and vertical gauges",
+    "description": "水平和垂直仪表",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

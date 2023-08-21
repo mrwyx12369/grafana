@@ -18,8 +18,8 @@ export const PlaylistNewPage = () => {
   };
 
   const pageNav: NavModelItem = {
-    text: t('nav.new-playlist', 'New playlist'),
-    subTitle:t('nav.new-playlist-subtitle', 'A playlist rotates through a pre-selected list of dashboards. A playlist can be a great way to build situational awareness, or just show off your metrics to your team or visitors.')
+    text: t('nav.new-playlist', '新播放列表'),
+    subTitle:t('nav.new-playlist-subtitle', '播放列表在预先选择的仪表板列表中轮换。播放列表可以是建立态势感知的好方法，或者只是向您的团队或访问者展示您的指标。')
   };
 
   return (

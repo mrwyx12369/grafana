@@ -41,7 +41,7 @@ export const DeleteModal = ({ onConfirm, onDismiss, selectedItems, ...props }: P
           <Space v={2} />
         </>
       }
-      confirmationText="Delete"
+      confirmationText="确定"
       confirmText={
         isDeleting
           ? t('browse-dashboards.action.deleting', 'Deleting...')

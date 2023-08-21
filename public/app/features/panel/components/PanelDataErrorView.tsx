@@ -79,10 +79,10 @@ export function PanelDataErrorView(props: PanelDataErrorViewProps) {
             </>
           )}
           <CardButton icon="table" onClick={switchToTable}>
-            Switch to table
+            切换到表格
           </CardButton>
           <CardButton icon="chart-line" onClick={openVizPicker}>
-            Open visualization suggestions
+            打开可视化建议
           </CardButton>
         </div>
       )}

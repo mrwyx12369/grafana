@@ -226,7 +226,7 @@ export class InspectDataTab extends PureComponent<Props, State> {
     const dataFrames = this.getProcessedData();
 
     if (!dataFrames || !dataFrames.length) {
-      return <div>No Data</div>;
+      return <div>无数据</div>;
     }
 
     // let's make sure we don't try to render a frame that doesn't exists

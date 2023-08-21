@@ -11,7 +11,7 @@ import { StatSuggestionsSupplier } from './suggestions';
 export const plugin = new PanelPlugin<Options>(StatPanel)
   .useFieldConfig()
   .setPanelOptions((builder) => {
-    const mainCategory = ['Stat styles'];
+    const mainCategory = ['数字样式'];
 
     addStandardDataReduceOptions(builder);
     addOrientationOption(builder, mainCategory);
@@ -19,16 +19,16 @@ export const plugin = new PanelPlugin<Options>(StatPanel)
 
     builder.addSelect({
       path: 'textMode',
-      name: 'Text mode',
-      description: 'Control if name and value is displayed or just name',
+      name: '文本模式',
+      description: '控制是显示名称和值还是仅显示名称',
       category: mainCategory,
       settings: {
         options: [
-          { value: BigValueTextMode.Auto, label: 'Auto' },
-          { value: BigValueTextMode.Value, label: 'Value' },
-          { value: BigValueTextMode.ValueAndName, label: 'Value and name' },
-          { value: BigValueTextMode.Name, label: 'Name' },
-          { value: BigValueTextMode.None, label: 'None' },
+          { value: BigValueTextMode.Auto, label: '自动' },
+          { value: BigValueTextMode.Value, label: '值' },
+          { value: BigValueTextMode.ValueAndName, label: '值和名称' },
+          { value: BigValueTextMode.Name, label: '名称' },
+          { value: BigValueTextMode.None, label: '无' },
         ],
       },
       defaultValue: defaultOptions.textMode,
@@ -37,40 +37,40 @@ export const plugin = new PanelPlugin<Options>(StatPanel)
     builder
       .addSelect({
         path: 'colorMode',
-        name: 'Color mode',
+        name: '颜色模式',
         defaultValue: BigValueColorMode.Value,
         category: mainCategory,
         settings: {
           options: [
-            { value: BigValueColorMode.None, label: 'None' },
-            { value: BigValueColorMode.Value, label: 'Value' },
-            { value: BigValueColorMode.Background, label: 'Background Gradient' },
-            { value: BigValueColorMode.BackgroundSolid, label: 'Background Solid' },
+            { value: BigValueColorMode.None, label: '无' },
+            { value: BigValueColorMode.Value, label: '值' },
+            { value: BigValueColorMode.Background, label: '背景透明度' },
+            { value: BigValueColorMode.BackgroundSolid, label: '背景颜色' },
           ],
         },
       })
       .addRadio({
         path: 'graphMode',
-        name: 'Graph mode',
-        description: 'Stat panel graph / sparkline mode',
+        name: '图形模式',
+        description: '统计信息面板图/迷你图模式',
         category: mainCategory,
         defaultValue: defaultOptions.graphMode,
         settings: {
           options: [
-            { value: BigValueGraphMode.None, label: 'None' },
-            { value: BigValueGraphMode.Area, label: 'Area' },
+            { value: BigValueGraphMode.None, label: '无' },
+            { value: BigValueGraphMode.Area, label: '面积' },
           ],
         },
       })
       .addRadio({
         path: 'justifyMode',
-        name: 'Text alignment',
+        name: '文本对齐方式',
         defaultValue: defaultOptions.justifyMode,
         category: mainCategory,
         settings: {
           options: [
-            { value: BigValueJustifyMode.Auto, label: 'Auto' },
-            { value: BigValueJustifyMode.Center, label: 'Center' },
+            { value: BigValueJustifyMode.Auto, label: '自动' },
+            { value: BigValueJustifyMode.Center, label: '居中' },
           ],
         },
       });

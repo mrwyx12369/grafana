@@ -72,7 +72,7 @@ export const SaveDashboardForm = ({
                     saveTimerange: !options.saveTimerange,
                   })
                 }
-                label="Save current time range as dashboard default"
+                label="将当前时间范围另存为仪表板默认值"
                 aria-label={selectors.pages.SaveDashboardModal.saveTimerange}
               />
             )}
@@ -85,7 +85,7 @@ export const SaveDashboardForm = ({
                     saveVariables: !options.saveVariables,
                   })
                 }
-                label="Save current variable values as dashboard default"
+                label="将当前变量值另存为仪表板默认值"
                 aria-label={selectors.pages.SaveDashboardModal.saveVariables}
               />
             )}
@@ -100,13 +100,13 @@ export const SaveDashboardForm = ({
                 });
                 messageProps.onChange(e);
               }}
-              placeholder="Add a note to describe your changes."
+              placeholder="添加注释以描述您的更改。"
               autoFocus
               rows={5}
             />
             <Stack alignItems="center">
               <Button variant="secondary" onClick={onCancel} fill="outline">
-                Cancel
+                取消
               </Button>
               <Button
                 type="submit"
@@ -114,9 +114,9 @@ export const SaveDashboardForm = ({
                 icon={saving ? 'fa fa-spinner' : undefined}
                 aria-label={selectors.pages.SaveDashboardModal.save}
               >
-                {isLoading ? 'Saving...' : 'Save'}
+                {isLoading ? '保存...' : '保存'}
               </Button>
-              {!saveModel.hasChanges && <div>No changes to save</div>}
+              {!saveModel.hasChanges && <div>无需保存任何更改</div>}
             </Stack>
           </Stack>
         );

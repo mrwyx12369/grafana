@@ -22,7 +22,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(StatusHistoryPanel)
       builder
         .addSliderInput({
           path: 'lineWidth',
-          name: 'Line width',
+          name: '线宽',
           defaultValue: defaultFieldConfig.lineWidth,
           settings: {
             min: 0,
@@ -32,7 +32,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(StatusHistoryPanel)
         })
         .addSliderInput({
           path: 'fillOpacity',
-          name: 'Fill opacity',
+          name: '填充透明度',
           defaultValue: defaultFieldConfig.fillOpacity,
           settings: {
             min: 0,
@@ -48,19 +48,19 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(StatusHistoryPanel)
     builder
       .addRadio({
         path: 'showValue',
-        name: 'Show values',
+        name: '显示值',
         settings: {
           options: [
-            { value: VisibilityMode.Auto, label: 'Auto' },
-            { value: VisibilityMode.Always, label: 'Always' },
-            { value: VisibilityMode.Never, label: 'Never' },
+            { value: VisibilityMode.Auto, label: '自动' },
+            { value: VisibilityMode.Always, label: '总是' },
+            { value: VisibilityMode.Never, label: '从不' },
           ],
         },
         defaultValue: VisibilityMode.Auto,
       })
       .addSliderInput({
         path: 'rowHeight',
-        name: 'Row height',
+        name: '行高',
         defaultValue: 0.9,
         settings: {
           min: 0,

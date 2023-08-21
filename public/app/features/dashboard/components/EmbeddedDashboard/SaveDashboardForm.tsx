@@ -26,11 +26,11 @@ export const SaveDashboardForm = ({ dashboard, onCancel, onSubmit, onSuccess, sa
     setSaving(true);
     onSubmit(saveModel.clone)
       .then(() => {
-        notifyApp.success('Dashboard saved locally');
+        notifyApp.success('仪表板已保存！');
         onSuccess();
       })
       .catch((error) => {
-        notifyApp.error(error.message || 'Error saving dashboard');
+        notifyApp.error(error.message || '保存仪表板时出错');
       })
       .finally(() => setSaving(false));
   };
@@ -42,12 +42,12 @@ export const SaveDashboardForm = ({ dashboard, onCancel, onSubmit, onSuccess, sa
           <Stack gap={2}>
             <Stack alignItems="center">
               <Button variant="secondary" onClick={onCancel} fill="outline">
-                Cancel
+                取消
               </Button>
               <Button type="submit" disabled={!hasChanges} icon={saving ? 'fa fa-spinner' : undefined}>
-                Save
+                保存
               </Button>
-              {!hasChanges && <div>No changes to save</div>}
+              {!hasChanges && <div>无需保存任何更改</div>}
             </Stack>
           </Stack>
         );

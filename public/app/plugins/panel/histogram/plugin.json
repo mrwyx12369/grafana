@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Histogram",
+  "name": "直方图",
   "id": "histogram",
 
   "info": {

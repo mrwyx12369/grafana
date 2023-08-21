@@ -38,7 +38,7 @@ export function OpenLibraryPanelModal({ libraryPanel, onDismiss }: OpenLibraryPa
   };
 
   return (
-    <Modal title="View panel in dashboard" onDismiss={onDismiss} onClickBackdrop={onDismiss} isOpen>
+    <Modal title="仪表板中的视图面板" onDismiss={onDismiss} onClickBackdrop={onDismiss} isOpen>
       <div className={styles.container}>
         {connected === 0 ? (
           <span>Panel is not linked to a dashboard. Add the panel to a dashboard and retry.</span>
@@ -48,7 +48,7 @@ export function OpenLibraryPanelModal({ libraryPanel, onDismiss }: OpenLibraryPa
             <p>
               This panel is being used in{' '}
               <strong>
-                {connected} {connected > 1 ? 'dashboards' : 'dashboard'}
+                {connected} {connected > 1 ? '个仪表板' : '个仪表板'}
               </strong>
               .Please choose which dashboard to view the panel in:
             </p>
@@ -58,8 +58,8 @@ export function OpenLibraryPanelModal({ libraryPanel, onDismiss }: OpenLibraryPa
               defaultOptions={true}
               loadOptions={debouncedLoadOptions}
               onChange={setOption}
-              placeholder="Start typing to search for dashboard"
-              noOptionsMessage="No dashboards found"
+              placeholder="开始键入以搜索仪表板"
+              noOptionsMessage="未找到仪表板"
             />
           </>
         ) : null}
@@ -69,7 +69,7 @@ export function OpenLibraryPanelModal({ libraryPanel, onDismiss }: OpenLibraryPa
           Cancel
         </Button>
         <Button onClick={onViewPanel} disabled={!Boolean(option)}>
-          {option ? `View panel in ${option?.label}...` : 'View panel in dashboard...'}
+          {option ? `在面板“${option?.label}”中查看 ...` : '仪表板中的视图面板...'}
         </Button>
       </Modal.ButtonRow>
     </Modal>

@@ -14,10 +14,10 @@ export function addTextSizeOptions<T extends OptionsWithTextFormatting>(
   if (withTitle) {
     builder.addNumberInput({
       path: 'text.titleSize',
-      category: ['Text size'],
-      name: 'Title',
+      category: ['文本大小'],
+      name: '标题',
       settings: {
-        placeholder: 'Auto',
+        placeholder: '自动',
         integer: false,
         min: 1,
         max: 200,
@@ -28,10 +28,10 @@ export function addTextSizeOptions<T extends OptionsWithTextFormatting>(
 
   builder.addNumberInput({
     path: 'text.valueSize',
-    category: ['Text size'],
-    name: 'Value',
+    category: ['文本大小'],
+    name: '值',
     settings: {
-      placeholder: 'Auto',
+      placeholder: '自动',
       integer: false,
       min: 1,
       max: 200,

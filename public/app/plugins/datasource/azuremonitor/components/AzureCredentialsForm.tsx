@@ -91,11 +91,11 @@ export const AzureCredentialsForm = (props: Props) => {
   };
 
   return (
-    <ConfigSection title="Authentication">
+    <ConfigSection title="认证">
       {managedIdentityEnabled && (
         <Field
-          label="Authentication"
-          description="Choose the type of authentication to Azure services"
+          label="认证"
+          description="选择 Azure 服务的身份验证类型"
           data-testid={selectors.components.configEditor.authType.select}
           htmlFor="authentication-type"
         >

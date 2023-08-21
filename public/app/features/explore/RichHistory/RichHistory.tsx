@@ -13,17 +13,17 @@ import { RichHistorySettingsTab } from './RichHistorySettingsTab';
 import { RichHistoryStarredTab } from './RichHistoryStarredTab';
 
 export enum Tabs {
-  RichHistory = 'Query history',
-  Starred = 'Starred',
-  Settings = 'Settings',
+  RichHistory = '历史查询',
+  Starred = '已标星查询',
+  Settings = '查询设置',
 }
 
 export const getSortOrderOptions = () =>
   [
-    { label: 'Newest first', value: SortOrder.Descending },
-    { label: 'Oldest first', value: SortOrder.Ascending },
-    { label: 'Data source A-Z', value: SortOrder.DatasourceAZ },
-    { label: 'Data source Z-A', value: SortOrder.DatasourceZA },
+    { label: '最新的优先', value: SortOrder.Descending },
+    { label: '最早的在前', value: SortOrder.Ascending },
+    { label: '数据源字母升序', value: SortOrder.DatasourceAZ },
+    { label: '数据源字母降序', value: SortOrder.DatasourceZA },
   ].filter((option) => supportedFeatures().availableFilters.includes(option.value));
 
 export interface RichHistoryProps extends Themeable2 {
@@ -112,7 +112,7 @@ class UnThemedRichHistory extends PureComponent<RichHistoryProps> {
     const { loading } = this.state;
 
     const QueriesTab: TabConfig = {
-      label: 'Query history',
+      label: '历史查询',
       value: Tabs.RichHistory,
       content: (
         <RichHistoryQueriesTab
@@ -133,7 +133,7 @@ class UnThemedRichHistory extends PureComponent<RichHistoryProps> {
     };
 
     const StarredTab: TabConfig = {
-      label: 'Starred',
+      label: '已标星查询',
       value: Tabs.Starred,
       content: (
         <RichHistoryStarredTab
@@ -153,7 +153,7 @@ class UnThemedRichHistory extends PureComponent<RichHistoryProps> {
     };
 
     const SettingsTab: TabConfig = {
-      label: 'Settings',
+      label: '查询设置',
       value: Tabs.Settings,
       content: (
         <RichHistorySettingsTab

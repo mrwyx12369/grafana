@@ -12,24 +12,24 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(HistogramPanel)
       .addCustomEditor({
         id: '__calc__',
         path: '__calc__',
-        name: 'Values',
+        name: '值',
         description: 'Showing frequencies that are calculated in the query',
         editor: () => null, // empty editor
         showIf: (opts, data) => originalDataHasHistogram(data),
       })
       .addNumberInput({
-        path: 'bucketSize',
+        path: '桶大小',
         name: histogramFieldInfo.bucketSize.name,
         description: histogramFieldInfo.bucketSize.description,
         settings: {
-          placeholder: 'Auto',
+          placeholder: '自动',
           min: 0,
         },
         defaultValue: defaultOptions.bucketSize,
         showIf: (opts, data) => !originalDataHasHistogram(data),
       })
       .addNumberInput({
-        path: 'bucketOffset',
+        path: '桶偏移量',
         name: histogramFieldInfo.bucketOffset.name,
         description: histogramFieldInfo.bucketOffset.description,
         settings: {
@@ -40,7 +40,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(HistogramPanel)
         showIf: (opts, data) => !originalDataHasHistogram(data),
       })
       .addBooleanSwitch({
-        path: 'combine',
+        path: '组合',
         name: histogramFieldInfo.combine.name,
         description: histogramFieldInfo.combine.description,
         defaultValue: defaultOptions.combine,
@@ -67,7 +67,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(HistogramPanel)
       builder
         .addSliderInput({
           path: 'lineWidth',
-          name: 'Line width',
+          name: '线宽',
           defaultValue: cfg.lineWidth,
           settings: {
             min: 0,
@@ -77,7 +77,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(HistogramPanel)
         })
         .addSliderInput({
           path: 'fillOpacity',
-          name: 'Fill opacity',
+          name: '填充透明度',
           defaultValue: cfg.fillOpacity,
           settings: {
             min: 0,
@@ -87,7 +87,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(HistogramPanel)
         })
         .addRadio({
           path: 'gradientMode',
-          name: 'Gradient mode',
+          name: '渐变模式',
           defaultValue: graphFieldOptions.fillGradient[0].value,
           settings: {
             options: graphFieldOptions.fillGradient,

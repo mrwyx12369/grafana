@@ -101,7 +101,7 @@ const TracesQueryEditor = ({
                 // eslint-disable-next-line
                 <AdvancedResourcePicker resources={resources as string[]} onChange={onChange} />
               )}
-              selectionNotice={() => 'You may only choose items of the same resource type.'}
+              selectionNotice={() => '只能选择相同资源类型的项目。'}
             />
           </EditorFieldGroup>
         </EditorRow>

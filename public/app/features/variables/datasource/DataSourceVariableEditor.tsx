@@ -105,7 +105,7 @@ export class DataSourceVariableEditorUnConnected extends PureComponent<Props> {
       <>
         <VariableLegend>Data source options</VariableLegend>
         <VariableSelectField
-          name="Type"
+          name="类型e"
           value={typeValue}
           options={typeOptions}
           onChange={this.onDataSourceTypeChanged}
@@ -114,22 +114,21 @@ export class DataSourceVariableEditorUnConnected extends PureComponent<Props> {
 
         <VariableTextField
           value={this.props.variable.regex}
-          name="Instance name filter"
+          name="实例名称筛选器"
           placeholder="/.*-(.*)-.*/"
           onChange={this.onRegExChange}
           onBlur={this.onRegExBlur}
           description={
             <div>
-              Regex filter for which data source instances to choose from in the variable value list. Leave empty for
-              all.
+              正则表达式筛选器，以便在变量值列表中选择哪些数据源实例。留空给所有人。
               <br />
               <br />
-              Example: <code>/^prod/</code>
+              例子: <code>/^prod/</code>
             </div>
           }
         />
 
-        <VariableLegend>Selection options</VariableLegend>
+        <VariableLegend>选择选项</VariableLegend>
         <SelectionOptionsEditor
           variable={variable}
           onPropChange={this.onSelectionOptionsChange}

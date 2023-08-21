@@ -47,7 +47,7 @@ export const TrendPanel = ({
   const info = useMemo(() => {
     if (data.series.length > 1) {
       return {
-        warning: 'Only one frame is supported, consider adding a join transformation',
+        warning: '仅支持一个帧，请考虑添加联接转换',
         frames: data.series,
       };
     }
@@ -58,7 +58,7 @@ export const TrendPanel = ({
       xFieldIdx = findFieldIndex(frames[0], options.xField);
       if (xFieldIdx == null) {
         return {
-          warning: 'Unable to find field: ' + options.xField,
+          warning: '找不到字段：' + options.xField,
           frames: data.series,
         };
       }
@@ -68,7 +68,7 @@ export const TrendPanel = ({
       xFieldIdx = frames[0].fields.findIndex((f) => f.type === FieldType.number);
       if (xFieldIdx === -1) {
         return {
-          warning: 'No numeric fields found for X axis',
+          warning: '未找到X轴的数值字段',
           frames,
         };
       }
@@ -79,7 +79,7 @@ export const TrendPanel = ({
       const field = frames[0].fields[xFieldIdx];
       if (field.type === FieldType.number && !isLikelyAscendingVector(field.values)) {
         return {
-          warning: `Values must be in ascending order`,
+          warning: `值必须按升序排列`,
           frames,
         };
       }

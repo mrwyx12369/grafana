@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Datagrid",
+  "name": "数据网格",
   "id": "datagrid",
   "state": "beta",
 

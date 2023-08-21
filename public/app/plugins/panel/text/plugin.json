@@ -1,12 +1,12 @@
 {
   "type": "panel",
-  "name": "Text",
+  "name": "文本",
   "id": "text",
 
   "skipDataQuery": true,
 
   "info": {
-    "description": "Supports markdown and html content",
+    "description": "支持markdown和html内容",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

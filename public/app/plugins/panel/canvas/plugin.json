@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Canvas",
+  "name": "图形画板",
   "id": "canvas",
 
   "info": {
-    "description": "Explicit element placement",
+    "description": "显式元素放置",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

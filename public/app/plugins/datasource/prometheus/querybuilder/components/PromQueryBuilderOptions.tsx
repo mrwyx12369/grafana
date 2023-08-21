@@ -69,7 +69,7 @@ export const PromQueryBuilderOptions = React.memo<Props>(({ query, app, onChange
           onRunQuery={onRunQuery}
         />
         <EditorField
-          label="Min step"
+          label="最小步长"
           tooltip={
             <>
               An additional lower limit for the step parameter of the Prometheus query and for the{' '}
@@ -80,25 +80,25 @@ export const PromQueryBuilderOptions = React.memo<Props>(({ query, app, onChange
           <AutoSizeInput
             type="text"
             aria-label="Set lower limit for the step parameter"
-            placeholder={'auto'}
+            placeholder={'自动'}
             minWidth={10}
             onCommitChange={onChangeStep}
             defaultValue={query.interval}
           />
         </EditorField>
-        <EditorField label="Format">
+        <EditorField label="格式">
           <Select value={formatOption} allowCustomValue onChange={onChangeFormat} options={FORMAT_OPTIONS} />
         </EditorField>
         <EditorField label="Type">
           <RadioButtonGroup options={queryTypeOptions} value={queryTypeValue} onChange={onQueryTypeChange} />
         </EditorField>
         {shouldShowExemplarSwitch(query, app) && (
-          <EditorField label="Exemplars">
+          <EditorField label="样本">
             <EditorSwitch value={query.exemplar || false} onChange={onExemplarChange} />
           </EditorField>
         )}
         {query.intervalFactor && query.intervalFactor > 1 && (
-          <EditorField label="Resolution">
+          <EditorField label="解析">
             <Select
               aria-label="Select resolution"
               isSearchable={false}

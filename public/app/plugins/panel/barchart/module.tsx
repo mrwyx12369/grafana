@@ -39,7 +39,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
       builder
         .addSliderInput({
           path: 'lineWidth',
-          name: 'Line width',
+          name: '线宽',
           defaultValue: cfg.lineWidth,
           settings: {
             min: 0,
@@ -49,7 +49,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
         })
         .addSliderInput({
           path: 'fillOpacity',
-          name: 'Fill opacity',
+          name: '填充不透明度',
           defaultValue: cfg.fillOpacity,
           settings: {
             min: 0,
@@ -59,7 +59,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
         })
         .addRadio({
           path: 'gradientMode',
-          name: 'Gradient mode',
+          name: '渐变模式',
           defaultValue: graphFieldOptions.fillGradient[0].value,
           settings: {
             options: graphFieldOptions.fillGradient,
@@ -67,20 +67,20 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
         });
 
       builder.addSelect({
-        category: ['Graph styles'],
-        name: 'Transform',
+        category: ['图形样式'],
+        name: '转换',
         path: 'transform',
         settings: {
           options: [
             {
-              label: 'Constant',
+              label: '常量',
               value: GraphTransform.Constant,
-              description: 'The first value will be shown as a constant line',
+              description: '第一个值将显示为常量线',
             },
             {
-              label: 'Negative Y',
+              label: '负Y轴',
               value: GraphTransform.NegativeY,
-              description: 'Flip the results to negative values on the y axis',
+              description: '将结果翻转为Y轴上的负值',
             },
           ],
           isClearable: true,
@@ -91,8 +91,8 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
       builder.addCustomEditor({
         id: 'thresholdsStyle',
         path: 'thresholdsStyle',
-        name: 'Show thresholds',
-        category: ['Thresholds'],
+        name: '显示阈值',
+        category: ['阈值'],
         defaultValue: { mode: GraphTresholdsStyleMode.Off },
         settings: {
           options: graphFieldOptions.thresholdsDisplayModes,
@@ -109,7 +109,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
   })
   .setPanelOptions((builder, context) => {
     const disp = prepareBarChartDisplayValues(context.data, config.theme2, context.options ?? ({} as Options));
-    let xaxisPlaceholder = 'First string or time field';
+    let xaxisPlaceholder = '第一个字符串或时间字段';
     const viz = 'viz' in disp ? disp.viz[0] : undefined;
     if (viz?.fields?.length) {
       const first = viz.fields[0];
@@ -119,26 +119,26 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
     builder
       .addFieldNamePicker({
         path: 'xField',
-        name: 'X Axis',
+        name: 'X轴',
         settings: {
           placeholderText: xaxisPlaceholder,
         },
       })
       .addRadio({
         path: 'orientation',
-        name: 'Orientation',
+        name: '方向',
         settings: {
           options: [
-            { value: VizOrientation.Auto, label: 'Auto' },
-            { value: VizOrientation.Horizontal, label: 'Horizontal' },
-            { value: VizOrientation.Vertical, label: 'Vertical' },
+            { value: VizOrientation.Auto, label: '自动' },
+            { value: VizOrientation.Horizontal, label: '水平' },
+            { value: VizOrientation.Vertical, label: '垂直' },
           ],
         },
         defaultValue: defaultOptions.orientation,
       })
       .addSliderInput({
         path: 'xTickLabelRotation',
-        name: 'Rotate x-axis tick labels',
+        name: '旋转X轴刻度标签',
         defaultValue: defaultOptions.xTickLabelRotation,
         settings: {
           min: -90,
@@ -150,10 +150,10 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
       })
       .addNumberInput({
         path: 'xTickLabelMaxLength',
-        name: 'X-axis tick label max length',
-        description: 'X-axis labels will be truncated to the length provided',
+        name: 'X轴刻度标签最大长度',
+        description: 'X轴标签将被截断为提供的长度',
         settings: {
-          placeholder: 'None',
+          placeholder: '无',
           min: 0,
         },
         showIf: (opts) => opts.xTickLabelRotation !== 0,
@@ -161,25 +161,25 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
       .addCustomEditor({
         id: 'xTickLabelSpacing',
         path: 'xTickLabelSpacing',
-        name: 'X-axis labels minimum spacing',
+        name: 'X轴标签最小间距',
         defaultValue: defaultOptions.xTickLabelSpacing,
         editor: TickSpacingEditor,
       })
       .addRadio({
         path: 'showValue',
-        name: 'Show values',
+        name: '显示值',
         settings: {
           options: [
-            { value: VisibilityMode.Auto, label: 'Auto' },
-            { value: VisibilityMode.Always, label: 'Always' },
-            { value: VisibilityMode.Never, label: 'Never' },
+            { value: VisibilityMode.Auto, label: '自动' },
+            { value: VisibilityMode.Always, label: '总是' },
+            { value: VisibilityMode.Never, label: '从不' },
           ],
         },
         defaultValue: defaultOptions.showValue,
       })
       .addRadio({
         path: 'stacking',
-        name: 'Stacking',
+        name: '堆叠',
         settings: {
           options: graphFieldOptions.stacking,
         },
@@ -187,7 +187,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
       })
       .addSliderInput({
         path: 'groupWidth',
-        name: 'Group width',
+        name: '组宽度',
         defaultValue: defaultOptions.groupWidth,
         settings: {
           min: 0,
@@ -203,7 +203,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
       })
       .addSliderInput({
         path: 'barWidth',
-        name: 'Bar width',
+        name: '条形图宽度',
         defaultValue: defaultOptions.barWidth,
         settings: {
           min: 0,
@@ -213,7 +213,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
       })
       .addSliderInput({
         path: 'barRadius',
-        name: 'Bar radius',
+        name: '条形图边半径',
         defaultValue: defaultOptions.barRadius,
         settings: {
           min: 0,
@@ -223,14 +223,14 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(BarChartPanel)
       })
       .addBooleanSwitch({
         path: 'fullHighlight',
-        name: 'Highlight full area on hover',
+        name: '悬停时突出显示整个区域',
         defaultValue: defaultOptions.fullHighlight,
       });
 
     builder.addFieldNamePicker({
       path: 'colorByField',
-      name: 'Color by field',
-      description: 'Use the color value for a sibling field to color each bar value.',
+      name: '按字段着色',
+      description: '使用同级字段的颜色值为每个条形值着色。',
     });
 
     if (!context.options?.fullHighlight || context.options?.stacking === StackingMode.None) {

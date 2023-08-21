@@ -64,11 +64,11 @@ export const InstallControlsWarning = ({ plugin, pluginStatus, latestCompatibleV
   if (!plugin.isPublished) {
     return (
       <div className={styles.message}>
-        <Icon name="exclamation-triangle" /> This plugin is not published to{' '}
+        <Icon name="exclamation-triangle" /> 此插件未发布到{' '}
         <a href="https://www.grafana.com/plugins" target="__blank" rel="noreferrer">
           grafana.com/plugins
         </a>{' '}
-        and can&#39;t be managed via the catalog.
+         并且无法通过目录进行管理。
       </div>
     );
   }
@@ -77,7 +77,7 @@ export const InstallControlsWarning = ({ plugin, pluginStatus, latestCompatibleV
     return (
       <div className={styles.message}>
         <Icon name="exclamation-triangle" />
-        &nbsp;This plugin doesn&#39;t support your version of Grafana.
+        &nbsp;此插件不支持您的 Grafana 版本。
       </div>
     );
   }

@@ -20,11 +20,11 @@ export function PromDurationDocs() {
           <div>时间单位</div>
           <div>示例</div>
         </div>
-        <PromDurationDocsTimeUnit unit={TimeOptions.seconds} name="seconds" example="20s" />
-        <PromDurationDocsTimeUnit unit={TimeOptions.minutes} name="minutes" example="10m" />
-        <PromDurationDocsTimeUnit unit={TimeOptions.hours} name="hours" example="4h" />
-        <PromDurationDocsTimeUnit unit={TimeOptions.days} name="days" example="3d" />
-        <PromDurationDocsTimeUnit unit={TimeOptions.weeks} name="weeks" example="2w" />
+        <PromDurationDocsTimeUnit unit={TimeOptions.seconds} name="秒" example="20s" />
+        <PromDurationDocsTimeUnit unit={TimeOptions.minutes} name="分钟" example="10m" />
+        <PromDurationDocsTimeUnit unit={TimeOptions.hours} name="小时" example="4h" />
+        <PromDurationDocsTimeUnit unit={TimeOptions.days} name="天" example="3d" />
+        <PromDurationDocsTimeUnit unit={TimeOptions.weeks} name="周" example="2w" />
         <div className={styles.examples}>
           <div>多个单位组合</div>
           <code>1m30s, 2h30m20s, 1w2d</code>

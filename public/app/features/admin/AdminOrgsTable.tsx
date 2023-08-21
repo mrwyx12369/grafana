@@ -48,14 +48,14 @@ export function AdminOrgsTable({ orgs, onDelete }: Props) {
         <ConfirmModal
           isOpen
           icon="trash-alt"
-          title="Delete"
+          title="删除"
           body={
             <div>
-              Are you sure you want to delete &apos;{deleteOrg.name}&apos;?
-              <br /> <small>All dashboards for this organization will be removed!</small>
+              是否确实要删除 &apos;{deleteOrg.name}&apos;?
+              <br /> <small>此组织的所有仪表板都将被删除！</small>
             </div>
           }
-          confirmText="Delete"
+          confirmText="删除"
           onDismiss={() => setDeleteOrg(undefined)}
           onConfirm={() => {
             onDelete(deleteOrg.id);

@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "State timeline",
+  "name": "状态时间线",
   "id": "state-timeline",
 
   "info": {
-    "description": "State changes and durations",
+    "description": "状态更改和持续时间",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

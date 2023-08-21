@@ -300,7 +300,7 @@ export class UnthemedDashboardPage extends PureComponent<Props, State> {
     dashboard.addPanel({
       type: 'add-panel',
       gridPos: calculateNewPanelGridPos(dashboard),
-      title: 'Panel Title',
+      title: '面板标题',
     });
 
     // scroll to top after adding panel
@@ -351,7 +351,7 @@ export class UnthemedDashboardPage extends PureComponent<Props, State> {
 
     if (dashboard.meta.dashboardNotFound) {
       return (
-        <Page navId="dashboards/browse" layout={PageLayoutType.Canvas} pageNav={{ text: 'Not found' }}>
+        <Page navId="dashboards/browse" layout={PageLayoutType.Canvas} pageNav={{ text: '未找到' }}>
           <EntityNotFound entity="Dashboard" />
         </Page>
       );
@@ -475,7 +475,7 @@ function updateStatePageNavFromProps(props: Props, state: State): State {
   if (state.editPanel || state.viewPanel) {
     pageNav = {
       ...pageNav,
-      text: `${state.editPanel ? 'Edit' : 'View'} panel`,
+      text: `${state.editPanel ? '编辑' : '查看'}面板`,
       parentItem: pageNav,
       url: undefined,
     };

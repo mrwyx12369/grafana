@@ -25,12 +25,12 @@ export function NewsContainer({ className }: NewsContainerProps) {
         <Drawer
           title={
             <div className={styles.title}>
-              <Text element="h3">{t('news.title', 'Latest from the blog')}</Text>
+              <Text element="h3">{t('news.title', '最新博客')}</Text>
               <a
                 href="https://grafana.com/blog/"
                 target="_blank"
                 rel="noreferrer"
-                title="Go to Grafana labs blog"
+                title="博客文章"
                 className={styles.grot}
               >
                 <img src="public/img/grot-news.svg" alt="Grot reading news" />

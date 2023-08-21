@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Pie chart",
+  "name": "饼图",
   "id": "piechart",
 
   "info": {
-    "description": "The new core pie chart visualization",
+    "description": "新的核心饼图可视化",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

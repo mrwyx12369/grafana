@@ -49,9 +49,9 @@ export class DashboardRow extends React.Component<DashboardRowProps> {
   onDelete = () => {
     appEvents.publish(
       new ShowConfirmModalEvent({
-        title: 'Delete row',
-        text: 'Are you sure you want to remove this row and all its panels?',
-        altActionText: 'Delete row only',
+        title: '删除行',
+        text: '是否确实要删除此行及其所有面板？',
+        altActionText: '仅删除行',
         icon: 'trash-alt',
         onConfirm: () => {
           this.props.dashboard.removeRow(this.props.panel, true);
@@ -71,7 +71,7 @@ export class DashboardRow extends React.Component<DashboardRowProps> {
 
     const title = getTemplateSrv().replace(this.props.panel.title, this.props.panel.scopedVars, 'text');
     const count = this.props.panel.panels ? this.props.panel.panels.length : 0;
-    const panels = count === 1 ? 'panel' : 'panels';
+    const panels = count === 1 ? '个面板' : '个面板';
     const canEdit = this.props.dashboard.meta.canEdit === true;
 
     return (

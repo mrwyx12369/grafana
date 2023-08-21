@@ -31,7 +31,7 @@
       "delete-modal-title": "删除",
       "deleting": "删除中...",
       "manage-permissions-button": "管理权限",
-      "move-button": "Move",
+      "move-button": "移动",
       "move-modal-alert": "移动该项目可能会更改其权限。",
       "move-modal-field-label": "文件夹名称",
       "move-modal-text": "此操作将移动以下内容：",
@@ -774,9 +774,9 @@
       "apply-button": "应用时间范围",
       "default-error": "请输入一个过去的日期或\"现在\"",
       "fiscal-year": "财政年度",
-      "from-input": "发件人",
-      "range-error": "“发件人”不能在“收件人”之后",
-      "to-input": "结束"
+      "from-input": "开始时间",
+      "range-error": "“开始时间”不能在“结束时间”之后",
+      "to-input": "结束时间"
     },
     "range-picker": {
       "backwards-time-aria-label": "向后移动时间范围",

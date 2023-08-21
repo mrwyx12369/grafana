@@ -5,24 +5,24 @@ import { Checkbox, HorizontalGroup, RadioButtonGroup, Tooltip } from '@grafana/u
 
 const GAPS_OPTIONS: Array<SelectableValue<number>> = [
   {
-    label: 'None',
+    label: '无',
     value: 0,
-    description: 'Show all tick marks',
+    description: '显示所有刻度线',
   },
   {
-    label: 'Small',
+    label: '小',
     value: 100,
-    description: 'Require 100px spacing',
+    description: '需要100px间距',
   },
   {
-    label: 'Medium',
+    label: '中',
     value: 200,
-    description: 'Require 200px spacing',
+    description: '需要200px间距',
   },
   {
-    label: 'Large',
+    label: '大',
     value: 300,
-    description: 'Require 300px spacing',
+    description: '需要300px间距',
   },
 ];
 
@@ -52,7 +52,7 @@ export const TickSpacingEditor = (props: StandardEditorProps<number>) => {
     <HorizontalGroup>
       <RadioButtonGroup value={gap.value} options={GAPS_OPTIONS} onChange={onSpacingChange} />
       {value !== 0 && (
-        <Tooltip content="Require space from the right side" placement="top">
+        <Tooltip content="需要右侧的空间" placement="top">
           <div>
             <Checkbox value={isRTL} onChange={onRTLChange} label="RTL" />
           </div>

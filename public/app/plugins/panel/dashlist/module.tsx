@@ -17,27 +17,27 @@ export const plugin = new PanelPlugin<Options>(DashList)
     builder
       .addBooleanSwitch({
         path: 'keepTime',
-        name: 'Include current time range',
+        name: '包括当前时间范围',
         defaultValue: defaultOptions.keepTime,
       })
       .addBooleanSwitch({
         path: 'includeVars',
-        name: 'Include current template variable values',
+        name: '包括当前模板变量值',
         defaultValue: defaultOptions.includeVars,
       })
       .addBooleanSwitch({
         path: 'showStarred',
-        name: 'Starred',
+        name: '已标星',
         defaultValue: defaultOptions.showStarred,
       })
       .addBooleanSwitch({
         path: 'showRecentlyViewed',
-        name: 'Recently viewed',
+        name: '最近查看',
         defaultValue: defaultOptions.showRecentlyViewed,
       })
       .addBooleanSwitch({
         path: 'showSearch',
-        name: 'Search',
+        name: '搜索',
         defaultValue: defaultOptions.showSearch,
       })
       .addBooleanSwitch({
@@ -47,17 +47,17 @@ export const plugin = new PanelPlugin<Options>(DashList)
       })
       .addNumberInput({
         path: 'maxItems',
-        name: 'Max items',
+        name: '最大条目数',
         defaultValue: defaultOptions.maxItems,
       })
       .addTextInput({
         path: 'query',
-        name: 'Query',
+        name: '查询',
         defaultValue: defaultOptions.query,
       })
       .addCustomEditor({
         path: 'folderId',
-        name: 'Folder',
+        name: '文件夹',
         id: 'folderId',
         defaultValue: undefined,
         editor: function RenderFolderPicker({ value, onChange }) {
@@ -73,7 +73,7 @@ export const plugin = new PanelPlugin<Options>(DashList)
       .addCustomEditor({
         id: 'tags',
         path: 'tags',
-        name: 'Tags',
+        name: '标签',
         description: '',
         defaultValue: defaultOptions.tags,
         editor(props) {

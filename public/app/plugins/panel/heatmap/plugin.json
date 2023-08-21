@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Heatmap",
+  "name": "热力图",
   "id": "heatmap",
 
   "info": {
-    "description": "Like a histogram over time",
+    "description": "状态更改和持续时间",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

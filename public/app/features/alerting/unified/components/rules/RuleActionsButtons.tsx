@@ -64,10 +64,10 @@ export const RuleActionsButtons = ({ rule, rulesSource }: Props) => {
 
   if (!isViewMode) {
     buttons.push(
-      <Tooltip placement="top" content={'View'}>
+      <Tooltip placement="top" content={'查看'}>
         <LinkButton
           className={style.button}
-          title="View"
+          title="查看"
           size="sm"
           key="view"
           variant="secondary"
@@ -92,7 +92,7 @@ export const RuleActionsButtons = ({ rule, rulesSource }: Props) => {
             key="copy"
             icon="copy"
             onClipboardError={(copiedText) => {
-              notifyApp.error('Error while copying URL', copiedText);
+              notifyApp.error('复制网址时出错', copiedText);
             }}
             className={style.button}
             size="sm"
@@ -104,9 +104,9 @@ export const RuleActionsButtons = ({ rule, rulesSource }: Props) => {
       }
 
       buttons.push(
-        <Tooltip placement="top" content={'Edit'}>
+        <Tooltip placement="top" content={'编辑'}>
           <LinkButton
-            title="Edit"
+            title="编辑"
             className={style.button}
             size="sm"
             key="edit"
@@ -119,7 +119,7 @@ export const RuleActionsButtons = ({ rule, rulesSource }: Props) => {
     }
 
     buttons.push(
-      <Tooltip placement="top" content="Copy">
+      <Tooltip placement="top" content="拷贝">
         <CloneRuleButton ruleIdentifier={identifier} isProvisioned={isProvisioned} className={style.button} />
       </Tooltip>
     );
@@ -127,9 +127,9 @@ export const RuleActionsButtons = ({ rule, rulesSource }: Props) => {
 
   if (isRemovable && rulerRule && !isFederated && !isProvisioned) {
     buttons.push(
-      <Tooltip placement="top" content={'Delete'}>
+      <Tooltip placement="top" content={'删除'}>
         <Button
-          title="Delete"
+          title="删除"
           className={style.button}
           size="sm"
           type="button"
@@ -157,13 +157,12 @@ export const RuleActionsButtons = ({ rule, rulesSource }: Props) => {
             body={
               <div>
                 <p>
-                  Deleting &quot;<strong>{ruleToDelete.name}</strong>&quot; will permanently remove it from your alert
-                  rule list.
+                  删除&quot;<strong>{ruleToDelete.name}</strong>&quot; 会将其从警报规则列表中永久删除.
                 </p>
-                <p>Are you sure you want to delete this rule?</p>
+                <p>是否确实要删除此规则？</p>
               </div>
             }
-            confirmText="Yes, delete"
+            confirmText="确定"
             icon="exclamation-triangle"
             onConfirm={deleteRule}
             onDismiss={() => setRuleToDelete(undefined)}

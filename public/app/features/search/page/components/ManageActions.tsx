@@ -46,10 +46,10 @@ export function ManageActions({ items, folder, onChange, clearSelection }: Props
       <HorizontalGroup spacing="md" width="auto">
         <IconButton name="check-square" onClick={clearSelection} tooltip="Uncheck everything" />
         <Button disabled={!canMove} onClick={onMove} icon="exchange-alt" variant="secondary">
-          Move
+          移动
         </Button>
         <Button disabled={!canDelete} onClick={onDelete} icon="trash-alt" variant="destructive">
-          Delete
+          删除
         </Button>
       </HorizontalGroup>
 

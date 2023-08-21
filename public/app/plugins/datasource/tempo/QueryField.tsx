@@ -84,18 +84,18 @@ class TempoQueryFieldComponent extends React.PureComponent<Props, State> {
     const graphDatasourceUid = datasource.serviceMap?.datasourceUid;
 
     let queryTypeOptions: Array<SelectableValue<TempoQueryType>> = [
-      { value: 'traceqlSearch', label: 'Search' },
-      { value: 'traceql', label: 'TraceQL' },
-      { value: 'serviceMap', label: 'Service Graph' },
+      { value: 'traceqlSearch', label: '搜索' },
+      { value: 'traceql', label: 'TraceQL脚本' },
+      { value: 'serviceMap', label: '服务图' },
     ];
 
     if (logsDatasourceUid) {
       if (datasource?.search?.hide) {
         // Place at beginning as Search if no native search
-        queryTypeOptions.unshift({ value: 'search', label: 'Search' });
+        queryTypeOptions.unshift({ value: 'search', label: '搜索' });
       } else {
         // Place at end as Loki Search if native search is enabled
-        queryTypeOptions.push({ value: 'search', label: 'Loki Search' });
+        queryTypeOptions.push({ value: 'search', label: 'Loki搜索' });
       }
     }
 
@@ -108,13 +108,13 @@ class TempoQueryFieldComponent extends React.PureComponent<Props, State> {
       query.minDuration ||
       query.queryType === 'nativeSearch'
     ) {
-      queryTypeOptions.unshift({ value: 'nativeSearch', label: '[Deprecated] Search' });
+      queryTypeOptions.unshift({ value: 'nativeSearch', label: '[过时] 搜索' });
     }
 
     return (
       <>
         <Modal
-          title={'Upload trace'}
+          title={'上传跟踪'}
           isOpen={this.state.uploadModalOpen}
           onDismiss={() => this.setState({ uploadModalOpen: false })}
         >

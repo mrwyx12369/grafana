@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Getting Started",
+  "name": "开始",
   "id": "gettingstarted",
 
   "skipDataQuery": true,

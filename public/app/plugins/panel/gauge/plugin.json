@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Gauge",
+  "name": "仪表图",
   "id": "gauge",
 
   "info": {
-    "description": "Standard gauge visualization",
+    "description": "标准仪表可视化",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

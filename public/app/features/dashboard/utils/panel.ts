@@ -21,18 +21,18 @@ export const removePanel = (dashboard: DashboardModel, panel: PanelModel, ask: b
   if (ask !== false) {
     const text2 =
       panel.alert && !config.unifiedAlertingEnabled
-        ? 'Panel includes an alert rule. removing the panel will also remove the alert rule'
+        ? '面板包括警报规则。删除面板也会删除警报规则'
         : undefined;
     const confirmText = panel.alert ? 'YES' : undefined;
 
     appEvents.publish(
       new ShowConfirmModalEvent({
-        title: 'Remove panel',
-        text: 'Are you sure you want to remove this panel?',
+        title: '删除面板',
+        text: '是否确实要删除此面板？',
         text2: text2,
         icon: 'trash-alt',
         confirmText: confirmText,
-        yesText: 'Remove',
+        yesText: '确定',
         onConfirm: () => removePanel(dashboard, panel, false),
       })
     );
@@ -54,7 +54,7 @@ export const copyPanel = (panel: IPanelModel) => {
   }
 
   store.set(LS_PANEL_COPY_KEY, JSON.stringify(saveModel));
-  appEvents.emit(AppEvents.alertSuccess, ['Panel copied. Click **Add panel** icon to paste.']);
+  appEvents.emit(AppEvents.alertSuccess, ['面板已复制。单击**添加面板**图标进行粘贴。']);
 };
 
 export const sharePanel = (dashboard: DashboardModel, panel: PanelModel) => {
@@ -121,7 +121,7 @@ export function applyPanelTimeOverrides(panel: PanelModel, timeRange: TimeRange)
     const timeFromInterpolated = getTemplateSrv().replace(panel.timeFrom, panel.scopedVars);
     const timeFromInfo = rangeUtil.describeTextRange(timeFromInterpolated);
     if (timeFromInfo.invalid) {
-      newTimeData.timeInfo = 'invalid time override';
+      newTimeData.timeInfo = '无效的时间覆盖';
       return newTimeData;
     }
 
@@ -143,12 +143,12 @@ export function applyPanelTimeOverrides(panel: PanelModel, timeRange: TimeRange)
     const timeShiftInterpolated = getTemplateSrv().replace(panel.timeShift, panel.scopedVars);
     const timeShiftInfo = rangeUtil.describeTextRange(timeShiftInterpolated);
     if (timeShiftInfo.invalid) {
-      newTimeData.timeInfo = 'invalid timeshift';
+      newTimeData.timeInfo = '无效的时移';
       return newTimeData;
     }
 
     const timeShift = '-' + timeShiftInterpolated;
-    newTimeData.timeInfo += ' timeshift ' + timeShift;
+    newTimeData.timeInfo += ' 时移 ' + timeShift;
     const from = dateMath.parseDateMath(timeShift, newTimeData.timeRange.from, false)!;
     const to = dateMath.parseDateMath(timeShift, newTimeData.timeRange.to, true)!;
 

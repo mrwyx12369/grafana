@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Welcome",
+  "name": "欢迎页面",
   "id": "welcome",
 
   "skipDataQuery": true,

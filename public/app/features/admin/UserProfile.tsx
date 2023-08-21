@@ -87,28 +87,28 @@ export function UserProfile({
           <table className="filter-table form-inline">
             <tbody>
               <UserProfileRow
-                label="Name"
+                label="用户姓名"
                 value={user.name}
                 locked={editLocked}
                 lockMessage={lockMessage}
                 onChange={onUserNameChange}
               />
               <UserProfileRow
-                label="Email"
+                label="电子邮件"
                 value={user.email}
                 locked={editLocked}
                 lockMessage={lockMessage}
                 onChange={onUserEmailChange}
               />
               <UserProfileRow
-                label="Username"
+                label="用户名"
                 value={user.login}
                 locked={editLocked}
                 lockMessage={lockMessage}
                 onChange={onUserLoginChange}
               />
               <UserProfileRow
-                label="Password"
+                label="用户密码"
                 value="********"
                 inputType="password"
                 locked={passwordChangeLocked}
@@ -122,13 +122,13 @@ export function UserProfile({
           {canDelete && (
             <>
               <Button variant="destructive" onClick={showDeleteUserModal(true)} ref={deleteUserRef}>
-                Delete user
+               删除用户
               </Button>
               <ConfirmModal
                 isOpen={showDeleteModal}
-                title="Delete user"
-                body="Are you sure you want to delete this user?"
-                confirmText="Delete user"
+                title="删除用户"
+                body="是否确实要删除此用户？"
+                confirmText="确定"
                 onConfirm={handleUserDelete}
                 onDismiss={showDeleteUserModal(false)}
               />

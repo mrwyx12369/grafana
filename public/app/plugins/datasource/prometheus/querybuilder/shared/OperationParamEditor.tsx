@@ -86,7 +86,7 @@ function SelectInputParamEditor({
         <Button
           size="sm"
           variant="secondary"
-          title={`Add ${paramDef.name}`}
+          title={`增加 ${paramDef.name}`}
           icon="plus"
           onClick={() => onChange(index, selectOptions[0].value)}
         >
@@ -114,7 +114,7 @@ function SelectInputParamEditor({
           fill="text"
           icon="times"
           variant="secondary"
-          title={`Remove ${paramDef.name}`}
+          title={`删除 ${paramDef.name}`}
           onClick={() => onChange(index, '')}
         />
       )}

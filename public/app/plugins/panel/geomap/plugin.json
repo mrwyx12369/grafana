@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Geomap",
+  "name": "地理地图",
   "id": "geomap",
 
   "info": {
-    "description": "Geomap panel",
+    "description": "地理地图面板",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

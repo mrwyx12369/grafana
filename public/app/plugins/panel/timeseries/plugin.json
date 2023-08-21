@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Time series",
+  "name": "时间序列",
   "id": "timeseries",
 
   "info": {
-    "description": "Time based line, area and bar charts",
+    "description": "基于时间的折线图、面积图和条形图",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

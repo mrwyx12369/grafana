@@ -91,7 +91,7 @@ export const binaryScalarOperations: QueryBuilderOperationDef[] = binaryScalarDe
     params.push({
       name: 'Bool',
       type: 'boolean',
-      description: 'If checked comparison will return 0 or 1 for the value rather than filtering.',
+      description: '如果选中，比较将返回 0 或 1 作为值，而不是过滤。',
     });
     defaultParams.push(false);
   }

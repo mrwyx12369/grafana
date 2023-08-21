@@ -19,46 +19,46 @@ export const plugin = new PanelPlugin<Options>(BarGaugePanel)
     builder
       .addRadio({
         path: 'displayMode',
-        name: 'Display mode',
+        name: '显示模式',
         settings: {
           options: [
-            { value: BarGaugeDisplayMode.Gradient, label: 'Gradient' },
-            { value: BarGaugeDisplayMode.Lcd, label: 'Retro LCD' },
-            { value: BarGaugeDisplayMode.Basic, label: 'Basic' },
+            { value: BarGaugeDisplayMode.Gradient, label: '渐变' },
+            { value: BarGaugeDisplayMode.Lcd, label: '复古液晶显示(LCD)' },
+            { value: BarGaugeDisplayMode.Basic, label: '基本' },
           ],
         },
         defaultValue: defaultOptions.displayMode,
       })
       .addRadio({
         path: 'valueMode',
-        name: 'Value display',
+        name: '值显示',
         settings: {
           options: [
-            { value: BarGaugeValueMode.Color, label: 'Value color' },
-            { value: BarGaugeValueMode.Text, label: 'Text color' },
-            { value: BarGaugeValueMode.Hidden, label: 'Hidden' },
+            { value: BarGaugeValueMode.Color, label: '值颜色' },
+            { value: BarGaugeValueMode.Text, label: '文本颜色' },
+            { value: BarGaugeValueMode.Hidden, label: '隐藏' },
           ],
         },
         defaultValue: defaultOptions.valueMode,
       })
       .addBooleanSwitch({
         path: 'showUnfilled',
-        name: 'Show unfilled area',
-        description: 'When enabled renders the unfilled region as gray',
+        name: '显示未填充区域',
+        description: '启用后，将未填充的区域呈现为灰色',
         defaultValue: defaultOptions.showUnfilled,
         showIf: (options) => options.displayMode !== 'lcd',
       })
       .addNumberInput({
         path: 'minVizWidth',
-        name: 'Min width',
-        description: 'Minimum column width',
+        name: '最小宽度',
+        description: '最小列宽',
         defaultValue: defaultOptions.minVizWidth,
         showIf: (options) => options.orientation === VizOrientation.Vertical,
       })
       .addNumberInput({
         path: 'minVizHeight',
-        name: 'Min height',
-        description: 'Minimum row height',
+        name: '最小高度',
+        description: '最小行高',
         defaultValue: defaultOptions.minVizHeight,
         showIf: (options) => options.orientation === VizOrientation.Horizontal,
       });

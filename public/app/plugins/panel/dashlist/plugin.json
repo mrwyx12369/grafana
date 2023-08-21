@@ -1,12 +1,12 @@
 {
   "type": "panel",
-  "name": "Dashboard list",
+  "name": "仪表板列表",
   "id": "dashlist",
 
   "skipDataQuery": true,
 
   "info": {
-    "description": "List of dynamic links to other dashboards",
+    "description": "指向其他仪表板的动态链接列表",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

@@ -756,11 +756,11 @@ export class LokiDatasource
     return this.metadataRequest('labels', params).then(
       (values) => {
         return values.length > 0
-          ? { status: 'success', message: 'Data source successfully connected.' }
+          ? { status: 'success', message: '数据源已成功连接。' }
           : {
               status: 'error',
               message:
-                'Data source connected, but no labels were received. Verify that Loki and Promtail are correctly configured.',
+                '数据源已连接，但未收到标签。验证 Loki 和 Promtail 是否已正确配置。',
             };
       },
       (err) => {

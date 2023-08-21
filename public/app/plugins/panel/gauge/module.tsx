@@ -13,11 +13,11 @@ export const plugin = new PanelPlugin<Options>(GaugePanel)
     useCustomConfig: (builder) => {
       builder.addNumberInput({
         path: 'neutral',
-        name: 'Neutral',
-        description: 'Leave empty to use Min as neutral point',
-        category: ['Gauge'],
+        name: '中性点',
+        description: '留空以使用最小值作为中性点',
+        category: ['仪表图'],
         settings: {
-          placeholder: 'auto',
+          placeholder: '自动',
         },
       });
     },
@@ -28,14 +28,14 @@ export const plugin = new PanelPlugin<Options>(GaugePanel)
     builder
       .addBooleanSwitch({
         path: 'showThresholdLabels',
-        name: 'Show threshold labels',
-        description: 'Render the threshold values around the gauge bar',
+        name: '显示阈值标签',
+        description: '呈现仪表条周围的阈值',
         defaultValue: defaultOptions.showThresholdLabels,
       })
       .addBooleanSwitch({
         path: 'showThresholdMarkers',
-        name: 'Show threshold markers',
-        description: 'Renders the thresholds as an outer bar',
+        name: '显示阈值标记',
+        description: '将阈值呈现为外部栏',
         defaultValue: defaultOptions.showThresholdMarkers,
       });
 

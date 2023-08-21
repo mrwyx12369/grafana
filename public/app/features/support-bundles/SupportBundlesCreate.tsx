@@ -9,7 +9,7 @@ import { loadSupportBundleCollectors, createSupportBundle } from './state/action
 
 const subTitle = (
   <span>
-    Choose the components for the support bundle. The support bundle will be available for 3 days after creation.
+  选择支持包的组件。支持包将在创建后 3 天内可用。
   </span>
 );
 
@@ -54,7 +54,7 @@ export const SupportBundlesCreateUnconnected = ({
   }, {});
 
   return (
-    <Page navId="support-bundles" pageNav={{ text: 'Create support bundle' }} subTitle={subTitle}>
+    <Page navId="support-bundles" pageNav={{ text: '创建支持包' }} subTitle={subTitle}>
       <Page.Contents isLoading={isLoading}>
         {loadCollectorsError && <Alert title={loadCollectorsError} severity="error" />}
         {createBundleError && <Alert title={createBundleError} severity="error" />}
@@ -80,9 +80,9 @@ export const SupportBundlesCreateUnconnected = ({
                       );
                     })}
                   <HorizontalGroup>
-                    <Button type="submit">Create</Button>
+                    <Button type="submit">创建</Button>
                     <LinkButton href="/support-bundles" variant="secondary">
-                      Cancel
+                      取消
                     </LinkButton>
                   </HorizontalGroup>
                 </>

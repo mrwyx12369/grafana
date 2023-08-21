@@ -21,7 +21,7 @@ export function PanelNotSupported({ message }: Props): JSX.Element {
         <h2>{message}</h2>
         <div>
           <Button size="md" variant="secondary" icon="arrow-left" onClick={onBackToQueries}>
-            Go back to Queries
+           返回查询
           </Button>
         </div>
       </VerticalGroup>

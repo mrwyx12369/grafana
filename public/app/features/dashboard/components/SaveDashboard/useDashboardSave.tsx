@@ -61,7 +61,7 @@ export const useDashboardSave = (dashboard: DashboardModel, isCopy = false) => {
 
         // important that these happen before location redirect below
         appEvents.publish(new DashboardSavedEvent());
-        notifyApp.success('Dashboard saved');
+        notifyApp.success('仪表板已保存!');
 
         //Update local storage dashboard to handle things like last used datasource
         updateDashboardUidLastUsedDatasource(result.uid);
@@ -72,7 +72,7 @@ export const useDashboardSave = (dashboard: DashboardModel, isCopy = false) => {
             url: result.url,
           });
         } else {
-          reportInteraction(`grafana_dashboard_${dashboard.id ? 'saved' : 'created'}`, {
+          reportInteraction(`grafana_dashboard_${dashboard.id ? '已保存' : '已创建'}`, {
             name: dashboard.title,
             url: result.url,
           });

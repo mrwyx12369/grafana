@@ -20,12 +20,12 @@ export const VersionsHistoryButtons = ({
   <Stack>
     {hasMore && (
       <Button type="button" onClick={() => getVersions(true)} variant="secondary" disabled={isLastPage}>
-        Show more versions
+      显示更多版本
       </Button>
     )}
-    <Tooltip content="Select two versions to start comparing" placement="bottom">
+    <Tooltip content="选择两个版本开始比较" placement="bottom">
       <Button type="button" disabled={!canCompare} onClick={getDiff} icon="code-branch">
-        Compare versions
+        比较版本
       </Button>
     </Tooltip>
   </Stack>

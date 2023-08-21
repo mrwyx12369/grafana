@@ -149,7 +149,7 @@ export class VersionsSettings extends PureComponent<Props, State> {
             isNewLatest={isNewLatest}
           />
           {isLoading ? (
-            <VersionsHistorySpinner msg="Fetching changes&hellip;" />
+            <VersionsHistorySpinner msg="正在获取更改..." />
           ) : (
             <VersionHistoryComparison
               newInfo={newInfo!}
@@ -165,11 +165,11 @@ export class VersionsSettings extends PureComponent<Props, State> {
     return (
       <Page navModel={this.props.sectionNav}>
         {isLoading ? (
-          <VersionsHistorySpinner msg="Fetching history list&hellip;" />
+          <VersionsHistorySpinner msg="正在获取历史记录列表..." />
         ) : (
           <VersionHistoryTable versions={versions} onCheck={this.onCheck} canCompare={canCompare} />
         )}
-        {this.state.isAppending && <VersionsHistorySpinner msg="Fetching more entries&hellip;" />}
+        {this.state.isAppending && <VersionsHistorySpinner msg="正在获取更多条目..." />}
         {showButtons && (
           <VersionsHistoryButtons
             hasMore={hasMore}

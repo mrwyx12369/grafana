@@ -33,24 +33,31 @@
       "search": false,
       "starred": true,
       "tags": [],
-      "title": "Dashboards",
+      "title": "仪表板列表",
       "type": "dashlist"
     },
     {
       "datasource": null,
       "gridPos": {
-        "h": 15,
+        "h": 18,
         "w": 12,
         "x": 12,
-        "y": 4
+        "y": 3
       },
       "id": 4,
       "links": [],
       "options": {
-        "feedUrl": "https://grafana.com/blog/news.xml"
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "## 关于大数据可视化管理系统\n\n本系统是一套基于Grafan二次开发的开源的度量分析与可视化套件。纯 Javascript 开发的前端工具，通过访问库（如InfluxDB），展示自定义报表、显示图表等。大多使用在时序数据的监控方面，如同Kibana类似。Grafana的UI更加灵活，有丰富的插件，功能强大。\n系统支持许多不同的数据源。每个数据源都有一个特定的查询编辑器,该编辑器定制的特性和功能是公开的特定数据来源。\n官方支持以下数据源:Graphite，InfluxDB，OpenTSDB，Prometheus，Elasticsearch，CloudWatch和KairosDB。\n每个数据源的查询语言和能力都是不同的。你可以把来自多个数据源的数据组合到一个仪表板，但每一个面板被绑定到一个特定的数据源,它就属于一个特定的组织。系统有如下特点:\n\n#### 1.统一数据，而非数据库\n系统不要求您将数据导入后端数据仓库或供应商数据库。相反，数据采用独特的方法提供单一数据面板，无论您的现有数据位于何处，都可以将其统一。\n通过数据，您可以从 Kubernetes 集群、Raspberry Pi、不同的云服务、甚至是 Google Sheets 获取任何现有数据，并在单个数据面板中按照自己的需求可视化。\n#### 2.可供所有人查看的数据\n系统的构建原则是让组织中的每个人都可以访问数据，而不仅仅是单个运营人员。系统促进数据使用和获取的文化，让需要数据的人轻松获取，有助于打破数据孤岛并赋予团队更强的能力。\n#### 3.可供任何人使用的数据面板\n通过系统数据面板，您不仅可以将从众多来源收集到的数据变成有意义的洞见，还可以与其他团队成员共享您创建的数据面板，共同探索数据。借助系统，任何人都可以创建和共享动态数据面板，增进协作和透明度。\n#### 4.灵活性和多功能性\n与其他工具不同，在 系统您可以为您和团队将任何数据翻译，转换并创建灵活且多功能的专属数据面板。借助高级查询和转换功能，您可以自定义面板，创建真正对您有帮助的可视化内容。",
+        "mode": "markdown"
       },
-      "title": "Latest from the blog",
-      "type": "news"
+      "pluginVersion": "10.2.0-pre",
+      "title": "关于",
+      "type": "text"
     }
   ],
   "schemaVersion": 22,
@@ -70,5 +77,5 @@
     "type": "timepicker"
   },
   "timezone": "browser",
-  "title": "Home"
+  "title": "首页"
 }

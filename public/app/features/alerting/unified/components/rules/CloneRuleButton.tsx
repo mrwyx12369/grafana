@@ -27,7 +27,7 @@ export const CloneRuleButton = React.forwardRef<HTMLAnchorElement, CloneRuleButt
     return (
       <>
         <LinkButton
-          title="Copy"
+          title="拷贝"
           className={className}
           size="sm"
           key="clone"
@@ -42,19 +42,18 @@ export const CloneRuleButton = React.forwardRef<HTMLAnchorElement, CloneRuleButt
 
         <ConfirmModal
           isOpen={showModal}
-          title="Copy provisioned alert rule"
+          title="复制预配的警报规则"
           body={
             <div>
               <p>
-                The new rule will <span className={styles.bold}>NOT</span> be marked as a provisioned rule.
+               新规则将 <span className={styles.bold}>不被</span> 标记为预置规则.
               </p>
               <p>
-                You will need to set a new alert group for the copied rule because the original one has been provisioned
-                and cannot be used for rules created in the UI.
+              您需要为复制的规则设置新的警报组，因为原始警报组已预配，不能用于在 UI 中创建的规则。
               </p>
             </div>
           }
-          confirmText="Copy"
+          confirmText="拷贝"
           onConfirm={() => {
             locationService.push(cloneUrl);
           }}

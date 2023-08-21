@@ -81,28 +81,27 @@ const ProvisionedDeleteModal = ({ hideModal, provisionedId }: { hideModal(): voi
     `}
   >
     <p>
-      This dashboard is managed by Grafana provisioning and cannot be deleted. Remove the dashboard from the config file
-      to delete it.
+    此仪表板由 Grafana 预配管理，无法删除。从配置文件中删除仪表板以将其删除。
     </p>
     <p>
       <i>
         See{' '}
         <a
           className="external-link"
-          href="https://grafana.com/docs/grafana/latest/administration/provisioning/#dashboards"
+          href="https://www.smxyi.com/docs/datav/latest/administration/provisioning/#dashboards"
           target="_blank"
           rel="noreferrer"
         >
-          documentation
+          文档
         </a>{' '}
-        for more information about provisioning.
+        有关预配的详细信息。
       </i>
       <br />
       File path: {provisionedId}
     </p>
     <Modal.ButtonRow>
       <Button variant="primary" onClick={hideModal}>
-        OK
+        确定
       </Button>
     </Modal.ButtonRow>
   </Modal>

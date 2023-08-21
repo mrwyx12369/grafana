@@ -8,8 +8,8 @@ export const plugin = new PanelPlugin<Options>(NewsPanel).setPanelOptions((build
   builder
     .addTextInput({
       path: 'feedUrl',
-      name: 'URL',
-      description: 'Supports RSS and Atom feeds',
+      name: 'URL地址',
+      description: '支持RSS和Atom提要',
       settings: {
         placeholder: DEFAULT_FEED_URL,
       },
@@ -17,8 +17,8 @@ export const plugin = new PanelPlugin<Options>(NewsPanel).setPanelOptions((build
     })
     .addBooleanSwitch({
       path: 'showImage',
-      name: 'Show image',
-      description: 'Controls if the news item social (og:image) image is shown above text content',
+      name: '显示图片',
+      description: '控制新闻项社交图片是否显示在文本内容上方',
       defaultValue: defaultOptions.showImage,
     });
 });

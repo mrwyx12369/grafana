@@ -22,7 +22,7 @@ export function NewsWrapper({ feedUrl }: NewsWrapperProps) {
   if (state.loading || state.error) {
     return (
       <div className={styles.innerWrapper}>
-        {state.loading && <LoadingPlaceholder text="Loading..." />}
+        {state.loading && <LoadingPlaceholder text="加载..." />}
         {state.error && state.error.message}
       </div>
     );

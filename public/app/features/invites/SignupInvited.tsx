@@ -62,44 +62,44 @@ export const SignupInvitedPage = ({ match }: Props) => {
   return (
     <Page navModel={navModel}>
       <Page.Contents>
-        <h3 className="page-sub-heading">Hello {greeting || 'there'}.</h3>
+        <h3 className="page-sub-heading">您好 {greeting || '现在'}.</h3>
 
         <div className="modal-tagline p-b-2">
-          <em>{invitedBy || 'Someone'}</em> has invited you to join Grafana and the organization{' '}
+          <em>{invitedBy || '有人'}</em> 已邀请您加入系统用户组织{' '}
           <span className="highlight-word">{contextSrv.user.orgName}</span>
           <br />
-          Please complete the following and choose a password to accept your invitation and continue:
+          请填写以下内容并选择密码以接受邀请并继续：
         </div>
         <Form defaultValues={initFormModel} onSubmit={onSubmit}>
           {({ register, errors }) => (
             <>
-              <Field invalid={!!errors.email} error={errors.email && errors.email.message} label="Email">
+              <Field invalid={!!errors.email} error={errors.email && errors.email.message} label="电子邮件">
                 <Input
                   placeholder="email@example.com"
                   {...register('email', {
-                    required: 'Email is required',
+                    required: '电子邮件为必填项',
                     pattern: {
                       value: w3cStandardEmailValidator,
-                      message: 'Email is invalid',
+                      message: '电子邮件无效',
                     },
                   })}
                 />
               </Field>
-              <Field invalid={!!errors.name} error={errors.name && errors.name.message} label="Name">
-                <Input placeholder="Name (optional)" {...register('name')} />
+              <Field invalid={!!errors.name} error={errors.name && errors.name.message} label="姓名">
+                <Input placeholder="姓名(可选)" {...register('name')} />
               </Field>
-              <Field invalid={!!errors.username} error={errors.username && errors.username.message} label="Username">
-                <Input {...register('username', { required: 'Username is required' })} placeholder="Username" />
+              <Field invalid={!!errors.username} error={errors.username && errors.username.message} label="用户名">
+                <Input {...register('username', { required: '用户名为必填项' })} placeholder="用户名" />
               </Field>
-              <Field invalid={!!errors.password} error={errors.password && errors.password.message} label="Password">
+              <Field invalid={!!errors.password} error={errors.password && errors.password.message} label="密码">
                 <Input
-                  {...register('password', { required: 'Password is required' })}
+                  {...register('password', { required: '密码为必填项' })}
                   type="password"
-                  placeholder="Password"
+                  placeholder="密码"
                 />
               </Field>
 
-              <Button type="submit">Sign up</Button>
+              <Button type="submit">注册</Button>
             </>
           )}
         </Form>

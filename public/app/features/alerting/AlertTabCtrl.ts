@@ -237,12 +237,12 @@ export class AlertTabCtrl {
       if (!model) {
         appEvents.publish(
           new ShowConfirmModalEvent({
-            title: 'Notifier with invalid identifier is detected',
-            text: `Do you want to delete notifier with invalid identifier: ${identifier} from the dashboard JSON?`,
-            text2: 'After successful deletion, make sure to save the dashboard for storing the update JSON.',
+            title: '检测到标识符无效的通知程序',
+            text: `是否要从仪表板 JSON 中删除标识符无效的通知程序：${identifier}？`,
+            text2: '成功删除后，请确保保存仪表板以存储更新 JSON。',
             icon: 'trash-alt',
-            confirmText: 'Delete',
-            yesText: 'Delete',
+            confirmText: '删除',
+            yesText: '确定',
             onConfirm: async () => {
               this.removeNotification(addedNotification);
             },

@@ -1,12 +1,12 @@
 {
   "type": "panel",
-  "name": "Annotations list",
+  "name": "注解列表",
   "id": "annolist",
 
   "skipDataQuery": true,
 
   "info": {
-    "description": "List annotations",
+    "description": "列出注解",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

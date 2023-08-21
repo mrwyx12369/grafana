@@ -30,7 +30,7 @@ export const OverrideCategoryTitle = ({
     <div>
       <HorizontalGroup justify="space-between">
         <div>{overrideName}</div>
-        <IconButton name="trash-alt" onClick={onOverrideRemove} tooltip="Remove override" />
+        <IconButton name="trash-alt" onClick={onOverrideRemove} tooltip="删除覆盖" />
       </HorizontalGroup>
       {!isExpanded && (
         <div className={styles.overrideDetails}>

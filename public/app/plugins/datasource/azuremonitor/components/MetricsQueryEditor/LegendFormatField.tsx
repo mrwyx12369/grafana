@@ -24,10 +24,10 @@ const LegendFormatField = ({ onQueryChange, query }: AzureQueryEditorFieldProps)
   }, [onQueryChange, query, value]);
 
   return (
-    <Field label="Legend format">
+    <Field label="图例格式">
       <Input
         id="azure-monitor-metrics-legend-field"
-        placeholder="Alias patterns"
+        placeholder="别名模式"
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}

@@ -1,12 +1,12 @@
 {
   "type": "panel",
-  "name": "Alert list",
+  "name": "警报列表",
   "id": "alertlist",
 
   "skipDataQuery": true,
 
   "info": {
-    "description": "Shows list of alerts and their current status",
+    "description": "显示警报列表及其当前状态",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

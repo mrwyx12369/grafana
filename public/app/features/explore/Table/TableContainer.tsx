@@ -78,8 +78,8 @@ export class TableContainer extends PureComponent<Props> {
     return (
       <>
         {frames && frames.length === 0 && (
-          <PanelChrome title={'Table'} width={width} height={200}>
-            {() => <MetaInfoText metaItems={[{ value: '0 series returned' }]} />}
+          <PanelChrome title={'表格'} width={width} height={200}>
+            {() => <MetaInfoText metaItems={[{ value: '0 个序列返回' }]} />}
           </PanelChrome>
         )}
         {frames &&
@@ -87,7 +87,7 @@ export class TableContainer extends PureComponent<Props> {
           frames.map((data, i) => (
             <PanelChrome
               key={data.refId || `table-${i}`}
-              title={dataFrames && dataFrames.length > 1 ? `Table - ${data.name || data.refId || i}` : 'Table'}
+              title={dataFrames && dataFrames.length > 1 ? `表格 - ${data.name || data.refId || i}` : '表格'}
               width={width}
               height={this.getTableHeight(data.length, this.hasSubFrames(data))}
               loadingState={loading ? LoadingState.Loading : undefined}

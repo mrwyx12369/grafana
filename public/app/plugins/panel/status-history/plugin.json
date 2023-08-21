@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Status history",
+  "name": "状态历史记录",
   "id": "status-history",
 
   "info": {
-    "description": "Periodic status history",
+    "description": "定期状态历史记录",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

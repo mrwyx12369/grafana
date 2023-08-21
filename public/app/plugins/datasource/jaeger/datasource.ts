@@ -66,7 +66,7 @@ export class JaegerDatasource extends DataSourceApi<JaegerQuery, JaegerJsonData>
     }
 
     if (target.queryType === 'search' && !this.isSearchFormValid(target)) {
-      return of({ error: { message: 'You must select a service.' }, data: [] });
+      return of({ error: { message: '您必须选择一个服务。' }, data: [] });
     }
 
     let { start, end } = this.getTimeRange();
@@ -107,7 +107,7 @@ export class JaegerDatasource extends DataSourceApi<JaegerQuery, JaegerJsonData>
         }
         return of({ data });
       } catch (error) {
-        return of({ error: { message: 'The JSON file uploaded is not in a valid Jaeger format' }, data: [] });
+        return of({ error: { message: '上传的 JSON 文件不是有效的 Jaeger 格式' }, data: [] });
       }
     }
 

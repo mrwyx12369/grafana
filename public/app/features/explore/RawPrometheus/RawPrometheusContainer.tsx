@@ -133,7 +133,7 @@ export class RawPrometheusContainer extends PureComponent<Props, PrometheusConta
       (frame: DataFrame | undefined): frame is DataFrame => !!frame && frame.length !== 0
     );
 
-    const label = this.state?.resultsStyle !== undefined ? this.renderLabel() : 'Table';
+    const label = this.state?.resultsStyle !== undefined ? this.renderLabel() : '表格';
 
     // Render table as default if resultsStyle is not set.
     const renderTable = !this.state?.resultsStyle || this.state?.resultsStyle === TABLE_RESULTS_STYLE.table;
@@ -154,7 +154,7 @@ export class RawPrometheusContainer extends PureComponent<Props, PrometheusConta
             {this.state?.resultsStyle === TABLE_RESULTS_STYLE.raw && <RawListContainer tableResult={frames[0]} />}
           </>
         )}
-        {!frames?.length && <MetaInfoText metaItems={[{ value: '0 series returned' }]} />}
+        {!frames?.length && <MetaInfoText metaItems={[{ value: '0 个序列返回' }]} />}
       </Collapse>
     );
   }

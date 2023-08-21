@@ -89,7 +89,7 @@ export default class RichHistoryLocalStorage implements RichHistoryStorage {
       return {
         warning: {
           type: RichHistoryStorageWarning.LimitExceeded,
-          message: `Query history reached the limit of ${MAX_HISTORY_ITEMS}. Old, not-starred items have been removed.`,
+          message: `查询历史记录已达到${MAX_HISTORY_ITEMS}条系统限制. 旧的、未加星标的项目已被移除。`,
         },
         richHistoryQuery,
       };

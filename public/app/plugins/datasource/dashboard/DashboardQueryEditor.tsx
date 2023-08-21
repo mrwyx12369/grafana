@@ -147,7 +147,7 @@ export function DashboardQueryEditor({ panelData, queries, onChange, onRunQuerie
   if (panels.length < 1) {
     return (
       <p className={styles.noQueriesText}>
-        This dashboard does not have any other panels. Add queries to other panels and try again.
+      此仪表板没有任何其他面板。将查询添加到其他面板，然后重试。
       </p>
     );
   }
@@ -156,10 +156,10 @@ export function DashboardQueryEditor({ panelData, queries, onChange, onRunQuerie
 
   return (
     <>
-      <Field label="Source" description="Use the same results as panel">
+      <Field label="源面板" description="使用与面板相同的结果">
         <Select
           inputId={selectId}
-          placeholder="Choose panel"
+          placeholder="选择面板"
           isSearchable={true}
           options={panels}
           value={selected}
@@ -169,15 +169,15 @@ export function DashboardQueryEditor({ panelData, queries, onChange, onRunQuerie
 
       <HorizontalGroup height="auto" wrap={true} align="flex-start">
         <Field
-          label="Data Source"
-          description="Use data or annotations from the panel"
+          label="数据源"
+          description="使用面板中的数据或注释"
           className={styles.horizontalField}
         >
           <RadioButtonGroup options={topics} value={query.topic === DataTopic.Annotations} onChange={onTopicChanged} />
         </Field>
 
         {showTransforms && (
-          <Field label="Transform" description="Apply panel transformations from the source panel">
+          <Field label="转换" description="从源面板应用面板转换">
             <Switch value={Boolean(query.withTransforms)} onChange={onTransformToggle} />
           </Field>
         )}
@@ -188,7 +188,7 @@ export function DashboardQueryEditor({ panelData, queries, onChange, onRunQuerie
       ) : (
         <>
           {results && Boolean(results.length) && (
-            <Field label="Queries from panel">
+            <Field label="来自面板的查询">
               <VerticalGroup spacing="sm">
                 {results.map((target, i) => (
                   <Card key={`DashboardQueryRow-${i}`}>

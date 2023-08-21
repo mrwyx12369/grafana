@@ -54,7 +54,7 @@ export const SaveDashboardDiff = ({ diff, oldValue, newValue }: SaveDashboardDif
   }
 
   if (value.count < 1) {
-    return <div>No changes in this dashboard</div>;
+    return <div>此仪表板中没有更改</div>;
   }
 
   return (
@@ -63,7 +63,7 @@ export const SaveDashboardDiff = ({ diff, oldValue, newValue }: SaveDashboardDif
 
       {value.showDiffs && <div className={styles.spacer}>{value.diffs}</div>}
 
-      <h4>JSON Model</h4>
+      <h4>JSON模型</h4>
       {value.jsonView}
     </div>
   );

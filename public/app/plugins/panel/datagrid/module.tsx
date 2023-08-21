@@ -15,7 +15,7 @@ export const plugin = new PanelPlugin<Options>(DataGridPanel).setPanelOptions((b
 
   return builder.addSelect({
     path: 'selectedSeries',
-    name: 'Select series',
+    name: '选择系列',
     defaultValue: defaultOptions.selectedSeries,
     settings: {
       options: seriesOptions,

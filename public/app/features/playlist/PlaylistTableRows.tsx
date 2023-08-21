@@ -20,7 +20,7 @@ export const PlaylistTableRows = ({ items, onDelete }: Props) => {
   if (!items?.length) {
     return (
       <div>
-        <em>Playlist is empty. Add dashboards below.</em>
+        <em>播放列表为空。在下面添加仪表板。</em>
       </div>
     );
   }
@@ -36,21 +36,21 @@ export const PlaylistTableRows = ({ items, onDelete }: Props) => {
       info.push(<TagBadge key={item.value} label={item.value} removeIcon={false} count={0} />);
       if (!first) {
         icon = 'exclamation-triangle';
-        info.push(<span key="info">&nbsp; No dashboards found</span>);
+        info.push(<span key="info">&nbsp; 未找到仪表板</span>);
       } else {
-        info.push(<span key="info">&nbsp; {pluralize('dashboard', item.dashboards.length, true)}</span>);
+        info.push(<span key="info">&nbsp; {pluralize('个仪表板', item.dashboards.length, true)}</span>);
       }
     } else if (first) {
       info.push(
         item.dashboards.length > 1 ? (
-          <span key="info">Multiple items found: ${item.value}</span>
+          <span key="info">找到多个项目： ${item.value}</span>
         ) : (
           <span key="info">{first.name ?? item.value}</span>
         )
       );
     } else {
       icon = 'exclamation-triangle';
-      info.push(<span key="info">&nbsp; Not found: {item.value}</span>);
+      info.push(<span key="info">&nbsp; 未找到： {item.value}</span>);
     }
     return (
       <>
@@ -82,7 +82,7 @@ export const PlaylistTableRows = ({ items, onDelete }: Props) => {
                   onClick={() => onDelete(index)}
                   tooltip={selectors.pages.PlaylistForm.itemDelete}
                 />
-                <Icon title="Drag and drop to reorder" name="draggabledots" size="md" />
+                <Icon title="拖放以重新排序" name="draggabledots" size="md" />
               </div>
             </div>
           )}

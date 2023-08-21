@@ -152,7 +152,7 @@ export function AddToDashboardForm(props: Props): ReactElement {
         <InputControl
           control={control}
           render={({ field: { ref, ...field } }) => (
-            <Field label="Target dashboard" description="Choose where to add the panel.">
+            <Field label="目标仪表板" description="选择添加面板的位置。">
               <RadioButtonGroup options={saveTargets} {...field} id="e2d-save-target" />
             </Field>
           )}
@@ -167,8 +167,8 @@ export function AddToDashboardForm(props: Props): ReactElement {
             <InputControl
               render={({ field: { ref, value, onChange, ...field } }) => (
                 <Field
-                  label="Dashboard"
-                  description="Select in which dashboard the panel will be created."
+                  label="仪表板"
+                  description="选择要在其中创建面板的仪表板。"
                   error={errors.dashboardUid?.message}
                   invalid={!!errors.dashboardUid}
                 >
@@ -183,7 +183,7 @@ export function AddToDashboardForm(props: Props): ReactElement {
               control={control}
               name="dashboardUid"
               shouldUnregister
-              rules={{ required: { value: true, message: 'This field is required.' } }}
+              rules={{ required: { value: true, message: '此字段为必填字段。' } }}
             />
           );
         })()}
@@ -196,7 +196,7 @@ export function AddToDashboardForm(props: Props): ReactElement {
 
       <Modal.ButtonRow>
         <Button type="reset" onClick={onClose} fill="outline" variant="secondary">
-          Cancel
+          取消
         </Button>
         <Button
           type="submit"
@@ -204,10 +204,10 @@ export function AddToDashboardForm(props: Props): ReactElement {
           onClick={handleSubmit(partial(onSubmit, true))}
           icon="external-link-alt"
         >
-          Open in new tab
+         在新标签页中打开
         </Button>
         <Button type="submit" variant="primary" onClick={handleSubmit(partial(onSubmit, false))} icon="apps">
-          Open dashboard
+         打开仪表板
         </Button>
       </Modal.ButtonRow>
     </form>

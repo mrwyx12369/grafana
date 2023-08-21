@@ -272,7 +272,7 @@ export function DataGridPanel({ options, data, id, fieldConfig, width, height }:
   }
 
   if (!isDatagridEnabled()) {
-    return <PanelDataErrorView panelId={id} message="Datagrid is not enabled" fieldConfig={fieldConfig} data={data} />;
+    return <PanelDataErrorView panelId={id} message="未启用数据网格" fieldConfig={fieldConfig} data={data} />;
   }
 
   if (!document.getElementById('portal')) {

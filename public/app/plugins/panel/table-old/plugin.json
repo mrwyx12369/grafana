@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Table (old)",
+  "name": "数据表格(旧)",
   "id": "table-old",
 
   "state": "deprecated",

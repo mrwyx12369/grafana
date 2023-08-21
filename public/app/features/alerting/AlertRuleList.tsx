@@ -40,13 +40,13 @@ export type Props = OwnProps & ConnectedProps<typeof connector>;
 
 export class AlertRuleListUnconnected extends PureComponent<Props> {
   stateFilters = [
-    { label: 'All', value: 'all' },
-    { label: 'OK', value: 'ok' },
-    { label: 'Not OK', value: 'not_ok' },
-    { label: 'Alerting', value: 'alerting' },
-    { label: 'No data', value: 'no_data' },
-    { label: 'Paused', value: 'paused' },
-    { label: 'Pending', value: 'pending' },
+    { label: '所有', value: 'all' },
+    { label: '良好', value: 'ok' },
+    { label: '不好', value: 'not_ok' },
+    { label: '警告', value: 'alerting' },
+    { label: '无数据', value: 'no_data' },
+    { label: '暂停', value: 'paused' },
+    { label: '等待', value: 'pending' },
   ];
 
   componentDidMount() {
@@ -99,11 +99,11 @@ export class AlertRuleListUnconnected extends PureComponent<Props> {
         <Page.Contents isLoading={isLoading}>
           <div className="page-action-bar">
             <div className="gf-form gf-form--grow">
-              <FilterInput placeholder="Search alerts" value={search} onChange={this.onSearchQueryChange} />
+              <FilterInput placeholder="搜索警报" value={search} onChange={this.onSearchQueryChange} />
             </div>
             <div className="gf-form">
               <label className="gf-form-label" htmlFor="alert-state-filter">
-                States
+                状态
               </label>
 
               <div className="width-13">
@@ -118,11 +118,11 @@ export class AlertRuleListUnconnected extends PureComponent<Props> {
             <div className="page-action-bar__spacer" />
             {config.unifiedAlertingEnabled && (
               <LinkButton variant="primary" href="alerting/ng/new">
-                Add NG Alert
+               添加NG警报
               </LinkButton>
             )}
             <Button variant="secondary" onClick={this.onOpenHowTo}>
-              How to add an alert
+              如何添加警报
             </Button>
           </div>
           <DeprecationNotice />

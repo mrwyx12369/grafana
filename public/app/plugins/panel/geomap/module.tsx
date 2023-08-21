@@ -21,13 +21,13 @@ export const plugin = new PanelPlugin<Options>(GeomapPanel)
     },
   })
   .setPanelOptions((builder, context) => {
-    let category = ['Map view'];
+    let category = ['地图视图'];
     builder.addCustomEditor({
       category,
       id: 'view',
       path: 'view',
-      name: 'Initial view', // don't show it
-      description: 'This location will show when the panel first loads.',
+      name: '初始视图', // don't show it
+      description: '此位置将显示面板首次加载的时间。',
       editor: MapViewEditor,
       defaultValue: defaultMapViewConfig,
     });
@@ -35,8 +35,8 @@ export const plugin = new PanelPlugin<Options>(GeomapPanel)
     builder.addBooleanSwitch({
       category,
       path: 'view.shared',
-      description: 'Use the same view across multiple panels.  Note: this may require a dashboard reload.',
-      name: 'Share view',
+      description: '在多个面板上使用相同的视图。 注意：这可能需要重新加载仪表板。',
+      name: '共享视图',
       defaultValue: defaultMapViewConfig.shared,
     });
 
@@ -45,8 +45,8 @@ export const plugin = new PanelPlugin<Options>(GeomapPanel)
     if (!state?.layers) {
       // TODO? show spinner?
     } else {
-      const layersCategory = ['Map layers'];
-      const basemapCategory = ['Basemap layer'];
+      const layersCategory = ['地图图层'];
+      const basemapCategory = ['底图图层'];
       builder.addCustomEditor({
         category: layersCategory,
         id: 'layers',
@@ -88,59 +88,59 @@ export const plugin = new PanelPlugin<Options>(GeomapPanel)
     }
 
     // The controls section
-    category = ['Map controls'];
+    category = ['地图控件'];
     builder
       .addBooleanSwitch({
         category,
         path: 'controls.showZoom',
-        description: 'Show zoom control buttons in the upper left corner',
-        name: 'Show zoom control',
+        description: '在左上角显示缩放控制按钮',
+        name: '显示缩放控件',
         defaultValue: true,
       })
       .addBooleanSwitch({
         category,
         path: 'controls.mouseWheelZoom',
-        description: 'Enable zoom control via mouse wheel',
-        name: 'Mouse wheel zoom',
+        description: '通过鼠标滚轮启用缩放控制',
+        name: '鼠标滚轮缩放',
         defaultValue: true,
       })
       .addBooleanSwitch({
         category,
         path: 'controls.showAttribution',
-        name: 'Show attribution',
-        description: 'Show the map source attribution info in the lower right',
+        name: '显示归属',
+        description: '在右下角显示地图来源属性信息',
         defaultValue: true,
       })
       .addBooleanSwitch({
         category,
         path: 'controls.showScale',
-        name: 'Show scale',
-        description: 'Indicate map scale',
+        name: '显示比例',
+        description: '指示地图比例',
         defaultValue: false,
       })
       .addBooleanSwitch({
         category,
         path: 'controls.showMeasure',
-        name: 'Show measure tools',
-        description: 'Show tools for making measurements on the map',
+        name: '显示测量工具',
+        description: '显示用于在地图上进行测量的工具',
         defaultValue: false,
       })
       .addBooleanSwitch({
         category,
         path: 'controls.showDebug',
-        name: 'Show debug',
-        description: 'Show map info',
+        name: '显示调试',
+        description: '显示地图信息',
         defaultValue: false,
       })
       .addRadio({
         category,
         path: 'tooltip.mode',
-        name: 'Tooltip',
+        name: '提示',
         defaultValue: TooltipMode.Details,
         settings: {
           options: [
-            { label: 'None', value: TooltipMode.None, description: 'Show contents on click, not hover' },
-            { label: 'Details', value: TooltipMode.Details, description: 'Show popup on hover' },
+            { label: '无', value: TooltipMode.None, description: '单击时显示内容，而不是悬停' },
+            { label: '详细', value: TooltipMode.Details, description: '悬停时显示弹出窗口' },
           ],
         },
       });

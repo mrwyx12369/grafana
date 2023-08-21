@@ -49,7 +49,7 @@ export const PanelLibraryOptionsGroup = ({ panel, searchQuery, isWidget = false 
       {!panel.libraryPanel && (
         <VerticalGroup align="center">
           <Button icon="plus" onClick={onAddToPanelLibrary} variant="secondary" fullWidth>
-            Create new library panel
+          创建新的库面板
           </Button>
         </VerticalGroup>
       )}

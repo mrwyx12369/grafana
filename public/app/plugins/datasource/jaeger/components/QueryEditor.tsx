@@ -39,12 +39,12 @@ export function QueryEditor({ datasource, query, onChange, onRunQuery }: Props) 
       default:
         return (
           <InlineFieldRow>
-            <InlineField label="Trace ID" labelWidth={14} grow>
+            <InlineField label="跟踪ID" labelWidth={14} grow>
               <QueryField
                 query={query.query}
                 onChange={onChangeQuery}
                 onRunQuery={onRunQuery}
-                placeholder={'Enter a Trace ID (run with Shift+Enter)'}
+                placeholder={'输入跟踪ID (快捷键Shift+Enter)'}
                 portalOrigin="jaeger"
               />
             </InlineField>
@@ -55,7 +55,7 @@ export function QueryEditor({ datasource, query, onChange, onRunQuery }: Props) 
 
   return (
     <>
-      <Modal title={'Upload trace'} isOpen={uploadModalOpen} onDismiss={() => setUploadModalOpen(false)}>
+      <Modal title={'上传跟踪'} isOpen={uploadModalOpen} onDismiss={() => setUploadModalOpen(false)}>
         <div className={css({ padding: theme.spacing(2) })}>
           <FileDropzone
             options={{ multiple: false }}
@@ -73,12 +73,12 @@ export function QueryEditor({ datasource, query, onChange, onRunQuery }: Props) 
       </Modal>
       <div className={styles.container}>
         <InlineFieldRow>
-          <InlineField label="Query type" grow={true}>
+          <InlineField label="查询类型" grow={true}>
             <HorizontalGroup spacing={'sm'} align={'center'} justify={'space-between'}>
               <RadioButtonGroup<JaegerQueryType>
                 options={[
-                  { value: 'search', label: 'Search' },
-                  { value: undefined, label: 'TraceID' },
+                  { value: 'search', label: '搜索' },
+                  { value: undefined, label: '跟踪ID' },
                 ]}
                 value={query.queryType}
                 onChange={(v) =>
@@ -96,7 +96,7 @@ export function QueryEditor({ datasource, query, onChange, onRunQuery }: Props) 
                   setUploadModalOpen(true);
                 }}
               >
-                Import trace
+                导入
               </Button>
             </HorizontalGroup>
           </InlineField>

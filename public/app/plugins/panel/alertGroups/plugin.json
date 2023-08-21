@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Alert groups",
+  "name": "警报组",
   "id": "alertGroups",
   "state": "alpha",
 

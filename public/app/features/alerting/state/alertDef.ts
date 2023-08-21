@@ -17,7 +17,7 @@ const alertQueryDef = new QueryPartDef({
   defaultParams: ['#A', '15m', 'now', 'avg'],
 });
 
-const conditionTypes = [{ text: 'Query', value: 'query' }];
+const conditionTypes = [{ text: '查询y', value: 'query' }];
 
 const alertStateSortScore = {
   alerting: 1,
@@ -38,16 +38,16 @@ export enum EvalFunction {
 }
 
 const evalFunctions = [
-  { value: EvalFunction.IsAbove, text: 'IS ABOVE' },
-  { value: EvalFunction.IsBelow, text: 'IS BELOW' },
-  { value: EvalFunction.IsOutsideRange, text: 'IS OUTSIDE RANGE' },
-  { value: EvalFunction.IsWithinRange, text: 'IS WITHIN RANGE' },
-  { value: EvalFunction.HasNoValue, text: 'HAS NO VALUE' },
+  { value: EvalFunction.IsAbove, text: '上界' },
+  { value: EvalFunction.IsBelow, text: '下界' },
+  { value: EvalFunction.IsOutsideRange, text: '超出范围' },
+  { value: EvalFunction.IsWithinRange, text: '在范围内' },
+  { value: EvalFunction.HasNoValue, text: '无数值' },
 ];
 
 const evalOperators = [
-  { text: 'OR', value: 'or' },
-  { text: 'AND', value: 'and' },
+  { text: '或', value: 'or' },
+  { text: '与', value: 'and' },
 ];
 
 const reducerTypes = [
@@ -66,15 +66,15 @@ const reducerTypes = [
 ] as const;
 
 const noDataModes = [
-  { text: 'Alerting', value: 'alerting' },
-  { text: 'No Data', value: 'no_data' },
-  { text: 'Keep Last State', value: 'keep_state' },
-  { text: 'Ok', value: 'ok' },
+  { text: '报警', value: 'alerting' },
+  { text: '无数据', value: 'no_data' },
+  { text: '保持上一个状态', value: 'keep_state' },
+  { text: '良好', value: 'ok' },
 ];
 
 const executionErrorModes = [
-  { text: 'Alerting', value: 'alerting' },
-  { text: 'Keep Last State', value: 'keep_state' },
+  { text: '警报', value: 'alerting' },
+  { text: '保持上一个状态', value: 'keep_state' },
 ];
 
 function createReducerPart(model: any) {
@@ -101,35 +101,35 @@ function getStateDisplayModel(state: string): AlertStateDisplayModel {
     case 'normal':
     case 'ok': {
       return {
-        text: 'OK',
+        text: '良好',
         iconClass: 'heart',
         stateClass: 'alert-state-ok',
       };
     }
     case 'alerting': {
       return {
-        text: 'ALERTING',
+        text: '报警',
         iconClass: 'heart-break',
         stateClass: 'alert-state-critical',
       };
     }
     case 'nodata': {
       return {
-        text: 'NO DATA',
+        text: '无数据',
         iconClass: 'question-circle',
         stateClass: 'alert-state-warning',
       };
     }
     case 'paused': {
       return {
-        text: 'PAUSED',
+        text: '暂停',
         iconClass: 'pause',
         stateClass: 'alert-state-paused',
       };
     }
     case 'pending': {
       return {
-        text: 'PENDING',
+        text: '等待',
         iconClass: 'hourglass',
         stateClass: 'alert-state-warning',
       };
@@ -137,7 +137,7 @@ function getStateDisplayModel(state: string): AlertStateDisplayModel {
 
     case 'firing': {
       return {
-        text: 'FIRING',
+        text: '触发',
         iconClass: 'fire',
         stateClass: '',
       };
@@ -145,7 +145,7 @@ function getStateDisplayModel(state: string): AlertStateDisplayModel {
 
     case 'inactive': {
       return {
-        text: 'INACTIVE',
+        text: '非活动',
         iconClass: 'check',
         stateClass: '',
       };
@@ -153,7 +153,7 @@ function getStateDisplayModel(state: string): AlertStateDisplayModel {
 
     case 'error': {
       return {
-        text: 'ERROR',
+        text: '错误',
         iconClass: 'heart-break',
         stateClass: 'alert-state-critical',
       };
@@ -162,7 +162,7 @@ function getStateDisplayModel(state: string): AlertStateDisplayModel {
     case 'unknown':
     default: {
       return {
-        text: 'UNKNOWN',
+        text: '未知',
         iconClass: 'question-circle',
         stateClass: '.alert-state-paused',
       };

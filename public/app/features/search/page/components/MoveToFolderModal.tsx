@@ -83,13 +83,13 @@ export const MoveToFolderModal = ({ results, onMoveItems, onDismiss }: Props) =>
       moveDashboards(selectedDashboards, folder).then((result) => {
         if (result.successCount > 0) {
           const ending = result.successCount === 1 ? '' : 's';
-          const header = `Dashboard${ending} Moved`;
-          const msg = `${result.successCount} dashboard${ending} moved to ${folderTitle}`;
+          const header = `仪表板“${ending}“已移动`;
+          const msg = `${result.successCount} 仪表板${ending}已移动到“${folderTitle}”`;
           notifyApp.success(header, msg);
         }
 
         if (result.totalCount === result.alreadyInFolderCount) {
-          notifyApp.error('Error', `Dashboard already belongs to folder ${folderTitle}`);
+          notifyApp.error('Error', `仪表板已属于文件夹“${folderTitle}“`);
         } else {
           //update the list
           onMoveItems();
@@ -113,27 +113,27 @@ export const MoveToFolderModal = ({ results, onMoveItems, onDismiss }: Props) =>
     <Modal
       isOpen
       className={styles.modal}
-      title={nestedFoldersEnabled ? 'Move' : 'Choose Dashboard Folder'}
+      title={nestedFoldersEnabled ? '移动' : '选择仪表板文件夹'}
       icon="folder-plus"
       onDismiss={onDismiss}
     >
       <>
         <div className={styles.content}>
           {nestedFoldersEnabled && selectedFolders.length > 0 && (
-            <Alert severity="warning" title=" Moving this item may change its permissions" />
+            <Alert severity="warning" title="移动此项目可能会更改其权限" />
           )}
 
-          <p>Move {thingsMoving} to:</p>
+          <p>移动 {thingsMoving}到:</p>
 
           <OldFolderPicker allowEmpty={true} enableCreateNew={false} onChange={handleFolderChange} />
         </div>
 
         <HorizontalGroup justify="flex-end">
           <Button variant="secondary" onClick={onDismiss} fill="outline">
-            Cancel
+            取消
           </Button>
           <Button icon={moving ? 'fa fa-spinner' : undefined} variant="primary" onClick={moveTo}>
-            Move
+            移动
           </Button>
         </HorizontalGroup>
       </>

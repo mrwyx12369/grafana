@@ -22,10 +22,10 @@ export const VersionHistoryHeader = ({
 
   return (
     <h3 className={styles.header}>
-      <IconButton name="arrow-left" size="xl" onClick={onClick} tooltip="Reset version" />
+      <IconButton name="arrow-left" size="xl" onClick={onClick} tooltip="重置版本" />
       <span>
         Comparing {baseVersion} <Icon name="arrows-h" /> {newVersion}{' '}
-        {isNewLatest && <cite className="muted">(Latest)</cite>}
+        {isNewLatest && <cite className="muted">(最新版本)</cite>}
       </span>
     </h3>
   );

@@ -70,7 +70,7 @@ export const ReduceTransformerEditor = ({ options, onChange }: TransformerUIProp
         labelWidth={16}
       >
         <StatsPicker
-          placeholder="Choose Stat"
+          placeholder="选择统计数据"
           allowMultiple
           stats={options.reducers || []}
           onChange={(stats) => {
@@ -82,12 +82,12 @@ export const ReduceTransformerEditor = ({ options, onChange }: TransformerUIProp
         />
       </InlineField>
       {options.mode === ReduceTransformerMode.ReduceFields && (
-        <InlineField htmlFor="include-time-field" labelWidth={16} label="Include time">
+        <InlineField htmlFor="include-time-field" labelWidth={16} label="包括时间">
           <InlineSwitch id="include-time-field" value={!!options.includeTimeField} onChange={onToggleTime} />
         </InlineField>
       )}
       {options.mode !== ReduceTransformerMode.ReduceFields && (
-        <InlineField htmlFor="labels-to-fields" labelWidth={16} label="Labels to fields">
+        <InlineField htmlFor="labels-to-fields" labelWidth={16} label="字段的标签">
           <InlineSwitch id="labels-to-fields" value={!!options.labelsToFields} onChange={onToggleLabels} />
         </InlineField>
       )}

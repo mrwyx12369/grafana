@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "News",
+  "name": "新闻",
   "id": "news",
 
   "skipDataQuery": true,
@@ -8,7 +8,7 @@
   "state": "beta",
 
   "info": {
-    "description": "RSS feed reader",
+    "description": "RSS种子阅读器",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

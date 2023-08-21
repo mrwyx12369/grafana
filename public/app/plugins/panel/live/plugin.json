@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Live",
+  "name": "实时图表",
   "id": "live",
 
   "skipDataQuery": true,

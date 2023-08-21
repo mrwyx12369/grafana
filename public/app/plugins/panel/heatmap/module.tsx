@@ -28,8 +28,8 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       builder.addCustomEditor<void, ScaleDistributionConfig>({
         id: 'scaleDistribution',
         path: 'scaleDistribution',
-        name: 'Y axis scale',
-        category: ['Heatmap'],
+        name: 'Y轴刻度',
+        category: ['热力图'],
         editor: ScaleDistributionEditor as any,
         override: ScaleDistributionEditor as any,
         defaultValue: { type: ScaleDistribution.Linear },
@@ -57,17 +57,17 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       } catch {}
     }
 
-    let category = ['Heatmap'];
+    let category = ['热力图'];
 
     builder.addRadio({
       path: 'calculate',
-      name: 'Calculate from data',
+      name: '根据数据计算',
       defaultValue: defaultOptions.calculate,
       category,
       settings: {
         options: [
-          { label: 'Yes', value: true },
-          { label: 'No', value: false },
+          { label: '是', value: true },
+          { label: '否', value: false },
         ],
       },
     });
@@ -76,26 +76,26 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       addHeatmapCalculationOptions('calculation.', builder, opts.calculation, category);
     }
 
-    category = ['Y Axis'];
+    category = ['Y轴'];
 
     builder
       .addRadio({
         path: 'yAxis.axisPlacement',
-        name: 'Placement',
+        name: 'Y轴位置',
         defaultValue: defaultOptions.yAxis.axisPlacement ?? AxisPlacement.Left,
         category,
         settings: {
           options: [
-            { label: 'Left', value: AxisPlacement.Left },
-            { label: 'Right', value: AxisPlacement.Right },
-            { label: 'Hidden', value: AxisPlacement.Hidden },
+            { label: '靠左', value: AxisPlacement.Left },
+            { label: '靠右', value: AxisPlacement.Right },
+            { label: '隐藏', value: AxisPlacement.Hidden },
           ],
         },
       })
       .addUnitPicker({
         category,
         path: 'yAxis.unit',
-        name: 'Unit',
+        name: 'Y轴计量单位',
         defaultValue: undefined,
         settings: {
           isClearable: true,
@@ -104,9 +104,9 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       .addNumberInput({
         category,
         path: 'yAxis.decimals',
-        name: 'Decimals',
+        name: 'Y轴小数',
         settings: {
-          placeholder: 'Auto',
+          placeholder: '自动',
         },
       });
 
@@ -115,17 +115,17 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       builder
         .addNumberInput({
           path: 'yAxis.min',
-          name: 'Min value',
+          name: 'Y轴最小值',
           settings: {
-            placeholder: 'Auto',
+            placeholder: '自动',
           },
           category,
         })
         .addTextInput({
           path: 'yAxis.max',
-          name: 'Max value',
+          name: 'Y轴最大值',
           settings: {
-            placeholder: 'Auto',
+            placeholder: '自动',
           },
           category,
         });
@@ -134,20 +134,20 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     builder
       .addNumberInput({
         path: 'yAxis.axisWidth',
-        name: 'Axis width',
+        name: 'Y轴宽度',
         defaultValue: defaultOptions.yAxis.axisWidth,
         settings: {
-          placeholder: 'Auto',
+          placeholder: '自动',
           min: 5, // smaller should just be hidden
         },
         category,
       })
       .addTextInput({
         path: 'yAxis.axisLabel',
-        name: 'Axis label',
+        name: 'Y轴标签',
         defaultValue: defaultOptions.yAxis.axisLabel,
         settings: {
-          placeholder: 'Auto',
+          placeholder: '自动',
         },
         category,
       });
@@ -155,44 +155,44 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     if (!opts.calculate) {
       builder.addRadio({
         path: 'rowsFrame.layout',
-        name: 'Tick alignment',
+        name: '刻度对齐',
         defaultValue: defaultOptions.rowsFrame?.layout ?? HeatmapCellLayout.auto,
         category,
         settings: {
           options: [
-            { label: 'Auto', value: HeatmapCellLayout.auto },
-            { label: 'Top (LE)', value: HeatmapCellLayout.le },
-            { label: 'Middle', value: HeatmapCellLayout.unknown },
-            { label: 'Bottom (GE)', value: HeatmapCellLayout.ge },
+            { label: '自动', value: HeatmapCellLayout.auto },
+            { label: '上界(小于等于)', value: HeatmapCellLayout.le },
+            { label: '中位数', value: HeatmapCellLayout.unknown },
+            { label: '下界(大于等于)', value: HeatmapCellLayout.ge },
           ],
         },
       });
     }
     builder.addBooleanSwitch({
       path: 'yAxis.reverse',
-      name: 'Reverse',
+      name: 'Y轴反向',
       defaultValue: defaultOptions.yAxis.reverse === true,
       category,
     });
 
-    category = ['Colors'];
+    category = ['颜色'];
 
     builder.addRadio({
       path: `color.mode`,
-      name: 'Mode',
+      name: '模式',
       defaultValue: defaultOptions.color.mode,
       category,
       settings: {
         options: [
-          { label: 'Scheme', value: HeatmapColorMode.Scheme },
-          { label: 'Opacity', value: HeatmapColorMode.Opacity },
+          { label: '方案', value: HeatmapColorMode.Scheme },
+          { label: '透明度', value: HeatmapColorMode.Opacity },
         ],
       },
     });
 
     builder.addColorPicker({
       path: `color.fill`,
-      name: 'Color',
+      name: '颜色',
       defaultValue: defaultOptions.color.fill,
       category,
       showIf: (opts) => opts.color.mode === HeatmapColorMode.Opacity,
@@ -200,13 +200,13 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
 
     builder.addRadio({
       path: `color.scale`,
-      name: 'Scale',
+      name: '刻度',
       defaultValue: defaultOptions.color.scale,
       category,
       settings: {
         options: [
-          { label: 'Exponential', value: HeatmapColorScale.Exponential },
-          { label: 'Linear', value: HeatmapColorScale.Linear },
+          { label: '指数', value: HeatmapColorScale.Exponential },
+          { label: '线性', value: HeatmapColorScale.Linear },
         ],
       },
       showIf: (opts) => opts.color.mode === HeatmapColorMode.Opacity,
@@ -214,7 +214,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
 
     builder.addSliderInput({
       path: 'color.exponent',
-      name: 'Exponent',
+      name: '指数',
       defaultValue: defaultOptions.color.exponent,
       category,
       settings: {
@@ -228,7 +228,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
 
     builder.addSelect({
       path: `color.scheme`,
-      name: 'Scheme',
+      name: '模式',
       description: '',
       defaultValue: defaultOptions.color.scheme,
       category,
@@ -245,7 +245,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     builder
       .addSliderInput({
         path: 'color.steps',
-        name: 'Steps',
+        name: '步数',
         defaultValue: defaultOptions.color.steps,
         category,
         settings: {
@@ -256,7 +256,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       })
       .addBooleanSwitch({
         path: 'color.reverse',
-        name: 'Reverse',
+        name: '反向颜色值',
         defaultValue: defaultOptions.color.reverse,
         category,
       })
@@ -278,32 +278,32 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     builder
       .addNumberInput({
         path: 'color.min',
-        name: 'Start color scale from value',
+        name: '从值开始色阶',
         defaultValue: defaultOptions.color.min,
         settings: {
-          placeholder: 'Auto (min)',
+          placeholder: '自动(最小)',
         },
         category,
       })
       .addNumberInput({
         path: 'color.max',
-        name: 'End color scale at value',
+        name: '值的结束色阶',
         defaultValue: defaultOptions.color.max,
         settings: {
-          placeholder: 'Auto (max)',
+          placeholder: '自动(自动)',
         },
         category,
       });
 
-    category = ['Cell display'];
+    category = ['单元格显示'];
 
     if (!opts.calculate) {
       builder.addTextInput({
         path: 'rowsFrame.value',
-        name: 'Value name',
+        name: '值名称',
         defaultValue: defaultOptions.rowsFrame?.value,
         settings: {
-          placeholder: 'Value',
+          placeholder: '值',
         },
         category,
       });
@@ -313,7 +313,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       .addUnitPicker({
         category,
         path: 'cellValues.unit',
-        name: 'Unit',
+        name: '计量单位',
         defaultValue: undefined,
         settings: {
           isClearable: true,
@@ -322,9 +322,9 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       .addNumberInput({
         category,
         path: 'cellValues.decimals',
-        name: 'Decimals',
+        name: '小数',
         settings: {
-          placeholder: 'Auto',
+          placeholder: '自动',
         },
       });
 
@@ -343,7 +343,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       //   },
       // })
       .addSliderInput({
-        name: 'Cell gap',
+        name: '单元格间隙',
         path: 'cellGap',
         defaultValue: defaultOptions.cellGap,
         category,
@@ -354,19 +354,19 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       })
       .addNumberInput({
         path: 'filterValues.le',
-        name: 'Hide cells with values <=',
+        name: '隐藏值<=下列值的单元格',
         defaultValue: defaultOptions.filterValues?.le,
         settings: {
-          placeholder: 'None',
+          placeholder: '无',
         },
         category,
       })
       .addNumberInput({
         path: 'filterValues.ge',
-        name: 'Hide cells with values >=',
+        name: '隐藏值>=下列值的单元格',
         defaultValue: defaultOptions.filterValues?.ge,
         settings: {
-          placeholder: 'None',
+          placeholder: '无',
         },
         category,
       });
@@ -381,35 +381,35 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     //   },
     // })
 
-    category = ['Tooltip'];
+    category = ['提示'];
 
     builder.addBooleanSwitch({
       path: 'tooltip.show',
-      name: 'Show tooltip',
+      name: '显示提示',
       defaultValue: defaultOptions.tooltip.show,
       category,
     });
 
     builder.addBooleanSwitch({
       path: 'tooltip.yHistogram',
-      name: 'Show histogram (Y axis)',
+      name: '显示直方图（Y 轴）',
       defaultValue: defaultOptions.tooltip.yHistogram,
       category,
       showIf: (opts) => opts.tooltip.show,
     });
 
-    category = ['Legend'];
+    category = ['图例'];
     builder.addBooleanSwitch({
       path: 'legend.show',
-      name: 'Show legend',
+      name: '显示图例',
       defaultValue: defaultOptions.legend.show,
       category,
     });
 
-    category = ['Exemplars'];
+    category = ['样本'];
     builder.addColorPicker({
       path: 'exemplars.color',
-      name: 'Color',
+      name: '颜色',
       defaultValue: defaultOptions.exemplars.color,
       category,
     });

@@ -79,18 +79,18 @@ const LogsQueryEditor = ({
                 // eslint-disable-next-line
                 <AdvancedResourcePicker resources={resources as string[]} onChange={onChange} />
               )}
-              selectionNotice={() => 'You may only choose items of the same resource type.'}
+              selectionNotice={() => '您只能选择相同资源类型的项目。'}
             />
             <InlineField
               label="Time-range"
               tooltip={
-                'Specifies the time-range used to query. The query option will only use time-ranges specified in the query. Intersection will combine query time-ranges with the Grafana time-range.'
+                '指定用于查询的时间范围。查询选项将仅使用查询中指定的时间范围。交集会将查询时间范围与系统时间范围相结合。'
               }
             >
               <RadioButtonGroup
                 options={[
-                  { label: 'Query', value: false },
-                  { label: 'Intersection', value: true },
+                  { label: '查询', value: false },
+                  { label: '交集', value: true },
                 ]}
                 value={query.azureLogAnalytics?.intersectTime ?? false}
                 size={'md'}
@@ -119,8 +119,8 @@ const LogsQueryEditor = ({
                 setError={setError}
                 inputId={'azure-monitor-logs'}
                 options={[
-                  { label: 'Time series', value: ResultFormat.TimeSeries },
-                  { label: 'Table', value: ResultFormat.Table },
+                  { label: '时间序列', value: ResultFormat.TimeSeries },
+                  { label: '表格', value: ResultFormat.Table },
                 ]}
                 defaultValue={ResultFormat.Table}
                 setFormatAs={setFormatAs}
